@@ -20,10 +20,15 @@
 :root {
     font-size: 16px;
     font-family: font-1;
+    --swiper-theme-color: var(--Theme1-Color3);
     --Theme1-Color1: #262b35;
     --Theme1-Color2: #1a1e27;
-
+    --Theme1-Color3: #F78361;
+    --Theme1-Color4: #9c523c;
 }
+
+
+
 
 body {
     font-family: Poppins;
@@ -56,7 +61,7 @@ main {
 #computer {
     top: 0;
     position: absolute;
-    color: #F78361;
+    color: var(--Theme1-Color3);
     display: block;
     left: 50%;
     transform: translateX(-48%);
@@ -84,8 +89,8 @@ input:focus {
 
 #upper-part {
     height: 50%;
-    /* padding-left: 3rem;
-    padding-right: 3rem; */
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .swiper {
@@ -289,7 +294,7 @@ input:focus {
     background: var(--Theme1-Color1);
     bottom: 0px;
     border-radius: 20px 20px 0 0;
-    border-top: solid 1px #F78361;
+    border-top: solid 1px var(--Theme1-Color3);
     user-select: text;
     cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
     z-index: 998;
@@ -316,7 +321,7 @@ input:focus {
 }
 
 #console::-webkit-scrollbar-thumb {
-    background: #F78361;
+    background: var(--Theme1-Color3);
     border-radius: 10px;
 }
 
@@ -351,7 +356,7 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F78361;
+    background: var(--Theme1-Color3);
     border-radius: 20px;
     width: 120px;
     height: 120px;
@@ -361,10 +366,9 @@ input:focus {
 .btn:hover {
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
     ;
-    /* transition: 0.2s; */
+
     color: white;
-    background-color: #bd6449;
-    transform: scale(1.1);
+    background-color: var(--Theme1-Color4);
 }
 
 .btn:active {
@@ -441,17 +445,17 @@ input:focus {
 }
 
 #btn-clear .fa-2x {
-    --fa-primary-color: #F78361;
+    --fa-primary-color: var(--Theme1-Color3);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-param .fa-2x {
-    --fa-primary-color: #F78361;
+    --fa-primary-color: var(--Theme1-Color3);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-more .fa-2x {
-    --fa-primary-color: #F78361;
+    --fa-primary-color: var(--Theme1-Color3);
     --fa-secondary-color: #8A8791;
 }
 
@@ -467,13 +471,39 @@ input:focus {
     gap: 14rem;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 20000;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 @keyframes glow {
     from {
         box-shadow: 0 0 10px -10px #F54B64;
     }
 
     to {
-        box-shadow: 0 0 50px 10px #F78361;
+        box-shadow: 0 0 50px 10px var(--Theme1-Color3);
     }
 }
 
@@ -482,7 +512,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #F78361;
+    color: var(--Theme1-Color3);
 }
 
 #param-container {
@@ -499,7 +529,7 @@ input:focus {
     width: 1000px;
     height: 500px;
     z-index: 999;
-    border: solid 1px #F78361;
+    border: solid 1px var(--Theme1-Color3);
     border-top: none;
     color: white;
     background-color: #222222;
@@ -609,10 +639,12 @@ input:focus {
 
 
 .param-section:hover {
-    border-right: #F78361 solid 1px;
+    border-right: var(--Theme1-Color3);
+    solid 1px;
     background: #1a1e27;
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    transition: 0.2s;
+    /* transition: 0.2s; */
+    animation: headShake 0.6s;
 }
 
 .param-section {
@@ -661,9 +693,16 @@ input:focus {
 }
 
 .line {
-    /* background: green; */
     width: 100%;
     padding-bottom: 1rem;
+    display: block;
+    position: relative;
+    padding-left: 1rem;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -712,7 +751,7 @@ input:focus {
     .btn {
         display: flex;
         height: auto;
-        background: #F78361;
+        background: var(--Theme1-Color3);
         border-radius: 20px;
         width: 180px;
         padding: 5px;

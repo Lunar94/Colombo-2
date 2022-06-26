@@ -31,7 +31,7 @@ btnMore.addEventListener("click", () => {
 
 function myFunction() {
   if (consoleCAA.style.height === "100%") {
-    consoleCAA.classList.add("animate__heartBeat");
+    consoleCAA.classList.add("animate__shakeY");
 
     // on lui ajoute puis retire le console-overflow 1000ms plus tard
     consoleCAA.classList.remove("console-overflow");
@@ -40,7 +40,7 @@ function myFunction() {
     }, 1000);
 
     setTimeout(function () {
-      consoleCAA.classList.remove("animate__heartBeat");
+      consoleCAA.classList.remove("animate__shakeY");
     }, 1000);
 
     consoleCAA.style.height = "50%";
