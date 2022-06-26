@@ -1,0 +1,21 @@
+{
+    "name": "colombo-2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron .",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^19.0.4"
+    },
+    "dependencies": {
+        "alertifyjs": "^1.13.1",
+        "animate.css": "^4.1.1",
+        "install": "^0.13.0",
+        "swiper": "^8.2.4"
+    }
+}

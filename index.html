@@ -1,0 +1,296 @@
+<!-- HTML code by Yan Noël -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombo 2.0 | Home</title>
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/favicon.ico">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">
+    <link rel="stylesheet" href="./styles/default/style.css">
+    <link rel="stylesheet" href="./Assets/Fontawesome/css/all.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css" />
+</head>
+
+<body,>
+
+
+    <div id="topbar">
+        <div id="dragbar">
+            <!-- <span id="tab-title">Actions</span> -->
+            <span id="app-title">Colombo 2.0</span>
+        </div>
+        <!-- <div id="compact"><i class="fa-duotone fa-down-left-and-up-right-to-center"></i></div> -->
+        <div id="minimize" class="ui-button"><span class="dot yellow"><span class="small-dot-yellow"></span></span>
+        </div>
+        <div id="maximize" class="ui-button"><span class="dot green"><span class="small-dot-green"></span></span></div>
+        <div id="close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span></div>
+    </div>
+
+    <div id="tongue">
+        <div id="cover"></div>
+    </div>
+
+
+    <div id="param-container">
+        <div id="param" class="animate__animated animate__zoomIn">
+            <div id="param-topbar">
+                <div id="param-dragbar">
+                    <span id="app-title-param">Paramètres</span>
+                </div>
+                <div id="param-close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span>
+                </div>
+            </div>
+
+
+            <div id="param-sidebar">
+
+                <div id="param-section-container">
+                    <div id="console-section" class="param-section">Console</div>
+                    <div id="assistant-section" class="param-section">Assistant d'appels</div>
+                    <div id="theme-section" class="param-section">Thème & comportement</div>
+                    <div id="update-section" class="param-section">Vérifier mises à jour</div>
+                    <div id="credits-section" class="param-section">Crédits</div>
+                    <div id="build-section" class="param-build">Build A40</div>
+                </div>
+
+
+
+            </div>
+
+            <div id="param-console-content" class="animate__animated">
+                <div class="line">
+                    <input type="checkbox" id="copyauto" name="copyauto" checked>
+                    <label for="copyauto" class="label">Copie automatique des résultats</label>
+                </div>
+
+                <div class="line">
+                    <input type="checkbox" id="confirmdelete" name="confirmdelete" checked>
+                    <label for="confirmdelete" class="label">Confirmer avant de supprimer la console</label>
+                </div>
+            </div>
+
+            <div id="param-assistant-content" class="animate__animated">
+                <div class="line">
+                    <input type="checkbox" id="avenir" name="avenir" checked>
+                    <label for="avenir" class="label">Enregistrer appel automatiquement</label>
+                </div>
+
+                <div class="line">
+                    <input type="checkbox" id="avenir2" name="avenir2" checked>
+                    <label for="avenir2" class="label">Demander avant de</label>
+                </div>
+            </div>
+
+            <div id="param-theme-content" class="animate__animated">
+                Theme content goes here
+            </div>
+
+            <div id="param-update-content" class="animate__animated">
+                Update content here
+            </div>
+
+
+            <div id="param-credits-content" class="animate__animated">
+                Merci à Rémy Roy & Alain Jean pour le développement de Colombo et tous les
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <main>
+        <div id="content">
+            <div id="upper-part">
+
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide swiper-no-swiping">
+
+
+                            <div id="slide-1">
+
+                                <input id="computer" maxlength='7' title="poste" value='' />
+                                <div id="computer-type-container">
+                                    <i class="fa-duotone fa-laptop fa-2x"></i>
+                                    <i class="fa-duotone fa-computer fa-2x"></i>
+                                </div>
+
+                                <div id="ping-container"><span id="ping-text">En ligne</span></div>
+
+                                <div class="buttons">
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis" class="fa-brands fa-windows fa-4x"></i></span>
+                                    </div>
+
+                                    <div data-psfile="diskSpace" class="btn"><span data-psfile="diskSpace"
+                                            class="btn-text"><i data-psfile="diskSpace"
+                                                class="fa-duotone fa-hard-drive fa-4x"></i></span></div>
+
+                                    <div data-psfile="biosInfo" class="btn"><span data-psfile="biosInfo"
+                                            class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
+                                                fa-monitor-waveform fa-4x"></i></span></div>
+
+                                    <div data-psfile="ping" class="btn"><span data-psfile="ping" class="btn-text"><i
+                                                data-psfile="ping"
+                                                class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span></div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis" class="fa-brands fa-uncharted fa-4x"></i></span>
+                                    </div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis"
+                                                class="fa-duotone fa-display-arrow-down fa-4x"></i></span></div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis" class="fa-duotone fa-power-off fa-4x"></i></span>
+                                    </div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis"
+                                                class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span></div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis" class="fa-duotone fa-broom fa-4x"></i></span>
+                                    </div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis"
+                                                class="fa-duotone fa-envelopes-bulk fa-4x"></i></span></div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis"
+                                                class="fa-duotone fa-signal-stream fa-4x"></i></span></div>
+
+                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                                data-psfile="doThis"
+                                                class="fa-duotone fa-rectangle-ad fa-4x"></i></span></div>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <div class="swiper-slide swiper-no-swiping tocome">Page #2 à venir !</div>
+                        <div class="swiper-slide  swiper-no-swiping tocome">Page #3 à venir !</div>
+                        ...
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+
+
+            </div>
+
+
+
+
+            <div id="console" class="animate__animated console-overflow">
+
+
+                <div id="btn-clear">
+                    <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
+                </div>
+
+                <div id="btn-param">
+                    <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
+                </div>
+
+                <div id="btn-more">
+                    <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
+                </div>
+
+
+                <div id="inner-console">
+                    <div id="output" class="response animate__animated"></div>
+                </div>
+
+            </div>
+
+
+
+
+    </main>
+
+    <script src="./renderer.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="./ui.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: false,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+
+    </body>
+
+</html>
