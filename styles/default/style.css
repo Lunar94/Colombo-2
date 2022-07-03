@@ -27,6 +27,11 @@
     --Theme1-Color4: #9c523c;
 }
 
+::selection {
+    color: white;
+    background: var(--Theme1-Color3);
+}
+
 body {
     font-family: Poppins;
     cursor: url(../../Assets/Images//cursors/Arrow.cur), auto;
@@ -631,7 +636,7 @@ input:focus {
     padding: 1rem;
     padding-top: 3rem;
     width: 738px;
-    margin-left: 230px;
+    margin-left: 220px;
     height: 81%;
     border-radius: 0 0 20px 0;
 }
@@ -664,17 +669,16 @@ input:focus {
 
 
 .param-section:hover {
-    border-right: var(--Theme1-Color3);
-    solid 1px;
     background: var(--Theme1-Color2);
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    transition: 0.2s;
+    border-right: 1px solid var(--Theme1-Color3);
+
 }
 
-.param-section-active {
-    border-right: var(--Theme1-Color3);
-    solid 1px;
-    background: var(--Theme1-Color2);
+.param-section-activated {
+    color: var(--Theme1-Color3);
+    border-right: 1px solid var(--Theme1-Color3);
+    transition: 0.2s;
 }
 
 .param-section {
@@ -950,7 +954,7 @@ input:focus {
     #param-theme-content {
         margin-top: 45px;
         width: 390px;
-        margin-left: 170px;
+        margin-left: 160px;
         font-size: 0.7rem;
         height: 81%;
     }
@@ -975,6 +979,8 @@ input:focus {
         height: 2rem;
         width: 2rem;
     }
+
+
 
 }
 

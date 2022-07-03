@@ -213,7 +213,15 @@ const btnTheme = document.getElementById("theme-section");
 const btnUpdate = document.getElementById("update-section");
 const btnCredits = document.getElementById("credits-section");
 
+btnConsole.classList.add("param-section-activated");
+
 btnConsole.addEventListener("click", () => {
+  btnConsole.classList.add("param-section-activated");
+  btnAssistant.classList.remove("param-section-activated");
+  btnTheme.classList.remove("param-section-activated");
+  btnUpdate.classList.remove("param-section-activated");
+  btnCredits.classList.remove("param-section-activated");
+
   consoleDisplay.classList.add("animate__fadeIn");
   setTimeout(function () {
     consoleDisplay.classList.remove("animate__fadeIn");
@@ -226,6 +234,12 @@ btnConsole.addEventListener("click", () => {
 });
 
 btnAssistant.addEventListener("click", () => {
+  btnConsole.classList.remove("param-section-activated");
+  btnAssistant.classList.add("param-section-activated");
+  btnTheme.classList.remove("param-section-activated");
+  btnUpdate.classList.remove("param-section-activated");
+  btnCredits.classList.remove("param-section-activated");
+
   consoleDisplay.style.display = "none";
   assistantDisplay.classList.add("animate__fadeIn");
   setTimeout(function () {
@@ -238,6 +252,12 @@ btnAssistant.addEventListener("click", () => {
 });
 
 btnTheme.addEventListener("click", () => {
+  btnConsole.classList.remove("param-section-activated");
+  btnAssistant.classList.remove("param-section-activated");
+  btnTheme.classList.add("param-section-activated");
+  btnUpdate.classList.remove("param-section-activated");
+  btnCredits.classList.remove("param-section-activated");
+
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.classList.add("animate__fadeIn");
@@ -250,6 +270,12 @@ btnTheme.addEventListener("click", () => {
 });
 
 btnUpdate.addEventListener("click", () => {
+  btnConsole.classList.remove("param-section-activated");
+  btnAssistant.classList.remove("param-section-activated");
+  btnTheme.classList.remove("param-section-activated");
+  btnUpdate.classList.add("param-section-activated");
+  btnCredits.classList.remove("param-section-activated");
+
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.style.display = "none";
@@ -262,6 +288,12 @@ btnUpdate.addEventListener("click", () => {
 });
 
 btnCredits.addEventListener("click", () => {
+  btnConsole.classList.remove("param-section-activated");
+  btnAssistant.classList.remove("param-section-activated");
+  btnTheme.classList.remove("param-section-activated");
+  btnUpdate.classList.remove("param-section-activated");
+  btnCredits.classList.add("param-section-activated");
+
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.style.display = "none";
