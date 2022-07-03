@@ -234,6 +234,15 @@ input:focus {
     animation: glow 5s infinite alternate;
 }
 
+#topbar2 {
+    display: flex;
+    position: relative;
+    height: 30px;
+    background: var(--Theme1-Color2);
+    border: var(--Theme1-Color3) 1px solid;
+    border-radius: 20px;
+}
+
 #tongue {
     display: flex;
     height: 30px;
@@ -631,14 +640,32 @@ input:focus {
 }
 
 #param-theme-content {
-    margin-top: 15px;
     display: none;
-    padding: 1rem;
-    padding-top: 3rem;
+    padding: 1.30rem;
+    padding-right: 2.55rem;
     width: 738px;
-    margin-left: 220px;
-    height: 81%;
+    margin-left: 200px;
     border-radius: 0 0 20px 0;
+    height: 428px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#param-theme-content::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+#param-theme-content::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+#param-theme-content::-webkit-scrollbar-thumb {
+    background: var(--Theme1-Color3);
+    border-radius: 10px;
+}
+
+#param-theme-content::-webkit-scrollbar-track {
+    margin-bottom: 20px;
 }
 
 .content-inner {
@@ -804,6 +831,7 @@ input:focus {
 #colors-container {
     margin-top: 1rem;
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .color:hover {
@@ -831,36 +859,63 @@ input:focus {
 }
 
 #red {
-    background: red;
+    background: #DF6C7F;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
 #blue {
-    background: blue;
+    background: #B06392;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
 #green {
-    background: green;
+    background: #785F90;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
-#yellow {
-    background: yellow;
+#turquoise {
+    background: #485679;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
 #orange {
-    background: orange;
+    background: #2F4858;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+/* COULEURS CONSOLE */
+
+#def {
+    background: var(--Theme1-Color3);
+    border-radius: 50%;
+}
+
+#grey {
+    background: #4a4a4a;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#white {
+    background: #ffffff;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#black {
+    background: #000000;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
 @media only screen and (max-width:600px) {
+
+
 
     #param {
         width: 98.8%;
@@ -952,12 +1007,23 @@ input:focus {
     }
 
     #param-theme-content {
-        margin-top: 45px;
-        width: 390px;
-        margin-left: 160px;
+        width: 400px;
+        margin-left: 150px;
+        padding-right: 2.55rem;
         font-size: 0.7rem;
-        height: 81%;
+        padding: 1.35rem;
     }
+
+    /* #param-theme-content {
+        display: none;
+
+
+        width: 738px;
+        margin-left: 200px;
+        border-radius: 0 0 20px 0;
+        height: 428px;
+        overflow-y: auto;
+    } */
 
     #param-update-content {
         width: 390px;

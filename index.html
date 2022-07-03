@@ -57,7 +57,7 @@
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
-                    <div id="build-section" class="param-build">Build <b>A42</b></div>
+                    <div id="build-section" class="param-build">Build <b>A43</b></div>
                 </div>
 
 
@@ -94,8 +94,8 @@
 
                 <div class="line">
                     <span>Animations:</span><br>
-                    <input type="checkbox" class="css-checkbox" id="animations" name="animations" checked>
-                    <label for="animations" class="css-label chrome-style">Activer les animations</label>
+                    <input type="checkbox" class="css-checkbox" id="glowing" name="glowing" checked>
+                    <label for="glowing" class="css-label chrome-style">Effet embrasé</label>
                 </div><br>
 
                 <span>Thème:</span><br>
@@ -107,16 +107,39 @@
                         <option value="3">Infernal</option>
                         <option value="4">Abyssal</option>
                     </select>
-                </div><br><br>
+                </div><br>
 
-                <span>Nuance:</span>
+                <span>Nuance du thème:</span>
                 <div id="colors-container">
                     <div id="defaut" class="color"></div>
                     <div id="red" class="color"></div>
                     <div id="blue" class="color"></div>
                     <div id="green" class="color"></div>
-                    <div id="yellow" class="color"></div>
+                    <div id="turquoise" class="color"></div>
                     <div id="orange" class="color"></div>
+                </div><br>
+
+                <span>Texte de la console:</span>
+                <div id="colors-container">
+                    <div id="def" class="color"></div>
+                    <div id="grey" class="color"></div>
+                    <div id="white" class="color"></div>
+                    <div id="black" class="color"></div>
+                </div><br>
+
+                <!-- <span>Boutons de fenêtres:</span><br> -->
+
+                <div id="topbar2" style="animation:none;">
+                    <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
+                        <!-- <span id="tab-title">Actions</span> -->
+                    </div>
+                    <div id="minimize" class="ui-button"><span class="dot yellow"><span
+                                class="small-dot-yellow"></span></span>
+                    </div>
+                    <div id="maximize" class="ui-button"><span class="dot green"><span
+                                class="small-dot-green"></span></span></div>
+                    <div id="close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span>
+                    </div>
                 </div>
 
 

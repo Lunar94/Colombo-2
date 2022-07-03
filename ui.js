@@ -1,18 +1,15 @@
 ("use strict");
-
 /************
  *
  *  Console
  *
  ************/
-
-// ÉLÉMENTS HTML
 const btnMore = document.getElementById("btn-more");
 const btnClear = document.getElementById("btn-clear");
 const consoleCAA = document.getElementById("console");
 const moreButtonIcon = document.getElementById("btn-more-icon");
 
-// FONCTIONS
+// Effet de suppression console
 btnClear.addEventListener("click", () => {
   document.querySelector(".response").classList.add("animate__flash");
   setTimeout(function () {
@@ -24,28 +21,25 @@ btnClear.addEventListener("click", () => {
   }, 1000);
 });
 
+// Élargissement de la console
 btnMore.addEventListener("click", () => {
-  myFunction();
+  consoleEnlarge();
   moreButtonIcon.classList.add("animate__rotateIn");
   setTimeout(function () {
     moreButtonIcon.classList.remove("animate__rotateIn");
   }, 800);
 });
 
-function myFunction() {
+function consoleEnlarge() {
   if (consoleCAA.style.height === "100%") {
     consoleCAA.classList.add("animate__shakeY");
-
-    // on lui ajoute puis retire le console-overflow 1000ms plus tard
     consoleCAA.classList.remove("console-overflow");
     setTimeout(function () {
       consoleCAA.classList.add("console-overflow");
     }, 1000);
-
     setTimeout(function () {
       consoleCAA.classList.remove("animate__shakeY");
     }, 1000);
-
     consoleCAA.style.height = "50%";
     moreButtonIcon.classList.remove("fa-down-from-line");
     moreButtonIcon.classList.add("fa-expand");
@@ -53,16 +47,13 @@ function myFunction() {
   } else {
     consoleCAA.style.height = "100%";
     consoleCAA.classList.add("animate__slideInUp");
-
     consoleCAA.classList.remove("console-overflow");
     setTimeout(function () {
       consoleCAA.classList.add("console-overflow");
     }, 1000);
-
     setTimeout(function () {
       consoleCAA.classList.remove("animate__slideInUp");
     }, 1000);
-
     moreButtonIcon.classList.remove("fa-expand");
     moreButtonIcon.classList.add("fa-down-from-line");
   }
@@ -73,26 +64,18 @@ function myFunction() {
  *  Settings
  *
  ***************/
-
-// ÉLÉMENTS HTML
 const btnParam = document.getElementById("btn-param");
-const btnParamClose = document.getElementById("param-close");
 const paramPanel = document.getElementById("param");
 const paramButtonIcon = document.getElementById("btn-param-icon");
-const checkCopyAuto = document.getElementById("copyauto");
 
 const root = document.querySelector(":root");
 const nuanceDefault = document.getElementById("defaut");
 const nuanceRed = document.getElementById("red");
 const nuanceBlue = document.getElementById("blue");
 const nuanceGreen = document.getElementById("green");
-const nuanceYellow = document.getElementById("yellow");
+const nuanceTurquoise = document.getElementById("turquoise");
 const nuanceOrange = document.getElementById("orange");
 
-// VARIABLES GLOBALES
-let isAutoCopyChecked = false;
-
-// FONCTIONS
 btnParam.addEventListener("click", () => {
   paramButtonIcon.classList.add("animate__rotateIn");
   setTimeout(function () {
@@ -101,18 +84,24 @@ btnParam.addEventListener("click", () => {
   paramPanel.style.display = "block";
 });
 
-btnParamClose.addEventListener("click", () => {
-  paramPanel.classList.add("animate__zoomOut");
-  setTimeout(function () {
-    paramPanel.style.display = "none";
-    paramPanel.classList.remove("animate__zoomOut");
-  }, 800);
-});
+// checkbox glowing
+const topbar = document.getElementById("topbar");
+const tongue = document.getElementById("tongue");
+const checkGlow = document.getElementById("glowing");
 
-checkCopyAuto.addEventListener("change", function () {
-  isAutoCopyChecked = this.checked;
-});
+window.onload = function () {
+  checkGlow.onchange = function () {
+    if (checkGlow.checked == false) {
+      topbar.style.animation = "none";
+      tongue.style.animation = "none";
+    } else {
+      topbar.style.animation = "glow 5s infinite alternate";
+      tongue.style.animation = "glow 5s infinite alternate";
+    }
+  };
+};
 
+// Les nuances
 nuanceDefault.classList.add("colorJS");
 
 nuanceDefault.addEventListener("click", () => {
@@ -120,9 +109,9 @@ nuanceDefault.addEventListener("click", () => {
   nuanceRed.classList.remove("colorJS");
   nuanceBlue.classList.remove("colorJS");
   nuanceGreen.classList.remove("colorJS");
-  nuanceYellow.classList.remove("colorJS");
+  nuanceTurquoise.classList.remove("colorJS");
   nuanceOrange.classList.remove("colorJS");
-
+  //N0
   root.style.setProperty("--Theme1-Color3", "#F78361");
 });
 
@@ -131,10 +120,10 @@ nuanceRed.addEventListener("click", () => {
   nuanceRed.classList.add("colorJS");
   nuanceBlue.classList.remove("colorJS");
   nuanceGreen.classList.remove("colorJS");
-  nuanceYellow.classList.remove("colorJS");
+  nuanceTurquoise.classList.remove("colorJS");
   nuanceOrange.classList.remove("colorJS");
-
-  root.style.setProperty("--Theme1-Color3", "red");
+  //N1
+  root.style.setProperty("--Theme1-Color3", "#DF6C7F");
 });
 
 nuanceBlue.addEventListener("click", () => {
@@ -142,10 +131,10 @@ nuanceBlue.addEventListener("click", () => {
   nuanceRed.classList.remove("colorJS");
   nuanceBlue.classList.add("colorJS");
   nuanceGreen.classList.remove("colorJS");
-  nuanceYellow.classList.remove("colorJS");
+  nuanceTurquoise.classList.remove("colorJS");
   nuanceOrange.classList.remove("colorJS");
-
-  root.style.setProperty("--Theme1-Color3", "blue");
+  //N2
+  root.style.setProperty("--Theme1-Color3", "#B06392");
 });
 
 nuanceGreen.addEventListener("click", () => {
@@ -153,31 +142,75 @@ nuanceGreen.addEventListener("click", () => {
   nuanceRed.classList.remove("colorJS");
   nuanceBlue.classList.remove("colorJS");
   nuanceGreen.classList.add("colorJS");
-  nuanceYellow.classList.remove("colorJS");
+  nuanceTurquoise.classList.remove("colorJS");
   nuanceOrange.classList.remove("colorJS");
-
-  root.style.setProperty("--Theme1-Color3", "green");
+  //N3
+  root.style.setProperty("--Theme1-Color3", "#785F90");
 });
 
-nuanceYellow.addEventListener("click", () => {
+nuanceTurquoise.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
   nuanceRed.classList.remove("colorJS");
   nuanceBlue.classList.remove("colorJS");
   nuanceGreen.classList.remove("colorJS");
-  nuanceYellow.classList.add("colorJS");
+  nuanceTurquoise.classList.add("colorJS");
   nuanceOrange.classList.remove("colorJS");
-
-  root.style.setProperty("--Theme1-Color3", "yellow");
+  //N4
+  root.style.setProperty("--Theme1-Color3", "#485679");
 });
-
+//N5
 nuanceOrange.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
   nuanceRed.classList.remove("colorJS");
   nuanceBlue.classList.remove("colorJS");
   nuanceGreen.classList.remove("colorJS");
-  nuanceYellow.classList.remove("colorJS");
+  nuanceTurquoise.classList.remove("colorJS");
   nuanceOrange.classList.add("colorJS");
-  root.style.setProperty("--Theme1-Color3", "orange");
+  root.style.setProperty("--Theme1-Color3", "#2F4858");
+});
+
+// Couleur du texte de la console
+const nuanceConsoleDefault = document.getElementById("def");
+const nuanceConsoleGrey = document.getElementById("grey");
+const nuanceConsoleWhite = document.getElementById("white");
+const nuanceConsoleBlack = document.getElementById("black");
+
+nuanceConsoleDefault.classList.add("colorJS");
+
+nuanceConsoleDefault.addEventListener("click", () => {
+  nuanceConsoleDefault.classList.add("colorJS");
+  nuanceConsoleGrey.classList.remove("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS");
+  nuanceConsoleBlack.classList.remove("colorJS");
+  //N0
+  consoleCAA.style.setProperty("color", "var(--Theme1-Color3)");
+});
+
+nuanceConsoleGrey.addEventListener("click", () => {
+  nuanceConsoleDefault.classList.remove("colorJS");
+  nuanceConsoleGrey.classList.add("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS");
+  nuanceConsoleBlack.classList.remove("colorJS");
+  //N0
+  consoleCAA.style.setProperty("color", "grey");
+});
+
+nuanceConsoleWhite.addEventListener("click", () => {
+  nuanceConsoleDefault.classList.remove("colorJS");
+  nuanceConsoleGrey.classList.remove("colorJS");
+  nuanceConsoleWhite.classList.add("colorJS");
+  nuanceConsoleBlack.classList.remove("colorJS");
+  //N0
+  consoleCAA.style.setProperty("color", "white");
+});
+
+nuanceConsoleBlack.addEventListener("click", () => {
+  nuanceConsoleDefault.classList.remove("colorJS");
+  nuanceConsoleGrey.classList.remove("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS");
+  nuanceConsoleBlack.classList.add("colorJS");
+  //N0
+  consoleCAA.style.setProperty("color", "black");
 });
 
 /***************
@@ -212,6 +245,15 @@ const btnAssistant = document.getElementById("assistant-section");
 const btnTheme = document.getElementById("theme-section");
 const btnUpdate = document.getElementById("update-section");
 const btnCredits = document.getElementById("credits-section");
+const btnParamClose = document.getElementById("param-close");
+
+btnParamClose.addEventListener("click", () => {
+  paramPanel.classList.add("animate__zoomOut");
+  setTimeout(function () {
+    paramPanel.style.display = "none";
+    paramPanel.classList.remove("animate__zoomOut");
+  }, 800);
+});
 
 btnConsole.classList.add("param-section-activated");
 
@@ -307,7 +349,7 @@ btnCredits.addEventListener("click", () => {
 
 /***************
  *
- *  Custom Selector
+ *  Custom Selector (Sélecteur de Thème) - From Google
  *
  ***************/
 var x, i, j, l, ll, selElmnt, a, b, c;
