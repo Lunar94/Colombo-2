@@ -27,9 +27,6 @@
     --Theme1-Color4: #9c523c;
 }
 
-
-
-
 body {
     font-family: Poppins;
     cursor: url(../../Assets/Images//cursors/Arrow.cur), auto;
@@ -44,6 +41,16 @@ body {
             #1a1e27 50%) 0 / 15px 15px;
     overflow: hidden;
     user-select: none;
+}
+
+#exit {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 
 h1 {
@@ -435,6 +442,7 @@ input:focus {
     ;
     transition: 0.2s;
     background: #444d5f;
+
 }
 
 #btn-more:hover {
@@ -507,6 +515,17 @@ input:focus {
     }
 }
 
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-1692px, 0, 0);
+        /* The image width */
+    }
+}
+
 /* CA VA ÊTRE A SUPPRIMER C'EST SUR LA 2E et 3E PAGE MON TETON */
 .tocome {
     display: flex;
@@ -563,7 +582,6 @@ input:focus {
     height: 30px;
     width: 100%;
     background: var(--Theme1-Color2);
-    animation: glow 5s infinite alternate;
     border-radius: 20px 20px 0 0;
 }
 
@@ -608,13 +626,20 @@ input:focus {
 }
 
 #param-theme-content {
+    margin-top: 15px;
     display: none;
     padding: 1rem;
     padding-top: 3rem;
     width: 738px;
     margin-left: 230px;
-    height: 87.6%;
+    height: 81%;
     border-radius: 0 0 20px 0;
+}
+
+.content-inner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #param-update-content {
@@ -641,10 +666,15 @@ input:focus {
 .param-section:hover {
     border-right: var(--Theme1-Color3);
     solid 1px;
-    background: #1a1e27;
+    background: var(--Theme1-Color2);
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    /* transition: 0.2s; */
-    animation: headShake 0.6s;
+    transition: 0.2s;
+}
+
+.param-section-active {
+    border-right: var(--Theme1-Color3);
+    solid 1px;
+    background: var(--Theme1-Color2);
 }
 
 .param-section {
@@ -693,11 +723,9 @@ input:focus {
 }
 
 .line {
-    width: 100%;
     padding-bottom: 1rem;
     display: block;
     position: relative;
-    padding-left: 1rem;
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -705,8 +733,128 @@ input:focus {
     user-select: none;
 }
 
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+}
 
+.custom-select select {
+    display: none;
+    /*hide original SELECT element: */
+}
 
+.select-selected {
+    background-color: var(--Theme1-Color3);
+    border-radius: 20px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 55%;
+    transform: translateY(-50%);
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 39%;
+    transform: translateY(-50%);
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: var(--Theme1-Color3);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 20px;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#colors-container {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.color:hover {
+    outline: 10px solid white;
+    outline-offset: -30px;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    transition: 0.2s;
+}
+
+.colorJS {
+    outline: 10px solid white;
+    outline-offset: -30px;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+
+}
+
+.color {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+#defaut {
+    background: #F78361;
+    border-radius: 50%;
+}
+
+#red {
+    background: red;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#blue {
+    background: blue;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#green {
+    background: green;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#yellow {
+    background: yellow;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#orange {
+    background: orange;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
 
 @media only screen and (max-width:600px) {
 
@@ -790,36 +938,44 @@ input:focus {
     #param-console-content {
         width: 390px;
         margin-left: 170px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #param-assistant-content {
         width: 390px;
         margin-left: 170px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #param-theme-content {
+        margin-top: 45px;
         width: 390px;
         margin-left: 170px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        height: 81%;
     }
 
     #param-update-content {
         width: 390px;
         margin-left: 170px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #param-credits-content {
         width: 390px;
         margin-left: 170px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     #autocopy {
         margin-right: 400px;
     }
+
+    .color {
+        height: 2rem;
+        width: 2rem;
+    }
+
 }
 
 .fa-down-left-and-up-right-to-center {}

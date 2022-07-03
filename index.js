@@ -20,6 +20,7 @@ function createWindow() {
     },
     resizable: false,
     frame: false,
+    // transparent: true,
   });
 
   // and load the index.html of the app.

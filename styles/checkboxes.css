@@ -148,6 +148,7 @@ input[type=checkbox].css-checkbox:checked+label.css-label {
 
 .chrome-style {
 	background-image: url(http://csscheckbox.com/checkboxes/chrome-style.png);
+	margin-top: 1rem;
 }
 
 .web-two-style {

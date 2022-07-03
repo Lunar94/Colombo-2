@@ -16,7 +16,11 @@ document.getElementById("maximize").addEventListener("click", () => {
 });
 
 document.getElementById("close").addEventListener("click", () => {
-  windowControls.close();
+  const exit = document.getElementById("exit");
+  exit.style.display = "block";
+  setTimeout(function () {
+    windowControls.close();
+  }, 3500);
 });
 
 // PS PART
@@ -33,7 +37,7 @@ document
       response.insertAdjacentHTML(
         "beforeend",
         `
-        <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:var(--Theme1-Color3); transition: 1s; white-space: pre-wrap;">${res}</div>
+        <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:var(--Theme1-Color3); white-space: pre-wrap;">${res}</div>
         `
       );
       btn_copier = document.getElementById(`${btn_copier_id}-btn-copier`);

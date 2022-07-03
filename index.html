@@ -35,6 +35,8 @@
         <div id="cover"></div>
     </div>
 
+    <img src="./Assets/Images/exit.gif" id="exit" alt="">
+
 
     <div id="param-container">
         <div id="param" class="animate__animated animate__zoomIn">
@@ -65,12 +67,12 @@
             <div id="param-console-content" class="animate__animated">
                 <div class="line">
                     <input type="checkbox" class="css-checkbox" id="copyauto" name="copyauto" checked>
-                    <label for="copyauto" class="css-label dark-check-orange">Copie automatique des résultats</label>
+                    <label for="copyauto" class="css-label chrome-style">Copie automatique des résultats</label>
                 </div>
 
                 <div class="line">
                     <input type="checkbox" class="css-checkbox" id="confirmdelete" name="confirmdelete" checked>
-                    <label for="confirmdelete" class="css-label dark-check-orange">Confirmer avant de supprimer la
+                    <label for="confirmdelete" class="css-label chrome-style">Confirmer avant de supprimer la
                         console</label>
                 </div>
             </div>
@@ -78,20 +80,46 @@
             <div id="param-assistant-content" class="animate__animated">
                 <div class="line">
                     <input type="checkbox" class="css-checkbox " id="avenir" name="avenir" checked>
-                    <label for="avenir" class="css-label dark-check-orange">Enregistrer appel automatiquement</label>
+                    <label for="avenir" class="css-label chrome-style">Enregistrer appel automatiquement</label>
                 </div>
 
                 <div class="line">
                     <input type="checkbox" class="css-checkbox" id="avenir2" name="avenir2" checked>
-                    <label for="avenir2" class="css-label dark-check-orange">Demander avant de</label>
+                    <label for="avenir2" class="css-label chrome-style">Demander avant de</label>
                 </div>
             </div>
 
             <div id="param-theme-content" class="animate__animated">
+
+
                 <div class="line">
+                    <span>Animations:</span><br>
                     <input type="checkbox" class="css-checkbox" id="animations" name="animations" checked>
-                    <label for="animations" class="css-label dark-check-orange">Activer les animations</label>
+                    <label for="animations" class="css-label chrome-style">Activer les animations</label>
+                </div><br>
+
+                <span>Thème:</span><br>
+                <div class="custom-select" style="margin-top:1rem;">
+                    <select>
+                        <option value="0">Sélectionner un thème:</option>
+                        <option value="1">Détective (Par défaut)</option>
+                        <option value="2">Basique</option>
+                        <option value="3">Infernal</option>
+                        <option value="4">Abyssal</option>
+                    </select>
+                </div><br><br>
+
+                <span>Nuance:</span>
+                <div id="colors-container">
+                    <div id="defaut" class="color"></div>
+                    <div id="red" class="color"></div>
+                    <div id="blue" class="color"></div>
+                    <div id="green" class="color"></div>
+                    <div id="yellow" class="color"></div>
+                    <div id="orange" class="color"></div>
                 </div>
+
+
             </div>
 
             <div id="param-update-content" class="animate__animated">
