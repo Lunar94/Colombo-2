@@ -47,6 +47,23 @@ function createWindow() {
   });
 }
 
+ipcMain.on("windowControls:maximize2", () => {
+  if (mainWindow.isMaximized()) {
+    mainWindow.restore();
+  } else {
+    mainWindow.maximize();
+  }
+});
+
+ipcMain.on("windowControls:minimize2", () => {
+  mainWindow.minimize();
+});
+
+ipcMain.on("windowControls:close2", () => {
+  mainWindow.close();
+});
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.

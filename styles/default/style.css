@@ -1,5 +1,3 @@
-/* CSS code by Yan Noël */
-
 @font-face {
     font-family: font-3;
     src: url(../../Assets/Fonts/Menlo-Regular.ttf);
@@ -114,182 +112,6 @@ input:focus {
 .fa-2x {
     --fa-primary-color: #8A8791;
     --fa-secondary-color: #8A8791;
-}
-
-.dot {
-    position: relative;
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.small-dot-red {
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
-    display: inline-block;
-    background: rgb(139, 0, 0);
-    border: solid 2px rgb(139, 0, 0);
-}
-
-.small-dot-green {
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
-    display: inline-block;
-    background: rgb(0, 69, 0);
-    border: solid 2px rgb(0, 69, 0);
-}
-
-.small-dot-yellow {
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    width: 50%;
-    border-radius: 50%;
-    display: inline-block;
-    background: rgb(111, 111, 0);
-    border: solid 2px rgb(111, 111, 0);
-}
-
-.red {
-    background: red;
-    border: solid 1px rgb(139, 0, 0);
-}
-
-.yellow {
-    background: yellow;
-    border: solid 1px rgb(111, 111, 0);
-}
-
-.green {
-    background: green;
-    border: solid 1px rgb(0, 69, 0);
-}
-
-.red:hover {
-    box-shadow: 0px 0px 30px 10px rgb(255, 0, 0);
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    transition: 0.2s;
-}
-
-.green:hover {
-    box-shadow: 0px 0px 30px 10px green;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    transition: 0.2s;
-}
-
-.yellow:hover {
-    box-shadow: 0px 0px 30px 4px yellow;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    ;
-    transition: 0.2s;
-}
-
-#minimize {
-    display: flex;
-    width: 30px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#maximize {
-    display: flex;
-    width: 30px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#close {
-    display: flex;
-    margin-right: 2px;
-    width: 30px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#topbar {
-    display: flex;
-    position: relative;
-    height: 30px;
-    width: 100%;
-    background: var(--Theme1-Color2);
-    animation: glow 5s infinite alternate;
-}
-
-#topbar2 {
-    display: flex;
-    position: relative;
-    height: 30px;
-    background: var(--Theme1-Color2);
-    border: var(--Theme1-Color3) 1px solid;
-    border-radius: 20px;
-}
-
-#tongue {
-    display: flex;
-    height: 30px;
-    width: 200px;
-    background: var(--Theme1-Color2);
-    margin: 0 auto;
-    border-radius: 0 0 20px 20px;
-    animation: glow 5s infinite alternate;
-    -webkit-app-region: drag;
-}
-
-#cover {
-    width: 200px;
-    background: var(--Theme1-Color2);
-    z-index: 1;
-    border-radius: 0 0 20px 20px;
-}
-
-#dragbar {
-    -webkit-app-region: drag;
-    height: 30px;
-    width: 100%;
-    background: var(--Theme1-Color2);
-}
-
-#tab-title {
-    font-family: font-2;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 15px;
-    z-index: 2;
-}
-
-#app-title {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 10px;
-    color: white;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 4px;
 }
 
 #app-title-param {
@@ -571,23 +393,6 @@ input:focus {
             #2b2b2b 10%,
             #1a1e27 0%,
             #1a1e27 50%) 0 / 15px 15px;
-}
-
-#param-maximize {
-    display: flex;
-    width: 30px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-#param-close {
-    display: flex;
-    margin-right: 2px;
-    width: 30px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
 }
 
 #param-topbar {
@@ -912,6 +717,15 @@ input:focus {
     border-radius: 50%;
     margin-left: 1rem;
 }
+
+#windowsBtnStyle-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 
 @media only screen and (max-width:600px) {
 

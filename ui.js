@@ -101,6 +101,40 @@ window.onload = function () {
   };
 };
 
+// Boutons de fenêtres
+const fermer = document.getElementById("close");
+const agrandir = document.getElementById("maximize");
+const reduire = document.getElementById("minimize");
+
+const b1 = document.getElementById("topbar-1-demo");
+const b2 = document.getElementById("topbar-2-demo");
+
+const bStyle1 = document.getElementById("windowsBtnStyle1");
+const bStyle2 = document.getElementById("windowsBtnStyle2");
+
+b1.classList.add("topbar-1-demo-selected");
+b1.addEventListener("click", () => {
+  b1.classList.add("topbar-1-demo-selected");
+  b2.classList.remove("topbar-1-demo-selected");
+
+  bStyle1.style.display = "flex";
+  bStyle2.style.display = "none";
+
+  btnParamClose1.style.display = "flex";
+  btnParamClose2.style.display = "none";
+});
+
+b2.addEventListener("click", () => {
+  b1.classList.remove("topbar-1-demo-selected");
+  b2.classList.add("topbar-1-demo-selected");
+
+  bStyle1.style.display = "none";
+  bStyle2.style.display = "flex";
+
+  btnParamClose1.style.display = "none";
+  btnParamClose2.style.display = "flex";
+});
+
 // Les nuances
 nuanceDefault.classList.add("colorJS");
 
@@ -170,46 +204,62 @@ nuanceOrange.addEventListener("click", () => {
 });
 
 // Couleur du texte de la console
-const nuanceConsoleDefault = document.getElementById("def");
-const nuanceConsoleGrey = document.getElementById("grey");
-const nuanceConsoleWhite = document.getElementById("white");
-const nuanceConsoleBlack = document.getElementById("black");
+let nuanceConsoleDefault = document.getElementById("def");
+let nuanceConsoleGrey = document.getElementById("grey");
+let nuanceConsoleWhite = document.getElementById("white");
+let nuanceConsoleBlack = document.getElementById("black");
 
 nuanceConsoleDefault.classList.add("colorJS");
 
 nuanceConsoleDefault.addEventListener("click", () => {
+  cDefault = 1;
+  cGrey = 0;
+  cWhite = 0;
+  cBlack = 0;
   nuanceConsoleDefault.classList.add("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
-  //N0
+  //NC1
   consoleCAA.style.setProperty("color", "var(--Theme1-Color3)");
 });
 
 nuanceConsoleGrey.addEventListener("click", () => {
+  cDefault = 0;
+  cGrey = 1;
+  cWhite = 0;
+  cBlack = 0;
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.add("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
-  //N0
+  //NC2
   consoleCAA.style.setProperty("color", "grey");
 });
 
 nuanceConsoleWhite.addEventListener("click", () => {
+  cDefault = 0;
+  cGrey = 0;
+  cWhite = 1;
+  cBlack = 0;
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.add("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
-  //N0
+  //NC3
   consoleCAA.style.setProperty("color", "white");
 });
 
 nuanceConsoleBlack.addEventListener("click", () => {
+  cDefault = 0;
+  cGrey = 0;
+  cWhite = 0;
+  cBlack = 1;
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.add("colorJS");
-  //N0
+  //NC4
   consoleCAA.style.setProperty("color", "black");
 });
 
@@ -245,9 +295,18 @@ const btnAssistant = document.getElementById("assistant-section");
 const btnTheme = document.getElementById("theme-section");
 const btnUpdate = document.getElementById("update-section");
 const btnCredits = document.getElementById("credits-section");
-const btnParamClose = document.getElementById("param-close");
+const btnParamClose1 = document.getElementById("param-close1");
+const btnParamClose2 = document.getElementById("param-close2");
 
-btnParamClose.addEventListener("click", () => {
+btnParamClose1.addEventListener("click", () => {
+  paramPanel.classList.add("animate__zoomOut");
+  setTimeout(function () {
+    paramPanel.style.display = "none";
+    paramPanel.classList.remove("animate__zoomOut");
+  }, 800);
+});
+
+btnParamClose2.addEventListener("click", () => {
   paramPanel.classList.add("animate__zoomOut");
   setTimeout(function () {
     paramPanel.style.display = "none";
