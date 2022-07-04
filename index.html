@@ -87,7 +87,7 @@
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
-                    <div id="build-section" class="param-build">Build <b>A44</b></div>
+                    <div id="build-section" class="param-build">Build <b>A44.1</b></div>
                 </div>
 
 
@@ -121,14 +121,32 @@
 
             <div id="param-theme-content" class="animate__animated">
 
+                <br> <span><u>Animations</u>:</span><br>
+                <div class="line2">
 
-                <div class="line">
-                    <span>Animations:</span><br>
                     <input type="checkbox" class="css-checkbox" id="glowing" name="glowing" checked>
                     <label for="glowing" class="css-label chrome-style">Effet embrasé</label>
+
+                    <input type="checkbox" class="css-checkbox" id="paramAni" name="paramAni" checked>
+                    <label for="paramAni" class="css-label chrome-style" style="float:right;">Fenêtre des
+                        paramètres</label>
+                    <br>
+                    <input type="checkbox" class="css-checkbox" id="consoleDel" name="consoleDel" checked>
+                    <label for="consoleDel" class="css-label chrome-style">Supression de la console</label>
+
+                    <input type="checkbox" class="css-checkbox" id="pagesAni" name="pagesAni" checked>
+                    <label for="pagesAni" class="css-label chrome-style" style="float:right;">Changement de
+                        pages</label>
+                    <br>
+                    <input type="checkbox" class="css-checkbox" id="consoleMax" name="consoleMax" checked>
+                    <label for="consoleMax" class="css-label chrome-style">Maximisation de la console</label>
+
+                    <input type="checkbox" class="css-checkbox" id="consoleRes" name="consoleRes" checked>
+                    <label for="consoleRes" class="css-label chrome-style" style="float:right;">Résultats de la
+                        console</label>
                 </div><br>
 
-                <span>Thème:</span><br>
+                <span><u>Thème</u>:</span><br>
                 <div class="custom-select" style="margin-top:1rem;">
                     <select>
                         <option value="0">Sélectionner un thème:</option>
@@ -142,7 +160,7 @@
 
                 <div id="topbar-1-demo" style="animation:none;">
                     <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
-                        <span id="windowsBtnStyle-title">Pomme arrondie</span>
+                        <span id="windowsBtnStyle-title"><i>Pomme arrondie</i></span>
                     </div>
                     <div id="minimize" class="ui-button"><span class="dot yellow"><span
                                 class="small-dot-yellow"></span></span>
@@ -158,7 +176,7 @@
                 <div id="topbar-2-demo" style="animation:none;">
 
                     <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
-                        <span id="windowsBtnStyle-title">Fenêtré carré</span>
+                        <span id="windowsBtnStyle-title"><i>Fenêtré carré</i></span>
                     </div>
 
                     <div id="minimize" class="ui-button">
@@ -172,10 +190,10 @@
                     <div id="close" class="ui-button">
                         <i class="buttons-style-2">&#xE106</i>
                     </div>
-                </div><br>
+                </div><br><br>
 
 
-                <span>Nuance du thème:</span>
+                <span><u>Nuance du thème</u>:</span>
                 <div id="colors-container">
                     <div id="defaut" class="color"></div>
                     <div id="red" class="color"></div>
@@ -185,7 +203,7 @@
                     <div id="orange" class="color"></div>
                 </div><br>
 
-                <span>Texte de la console:</span>
+                <span><u>Texte de la console</u>:</span>
                 <div id="colors-container">
                     <div id="def" class="color"></div>
                     <div id="grey" class="color"></div>

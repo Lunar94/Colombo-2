@@ -117,7 +117,7 @@ input:focus {
 #app-title-param {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 49%;
     transform: translate(-50%, -50%);
     margin-left: 10px;
     color: white;
@@ -141,6 +141,7 @@ input:focus {
     user-select: text;
     cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
     z-index: 998;
+    /* animation: glow 5s infinite alternate; */
 }
 
 #inner-console {}
@@ -385,7 +386,7 @@ input:focus {
     height: 500px;
     z-index: 999;
     border: solid 1px var(--Theme1-Color3);
-    border-top: none;
+
     color: white;
     background-color: #222222;
     background: repeating-linear-gradient(135deg,
@@ -402,6 +403,7 @@ input:focus {
     width: 100%;
     background: var(--Theme1-Color2);
     border-radius: 20px 20px 0 0;
+    border-bottom: solid 1px var(--Theme1-Color3);
 }
 
 #param-dragbar {
@@ -554,8 +556,10 @@ input:focus {
 #ping-text {
     font-family: Poppins;
     font-size: 0.8rem;
+    font-weight: bolder;
     color: green;
     text-transform: uppercase;
+    z-index: 99999;
 }
 
 .line {
@@ -564,8 +568,6 @@ input:focus {
     position: relative;
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
 }
 
@@ -723,6 +725,20 @@ input:focus {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-weight: lighter;
+}
+
+.line2 {
+    padding-bottom: 1rem;
+    display: block;
+    position: relative;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#consoleDel {
+    margin-left: 2rem;
 }
 
 

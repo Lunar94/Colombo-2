@@ -155,7 +155,8 @@
 }
 
 #topbar-1-demo:hover {
-    border: rgba(255, 255, 255, 0.71) 1px solid
+    border: rgba(255, 255, 255, 0.71) 1px solid;
+    transition: 0.2s;
 }
 
 #topbar-2-demo {
@@ -170,7 +171,8 @@
 }
 
 #topbar-2-demo:hover {
-    border: rgba(255, 255, 255, 0.71) 1px solid
+    border: rgba(255, 255, 255, 0.71) 1px solid;
+    transition: 0.2s;
 }
 
 #tongue {

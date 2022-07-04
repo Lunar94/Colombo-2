@@ -88,6 +88,7 @@ btnParam.addEventListener("click", () => {
 const topbar = document.getElementById("topbar");
 const tongue = document.getElementById("tongue");
 const checkGlow = document.getElementById("glowing");
+const checkConsMax = document.getElementById("consoleMax");
 
 window.onload = function () {
   checkGlow.onchange = function () {
