@@ -636,9 +636,21 @@ input:focus {
 }
 
 #colors-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     margin-top: 1rem;
     display: flex;
     margin-bottom: 1rem;
+}
+
+#console-colors-container {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 12px;
 }
 
 .color:hover {
@@ -649,10 +661,14 @@ input:focus {
 }
 
 .colorJS {
-    outline: 10px solid white;
-    outline-offset: -30px;
+    outline: 2px solid white;
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+}
 
+.colorJS-white {
+    outline: 10px solid black;
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    outline-offset: -30px;
 }
 
 .color {
@@ -660,37 +676,67 @@ input:focus {
     width: 2.5rem;
 }
 
-#defaut {
+#nuance-default {
     background: #F78361;
     border-radius: 50%;
 }
 
-#red {
+#nuance-1 {
     background: #DF6C7F;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
-#blue {
+#nuance-2 {
     background: #B06392;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
-#green {
+#nuance-3 {
     background: #785F90;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
-#turquoise {
+#nuance-4 {
     background: #485679;
     border-radius: 50%;
     margin-left: 1rem;
 }
 
-#orange {
+#nuance-5 {
     background: #2F4858;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#nuance-6 {
+    background: #1C6E7D;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#nuance-7 {
+    background: #039590;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#nuance-8 {
+    background: #4BBC8E;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#nuance-9 {
+    background: #9BDE7E;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+#nuance-10 {
+    background: #F9F871;
     border-radius: 50%;
     margin-left: 1rem;
 }
@@ -872,11 +918,26 @@ input:focus {
     }
 
     .color {
-        height: 2rem;
-        width: 2rem;
+        height: 1.2rem;
+        width: 1.2rem;
     }
 
+    #console-colors-container {
+        gap: 2px;
+    }
 
+    .color:hover {
+        outline: 5px solid white;
+        outline-offset: -30px;
+        cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+        transition: 0.2s;
+    }
+
+    .colorJS-white {
+        outline: 5px solid black;
+        cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+        outline-offset: -30px;
+    }
 
 }
 

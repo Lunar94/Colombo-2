@@ -86,15 +86,5 @@ document
           `
         );
       }
-
     }
   });
-
-nuanceConsoleGrey.addEventListener("click", () => {
-  nuanceConsoleDefault.classList.remove("colorJS");
-  nuanceConsoleGrey.classList.add("colorJS");
-  nuanceConsoleWhite.classList.remove("colorJS");
-  nuanceConsoleBlack.classList.remove("colorJS");
-  //NC2
-  consoleCAA.style.setProperty("color", "grey");
-});

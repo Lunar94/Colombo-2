@@ -69,12 +69,17 @@ const paramPanel = document.getElementById("param");
 const paramButtonIcon = document.getElementById("btn-param-icon");
 
 const root = document.querySelector(":root");
-const nuanceDefault = document.getElementById("defaut");
-const nuanceRed = document.getElementById("red");
-const nuanceBlue = document.getElementById("blue");
-const nuanceGreen = document.getElementById("green");
-const nuanceTurquoise = document.getElementById("turquoise");
-const nuanceOrange = document.getElementById("orange");
+const nuanceDefault = document.getElementById("nuance-default");
+const nuance_1 = document.getElementById("nuance-1");
+const nuance_2 = document.getElementById("nuance-2");
+const nuance_3 = document.getElementById("nuance-3");
+const nuance_4 = document.getElementById("nuance-4");
+const nuance_5 = document.getElementById("nuance-5");
+const nuance_6 = document.getElementById("nuance-6");
+const nuance_7 = document.getElementById("nuance-7");
+const nuance_8 = document.getElementById("nuance-8");
+const nuance_9 = document.getElementById("nuance-9");
+const nuance_10 = document.getElementById("nuance-10");
 
 btnParam.addEventListener("click", () => {
   paramButtonIcon.classList.add("animate__rotateIn");
@@ -141,67 +146,189 @@ nuanceDefault.classList.add("colorJS");
 
 nuanceDefault.addEventListener("click", () => {
   nuanceDefault.classList.add("colorJS");
-  nuanceRed.classList.remove("colorJS");
-  nuanceBlue.classList.remove("colorJS");
-  nuanceGreen.classList.remove("colorJS");
-  nuanceTurquoise.classList.remove("colorJS");
-  nuanceOrange.classList.remove("colorJS");
-  //N0
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N0 (default)
   root.style.setProperty("--Theme1-Color3", "#F78361");
+  root.style.setProperty("--Theme1-Color4", "#9C523C");
 });
 
-nuanceRed.addEventListener("click", () => {
+nuance_1.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
-  nuanceRed.classList.add("colorJS");
-  nuanceBlue.classList.remove("colorJS");
-  nuanceGreen.classList.remove("colorJS");
-  nuanceTurquoise.classList.remove("colorJS");
-  nuanceOrange.classList.remove("colorJS");
+  nuance_1.classList.add("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
   //N1
   root.style.setProperty("--Theme1-Color3", "#DF6C7F");
+  root.style.setProperty("--Theme1-Color4", "#944855");
 });
 
-nuanceBlue.addEventListener("click", () => {
+nuance_2.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
-  nuanceRed.classList.remove("colorJS");
-  nuanceBlue.classList.add("colorJS");
-  nuanceGreen.classList.remove("colorJS");
-  nuanceTurquoise.classList.remove("colorJS");
-  nuanceOrange.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.add("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
   //N2
   root.style.setProperty("--Theme1-Color3", "#B06392");
+  root.style.setProperty("--Theme1-Color4", "#7D4868");
 });
 
-nuanceGreen.addEventListener("click", () => {
+nuance_3.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
-  nuanceRed.classList.remove("colorJS");
-  nuanceBlue.classList.remove("colorJS");
-  nuanceGreen.classList.add("colorJS");
-  nuanceTurquoise.classList.remove("colorJS");
-  nuanceOrange.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.add("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
   //N3
   root.style.setProperty("--Theme1-Color3", "#785F90");
+  root.style.setProperty("--Theme1-Color4", "#5D4B6F");
 });
 
-nuanceTurquoise.addEventListener("click", () => {
+nuance_4.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
-  nuanceRed.classList.remove("colorJS");
-  nuanceBlue.classList.remove("colorJS");
-  nuanceGreen.classList.remove("colorJS");
-  nuanceTurquoise.classList.add("colorJS");
-  nuanceOrange.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.add("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
   //N4
   root.style.setProperty("--Theme1-Color3", "#485679");
+  root.style.setProperty("--Theme1-Color4", "#3F4B68");
 });
-//N5
-nuanceOrange.addEventListener("click", () => {
+
+nuance_5.addEventListener("click", () => {
   nuanceDefault.classList.remove("colorJS");
-  nuanceRed.classList.remove("colorJS");
-  nuanceBlue.classList.remove("colorJS");
-  nuanceGreen.classList.remove("colorJS");
-  nuanceTurquoise.classList.remove("colorJS");
-  nuanceOrange.classList.add("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.add("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N5
   root.style.setProperty("--Theme1-Color3", "#2F4858");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
+});
+
+nuance_6.addEventListener("click", () => {
+  nuanceDefault.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.add("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N6
+  root.style.setProperty("--Theme1-Color3", "#1C6E7D");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
+});
+
+nuance_7.addEventListener("click", () => {
+  nuanceDefault.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.add("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N7
+  root.style.setProperty("--Theme1-Color3", "#039590");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
+});
+
+nuance_8.addEventListener("click", () => {
+  nuanceDefault.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.add("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N8
+  root.style.setProperty("--Theme1-Color3", "#4BBC8E");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
+});
+
+nuance_9.addEventListener("click", () => {
+  nuanceDefault.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.add("colorJS");
+  nuance_10.classList.remove("colorJS");
+  //N9
+  root.style.setProperty("--Theme1-Color3", "#9BDE7E");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
+});
+
+nuance_10.addEventListener("click", () => {
+  nuanceDefault.classList.remove("colorJS");
+  nuance_1.classList.remove("colorJS");
+  nuance_2.classList.remove("colorJS");
+  nuance_3.classList.remove("colorJS");
+  nuance_4.classList.remove("colorJS");
+  nuance_5.classList.remove("colorJS");
+  nuance_6.classList.remove("colorJS");
+  nuance_7.classList.remove("colorJS");
+  nuance_8.classList.remove("colorJS");
+  nuance_9.classList.remove("colorJS");
+  nuance_10.classList.add("colorJS");
+  //N10
+  root.style.setProperty("--Theme1-Color3", "#F9F871");
+  root.style.setProperty("--Theme1-Color4", "#0066A0");
 });
 
 // Couleur du texte de la console
@@ -221,6 +348,7 @@ nuanceConsoleDefault.addEventListener("click", () => {
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS-white");
   //NC1
   consoleCAA.style.setProperty("color", "var(--Theme1-Color3)");
 });
@@ -234,6 +362,7 @@ nuanceConsoleGrey.addEventListener("click", () => {
   nuanceConsoleGrey.classList.add("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS-white");
   //NC2
   consoleCAA.style.setProperty("color", "grey");
 });
@@ -245,7 +374,7 @@ nuanceConsoleWhite.addEventListener("click", () => {
   cBlack = 0;
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
-  nuanceConsoleWhite.classList.add("colorJS");
+  nuanceConsoleWhite.classList.add("colorJS-white");
   nuanceConsoleBlack.classList.remove("colorJS");
   //NC3
   consoleCAA.style.setProperty("color", "white");
@@ -260,6 +389,7 @@ nuanceConsoleBlack.addEventListener("click", () => {
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.add("colorJS");
+  nuanceConsoleWhite.classList.remove("colorJS-white");
   //NC4
   consoleCAA.style.setProperty("color", "black");
 });

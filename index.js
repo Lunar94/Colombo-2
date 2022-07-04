@@ -62,7 +62,7 @@ ipcMain.on("windowControls:minimize2", () => {
 ipcMain.on("windowControls:close2", () => {
   mainWindow.close();
 });
-}
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
