@@ -81,6 +81,8 @@ const nuance_8 = document.getElementById("nuance-8");
 const nuance_9 = document.getElementById("nuance-9");
 const nuance_10 = document.getElementById("nuance-10");
 
+const icons = document.querySelectorAll(".fa-4x");
+
 btnParam.addEventListener("click", () => {
   paramButtonIcon.classList.add("animate__rotateIn");
   setTimeout(function () {
@@ -94,15 +96,18 @@ const topbar = document.getElementById("topbar");
 const tongue = document.getElementById("tongue");
 const checkGlow = document.getElementById("glowing");
 const checkConsMax = document.getElementById("consoleMax");
+const wrapCons = document.getElementById("console-wrapper");
 
 window.onload = function () {
   checkGlow.onchange = function () {
     if (checkGlow.checked == false) {
       topbar.style.animation = "none";
       tongue.style.animation = "none";
+      wrapCons.style.animation = "none";
     } else {
       topbar.style.animation = "glow 5s infinite alternate";
       tongue.style.animation = "glow 5s infinite alternate";
+      wrapCons.style.animation = "glow 5s infinite alternate";
     }
   };
 };
@@ -159,6 +164,9 @@ nuanceDefault.addEventListener("click", () => {
   //N0 (default)
   root.style.setProperty("--Theme1-Color3", "#F78361");
   root.style.setProperty("--Theme1-Color4", "#9C523C");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_1.addEventListener("click", () => {
@@ -176,6 +184,9 @@ nuance_1.addEventListener("click", () => {
   //N1
   root.style.setProperty("--Theme1-Color3", "#DF6C7F");
   root.style.setProperty("--Theme1-Color4", "#944855");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_2.addEventListener("click", () => {
@@ -193,6 +204,9 @@ nuance_2.addEventListener("click", () => {
   //N2
   root.style.setProperty("--Theme1-Color3", "#B06392");
   root.style.setProperty("--Theme1-Color4", "#7D4868");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_3.addEventListener("click", () => {
@@ -210,6 +224,9 @@ nuance_3.addEventListener("click", () => {
   //N3
   root.style.setProperty("--Theme1-Color3", "#785F90");
   root.style.setProperty("--Theme1-Color4", "#5D4B6F");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_4.addEventListener("click", () => {
@@ -227,6 +244,9 @@ nuance_4.addEventListener("click", () => {
   //N4
   root.style.setProperty("--Theme1-Color3", "#485679");
   root.style.setProperty("--Theme1-Color4", "#3F4B68");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_5.addEventListener("click", () => {
@@ -243,7 +263,19 @@ nuance_5.addEventListener("click", () => {
   nuance_10.classList.remove("colorJS");
   //N5
   root.style.setProperty("--Theme1-Color3", "#2F4858");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#596D79");
+  // cDefault = 1;
+  // cGrey = 0;
+  // cWhite = 0;
+  // cBlack = 0;
+  // nuanceConsoleDefault.classList.remove("colorJS");
+  // nuanceConsoleGrey.classList.remove("colorJS");
+  // nuanceConsoleWhite.classList.add("colorJS-white");
+  // nuanceConsoleBlack.classList.remove("colorJS");
+
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_6.addEventListener("click", () => {
@@ -260,7 +292,10 @@ nuance_6.addEventListener("click", () => {
   nuance_10.classList.remove("colorJS");
   //N6
   root.style.setProperty("--Theme1-Color3", "#1C6E7D");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#2798ad");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_7.addEventListener("click", () => {
@@ -277,7 +312,10 @@ nuance_7.addEventListener("click", () => {
   nuance_10.classList.remove("colorJS");
   //N7
   root.style.setProperty("--Theme1-Color3", "#039590");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#04c9c2");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_8.addEventListener("click", () => {
@@ -294,7 +332,10 @@ nuance_8.addEventListener("click", () => {
   nuance_10.classList.remove("colorJS");
   //N8
   root.style.setProperty("--Theme1-Color3", "#4BBC8E");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#378a68");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "white");
+  });
 });
 
 nuance_9.addEventListener("click", () => {
@@ -311,7 +352,10 @@ nuance_9.addEventListener("click", () => {
   nuance_10.classList.remove("colorJS");
   //N9
   root.style.setProperty("--Theme1-Color3", "#9BDE7E");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#7bb063");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "#507340");
+  });
 });
 
 nuance_10.addEventListener("click", () => {
@@ -328,7 +372,10 @@ nuance_10.addEventListener("click", () => {
   nuance_10.classList.add("colorJS");
   //N10
   root.style.setProperty("--Theme1-Color3", "#F9F871");
-  root.style.setProperty("--Theme1-Color4", "#0066A0");
+  root.style.setProperty("--Theme1-Color4", "#bbba54");
+  icons.forEach((icons) => {
+    icons.style.setProperty("color", "#797836");
+  });
 });
 
 // Couleur du texte de la console
@@ -399,15 +446,17 @@ nuanceConsoleBlack.addEventListener("click", () => {
  *  Main Buttons
  *
  ***************/
-const btnMain = document.querySelector(".btn");
+const btnMain = document.querySelectorAll(".btn");
 
-btnMain.addEventListener("click", () => {
-  btnMain.classList.add("animate__animated");
-  btnMain.classList.add("animate__tada");
-  setTimeout(function () {
-    btnMain.classList.remove("animate__animated");
-    btnMain.classList.remove("animate__tada");
-  }, 1000);
+btnMain.forEach((btnMain) => {
+  btnMain.addEventListener("click", () => {
+    btnMain.classList.add("animate__animated");
+    btnMain.classList.add("animate__tada");
+    setTimeout(function () {
+      btnMain.classList.remove("animate__animated");
+      btnMain.classList.remove("animate__tada");
+    }, 1000);
+  });
 });
 
 /***************
@@ -627,3 +676,12 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+// OVERLAY
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}

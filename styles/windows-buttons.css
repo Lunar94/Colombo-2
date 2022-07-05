@@ -141,6 +141,7 @@
 
 .topbar-1-demo-selected {
     border: var(--Theme1-Color3) 1px solid !important;
+    -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
 }
 
 #topbar-1-demo {

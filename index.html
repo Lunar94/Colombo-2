@@ -87,7 +87,7 @@
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
-                    <div id="build-section" class="param-build">Build <b>A44.2</b></div>
+                    <div id="build-section" class="param-build">Build <b>A44.3</b></div>
                 </div>
 
 
@@ -205,10 +205,10 @@
 
                 <span><u>Texte de la console</u>:</span>
                 <div id="console-colors-container">
-                    <div id="def" class="color"></div>
-                    <div id="grey" class="color"></div>
-                    <div id="white" class="color"></div>
-                    <div id="black" class="color"></div>
+                    <div id="def" class="console-color"></div>
+                    <div id="grey" class="console-color"></div>
+                    <div id="white" class="console-color"></div>
+                    <div id="black" class="console-color"></div>
                 </div><br>
 
                 <!-- <span>Boutons de fenêtres:</span><br> -->
@@ -268,7 +268,7 @@
 
                                 <input id="computer" maxlength='7' title="poste" value='' />
                                 <div id="computer-type-container">
-                                    <i class="fa-duotone fa-laptop fa-2x"></i>
+                                    <i class="fa-duotone fa-laptop fa-2x" style="margin-top:1px;"></i>
                                     <i class="fa-duotone fa-computer fa-2x"></i>
                                 </div>
 
@@ -276,53 +276,69 @@
 
                                 <div class="buttons">
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                    <div data-hover="Informations sur le système d'exploitation" data-psfile="doThis"
+                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
                                                 data-psfile="doThis" class="fa-brands fa-windows fa-4x"></i></span>
                                     </div>
 
-                                    <div data-psfile="diskSpace" class="btn"><span data-psfile="diskSpace"
+
+
+                                    <div data-hover="Vérifier la taille du ou des disques durs local"
+                                        data-psfile="diskSpace" class="btn hovertext"><span data-psfile="diskSpace"
                                             class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                     </div>
 
 
-                                    <div data-psfile="biosInfo" class="btn"><span data-psfile="biosInfo"
+                                    <div data-hover="Informations générales sur la version du Bios"
+                                        data-psfile="biosInfo" class="btn hovertext"><span data-psfile="biosInfo"
                                             class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
                                                 fa-monitor-waveform fa-4x"></i></span></div>
 
-                                    <div data-psfile="ping" class="btn"><span data-psfile="ping" class="btn-text"><i
+                                    <div data-hover="Est-ce que le poste répond bien aux paquets ?" data-psfile="ping"
+                                        class="btn hovertext"><span data-psfile="ping" class="btn-text"><i
                                                 data-psfile="ping"
                                                 class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span></div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis" class="fa-brands fa-uncharted fa-4x"></i></span>
+                                    <div data-hover="Sortir la liste complète des logiciels installés"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-brands fa-uncharted fa-4x"></i></span>
                                     </div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis"
+                                    <div data-hover="Installer un ou plusieurs logiciels sur le poste"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-display-arrow-down fa-4x"></i></span></div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                    <div data-hover="Redémarrer le poste à distance [maintenir]" data-psfile="doThis"
+                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
                                                 data-psfile="doThis" class="fa-duotone fa-power-off fa-4x"></i></span>
                                     </div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis"
-                                                class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span></div>
+                                    <div data-hover="Transfert de fichiers d'un poste à l'autre" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span>
+                                    </div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                    <div data-hover="Libérer de l'espace sur le disque local C:\" data-psfile="doThis"
+                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
                                                 data-psfile="doThis" class="fa-duotone fa-broom fa-4x"></i></span>
                                     </div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis"
+                                    <div data-hover="Ouvrir le répertoire Outlook contenant le fichier .ost"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-envelopes-bulk fa-4x"></i></span></div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                    <div data-hover="Contrôle à distance - ShadowRDP" data-psfile="doThis"
+                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
                                                 data-psfile="doThis"
                                                 class="fa-duotone fa-signal-stream fa-4x"></i></span></div>
 
-                                    <div data-psfile="doThis" class="btn"><span data-psfile="doThis" class="btn-text"><i
+                                    <div data-hover="Rechercher ce poste dans l'Active Directory" data-psfile="doThis"
+                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
                                                 data-psfile="doThis"
                                                 class="fa-duotone fa-rectangle-ad fa-4x"></i></span></div>
 
@@ -376,29 +392,54 @@
 
 
 
+            <div id="console-wrapper">
+                <div id="console" class="animate__animated console-overflow">
 
-            <div id="console" class="animate__animated console-overflow">
+
+                    <div id="btn-clear">
+                        <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
+                    </div>
+
+                    <div onclick="toggleClass()" id="btn-astuces">
+                        <i class="fa-duotone fa-message-question fa-2x animate__animated"></i>
+                    </div>
+
+                    <div id="btn-param">
+                        <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
+                    </div>
+
+                    <div id="btn-more">
+                        <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
+                    </div>
 
 
-                <div id="btn-clear">
-                    <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
+                    <div id="inner-console">
+                        <div id="output" class="response animate__animated"></div>
+                    </div>
+
                 </div>
-
-                <div id="btn-param">
-                    <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
-                </div>
-
-                <div id="btn-more">
-                    <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
-                </div>
-
-
-                <div id="inner-console">
-                    <div id="output" class="response animate__animated"></div>
-                </div>
-
             </div>
 
+
+            <script>
+                const btnAstuces = document.getElementById("btn-astuces");
+                const Astuces = getComputedStyle(document.querySelector(".hovertext"), ':before').content;
+                Astuces.style.setProperty("display", "block");
+
+                console.log(Astuces)
+
+                function toggleClass() {
+                    if (btnAstuces.classList == "astucesActivated") {
+                        btnAstuces.classList.remove("astucesActivated");
+                        btnAstuces.style.setProperty("margin-top", "-53px");
+
+                    } else {
+                        btnAstuces.classList.add("astucesActivated");
+                        btnAstuces.style.setProperty("margin-top", "-64px");
+
+                    }
+                }
+            </script>
 
 
 

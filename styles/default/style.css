@@ -83,7 +83,7 @@ main {
     background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/10ch 2px no-repeat;
     font: 2rem droid sans mono, consolas, monospace;
     letter-spacing: 0.5ch;
-    z-index: 9999;
+    z-index: 1;
     cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
 }
 
@@ -114,6 +114,10 @@ input:focus {
     --fa-secondary-color: #8A8791;
 }
 
+.fa-4x {
+    color: white;
+}
+
 #app-title-param {
     position: absolute;
     top: 50%;
@@ -141,8 +145,13 @@ input:focus {
     user-select: text;
     cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
     z-index: 998;
-    /* animation: glow 5s infinite alternate; */
 }
+
+#console-wrapper {
+    animation: glow 5s infinite alternate;
+}
+
+
 
 #inner-console {}
 
@@ -205,20 +214,14 @@ input:focus {
     width: 120px;
     height: 120px;
     padding: 5px;
+    border: 2px solid var(--Theme1-Color2);
 }
 
 .btn:hover {
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    ;
-
     color: white;
     background-color: var(--Theme1-Color4);
 }
-
-.btn:active {
-    transform: scale(1.2);
-}
-
 
 #btn-clear {
     display: flex;
@@ -226,6 +229,21 @@ input:focus {
     align-items: center;
     position: fixed;
     left: 20px;
+    margin-top: -53px;
+    height: 40px;
+    width: 40px;
+    background: var(--Theme1-Color1);
+    z-index: 8000;
+    border-radius: 20px 20px 0 0;
+    font-size: 0.6rem;
+}
+
+#btn-astuces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 60px;
     margin-top: -53px;
     height: 40px;
     width: 40px;
@@ -268,7 +286,13 @@ input:focus {
 
 #btn-clear:hover {
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    ;
+    transition: 0.2s;
+    background: #444d5f;
+    z-index: 8000;
+}
+
+#btn-astuces:hover {
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     background: #444d5f;
     z-index: 8000;
@@ -276,7 +300,6 @@ input:focus {
 
 #btn-param:hover {
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    ;
     transition: 0.2s;
     background: #444d5f;
 
@@ -284,12 +307,16 @@ input:focus {
 
 #btn-more:hover {
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    ;
     transition: 0.2s;
     background: #444d5f;
 }
 
 #btn-clear .fa-2x {
+    --fa-primary-color: var(--Theme1-Color3);
+    --fa-secondary-color: #8A8791;
+}
+
+#btn-astuces .fa-2x {
     --fa-primary-color: var(--Theme1-Color3);
     --fa-secondary-color: #8A8791;
 }
@@ -344,7 +371,7 @@ input:focus {
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px -10px #F54B64;
+        box-shadow: 0 0 10px -10px var(--Theme1-Color4);
     }
 
     to {
@@ -663,17 +690,30 @@ input:focus {
 .colorJS {
     outline: 2px solid white;
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .colorJS-white {
-    outline: 10px solid black;
+    outline: 3px solid rgb(6, 6, 6);
     cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-    outline-offset: -30px;
+    -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
+
 
 .color {
     height: 2.5rem;
     width: 2.5rem;
+}
+
+.console-color {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.console-color:hover {
+    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    transition: 0.2s;
+    -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 #nuance-default {
@@ -787,11 +827,41 @@ input:focus {
     margin-left: 2rem;
 }
 
+.hovertext {
+    position: relative;
+}
+
+.hovertext::before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 100%;
+    font-size: 0.8rem;
+    z-index: 999;
+    display: none;
+}
+
+.hovertext:hover::before {
+    opacity: 0.8;
+    visibility: visible;
+    z-index: 999;
+}
+
+.astucesActivated {
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0 0 10px var(--Theme1-Color3);
+    border: 1px solid var(--Theme1-Color3);
+}
 
 
 @media only screen and (max-width:600px) {
-
-
 
     #param {
         width: 98.8%;
@@ -853,7 +923,7 @@ input:focus {
     #ping-container {
         position: absolute;
         left: 50%;
-        top: 90%;
+        top: 91%;
         transform: translateX(-50%);
     }
 
@@ -890,17 +960,6 @@ input:focus {
         padding: 1.35rem;
     }
 
-    /* #param-theme-content {
-        display: none;
-
-
-        width: 738px;
-        margin-left: 200px;
-        border-radius: 0 0 20px 0;
-        height: 428px;
-        overflow-y: auto;
-    } */
-
     #param-update-content {
         width: 390px;
         margin-left: 170px;
@@ -922,6 +981,11 @@ input:focus {
         width: 1.2rem;
     }
 
+    .console-color {
+        height: 1.2rem;
+        width: 1.2rem;
+    }
+
     #console-colors-container {
         gap: 2px;
     }
@@ -933,14 +997,49 @@ input:focus {
         transition: 0.2s;
     }
 
-    .colorJS-white {
-        outline: 5px solid black;
-        cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
-        outline-offset: -30px;
+    .colorJS {
+        -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+    }
+}
+
+@media only screen and (min-width:1921px) {
+
+    .btn {
+        width: 154px;
+        height: 154px;
+    }
+
+    #computer {
+        top: 0;
+        position: absolute;
+        color: var(--Theme1-Color3);
+        display: block;
+        left: 50%;
+        transform: translateX(-48%);
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        border: none;
+        padding: 0;
+        width: 10.5ch;
+        background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/10ch 2px no-repeat;
+        font: 3rem droid sans mono, consolas, monospace;
+    }
+
+    #computer-type-container {
+        margin-top: 3.6rem;
+        font-size: 25px;
+        gap: 20rem;
+    }
+
+    #ping-container {
+        position: absolute;
+        left: 50%;
+        top: 22%;
+        transform: translateX(-50%);
+    }
+
+    #ping-text {
+        font-size: 1.2rem;
     }
 
 }
-
-.fa-down-left-and-up-right-to-center {}
-
-.fa-down-left-and-up-right-to-center:hover {}
