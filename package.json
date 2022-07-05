@@ -17,6 +17,7 @@
         "animate.css": "^4.1.1",
         "electron-store": "^8.0.2",
         "install": "^0.13.0",
+        "pretty-checkbox": "^3.0.3",
         "swiper": "^8.2.4"
     }
 }

@@ -1,3 +1,6 @@
+<script>
+    buildMain = "A44.4";
+</script>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,61 +14,53 @@
     <link rel="stylesheet" href="./styles/default/style.css">
     <link rel="stylesheet" href="./Assets/Fontawesome/css/all.css">
     <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="./styles/checkboxes.css">
     <link rel="stylesheet" href="./styles/windows-buttons.css">
+    <link rel="stylesheet" href="./node_modules/pretty-checkbox/dist/pretty-checkbox.css">
 </head>
 
 <body>
-
+    <img src="./Assets/Images/exit.gif" id="exit" alt="">
 
     <div id="topbar">
+
         <div id="dragbar">
             <span id="app-title">Colombo 2.0</span>
         </div>
 
         <div id="windowsBtnStyle1">
+
             <div id="minimize" class="ui-button"><span class="dot yellow"><span class="small-dot-yellow"></span></span>
             </div>
-
             <div id="maximize" class="ui-button"><span class="dot green"><span class="small-dot-green"></span></span>
             </div>
             <div id="close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span></div>
+
         </div>
 
-
-
-
-
         <div id="windowsBtnStyle2">
+
             <div id="minimize2" class="ui-button">
                 <i class="buttons-style-2">&#xE949</i>
             </div>
-
             <div id="maximize2" class="ui-button">
                 <i class="buttons-style-2">&#xE739</i>
             </div>
-
             <div id="close2" class="ui-button">
                 <i class="buttons-style-2">&#xE106</i>
             </div>
+
         </div>
 
     </div>
-
-
-
-
-
 
     <div id="tongue">
         <div id="cover"></div>
     </div>
 
-    <img src="./Assets/Images/exit.gif" id="exit" alt="">
-
-
     <div id="param-container">
+
         <div id="param" class="animate__animated animate__zoomIn">
+
             <div id="param-topbar">
                 <div id="param-dragbar">
                     <span id="app-title-param">Paramètres</span>
@@ -78,7 +73,6 @@
                 </div>
             </div>
 
-
             <div id="param-sidebar">
 
                 <div id="param-section-container">
@@ -87,66 +81,146 @@
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
-                    <div id="build-section" class="param-build">Build <b>A44.3</b></div>
+                    <div id="build-section" class="param-build">Build <b>
+                            <script>const buildVer = buildMain;
+                                document.write(buildVer);
+                            </script>
+                        </b></div>
+
                 </div>
-
-
 
             </div>
 
             <div id="param-console-content" class="animate__animated">
-                <div class="line">
-                    <input type="checkbox" class="css-checkbox" id="copyauto" name="copyauto" checked>
-                    <label for="copyauto" class="css-label chrome-style">Copie automatique des résultats</label>
-                </div>
 
-                <div class="line">
-                    <input type="checkbox" class="css-checkbox" id="confirmdelete" name="confirmdelete" checked>
-                    <label for="confirmdelete" class="css-label chrome-style">Confirmer avant de supprimer la
-                        console</label>
+                <div class="line2">
+
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="copyauto" name="copyauto"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="copyauto" style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Copie
+                                automatique
+                                des
+                                résultats</label>
+                        </div>
+                    </div>
+
+
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="confirmdelete" name="confirmdelete"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="confirmdelete"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Confirmer avant de
+                                supprimer les résultats</label>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div id="param-assistant-content" class="animate__animated">
-                <div class="line">
-                    <input type="checkbox" class="css-checkbox " id="avenir" name="avenir" checked>
-                    <label for="avenir" class="css-label chrome-style">Enregistrer appel automatiquement</label>
-                </div>
+                <div class="line2">
 
-                <div class="line">
-                    <input type="checkbox" class="css-checkbox" id="avenir2" name="avenir2" checked>
-                    <label for="avenir2" class="css-label chrome-style">Demander avant de</label>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="avenir" name="avenir"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="avenir"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Enregistrer les appels
+                                automatiquement</label>
+                        </div>
+                    </div>
+
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="avenir2" name="avenir2"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="avenir2" style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Afficher
+                                le bouton d'accessibilité rapide</label>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
             <div id="param-theme-content" class="animate__animated">
 
-                <br> <span><u>Animations</u>:</span><br>
+                <br> <span><u>Animations</u> :</span><br>
                 <div class="line2">
 
-                    <input type="checkbox" class="css-checkbox" id="glowing" name="glowing" checked>
-                    <label for="glowing" class="css-label chrome-style">Effet embrasé</label>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="glowing" name="glowing"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="glowing" style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Effet
+                                embrasé</label>
+                        </div>
+                    </div>
 
-                    <input type="checkbox" class="css-checkbox" id="paramAni" name="paramAni" checked>
-                    <label for="paramAni" class="css-label chrome-style" style="float:right;">Fenêtre des
-                        paramètres</label>
-                    <br>
-                    <input type="checkbox" class="css-checkbox" id="consoleDel" name="consoleDel" checked>
-                    <label for="consoleDel" class="css-label chrome-style">Supression de la console</label>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="paramAni" name="paramAni"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="paramAni" style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Fenêtre
+                                des
+                                paramètres</label>
+                        </div>
+                    </div>
 
-                    <input type="checkbox" class="css-checkbox" id="pagesAni" name="pagesAni" checked>
-                    <label for="pagesAni" class="css-label chrome-style" style="float:right;">Changement de
-                        pages</label>
-                    <br>
-                    <input type="checkbox" class="css-checkbox" id="consoleMax" name="consoleMax" checked>
-                    <label for="consoleMax" class="css-label chrome-style">Maximisation de la console</label>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="consoleDel" name="consoleDel"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="consoleDel"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Supression de la
+                                console</label>
+                        </div>
+                    </div>
 
-                    <input type="checkbox" class="css-checkbox" id="consoleRes" name="consoleRes" checked>
-                    <label for="consoleRes" class="css-label chrome-style" style="float:right;">Résultats de la
-                        console</label>
-                </div><br>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="pagesAni" name="pagesAni"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="pagesAni"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Changement de
+                                pages</label>
+                        </div>
+                    </div>
 
-                <span><u>Thème</u>:</span><br>
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="consoleMax" name="consoleMax"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="consoleMax"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Maximisation de la
+                                console</label>
+                        </div>
+                    </div>
+
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="consoleRes" name="consoleRes"
+                            style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;" checked />
+                        <div class="state p-success">
+                            <i class="icon fa fa-check"></i>
+                            <label for="consoleRes"
+                                style="cursor: url(./Assets/Images//cursors/Hand.cur), auto;">Résultats de la
+                                console</label>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <span><u>Thème</u> :</span><br>
                 <div class="custom-select" style="margin-top:1rem;">
                     <select>
                         <option value="0">Sélectionner un thème:</option>
@@ -186,8 +260,7 @@
                     </div>
                 </div><br><br>
 
-
-                <span><u>Nuance du thème</u>:</span>
+                <span><u>Nuance du thème</u> :</span>
                 <div id="colors-container">
                     <div id="nuance-default" class="color"></div>
                     <div id="nuance-1" class="color"></div>
@@ -203,7 +276,7 @@
                     <div id="nuance-10" class="color"></div>
                 </div><br>
 
-                <span><u>Texte de la console</u>:</span>
+                <span><u>Texte de la console</u> :</span>
                 <div id="console-colors-container">
                     <div id="def" class="console-color"></div>
                     <div id="grey" class="console-color"></div>
@@ -211,34 +284,38 @@
                     <div id="black" class="console-color"></div>
                 </div><br>
 
-                <!-- <span>Boutons de fenêtres:</span><br> -->
-
-
-
             </div>
 
             <div id="param-update-content" class="animate__animated">
-                <div class="line">
-                    Votre version: <br>
+
+                <div class="line2">
+                    <div class="state p-success">Votre version: </div>
                 </div>
-                <div class="line">
-                    Dernière version disponible: <br>
+
+                <div class="line2">
+                    <div class="state p-success">Dernière version disponible: </div>
                 </div>
 
             </div>
 
             <div id="param-credits-content" class="animate__animated">
-                Merci à Rémy Roy & Alain Jean pour le développement de Colombo et tous les
+                <div class="line2-credits">
+                    Développé par <b>Yan Noël</b> sous <i>ElectronJS</i>. <br><br>
+
+                    Languages de programmation utilisés: <b>HTML</b>, <b>CSS</b>, <b>Javascript</b> &
+                    <b>Powershell</b>.<br><br>
+
+                    Merci à <b>Rémy Roy</b> & <b>Alain Jean</b> pour le développement de toutes les premières
+                    versions de Colombo &
+                    Famille Colombo, sans quoi ce projet n'aurait pas été possible. <br><br>
+
+                    <u>Lien Github du projet</u> : <br><br>
+
+                    <u>Licence</u> :
+                </div>
             </div>
 
         </div>
-
-
-
-
-
-
-
 
     </div>
 
