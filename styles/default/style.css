@@ -407,6 +407,16 @@ input:focus {
     }
 }
 
+@keyframes credits {
+    0% {
+        top: 100%;
+    }
+
+    100% {
+        top: -500%;
+    }
+}
+
 /* CA VA ÊTRE A SUPPRIMER C'EST SUR LA 2E et 3E PAGE MON TETON */
 .tocome {
     display: flex;
@@ -553,8 +563,9 @@ input:focus {
     margin-left: 200px;
     border-radius: 0 0 20px 0;
     height: 413px;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
+    position: relative;
 }
 
 
@@ -619,6 +630,27 @@ input:focus {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+#slide-2 {
+    position: relative;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+#bgs2 {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.2;
+    z-index: -9999;
+}
+
 
 #ping-container {
     position: absolute;
@@ -914,6 +946,24 @@ input:focus {
 .astucesActivated {
     padding-bottom: 10px;
     border: 1px solid var(--Theme1-Color3);
+}
+
+.wrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    font: 300 30px/1 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    animation: 60s credits linear infinite;
+}
+
+.movie {
+    margin-bottom: 50px;
+    font-size: 1rem;
 }
 
 
