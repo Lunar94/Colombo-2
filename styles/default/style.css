@@ -28,7 +28,7 @@
     --Theme1-Color5: white;
     --Display-Astuces: none;
     --Selection-Color: white;
-
+    --little-buttons: var(--Theme1-Color3);
 }
 
 ::selection {
@@ -334,22 +334,22 @@ main {
 }
 
 #btn-clear .fa-2x {
-    --fa-primary-color: var(--Theme1-Color3);
+    --fa-primary-color: var(--little-buttons);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-astuces .fa-2x {
-    --fa-primary-color: var(--Theme1-Color3);
+    --fa-primary-color: var(--little-buttons);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-param .fa-2x {
-    --fa-primary-color: var(--Theme1-Color3);
+    --fa-primary-color: var(--little-buttons);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-more .fa-2x {
-    --fa-primary-color: var(--Theme1-Color3);
+    --fa-primary-color: var(--little-buttons);
     --fa-secondary-color: #8A8791;
 }
 
