@@ -18,17 +18,18 @@
 
 :root {
     font-size: 16px;
-    font-family: font-1;
+    font-family: poppins;
     --swiper-theme-color: var(--Theme1-Color3);
     --Theme1-Color1: #262b35;
     --Theme1-Color2: #1a1e27;
     --Theme1-Color3: #F78361;
     --Theme1-Color4: #9c523c;
     --Display-Astuces: none;
+    --Selection-Color: white;
 }
 
 ::selection {
-    color: white;
+    color: var(--Selection-Color);
     background: var(--Theme1-Color3);
 }
 
@@ -89,13 +90,13 @@ main {
     cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
 }
 
-input:focus {
+#computer:focus {
     outline: none;
     color: white;
 }
 
 #content {
-    font-family: font-2;
+    font-family: poppins;
     height: 100vh;
 }
 
@@ -633,11 +634,10 @@ input:focus {
 
 #slide-2 {
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 
@@ -648,7 +648,8 @@ input:focus {
     transform: translate(-50%, -50%);
     font-size: 3rem;
     opacity: 0.1;
-    z-index: 0;
+    z-index: -1;
+
 }
 
 

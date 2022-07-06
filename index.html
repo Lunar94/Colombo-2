@@ -1,5 +1,5 @@
 <script>
-    buildMain = "<b>A44.8</b>";
+    buildMain = "<b>A44.9</b>";
 </script>
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="./Assets/Fontawesome/css/all.css">
     <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="./styles/windows-buttons.css">
+    <link rel="stylesheet" href="./styles/assistant.css">
     <link rel="stylesheet" href="./node_modules/pretty-checkbox/dist/pretty-checkbox.css">
+    <link rel="stylesheet" href="./node_modules/flatpickr/dist/flatpickr.css">
+
 </head>
 
 <body>
@@ -224,11 +227,10 @@
                 <span><u>Thème</u> :</span><br>
                 <div class="custom-select" style="margin-top:1rem;">
                     <select>
-                        <option value="0">Sélectionner un thème:</option>
-                        <option value="1">Détective (Par défaut)</option>
-                        <option value="2">Basique</option>
-                        <option value="3">Infernal</option>
-                        <option value="4">Abyssal</option>
+                        <option value="0">Détective (Par défaut)</option>
+                        <option value="1">Basique</option>
+                        <option value="2">Infernal</option>
+                        <option value="3">Abyssal</option>
                     </select>
                 </div><br>
 
@@ -578,6 +580,71 @@
                             <div id="slide-2">
                                 <div id="bgs2"><i class="fa-duotone fa-phone fa-8x"></i></div>
 
+                                <div id="new-incident" class="btn-send btn" style="margin-top: 5rem;">
+                                    <i class="fa-duotone fa-marker fa-4x"></i>
+                                    <span class="btn-form-validate">Nouvel incident</span>
+                                </div>
+
+
+                                <div id="new-demande" class="btn-send btn" style="margin-top: 5rem;">
+                                    <i class="fa-duotone fa-marker fa-4x"></i>
+                                    <span class="btn-form-validate">Nouvelle demande</span>
+                                </div>
+
+                                <form id="form-1" action="">
+
+                                    <input id="nom-prenom" class="field" title="nom-prenom" name="nom-prenom"
+                                        style="margin-bottom:-8px;" type="text" placeholder="Nom complet du client">
+
+
+                                    <br>
+
+                                    <div class="line3">
+
+                                        <div class="pretty p-switch p-slim switch1">
+                                            <input type="radio" name="switch1" />
+                                            <div class="state p-success">
+                                                <label style="color:grey;">Poste Bureau</label>
+                                            </div>
+                                        </div>
+
+                                        <input id="poste-number" class="field" title="poste-number" name="poste-number"
+                                            style="margin-top: 0px" type="text"
+                                            placeholder="Numéro du poste en problème"><br>
+
+                                        <div class="pretty p-switch p-slim switch2">
+                                            <input type="radio" name="switch1" />
+                                            <div class="state p-success">
+                                                <label style="color:grey;">Poste Maison</label>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
+                                    <input class="form-control field" type="datetime-local"
+                                        placeholder="Date des premiers symptômes">
+
+
+                                    <textarea id="enjeu" name="enjeu" rows="5" cols="50"
+                                        placeholder="Description de l'enjeu"></textarea>
+
+
+                                    <div class="btn-send btn">
+                                        <i class="fa-duotone fa-magnifying-glass-plus fa-4x"></i>
+                                        <span class="btn-form-validate">Débuter une nouvelle enquête</span>
+                                    </div>
+
+
+
+
+
+
+                                </form>
+
 
 
 
@@ -637,27 +704,12 @@
                 </div>
             </div>
 
-            <script>
-                const btnAstuces = document.getElementById("btn-astuces");
-                const theRoot = document.querySelector(":root");
-
-                function toggleClass() {
-                    if (btnAstuces.classList == "astucesActivated") {
-                        btnAstuces.classList.remove("astucesActivated");
-                        btnAstuces.style.setProperty("margin-top", "-53px");
-                        theRoot.style.setProperty("--Display-Astuces", 'none');
-
-                    } else {
-                        btnAstuces.classList.add("astucesActivated");
-                        btnAstuces.style.setProperty("margin-top", "-64px");
-                        theRoot.style.setProperty("--Display-Astuces", 'block');
-                    }
-                }
-            </script>
 
     </main>
     <script src="./renderer.js" type="text/javascript" charset="UTF-8"></script>
     <script src="./ui.js"></script>
+    <script src="./assistant.js"></script>
+    <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -706,6 +758,22 @@
                 }, 1000);
             }
         });
+
+    </script>
+
+    <script>
+
+
+
+        config = {
+            enableTime: true,
+            dateFormat: "d-m-Y",
+            altFormat: "j F, Y",
+            altInput: true,
+        }
+
+        flatpickr("input[type=datetime-local]", config);
+
 
     </script>
 

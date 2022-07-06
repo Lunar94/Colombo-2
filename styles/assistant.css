@@ -1,0 +1,121 @@
+.field {
+    padding: 1rem;
+    margin: 0 auto;
+    height: 40px;
+    width: 80%;
+    border-radius: 20px;
+    margin-top: 1rem;
+    color: var(--Theme1-Color3);
+    background: var(--Theme1-Color2);
+    border: 1px solid var(--Theme1-Color3);
+}
+
+.field:focus {
+    outline: 1px solid white;
+    color: white;
+    transition: 0.2s;
+}
+
+#form-1 {
+    position: relative;
+    display: none;
+    /* flex */
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding-top: 5rem;
+}
+
+.line3 {
+    display: flex;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 40px;
+}
+
+.switch1 {
+    position: absolute;
+    top: 35%;
+    font-size: 0.8rem;
+}
+
+
+.switch2 {
+    position: absolute;
+    top: 35%;
+    font-size: 0.8rem;
+    margin-left: 2rem;
+}
+
+#enjeu {
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 80%;
+    border-radius: 20px;
+    resize: vertical;
+    font-family: Poppins;
+    font-size: 0.8rem;
+    min-height: 55px;
+    color: var(--Theme1-Color3);
+    background: var(--Theme1-Color2);
+    border: 1px solid var(--Theme1-Color3);
+}
+
+#enjeu:focus {
+    outline: 1px solid white;
+    color: white;
+    transition: 0.2s;
+}
+
+.btn-send {
+    background: var(--Theme1-Color3);
+    border-radius: 20px;
+    width: 300px;
+    min-height: 40px;
+    max-height: 40px;
+    font-size: 8px;
+    margin: 0 auto;
+    font-size: 6px;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-bottom: -60px;
+}
+
+#poste-number {
+    position: absolute;
+    right: 0%;
+    min-width: 100vh;
+}
+
+
+.btn-send:hover {
+    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    color: white;
+    background-color: var(--Theme1-Color4);
+}
+
+.btn-form-validate {
+    color: white;
+    font-size: 1rem;
+}
+
+
+@media only screen and (max-width:600px) {
+
+    .field {}
+
+    .field:focus {}
+
+    #form-1 {}
+
+    .line3 {}
+
+    .btn-send {}
+
+
+}
+
+
+@media only screen and (min-width:1921px) {}

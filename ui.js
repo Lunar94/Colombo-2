@@ -21,6 +21,21 @@ btnClear.addEventListener("click", () => {
   }, 1000);
 });
 
+const btnAstuces = document.getElementById("btn-astuces");
+const theRoot = document.querySelector(":root");
+
+function toggleClass() {
+  if (btnAstuces.classList == "astucesActivated") {
+    btnAstuces.classList.remove("astucesActivated");
+    btnAstuces.style.setProperty("margin-top", "-53px");
+    theRoot.style.setProperty("--Display-Astuces", "none");
+  } else {
+    btnAstuces.classList.add("astucesActivated");
+    btnAstuces.style.setProperty("margin-top", "-64px");
+    theRoot.style.setProperty("--Display-Astuces", "block");
+  }
+}
+
 // Élargissement de la console
 btnMore.addEventListener("click", () => {
   consoleEnlarge();
