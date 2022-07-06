@@ -179,6 +179,8 @@ nuanceDefault.addEventListener("click", () => {
   //N0 (default)
   root.style.setProperty("--Theme1-Color3", "#F78361");
   root.style.setProperty("--Theme1-Color4", "#9C523C");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -199,6 +201,8 @@ nuance_1.addEventListener("click", () => {
   //N1
   root.style.setProperty("--Theme1-Color3", "#DF6C7F");
   root.style.setProperty("--Theme1-Color4", "#944855");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -219,6 +223,8 @@ nuance_2.addEventListener("click", () => {
   //N2
   root.style.setProperty("--Theme1-Color3", "#B06392");
   root.style.setProperty("--Theme1-Color4", "#7D4868");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -239,6 +245,8 @@ nuance_3.addEventListener("click", () => {
   //N3
   root.style.setProperty("--Theme1-Color3", "#785F90");
   root.style.setProperty("--Theme1-Color4", "#5D4B6F");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -259,6 +267,8 @@ nuance_4.addEventListener("click", () => {
   //N4
   root.style.setProperty("--Theme1-Color3", "#485679");
   root.style.setProperty("--Theme1-Color4", "#3F4B68");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -279,6 +289,8 @@ nuance_5.addEventListener("click", () => {
   //N5
   root.style.setProperty("--Theme1-Color3", "#2F4858");
   root.style.setProperty("--Theme1-Color4", "#596D79");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   // cDefault = 1;
   // cGrey = 0;
   // cWhite = 0;
@@ -308,6 +320,8 @@ nuance_6.addEventListener("click", () => {
   //N6
   root.style.setProperty("--Theme1-Color3", "#1C6E7D");
   root.style.setProperty("--Theme1-Color4", "#2798ad");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -328,6 +342,8 @@ nuance_7.addEventListener("click", () => {
   //N7
   root.style.setProperty("--Theme1-Color3", "#039590");
   root.style.setProperty("--Theme1-Color4", "#04c9c2");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -348,6 +364,8 @@ nuance_8.addEventListener("click", () => {
   //N8
   root.style.setProperty("--Theme1-Color3", "#4BBC8E");
   root.style.setProperty("--Theme1-Color4", "#378a68");
+  root.style.setProperty("--Theme1-Color5", "white");
+  root.style.setProperty("--Selection-Color", "white");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "white");
   });
@@ -368,6 +386,8 @@ nuance_9.addEventListener("click", () => {
   //N9
   root.style.setProperty("--Theme1-Color3", "#9BDE7E");
   root.style.setProperty("--Theme1-Color4", "#7bb063");
+  root.style.setProperty("--Theme1-Color5", "#334b28");
+  root.style.setProperty("--Selection-Color", "#334b28");
   icons.forEach((icons) => {
     icons.style.setProperty("color", "#507340");
   });
@@ -388,6 +408,9 @@ nuance_10.addEventListener("click", () => {
   //N10
   root.style.setProperty("--Theme1-Color3", "#F9F871");
   root.style.setProperty("--Theme1-Color4", "#bbba54");
+  root.style.setProperty("--Theme1-Color5", "#4a4a20");
+  root.style.setProperty("--Selection-Color", "#4a4a20");
+
   icons.forEach((icons) => {
     icons.style.setProperty("color", "#797836");
   });
