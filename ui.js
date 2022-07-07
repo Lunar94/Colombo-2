@@ -1,7 +1,7 @@
 ("use strict");
 /************
  *
- *  Console
+ *  CONSOLE CAA
  *
  ************/
 const btnMore = document.getElementById("btn-more");
@@ -27,7 +27,7 @@ const theRoot = document.querySelector(":root");
 function toggleClass() {
   if (btnAstuces.classList == "astucesActivated") {
     btnAstuces.classList.remove("astucesActivated");
-    btnAstuces.style.setProperty("margin-top", "-53px");
+    btnAstuces.style.setProperty("margin-top", "-41px");
     theRoot.style.setProperty("--Display-Astuces", "none");
   } else {
     btnAstuces.classList.add("astucesActivated");
@@ -72,7 +72,7 @@ function consoleEnlarge() {
 
 /***************
  *
- *  Settings
+ *  SETTINGS
  *
  ***************/
 const btnParam = document.getElementById("btn-param");
@@ -152,98 +152,91 @@ nuanceDefault.classList.add("colorJS");
 
 const colors = {
   nuanceDefault: {
-    color1: "#F78361",
-    color2: "#9C523C",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#F78361",
+    secondary: "#9C523C",
+    icons: "white",
+    littleButton: "#F78361",
   },
   nuance1: {
-    color1: "#DF6C7F",
-    color2: "#944855",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#DF6C7F",
+    secondary: "#944855",
+    icons: "white",
+    littleButton: "#DF6C7F",
   },
   nuance2: {
-    color1: "#B06392",
-    color2: "#7D4868",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#B06392",
+    secondary: "#7D4868",
+    icons: "white",
+    littleButton: "#B06392",
   },
   nuance3: {
-    color1: "#785F90",
-    color2: "#5D4B6F",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#785F90",
+    secondary: "#5D4B6F",
+    icons: "white",
+    littleButton: "#785F90",
   },
   nuance4: {
-    color1: "#485679",
-    color2: "#3F4B68",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#485679",
+    secondary: "#3F4B68",
+    icons: "white",
+    littleButton: "#485679",
   },
   nuance5: {
-    color1: "#2F4858",
-    color2: "#596D79",
-    color3: "white",
-    color4: "white",
-    color5: "white",
+    primary: "#2F4858",
+    secondary: "#596D79",
+    icons: "white",
+    littleButton: "white",
   },
   nuance6: {
-    color1: "#1C6E7D",
-    color2: "#2798ad",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#1C6E7D",
+    secondary: "#2798ad",
+    icons: "white",
+    littleButton: "#1C6E7D",
   },
   nuance7: {
-    color1: "#039590",
-    color2: "#04c9c2",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#039590",
+    secondary: "#04c9c2",
+    icons: "white",
+    littleButton: "#039590",
   },
   nuance8: {
-    color1: "#4BBC8E",
-    color2: "#378a68",
-    color3: "white",
-    color4: "white",
-    color5: "var(--Theme1-Color3)",
+    primary: "#4BBC8E",
+    secondary: "#378a68",
+    icons: "white",
+    littleButton: "#4BBC8E",
   },
   nuance9: {
-    color1: "#9BDE7E",
-    color2: "#7bb063",
-    color3: "#334b28",
-    color4: "#334b28",
-    color5: "var(--Theme1-Color3)",
+    primary: "#9BDE7E",
+    secondary: "#7bb063",
+    icons: "#334b28",
+    littleButton: "#7bb063",
   },
   nuance10: {
-    color1: "#F9F871",
-    color2: "#bbba54",
-    color3: "#4a4a20",
-    color4: "#4a4a20",
-    color5: "var(--Theme1-Color3)",
+    primary: "#F9F871",
+    secondary: "#bbba54",
+    icons: "#4a4a20",
+    littleButton: "#bbba54",
   },
 };
 
 let lastSelected = nuanceDefault;
 
-const testing = document.getElementById("colors-container");
-testing.addEventListener("click", (ev) => {
+document.getElementById("colors-container").addEventListener("click", (ev) => {
   if (ev.target.id == "colors-container") return;
   lastSelected.classList.remove("colorJS");
   ev.target.classList.add("colorJS");
   lastSelected = ev.target;
-  console.log(ev.target.id);
-  root.style.setProperty("--Theme1-Color3", colors[ev.target.id].color1);
-  root.style.setProperty("--Theme1-Color4", colors[ev.target.id].color2);
-  root.style.setProperty("--Theme1-Color5", colors[ev.target.id].color3);
-  root.style.setProperty("--Selection-Color", colors[ev.target.id].color4);
-  root.style.setProperty("--little-buttons", colors[ev.target.id].color5);
+  root.style.setProperty("--theme-primary", colors[ev.target.id].primary);
+  root.style.setProperty("--theme-secondary", colors[ev.target.id].secondary);
+  root.style.setProperty("--theme-icons", colors[ev.target.id].icons);
+  root.style.setProperty(
+    "--Selection-Color",
+    colors[ev.target.id].littleButton
+  );
+  root.style.setProperty(
+    "--theme-little-button",
+    colors[ev.target.id].littleButton
+  );
 });
 
 // Couleur du texte de la console
@@ -255,24 +248,18 @@ let nuanceConsoleBlack = document.getElementById("black");
 nuanceConsoleDefault.classList.add("colorJS");
 
 nuanceConsoleDefault.addEventListener("click", () => {
-  cDefault = 1;
-  cGrey = 0;
-  cWhite = 0;
-  cBlack = 0;
+  consoleColor = "cDefault";
   nuanceConsoleDefault.classList.add("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
   nuanceConsoleBlack.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS-white");
   //NC1
-  consoleCAA.style.setProperty("color", "var(--Theme1-Color3)");
+  consoleCAA.style.setProperty("color", "var(--theme-primary)");
 });
 
 nuanceConsoleGrey.addEventListener("click", () => {
-  cDefault = 0;
-  cGrey = 1;
-  cWhite = 0;
-  cBlack = 0;
+  consoleColor = "cGrey";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.add("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
@@ -283,10 +270,7 @@ nuanceConsoleGrey.addEventListener("click", () => {
 });
 
 nuanceConsoleWhite.addEventListener("click", () => {
-  cDefault = 0;
-  cGrey = 0;
-  cWhite = 1;
-  cBlack = 0;
+  consoleColor = "cWhite";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.add("colorJS-white");
@@ -296,10 +280,7 @@ nuanceConsoleWhite.addEventListener("click", () => {
 });
 
 nuanceConsoleBlack.addEventListener("click", () => {
-  cDefault = 0;
-  cGrey = 0;
-  cWhite = 0;
-  cBlack = 1;
+  consoleColor = "cBlack";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
   nuanceConsoleWhite.classList.remove("colorJS");
@@ -311,20 +292,22 @@ nuanceConsoleBlack.addEventListener("click", () => {
 
 /***************
  *
- *  Main Buttons
+ *  MAIN BUTTONS
  *
  ***************/
 const btnMain = document.querySelectorAll(".btn");
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
+    sfxClick();
     btnMain.classList.add("animate__animated");
     btnMain.classList.add("animate__heartBeat");
-    sfxClick();
+    btnMain.classList.remove("hovertext");
 
     setTimeout(function () {
       btnMain.classList.remove("animate__animated");
       btnMain.classList.remove("animate__heartBeat");
-    }, 1000);
+      btnMain.classList.add("hovertext");
+    }, 300);
   });
 });
 
@@ -333,6 +316,9 @@ btnMain.forEach((btnMain) => {
  *  SOUND EFFECTS
  *
  ***************/
+const prev = document.querySelector(".swiper-button-prev");
+const next = document.querySelector(".swiper-button-next");
+
 function sfxClick() {
   const sfxClick = document.getElementById("sfxClick");
   sfxClick.play();
@@ -343,9 +329,22 @@ function sfxDeleteConsole() {
   sfxDeleteConsole.play();
 }
 
+function sfxChangePage() {
+  const sfxChangePage = document.getElementById("sfxChangePage");
+  sfxChangePage.play();
+}
+
+prev.addEventListener("click", () => {
+  sfxChangePage();
+});
+
+next.addEventListener("click", () => {
+  sfxChangePage();
+});
+
 /***************
  *
- *  Settings NAV
+ *  SETTINGS NAVIGATION
  *
  ***************/
 const consoleDisplay = document.getElementById("param-console-content");
@@ -472,7 +471,7 @@ btnCredits.addEventListener("click", () => {
 
 /***************
  *
- *  Custom Selector (Sélecteur de Thème) - From Google
+ *  CUSTOM THEME SELECTOR - From Google)
  *
  ***************/
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -560,12 +559,3 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
-
-// OVERLAY
-function on() {
-  document.getElementById("overlay").style.display = "block";
-}
-
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}

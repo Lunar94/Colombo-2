@@ -38,53 +38,50 @@ document.getElementById("close2").addEventListener("click", () => {
 });
 
 // PS PART
-let cDefault = 1;
-let cGrey;
-let cWhite;
-let cBlack;
+let consoleColor = "cDefault";
 
 document
   .querySelector(".buttons")
   .addEventListener("click", async function (event) {
     const file = event?.target?.attributes["data-psfile"]?.value;
     if (file) {
-      const res = await window.electron.runPS(file);
+      let res = await window.electron.runPS(file);
+      res = res
+        .split("\n")
+        .filter((e) => e != "\r")
+        .filter((e) => e != null)
+        .join("\n");
+
       const response = document.querySelector(".response");
 
-      if (cDefault == 1) {
-        response.insertAdjacentHTML(
-          "beforeend",
-          `
-         <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:var(--Theme1-Color3); white-space: pre-wrap;">${res}</div>
-          `
-        );
-      }
+      response.scrollIntoView(false);
 
-      if (cGrey == 1) {
-        response.insertAdjacentHTML(
-          "beforeend",
-          `
-          <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:grey; white-space: pre-wrap;">${res}</div>
-          `
-        );
-      }
+      let div = document.createElement("div");
+      div.id = `${content_id}-content`;
+      div.classList.add("animate__animated");
+      div.classList.add("animate__bounceInLeft");
 
-      if (cWhite == 1) {
-        response.insertAdjacentHTML(
-          "beforeend",
-          `
-          <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:white; white-space: pre-wrap;">${res}</div>
-          `
-        );
-      }
+      div.style.whiteSpace = "pre-wrap";
+      div.style.paddingTop = "1rem";
+      div.style.paddingBottom = "1rem";
+      div.style.paddingLeft = "1rem";
 
-      if (cBlack == 1) {
-        response.insertAdjacentHTML(
-          "beforeend",
-          `
-          <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:black; white-space: pre-wrap;">${res}</div>
-          `
-        );
+      switch (consoleColor) {
+        case "cDefault":
+          div.style.color = "var(--theme-primary)";
+          break;
+        case "cGrey":
+          div.style.color = "grey";
+          break;
+        case "cWhite":
+          div.style.color = "white";
+          break;
+        case "cBlack":
+          div.style.color = "black";
+          break;
       }
+      div.innerText = res;
+
+      response.appendChild(div);
     }
   });

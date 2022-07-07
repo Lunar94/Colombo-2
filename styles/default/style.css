@@ -19,22 +19,21 @@
 :root {
     font-size: 16px;
     font-family: poppins;
-    --swiper-theme-color: var(--Theme1-Color3);
+    --swiper-theme-color: var(--theme-primary);
     --Theme1-Color1: #262b35;
     --Theme1-Color2: #1a1e27;
-    --Theme1-Color3: #F78361;
-    --Theme1-Color4: #9c523c;
-    /*Custom selector text */
-    --Theme1-Color5: white;
+    --theme-primary: #F78361;
+    --theme-secondary: #9c523c;
+    --theme-icons: white;
+    --theme-little-button: var(--theme-primary);
     --Display-Astuces: none;
     --Selection-Color: white;
-    --little-buttons: var(--Theme1-Color3);
     --texte-console: white;
 }
 
 ::selection {
     color: var(--Selection-Color);
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
 }
 
 body {
@@ -78,7 +77,7 @@ main {
 #computer {
     top: 0;
     position: absolute;
-    color: var(--Theme1-Color3);
+    color: var(--theme-primary);
     display: block;
     left: 50%;
     transform: translateX(-48%);
@@ -144,7 +143,7 @@ main {
 
 
 #console {
-    padding-top: 12px;
+
     display: flex;
     position: absolute;
     height: 50%;
@@ -152,7 +151,7 @@ main {
     background: var(--Theme1-Color1);
     bottom: 0px;
     border-radius: 20px 20px 0 0;
-    border-top: solid 1px var(--Theme1-Color3);
+    border-top: solid 1px var(--theme-primary);
     user-select: text;
     cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
     z-index: 998;
@@ -162,7 +161,9 @@ main {
     animation: glow 5s infinite alternate;
 }
 
-#inner-console {}
+#inner-console {
+    width: 100%;
+}
 
 .console-overflow {
     overflow-y: auto;
@@ -184,14 +185,13 @@ main {
 }
 
 #console::-webkit-scrollbar-thumb {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 10px;
 }
 
 #output {
     font-family: font-3;
     font-size: 1rem;
-    margin-left: 20px;
     padding-bottom: 4rem;
 }
 
@@ -199,7 +199,21 @@ main {
     display: flex;
 }
 
-.response {}
+.response {
+    width: 100%;
+}
+
+.response>div:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.response>div:nth-child(even) {
+    background: #1c1f27;
+}
+
+.response>div:nth-child(odd) {
+    background: #39414f;
+}
 
 .buttons {
     font-family: Poppins;
@@ -215,11 +229,15 @@ main {
     gap: 1rem;
 }
 
+.buttons div>span * {
+    color: var(--theme-icons);
+}
+
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 20px;
     width: 120px;
     height: 120px;
@@ -229,14 +247,14 @@ main {
 .btn:hover {
     cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
-    background-color: var(--Theme1-Color4);
+    background-color: var(--theme-secondary);
 }
 
 .btn2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 20px;
     width: 100%;
     height: 60px;
@@ -246,7 +264,7 @@ main {
 .btn2:hover {
     cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
-    background-color: var(--Theme1-Color4);
+    background-color: var(--theme-secondary);
 }
 
 #btn-clear {
@@ -255,7 +273,7 @@ main {
     align-items: center;
     position: fixed;
     left: 20px;
-    margin-top: -53px;
+    margin-top: -41px;
     height: 40px;
     width: 40px;
     background: var(--Theme1-Color1);
@@ -270,7 +288,7 @@ main {
     align-items: center;
     position: fixed;
     left: 60px;
-    margin-top: -53px;
+    margin-top: -41px;
     height: 40px;
     width: 40px;
     background: var(--Theme1-Color1);
@@ -285,7 +303,7 @@ main {
     align-items: center;
     position: fixed;
     right: 60px;
-    margin-top: -53px;
+    margin-top: -41px;
     height: 40px;
     width: 40px;
     background: var(--Theme1-Color1);
@@ -301,7 +319,7 @@ main {
     align-items: center;
     position: fixed;
     right: 20px;
-    margin-top: -53px;
+    margin-top: -41px;
     height: 40px;
     width: 40px;
     background: var(--Theme1-Color1);
@@ -338,22 +356,22 @@ main {
 }
 
 #btn-clear .fa-2x {
-    --fa-primary-color: var(--little-buttons);
+    --fa-primary-color: var(--theme-little-button);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-astuces .fa-2x {
-    --fa-primary-color: var(--little-buttons);
+    --fa-primary-color: var(--theme-little-button);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-param .fa-2x {
-    --fa-primary-color: var(--little-buttons);
+    --fa-primary-color: var(--theme-little-button);
     --fa-secondary-color: #8A8791;
 }
 
 #btn-more .fa-2x {
-    --fa-primary-color: var(--little-buttons);
+    --fa-primary-color: var(--theme-little-button);
     --fa-secondary-color: #8A8791;
 }
 
@@ -397,11 +415,11 @@ main {
 
 @keyframes glow {
     from {
-        box-shadow: 0 0 10px -10px var(--Theme1-Color4);
+        box-shadow: 0 0 10px -10px var(--theme-secondary);
     }
 
     to {
-        box-shadow: 0 0 50px 10px var(--Theme1-Color3);
+        box-shadow: 0 0 50px 10px var(--theme-primary);
     }
 }
 
@@ -431,7 +449,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--Theme1-Color3);
+    color: var(--theme-primary);
 }
 
 #param-container {
@@ -448,7 +466,7 @@ main {
     width: 1000px;
     height: 500px;
     z-index: 999;
-    border: solid 1px var(--Theme1-Color3);
+    border: solid 1px var(--theme-primary);
 
     color: white;
     background-color: #222222;
@@ -466,7 +484,7 @@ main {
     width: 100%;
     background: var(--Theme1-Color2);
     border-radius: 20px 20px 0 0;
-    border-bottom: solid 1px var(--Theme1-Color3);
+    border-bottom: solid 1px var(--theme-primary);
 }
 
 #param-dragbar {
@@ -536,7 +554,7 @@ main {
 }
 
 #param-theme-content::-webkit-scrollbar-thumb {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 10px;
 }
 
@@ -586,7 +604,7 @@ main {
 }
 
 #param-credits-content::-webkit-scrollbar-thumb {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 10px;
 }
 
@@ -598,13 +616,13 @@ main {
 .param-section:hover {
     background: var(--Theme1-Color2);
     cursor: url(../../assets/Images//cursors/Hand.cur), auto;
-    border-right: 1px solid var(--Theme1-Color3);
+    border-right: 1px solid var(--theme-primary);
 
 }
 
 .param-section-activated {
-    color: var(--Theme1-Color3);
-    border-right: 1px solid var(--Theme1-Color3);
+    color: var(--theme-primary);
+    border-right: 1px solid var(--theme-primary);
     transition: 0.2s;
 }
 
@@ -677,7 +695,7 @@ main {
 }
 
 .select-selected {
-    background-color: var(--Theme1-Color3);
+    background-color: var(--theme-primary);
     border-radius: 20px;
 }
 
@@ -691,19 +709,19 @@ main {
     width: 0;
     height: 0;
     border: 6px solid transparent;
-    border-color: var(--Theme1-Color5) transparent transparent transparent;
+    border-color: var(--theme-icons) transparent transparent transparent;
 }
 
 /* Point the arrow upwards when the select box is open (active): */
 .select-selected.select-arrow-active:after {
-    border-color: transparent transparent var(--Theme1-Color5) transparent;
+    border-color: transparent transparent var(--theme-icons) transparent;
     top: 39%;
     transform: translateY(-50%);
 }
 
 /* style the items (options), including the selected item: */
 .select-items div, .select-selected {
-    color: var(--Theme1-Color5);
+    color: var(--theme-icons);
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -713,7 +731,7 @@ main {
 /* Style items (options): */
 .select-items {
     position: absolute;
-    background-color: var(--Theme1-Color3);
+    background-color: var(--theme-primary);
     top: 100%;
     left: 0;
     right: 0;
@@ -853,7 +871,7 @@ main {
 /* COULEURS CONSOLE */
 
 #def {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 50%;
 }
 
@@ -908,6 +926,7 @@ main {
 
 .hovertext {
     position: relative;
+
 }
 
 .hovertext::before {
@@ -923,7 +942,7 @@ main {
     position: absolute;
     top: 100%;
     font-size: 0.8rem;
-    z-index: 999;
+
     display: var(--Display-Astuces);
 }
 
@@ -934,8 +953,8 @@ main {
 }
 
 .astucesActivated {
-    padding-bottom: 10px;
-    border: 1px solid var(--Theme1-Color3);
+    padding-bottom: 22px;
+    border: 1px solid var(--theme-primary);
 }
 
 .wrapper {
@@ -1001,7 +1020,7 @@ main {
     .btn {
         display: flex;
         height: auto;
-        background: var(--Theme1-Color3);
+        background: var(--theme-primary);
         border-radius: 20px;
         width: 180px;
         padding: 5px;
@@ -1131,7 +1150,7 @@ main {
     #computer {
         top: 0;
         position: absolute;
-        color: var(--Theme1-Color3);
+        color: var(--theme-primary);
         display: block;
         left: 50%;
         transform: translateX(-48%);

@@ -5,9 +5,9 @@
     width: 80%;
     border-radius: 20px;
     margin-top: 1rem;
-    color: var(--Theme1-Color3);
+    color: var(--Selection-Color);
     background: var(--Theme1-Color2);
-    border: 1px solid var(--Theme1-Color3);
+    border: 1px solid var(--theme-primary);
     font-size: 1rem;
     cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
 }
@@ -87,9 +87,9 @@
     font-size: 1rem;
     min-height: 60px;
     max-height: 250px;
-    color: var(--Theme1-Color3);
+    color: var(--Selection-Color);
     background: var(--Theme1-Color2);
-    border: 1px solid var(--Theme1-Color3);
+    border: 1px solid var(--theme-primary);
 }
 
 #enjeu:hover {
@@ -114,12 +114,12 @@
 }
 
 #enjeu::-webkit-scrollbar-thumb {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 10px;
 }
 
 .btn-assistant {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     border-radius: 20px;
     width: 300px;
     min-height: 60px;
@@ -141,11 +141,12 @@
 .btn-assistant:hover {
     cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
-    background: var(--Theme1-Color4);
+    background: var(--theme-secondary);
+
 }
 
 .btn-form-validate {
-    color: var(--Theme1-Color5);
+    color: var(--theme-icons);
     font-size: 1rem;
 }
 
@@ -157,14 +158,14 @@
 #new-demande {}
 
 #cancelIncident {
-    background: var(--Theme1-Color3);
+    background: var(--theme-primary);
     width: 120px;
 }
 
 #cancelIncident:hover {
     background: rgb(113, 4, 4);
     width: 120px;
-    background: var(--Theme1-Color4);
+    background: var(--theme-secondary);
 }
 
 

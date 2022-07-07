@@ -1,9 +1,10 @@
 <script>
-    buildMain = "<b>A45.4</b>";
+    buildMain = "<b>A45.5</b>";
 </script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
+<audio id="sfxChangePage" src="./assets/sounds/sfxChangePage.wav"></audio>
 <!-- END OF SFX -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -339,7 +340,10 @@
                             versions de Colombo &
                             Famille Colombo, sans quoi ce projet n'aurait pas été possible. <br><br>
 
-                            <u>Lien Github du projet</u> : <br><br>
+                            Merci également à <b>Skudar</b> & <b>Midori</b> pour leur aide, leur soutien et leur temps
+                            précieux.<br><br>
+
+                            <u>Lien Github du projet</u> : https://github.com/Lunar94/Colombo-2<br><br>
 
                             <u>Licence</u> : <br>
                             <div id="licence">
@@ -691,19 +695,19 @@
                 <div id="console" class="animate__animated console-overflow">
 
 
-                    <div data-hover="Supprimer" id="btn-clear" class="hovertext">
+                    <div data-hover="Supprimer" id="btn-clear" class="hovertext animate__animated animate__fadeIn">
                         <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
                     </div>
 
-                    <div onclick="toggleClass()" id="btn-astuces">
+                    <div onclick="toggleClass()" id="btn-astuces" class="animate__animated animate__fadeIn">
                         <i class="fa-duotone fa-message-question fa-2x animate__animated"></i>
                     </div>
 
-                    <div data-hover="Paramètres" id="btn-param" class="hovertext">
+                    <div data-hover="Paramètres" id="btn-param" class="hovertext animate__animated animate__fadeIn">
                         <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
                     </div>
 
-                    <div data-hover="Agrandir" id="btn-more" class="hovertext">
+                    <div data-hover="Agrandir" id="btn-more" class="hovertext animate__animated animate__fadeIn">
                         <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
                     </div>
 
@@ -765,16 +769,13 @@
 
                 setTimeout(function () {
                     consoleCAA.classList.remove("animate__slideInUp");
+                    consoleCAA.classList.add("console-overflow");
                 }, 1000);
             }
         });
-
     </script>
 
     <script>
-
-
-
         config = {
             enableTime: true,
             dateFormat: "d-m-Y",
@@ -783,8 +784,6 @@
         }
 
         flatpickr("input[type=datetime-local]", config);
-
-
     </script>
 
 </body>
