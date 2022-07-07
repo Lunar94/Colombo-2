@@ -9,6 +9,7 @@
     background: var(--Theme1-Color2);
     border: 1px solid var(--Theme1-Color3);
     font-size: 1rem;
+    cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
 }
 
 .field:focus {
@@ -24,7 +25,27 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    padding-top: 5rem;
+    padding-top: 4rem;
+}
+
+#slide-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+#bgs2 {
+    position: absolute;
+    left: 50%;
+    top: 47.5%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.1;
+    z-index: -1;
+
 }
 
 .line3 {
@@ -35,6 +56,12 @@
     width: 80%;
     height: 40px;
     margin-bottom: 22px;
+}
+
+.line4 {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .switch1 {
@@ -55,7 +82,7 @@
     margin: 1rem auto;
     width: 80%;
     border-radius: 20px;
-    resize: vertical;
+    resize: none;
     font-family: Poppins;
     font-size: 1rem;
     min-height: 60px;
@@ -65,13 +92,33 @@
     border: 1px solid var(--Theme1-Color3);
 }
 
+#enjeu:hover {
+    cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
+}
+
 #enjeu:focus {
     outline: 1px solid white;
     color: white;
     transition: 0.2s;
+    cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
 }
 
-.btn-send {
+#enjeu::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+#enjeu::-webkit-scrollbar-track {
+    background: #1e1e24;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#enjeu::-webkit-scrollbar-thumb {
+    background: var(--Theme1-Color3);
+    border-radius: 10px;
+}
+
+.btn-assistant {
     background: var(--Theme1-Color3);
     border-radius: 20px;
     width: 300px;
@@ -91,15 +138,33 @@
 }
 
 
-.btn-send:hover {
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+.btn-assistant:hover {
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
-    background-color: var(--Theme1-Color4);
+    background: var(--Theme1-Color4);
 }
 
 .btn-form-validate {
-    color: white;
+    color: var(--Theme1-Color5);
     font-size: 1rem;
+}
+
+#new-incident {
+    margin-top: 8rem;
+
+}
+
+#new-demande {}
+
+#cancelIncident {
+    background: var(--Theme1-Color3);
+    width: 120px;
+}
+
+#cancelIncident:hover {
+    background: rgb(113, 4, 4);
+    width: 120px;
+    background: var(--Theme1-Color4);
 }
 
 
@@ -118,7 +183,7 @@
         margin-bottom: 0;
     }
 
-    .btn-send {
+    .btn-assistant {
         height: 40px;
         max-height: 40px;
         min-height: 40px;
@@ -145,14 +210,28 @@
         margin-left: 0;
         top: 35%;
         font-size: 0.8rem;
+        cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     }
 
     .btn-form-validate {
-        color: white;
         font-size: 0.8rem;
+    }
+
+    #new-incident {
+        margin-top: 8rem;
+
     }
 
 }
 
 
-@media only screen and (min-width:1921px) {}
+@media only screen and (min-width:1921px) {
+    .switch2 {
+        margin-left: 60px;
+    }
+
+    #new-incident {
+        margin-top: 16.5rem;
+    }
+
+}

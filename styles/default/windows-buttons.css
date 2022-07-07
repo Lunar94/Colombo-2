@@ -1,6 +1,6 @@
 @font-face {
     font-family: font-4;
-    src: url(./../Assets/Fonts/segoe-mdl2-assets.ttf);
+    src: url(../../assets/fonts/segoe-mdl2-assets.ttf);
 }
 
 #param-close1 {
@@ -89,19 +89,19 @@
 
 .red:hover {
     box-shadow: 0px 0px 30px 10px rgb(255, 0, 0);
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
     transition: 0.2s;
 }
 
 .green:hover {
     box-shadow: 0px 0px 30px 10px green;
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
     transition: 0.2s;
 }
 
 .yellow:hover {
     box-shadow: 0px 0px 30px 4px yellow;
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
     ;
     transition: 0.2s;
 }
@@ -150,7 +150,7 @@
     height: 30px;
     background: var(--Theme1-Color2);
     border-radius: 20px;
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
     border: rgba(204, 204, 204, 0.174) 1px solid;
     gap: 8px;
 }
@@ -167,7 +167,7 @@
     width: 100%;
     background: var(--Theme1-Color2);
     border-radius: 20px;
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
     border: rgba(204, 204, 204, 0.174) 1px solid
 }
 
@@ -255,7 +255,7 @@
 .buttons-style-2:hover {
     font-size: 15px;
     text-shadow: 1px 1px 10px #fff, 1px 1px 10px #ccc;
-    cursor: url(./../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images//cursors/Hand.cur), auto;
 }
 
 

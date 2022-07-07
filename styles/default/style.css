@@ -1,16 +1,16 @@
 @font-face {
     font-family: font-3;
-    src: url(../../Assets/Fonts/Menlo-Regular.ttf);
+    src: url(../../assets/fonts/Menlo-Regular.ttf);
 }
 
 @font-face {
     font-family: font-2;
-    src: url(../../Assets/Fonts/OpenSans-Regular.ttf);
+    src: url(../../assets/fonts/OpenSans-Regular.ttf);
 }
 
 @font-face {
     font-family: font-1;
-    src: url(../../Assets/Fonts/Montserrat-Regular.ttf);
+    src: url(../../assets/fonts/Montserrat-Regular.ttf);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -29,6 +29,7 @@
     --Display-Astuces: none;
     --Selection-Color: white;
     --little-buttons: var(--Theme1-Color3);
+    --texte-console: white;
 }
 
 ::selection {
@@ -38,7 +39,7 @@
 
 body {
     font-family: Poppins;
-    cursor: url(../../Assets/Images//cursors/Arrow.cur), auto;
+    cursor: url(../../assets/Images//cursors/Arrow.cur), auto;
     color: white;
     margin: 0;
     padding: 0;
@@ -90,12 +91,16 @@ main {
     font: 2rem droid sans mono, consolas, monospace;
     letter-spacing: 0.5ch;
     z-index: 1;
-    cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
+    cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
 }
 
 #computer:focus {
     outline: none;
     color: white;
+}
+
+.greyscale {
+    -webkit-filter: grayscale(1);
 }
 
 #content {
@@ -149,15 +154,13 @@ main {
     border-radius: 20px 20px 0 0;
     border-top: solid 1px var(--Theme1-Color3);
     user-select: text;
-    cursor: url(../../Assets/Images//cursors/IBeam.cur), auto;
+    cursor: url(../../assets/Images//cursors/IBeam.cur), auto;
     z-index: 998;
 }
 
 #console-wrapper {
     animation: glow 5s infinite alternate;
 }
-
-
 
 #inner-console {}
 
@@ -177,6 +180,7 @@ main {
 #console::-webkit-scrollbar-track {
     background: #1e1e24;
     margin-top: 15px;
+    margin-bottom: 60px;
 }
 
 #console::-webkit-scrollbar-thumb {
@@ -188,7 +192,7 @@ main {
     font-family: font-3;
     font-size: 1rem;
     margin-left: 20px;
-
+    padding-bottom: 4rem;
 }
 
 .display-flex {
@@ -223,7 +227,7 @@ main {
 }
 
 .btn:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
     background-color: var(--Theme1-Color4);
 }
@@ -240,7 +244,7 @@ main {
 }
 
 .btn2:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
     background-color: var(--Theme1-Color4);
 }
@@ -307,28 +311,28 @@ main {
 }
 
 #btn-clear:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     background: #444d5f;
     z-index: 8000;
 }
 
 #btn-astuces:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     background: #444d5f;
     z-index: 8000;
 }
 
 #btn-param:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     background: #444d5f;
 
 }
 
 #btn-more:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     background: #444d5f;
 }
@@ -593,7 +597,7 @@ main {
 
 .param-section:hover {
     background: var(--Theme1-Color2);
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     border-right: 1px solid var(--Theme1-Color3);
 
 }
@@ -635,25 +639,6 @@ main {
     padding-bottom: 1rem;
 }
 
-#slide-2 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-
-#bgs2 {
-    position: absolute;
-    left: 50%;
-    top: 47.5%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    opacity: 0.1;
-    z-index: -1;
-
-}
 
 
 #ping-container {
@@ -676,7 +661,7 @@ main {
     padding-bottom: 1rem;
     display: block;
     position: relative;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -722,7 +707,7 @@ main {
     padding: 8px 16px;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
 }
 
 /* Style items (options): */
@@ -743,6 +728,7 @@ main {
 
 .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
 }
 
 #colors-container {
@@ -766,19 +752,19 @@ main {
 .color:hover {
     outline: 10px solid white;
     outline-offset: -30px;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
 }
 
 .colorJS {
     outline: 2px solid white;
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .colorJS-white {
     outline: 3px solid rgb(6, 6, 6);
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
@@ -794,7 +780,7 @@ main {
 }
 
 .console-color:hover {
-    cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     transition: 0.2s;
     -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
@@ -1117,7 +1103,7 @@ main {
     .color:hover {
         outline: 5px solid white;
         outline-offset: -30px;
-        cursor: url(../../Assets/Images//cursors/Hand.cur), auto;
+        cursor: url(../../assets/Images//cursors/Hand.cur), auto;
         transition: 0.2s;
     }
 

@@ -500,10 +500,10 @@ const btnMain = document.querySelectorAll(".btn");
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
     btnMain.classList.add("animate__animated");
-    btnMain.classList.add("animate__tada");
+    btnMain.classList.add("animate__heartBeat");
     setTimeout(function () {
       btnMain.classList.remove("animate__animated");
-      btnMain.classList.remove("animate__tada");
+      btnMain.classList.remove("animate__heartBeat");
     }, 1000);
   });
 });

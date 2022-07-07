@@ -55,7 +55,7 @@ document
         response.insertAdjacentHTML(
           "beforeend",
           `
-          <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:var(--Theme1-Color3); white-space: pre-wrap;">${res}</div>
+         <div id="${content_id}-content" class="animate__animated animate__bounceInLeft" style="color:var(--Theme1-Color3); white-space: pre-wrap;">${res}</div>
           `
         );
       }
