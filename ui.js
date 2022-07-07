@@ -11,6 +11,8 @@ const moreButtonIcon = document.getElementById("btn-more-icon");
 
 // Effet de suppression console
 btnClear.addEventListener("click", () => {
+
+
   document.querySelector(".response").classList.add("animate__flash");
   setTimeout(function () {
     document.querySelector(".response").classList.remove("animate__flash");
@@ -496,17 +498,33 @@ nuanceConsoleBlack.addEventListener("click", () => {
  *
  ***************/
 const btnMain = document.querySelectorAll(".btn");
-
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
     btnMain.classList.add("animate__animated");
     btnMain.classList.add("animate__heartBeat");
+    sfxClick();
+
     setTimeout(function () {
       btnMain.classList.remove("animate__animated");
       btnMain.classList.remove("animate__heartBeat");
     }, 1000);
   });
 });
+
+/***************
+ *
+ *  SOUND EFFECTS
+ *
+ ***************/
+function sfxClick() {
+  const sfxClick = document.getElementById("sfxClick");
+  sfxClick.play();
+}
+
+function sfxDeleteConsole() {
+  const sfxDeleteConsole = document.getElementById("sfxDeleteConsole");
+  sfxDeleteConsole.play();
+}
 
 /***************
  *
