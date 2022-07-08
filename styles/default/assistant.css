@@ -5,7 +5,7 @@
     width: 80%;
     border-radius: 20px;
     margin-top: 1rem;
-    color: var(--Selection-Color);
+    color: var(--selection-color);
     background: var(--Theme1-Color2);
     border: 1px solid var(--theme-primary);
     font-size: 1rem;
@@ -87,7 +87,7 @@
     font-size: 1rem;
     min-height: 60px;
     max-height: 250px;
-    color: var(--Selection-Color);
+    color: var(--selection-color);
     background: var(--Theme1-Color2);
     border: 1px solid var(--theme-primary);
 }

@@ -5,6 +5,7 @@ const btnCancelIncident = document.getElementById("cancelIncident");
 const bg = document.getElementById("bgs2");
 
 btnNewIncident.addEventListener("click", () => {
+  snd9.play();
   btnNewDemande.classList.add("greyscale");
   form1.classList.add("animate__animated");
   form1.classList.add("animate__bounceInUp");
@@ -12,6 +13,7 @@ btnNewIncident.addEventListener("click", () => {
 });
 
 btnCancelIncident.addEventListener("click", () => {
+  snd10.play();
   btnNewDemande.classList.remove("greyscale");
   form1.classList.add("animate__bounceOutDown");
 
@@ -22,5 +24,6 @@ btnCancelIncident.addEventListener("click", () => {
 });
 
 btnNewDemande.addEventListener("click", () => {
+  snd9.play();
   form2.style.display = "flex";
 });

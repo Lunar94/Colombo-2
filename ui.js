@@ -25,14 +25,26 @@ const btnAstuces = document.getElementById("btn-astuces");
 const theRoot = document.querySelector(":root");
 
 function toggleClass() {
-  if (btnAstuces.classList == "astucesActivated") {
+  if (btnAstuces.classList.contains("astucesActivated")) {
+    snd2.play();
+    snd3.play();
     btnAstuces.classList.remove("astucesActivated");
     btnAstuces.style.setProperty("margin-top", "-41px");
-    theRoot.style.setProperty("--Display-Astuces", "none");
+    theRoot.style.setProperty("--display-astuces", "none");
+    theRoot.style.setProperty(
+      "--current-cursor",
+      "url(../../assets/Images//cursors/Hand.cur), auto"
+    );
   } else {
+    snd1.play();
+    snd2.play();
     btnAstuces.classList.add("astucesActivated");
     btnAstuces.style.setProperty("margin-top", "-64px");
-    theRoot.style.setProperty("--Display-Astuces", "block");
+    theRoot.style.setProperty("--display-astuces", "block");
+    theRoot.style.setProperty(
+      "--current-cursor",
+      "url(../../assets/Images//cursors/Help.cur), auto"
+    );
   }
 }
 
@@ -47,6 +59,8 @@ btnMore.addEventListener("click", () => {
 
 function consoleEnlarge() {
   if (consoleCAA.style.height === "100%") {
+    snd2.play();
+    snd5.play();
     consoleCAA.classList.add("animate__shakeY");
     consoleCAA.classList.remove("console-overflow");
     setTimeout(() => {
@@ -58,6 +72,8 @@ function consoleEnlarge() {
     moreButtonIcon.classList.add("fa-expand");
     moreButtonIcon.classList.add("fa-animate__shakeY");
   } else {
+    snd2.play();
+    snd6.play();
     consoleCAA.style.height = "100%";
     consoleCAA.classList.add("animate__slideInUp");
     consoleCAA.classList.remove("console-overflow");
@@ -85,6 +101,7 @@ const nuanceDefault = document.getElementById("nuanceDefault");
 const icons = document.querySelectorAll(".fa-4x");
 
 btnParam.addEventListener("click", () => {
+  sfxBtn();
   paramButtonIcon.classList.add("animate__rotateIn");
   setTimeout(function () {
     paramButtonIcon.classList.remove("animate__rotateIn");
@@ -126,6 +143,7 @@ const bStyle2 = document.getElementById("windowsBtnStyle2");
 
 b1.classList.add("topbar-1-demo-selected");
 b1.addEventListener("click", () => {
+  snd7.play();
   b1.classList.add("topbar-1-demo-selected");
   b2.classList.remove("topbar-1-demo-selected");
 
@@ -137,6 +155,7 @@ b1.addEventListener("click", () => {
 });
 
 b2.addEventListener("click", () => {
+  snd7.play();
   b1.classList.remove("topbar-1-demo-selected");
   b2.classList.add("topbar-1-demo-selected");
 
@@ -173,13 +192,13 @@ const colors = {
     primary: "#785F90",
     secondary: "#5D4B6F",
     icons: "white",
-    littleButton: "#785F90",
+    littleButton: "white",
   },
   nuance4: {
     primary: "#485679",
     secondary: "#3F4B68",
     icons: "white",
-    littleButton: "#485679",
+    littleButton: "white",
   },
   nuance5: {
     primary: "#2F4858",
@@ -191,7 +210,7 @@ const colors = {
     primary: "#1C6E7D",
     secondary: "#2798ad",
     icons: "white",
-    littleButton: "#1C6E7D",
+    littleButton: "white",
   },
   nuance7: {
     primary: "#039590",
@@ -223,6 +242,7 @@ let lastSelected = nuanceDefault;
 
 document.getElementById("colors-container").addEventListener("click", (ev) => {
   if (ev.target.id == "colors-container") return;
+  snd7.play();
   lastSelected.classList.remove("colorJS");
   ev.target.classList.add("colorJS");
   lastSelected = ev.target;
@@ -230,7 +250,7 @@ document.getElementById("colors-container").addEventListener("click", (ev) => {
   root.style.setProperty("--theme-secondary", colors[ev.target.id].secondary);
   root.style.setProperty("--theme-icons", colors[ev.target.id].icons);
   root.style.setProperty(
-    "--Selection-Color",
+    "--selection-color",
     colors[ev.target.id].littleButton
   );
   root.style.setProperty(
@@ -248,6 +268,7 @@ let nuanceConsoleBlack = document.getElementById("black");
 nuanceConsoleDefault.classList.add("colorJS");
 
 nuanceConsoleDefault.addEventListener("click", () => {
+  snd7.play();
   consoleColor = "cDefault";
   nuanceConsoleDefault.classList.add("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -259,6 +280,7 @@ nuanceConsoleDefault.addEventListener("click", () => {
 });
 
 nuanceConsoleGrey.addEventListener("click", () => {
+  snd7.play();
   consoleColor = "cGrey";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.add("colorJS");
@@ -270,6 +292,7 @@ nuanceConsoleGrey.addEventListener("click", () => {
 });
 
 nuanceConsoleWhite.addEventListener("click", () => {
+  snd7.play();
   consoleColor = "cWhite";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -280,6 +303,7 @@ nuanceConsoleWhite.addEventListener("click", () => {
 });
 
 nuanceConsoleBlack.addEventListener("click", () => {
+  snd7.play();
   consoleColor = "cBlack";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -299,6 +323,7 @@ const btnMain = document.querySelectorAll(".btn");
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
     sfxClick();
+
     btnMain.classList.add("animate__animated");
     btnMain.classList.add("animate__heartBeat");
     btnMain.classList.remove("hovertext");
@@ -316,8 +341,22 @@ btnMain.forEach((btnMain) => {
  *  SOUND EFFECTS
  *
  ***************/
+function cashOut() {
+  setTimeout(() => {
+    snd8.play();
+  }, 300);
+}
+
 const prev = document.querySelector(".swiper-button-prev");
 const next = document.querySelector(".swiper-button-next");
+
+prev.addEventListener("click", () => {
+  sfxChangePage();
+});
+
+next.addEventListener("click", () => {
+  sfxChangePage();
+});
 
 function sfxClick() {
   const sfxClick = document.getElementById("sfxClick");
@@ -327,20 +366,78 @@ function sfxClick() {
 function sfxDeleteConsole() {
   const sfxDeleteConsole = document.getElementById("sfxDeleteConsole");
   sfxDeleteConsole.play();
+  snd2.play();
 }
 
 function sfxChangePage() {
   const sfxChangePage = document.getElementById("sfxChangePage");
   sfxChangePage.play();
+  snd2.play();
 }
 
-prev.addEventListener("click", () => {
-  sfxChangePage();
-});
+function sfxBtn() {
+  const sfxBtn = document.getElementById("sfxBtn");
+  sfxBtn.play();
+}
 
-next.addEventListener("click", () => {
-  sfxChangePage();
-});
+function sfxBtn2() {
+  const sfxBtn2 = document.getElementById("sfxBtn2");
+  sfxBtn2.play();
+}
+
+const snd1 = new Audio();
+const src1 = document.createElement("source");
+src1.type = "audio/mpeg";
+src1.src = "./assets/sounds/sfxAstuces.wav";
+snd1.appendChild(src1);
+
+const snd2 = new Audio();
+const src2 = document.createElement("source");
+src2.type = "audio/mpeg";
+src2.src = "./assets/sounds/sfxBtn.wav";
+snd2.appendChild(src2);
+
+const snd3 = new Audio();
+const src3 = document.createElement("source");
+src3.type = "audio/mpeg";
+src3.src = "./assets/sounds/sfxAstuces2.ogg";
+snd3.appendChild(src3);
+
+const snd5 = new Audio();
+const src5 = document.createElement("source");
+src5.type = "audio/mpeg";
+src5.src = "./assets/sounds/sfxConsoleMinimize.wav";
+snd5.appendChild(src5);
+
+const snd6 = new Audio();
+const src6 = document.createElement("source");
+src6.type = "audio/mpeg";
+src6.src = "./assets/sounds/sfxGong.wav";
+snd6.appendChild(src6);
+
+const snd7 = new Audio();
+const src7 = document.createElement("source");
+src7.type = "audio/mpeg";
+src7.src = "./assets/sounds/sfxDrill.wav";
+snd7.appendChild(src7);
+
+const snd8 = new Audio();
+const src8 = document.createElement("source");
+src8.type = "audio/mpeg";
+src8.src = "./assets/sounds/sfxCash.wav";
+snd8.appendChild(src8);
+
+const snd9 = new Audio();
+const src9 = document.createElement("source");
+src9.type = "audio/mpeg";
+src9.src = "./assets/sounds/sfxNewForm.wav";
+snd9.appendChild(src9);
+
+const snd10 = new Audio();
+const src10 = document.createElement("source");
+src10.type = "audio/mpeg";
+src10.src = "./assets/sounds/sfxCancel.wav";
+snd10.appendChild(src10);
 
 /***************
  *
@@ -367,6 +464,8 @@ btnParamClose1.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
+
+  sfxBtn2();
 });
 
 btnParamClose2.addEventListener("click", () => {
@@ -375,11 +474,14 @@ btnParamClose2.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
+
+  sfxBtn2();
 });
 
 btnConsole.classList.add("param-section-activated");
 
 btnConsole.addEventListener("click", () => {
+  snd2.play();
   btnConsole.classList.add("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -398,6 +500,7 @@ btnConsole.addEventListener("click", () => {
 });
 
 btnAssistant.addEventListener("click", () => {
+  snd2.play();
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.add("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -416,6 +519,7 @@ btnAssistant.addEventListener("click", () => {
 });
 
 btnTheme.addEventListener("click", () => {
+  snd2.play();
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.add("param-section-activated");
@@ -434,6 +538,7 @@ btnTheme.addEventListener("click", () => {
 });
 
 btnUpdate.addEventListener("click", () => {
+  snd2.play();
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -452,6 +557,7 @@ btnUpdate.addEventListener("click", () => {
 });
 
 btnCredits.addEventListener("click", () => {
+  snd2.play();
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");

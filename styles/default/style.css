@@ -26,15 +26,17 @@
     --theme-secondary: #9c523c;
     --theme-icons: white;
     --theme-little-button: var(--theme-primary);
-    --Display-Astuces: none;
-    --Selection-Color: white;
+    --display-astuces: none;
+    --selection-color: white;
     --texte-console: white;
+    --current-cursor: url(../../assets/Images//cursors/Hand.cur), auto;
 }
 
 ::selection {
-    color: var(--Selection-Color);
+    color: var(--theme-icons);
     background: var(--theme-primary);
 }
+
 
 body {
     font-family: Poppins;
@@ -143,7 +145,6 @@ main {
 
 
 #console {
-
     display: flex;
     position: absolute;
     height: 50%;
@@ -167,11 +168,6 @@ main {
 
 .console-overflow {
     overflow-y: auto;
-}
-
-
-#default-text {
-    line-height: normal;
 }
 
 #console::-webkit-scrollbar {
@@ -245,9 +241,9 @@ main {
 }
 
 .btn:hover {
-    cursor: url(../../assets/Images//cursors/Hand.cur), auto;
     color: white;
     background-color: var(--theme-secondary);
+    cursor: var(--current-cursor);
 }
 
 .btn2 {
@@ -786,7 +782,6 @@ main {
     -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
-
 .color {
     height: 2.5rem;
     width: 2.5rem;
@@ -943,7 +938,7 @@ main {
     top: 100%;
     font-size: 0.8rem;
 
-    display: var(--Display-Astuces);
+    display: var(--display-astuces);
 }
 
 .hovertext:hover::before {
@@ -978,7 +973,6 @@ main {
 
 
 @media only screen and (max-width:600px) {
-
     #param {
         width: 98.8%;
     }
@@ -998,7 +992,6 @@ main {
 
     #computer {
         margin-top: 1.5rem;
-
     }
 
     #computer-type-container {
@@ -1099,10 +1092,6 @@ main {
         padding: 1.34rem;
         margin-top: 0px;
         height: 426px;
-    }
-
-    #autocopy {
-        margin-right: 400px;
     }
 
     .color {

@@ -54,17 +54,13 @@ document
 
       const response = document.querySelector(".response");
 
-      response.scrollIntoView(false);
-
       let div = document.createElement("div");
       div.id = `${content_id}-content`;
       div.classList.add("animate__animated");
       div.classList.add("animate__bounceInLeft");
 
       div.style.whiteSpace = "pre-wrap";
-      div.style.paddingTop = "1rem";
-      div.style.paddingBottom = "1rem";
-      div.style.paddingLeft = "1rem";
+      div.style.padding = "1rem";
 
       switch (consoleColor) {
         case "cDefault":

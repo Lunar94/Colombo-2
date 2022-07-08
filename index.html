@@ -5,6 +5,8 @@
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
 <audio id="sfxChangePage" src="./assets/sounds/sfxChangePage.wav"></audio>
+<audio id="sfxBtn" src="./assets/sounds/sfxBtn.wav"></audio>
+<audio id="sfxBtn2" src="./assets/sounds/sfxBtn2.wav"></audio>
 <!-- END OF SFX -->
 <!DOCTYPE html>
 <html lang="fr">
@@ -516,68 +518,75 @@
 
                                 <div class="buttons">
 
-                                    <div data-hover="Informations sur le système d'exploitation" data-psfile="doThis"
-                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis" class="fa-brands fa-windows fa-4x"></i></span>
+                                    <div onclick="cashOut()" data-hover="Informations sur le système d'exploitation"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-brands fa-windows fa-4x"></i></span>
                                     </div>
 
-                                    <div data-hover="Vérifier la taille du ou des disques durs local"
+                                    <div onclick="cashOut()"
+                                        data-hover="Vérifier la taille du ou des disques durs local"
                                         data-psfile="diskSpace" class="btn hovertext"><span data-psfile="diskSpace"
                                             class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                     </div>
 
 
-                                    <div data-hover="Informations générales sur la version du Bios"
+                                    <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
                                         data-psfile="biosInfo" class="btn hovertext"><span data-psfile="biosInfo"
                                             class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
                                                 fa-monitor-waveform fa-4x"></i></span></div>
 
-                                    <div data-hover="Est-ce que le poste répond bien aux paquets ?" data-psfile="ping"
-                                        class="btn hovertext"><span data-psfile="ping" class="btn-text"><i
-                                                data-psfile="ping"
+                                    <div onclick="cashOut()" data-hover="Est-ce que le poste répond bien aux paquets ?"
+                                        data-psfile="ping" class="btn hovertext"><span data-psfile="ping"
+                                            class="btn-text"><i data-psfile="ping"
                                                 class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span></div>
 
-                                    <div data-hover="Sortir la liste complète des logiciels installés"
+                                    <div onclick="cashOut()"
+                                        data-hover="Sortir la liste complète des logiciels installés"
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-uncharted fa-4x"></i></span>
                                     </div>
 
-                                    <div data-hover="Installer un ou plusieurs logiciels sur le poste"
+                                    <div onclick="cashOut()"
+                                        data-hover="Installer un ou plusieurs logiciels sur le poste"
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-display-arrow-down fa-4x"></i></span></div>
 
-                                    <div data-hover="Redémarrer le poste à distance [maintenir]" data-psfile="doThis"
-                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis" class="fa-duotone fa-power-off fa-4x"></i></span>
+                                    <div onclick="cashOut()" data-hover="Redémarrer le poste à distance [maintenir]"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-power-off fa-4x"></i></span>
                                     </div>
 
-                                    <div data-hover="Transfert de fichiers d'un poste à l'autre" data-psfile="doThis"
-                                        class="btn hovertext">
+                                    <div onclick="cashOut()" data-hover="Transfert de fichiers d'un poste à l'autre"
+                                        data-psfile="doThis" class="btn hovertext">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span>
                                     </div>
 
-                                    <div data-hover="Libérer de l'espace sur le disque local C:\" data-psfile="doThis"
-                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis" class="fa-duotone fa-broom fa-4x"></i></span>
+                                    <div onclick="cashOut()" data-hover="Libérer de l'espace sur le disque local C:\"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-broom fa-4x"></i></span>
                                     </div>
 
-                                    <div data-hover="Ouvrir le répertoire Outlook contenant le fichier .ost"
+                                    <div onclick="cashOut()"
+                                        data-hover="Ouvrir le répertoire Outlook contenant le fichier .ost"
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-envelopes-bulk fa-4x"></i></span></div>
 
-                                    <div data-hover="Contrôle à distance - ShadowRDP" data-psfile="doThis"
-                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis"
+                                    <div onclick="cashOut()" data-hover="Contrôle à distance - ShadowRDP"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-signal-stream fa-4x"></i></span></div>
 
-                                    <div data-hover="Rechercher ce poste dans l'Active Directory" data-psfile="doThis"
-                                        class="btn hovertext"><span data-psfile="doThis" class="btn-text"><i
-                                                data-psfile="doThis"
+                                    <div onclick="cashOut()" data-hover="Rechercher ce poste dans l'Active Directory"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-rectangle-ad fa-4x"></i></span></div>
 
                                 </div>
