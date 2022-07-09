@@ -43,11 +43,30 @@ document.getElementById("close2").addEventListener("click", () => {
   }, 3500);
 });
 
+document.getElementById("minimize3").addEventListener("click", () => {
+  snd15.play();
+  windowControls.minimize();
+});
+
+document.getElementById("maximize3").addEventListener("click", () => {
+  snd16.play();
+  windowControls.maximize();
+});
+
+document.getElementById("close3").addEventListener("click", () => {
+  snd17.play();
+  const exit = document.getElementById("exit");
+  exit.style.display = "block";
+  setTimeout(function () {
+    windowControls.close();
+  }, 3500);
+});
+
 // PS PART
 let consoleColor = "cDefault";
 
 document
-  .querySelector(".buttons")
+  .getElementById("buttons")
   .addEventListener("click", async function (event) {
     const file = event?.target?.attributes["data-psfile"]?.value;
     if (file) {

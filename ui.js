@@ -140,33 +140,56 @@ const reduire = document.getElementById("minimize");
 
 const b1 = document.getElementById("topbar-1-demo");
 const b2 = document.getElementById("topbar-2-demo");
+const b3 = document.getElementById("topbar-3-demo");
 
 const bStyle1 = document.getElementById("windowsBtnStyle1");
 const bStyle2 = document.getElementById("windowsBtnStyle2");
+const bStyle3 = document.getElementById("windowsBtnStyle3");
 
 b1.classList.add("topbar-1-demo-selected");
 b1.addEventListener("click", () => {
-  snd13.play();
+  soundPlay("sfxAnvil.wav");
   b1.classList.add("topbar-1-demo-selected");
   b2.classList.remove("topbar-1-demo-selected");
+  b3.classList.remove("topbar-1-demo-selected");
 
   bStyle1.style.display = "flex";
   bStyle2.style.display = "none";
+  bStyle3.style.display = "none";
 
   btnParamClose1.style.display = "flex";
   btnParamClose2.style.display = "none";
+  btnParamClose3.style.display = "none";
 });
 
 b2.addEventListener("click", () => {
-  +snd13.play();
+  soundPlay("sfxAnvil.wav");
   b1.classList.remove("topbar-1-demo-selected");
   b2.classList.add("topbar-1-demo-selected");
+  b3.classList.remove("topbar-1-demo-selected");
 
   bStyle1.style.display = "none";
   bStyle2.style.display = "flex";
+  bStyle3.style.display = "none";
 
   btnParamClose1.style.display = "none";
   btnParamClose2.style.display = "flex";
+  btnParamClose3.style.display = "none";
+});
+
+b3.addEventListener("click", () => {
+  soundPlay("sfxAnvil.wav");
+  b1.classList.remove("topbar-1-demo-selected");
+  b2.classList.remove("topbar-1-demo-selected");
+  b3.classList.add("topbar-1-demo-selected");
+
+  bStyle1.style.display = "none";
+  bStyle2.style.display = "none";
+  bStyle3.style.display = "flex";
+
+  btnParamClose1.style.display = "none";
+  btnParamClose2.style.display = "none";
+  btnParamClose3.style.display = "flex";
 });
 
 // Les nuances
@@ -325,7 +348,7 @@ nuanceConsoleBlack.addEventListener("click", () => {
 const btnMain = document.querySelectorAll(".btn");
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
-    sfxClick();
+    soundPlay("sfxClick.wav");
 
     btnMain.classList.add("animate__animated");
     btnMain.classList.add("animate__heartBeat");
@@ -347,7 +370,7 @@ btnMain.forEach((btnMain) => {
 
 function cashOut() {
   setTimeout(() => {
-    snd8.play();
+    soundPlay("sfxCash.wav");
   }, 300);
 }
 
@@ -355,27 +378,18 @@ const prev = document.querySelector(".swiper-button-prev");
 const next = document.querySelector(".swiper-button-next");
 
 prev.addEventListener("click", () => {
-  sfxChangePage();
+  soundPlay("sfxChangePage.wav");
+  soundPlay("sfxBtn.wav");
 });
 
 next.addEventListener("click", () => {
-  sfxChangePage();
+  soundPlay("sfxChangePage.wav");
+  soundPlay("sfxBtn.wav");
 });
-
-function sfxClick() {
-  const sfxClick = document.getElementById("sfxClick");
-  sfxClick.play();
-}
 
 function sfxDeleteConsole() {
   const sfxDeleteConsole = document.getElementById("sfxDeleteConsole");
   sfxDeleteConsole.play();
-  snd2.play();
-}
-
-function sfxChangePage() {
-  const sfxChangePage = document.getElementById("sfxChangePage");
-  sfxChangePage.play();
   snd2.play();
 }
 
@@ -461,6 +475,31 @@ src13.type = "audio/mpeg";
 src13.src = "./assets/sounds/sfxAnvil.wav";
 snd13.appendChild(src13);
 
+let muted = false;
+
+function soundPlay(sound) {
+  if (muted) return;
+  const audio = new Audio();
+  const source = document.createElement("source");
+  source.src = `./assets/sounds/${sound}`;
+  audio.appendChild(source);
+
+  audio.play();
+  audio.addEventListener("ended", () => {
+    audio.remove();
+  });
+}
+
+document.getElementById("toggleSounds").addEventListener("click", () => {
+  if (muted) {
+    soundPlay("sfxClick.wav");
+    muted = false;
+  } else {
+    muted = true;
+    soundPlay("sfxClick.wav");
+  }
+});
+
 const snd14 = new Audio();
 const src14 = document.createElement("source");
 src14.type = "audio/mpeg";
@@ -542,6 +581,7 @@ const btnUpdate = document.getElementById("update-section");
 const btnCredits = document.getElementById("credits-section");
 const btnParamClose1 = document.getElementById("param-close1");
 const btnParamClose2 = document.getElementById("param-close2");
+const btnParamClose3 = document.getElementById("param-close3");
 
 btnParamClose1.addEventListener("click", () => {
   snd18.pause();
@@ -556,6 +596,18 @@ btnParamClose1.addEventListener("click", () => {
 });
 
 btnParamClose2.addEventListener("click", () => {
+  snd18.pause();
+  snd18.currentTime = 0;
+  paramPanel.classList.add("animate__zoomOut");
+  setTimeout(function () {
+    paramPanel.style.display = "none";
+    paramPanel.classList.remove("animate__zoomOut");
+  }, 800);
+
+  sfxBtn2();
+});
+
+btnParamClose3.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
   paramPanel.classList.add("animate__zoomOut");

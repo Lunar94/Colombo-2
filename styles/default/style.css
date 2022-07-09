@@ -216,7 +216,7 @@ main {
     transform: scale(1.2);
 }
 
-.buttons {
+#buttons {
     font-family: Poppins;
     font-size: 0.8rem;
     top: 55%;
@@ -230,7 +230,7 @@ main {
     gap: 1rem;
 }
 
-.buttons div>span * {
+#buttons div>span * {
     color: var(--theme-icons);
 }
 
@@ -427,7 +427,7 @@ main {
 }
 
 .soundActivated:hover {
-    color: black
+    color: black;
 }
 
 
@@ -1044,8 +1044,7 @@ main {
         margin-top: 1rem;
     }
 
-    .buttons {
-        top: 50%;
+    #buttons {
         transform: translateY(-50%);
         position: absolute;
         display: flex;
@@ -1054,6 +1053,8 @@ main {
         justify-content: center;
         gap: 1rem;
         font-size: 0.4rem;
+        top: 54%;
+        left: 0%;
     }
 
     .btn {
@@ -1063,16 +1064,6 @@ main {
         border-radius: 20px;
         width: 180px;
         padding: 5px;
-    }
-
-
-    .buttons {
-        top: 54%;
-        left: 0%;
-        position: absolute;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
     }
 
     #ping-container {

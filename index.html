@@ -1,5 +1,5 @@
 <script>
-    buildMain = "<b>A45.7</b>";
+    buildMain = "<b>A45.8</b>";
 </script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
@@ -61,6 +61,19 @@
 
         </div>
 
+        <div id="windowsBtnStyle3">
+
+            <div id="minimize3" class="ui-button">
+                <i class="buttons-style-3">&#xE734</i>
+            </div>
+            <div id="maximize3" class="ui-button">
+                <i class="buttons-style-3">&#xE7C6</i>
+            </div>
+            <div id="close3" class="ui-button">
+                <i class="buttons-style-3">&#xE735</i>
+            </div>
+        </div>
+
     </div>
 
     <div id="tongue">
@@ -78,8 +91,13 @@
                 <div id="param-close1" class="ui-button"><span class="dot red"><span
                             class="small-dot-red"></span></span>
                 </div>
+
                 <div id="param-close2" class="ui-button">
                     <i class="buttons-style-2">&#xE106</i>
+                </div>
+
+                <div id="param-close3" class="ui-button">
+                    <i class="buttons-style-3">&#xE735</i>
                 </div>
             </div>
 
@@ -89,12 +107,12 @@
 
                     <div id="sound-toggle">
                         <div class="pretty p-icon p-toggle p-plain soundActivated">
-                            <input onclick="switchSound()" id="toggleSounds" title="toggleSounds" type="checkbox" />
-                            <div class="state p-success-o p-on">
+                            <input id="toggleSounds" title="toggleSounds" type="checkbox" />
+                            <div class="state p-success-o p-off">
                                 <i class="fa-duotone fa-music-note soundActivated"></i>
                                 <label class="soundActivated" style="margin-left:-10px;">Sons activés</label>
                             </div>
-                            <div class="state p-off soundActivated">
+                            <div class="state p-on soundActivated">
                                 <i class="fa-duotone fa-music-note-slash soundActivated"></i>
                                 <label class="soundActivated" style="margin-left:-10px;">Sons désactivés</label>
                             </div>
@@ -308,6 +326,21 @@
                     </div>
                     <div id="close" class="ui-button">
                         <i class="buttons-style-2">&#xE106</i>
+                    </div>
+                </div><br>
+
+                <div id="topbar-3-demo" style="animation:none;">
+                    <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
+                        <span id="windowsBtnStyle-title"><i>Zen étoilé</i></span>
+                    </div>
+                    <div id="minimize" class="ui-button">
+                        <i class="buttons-style-3">&#xE734</i>
+                    </div>
+                    <div id="maximize" class="ui-button">
+                        <i class="buttons-style-3">&#xE7C6</i>
+                    </div>
+                    <div id="close" class="ui-button">
+                        <i class="buttons-style-3">&#xE735</i>
                     </div>
                 </div><br><br>
 
@@ -554,7 +587,7 @@
 
                                 <div id="ping-container"><span id="ping-text">En ligne</span></div>
 
-                                <div class="buttons">
+                                <div id="buttons">
 
                                     <div onclick="cashOut()" data-hover="Informations sur le système d'exploitation"
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
