@@ -206,14 +206,14 @@ main {
 
 .response>div:nth-child(even) {
     background-image: linear-gradient(to left, #1c1f27, #1e222a, #21252e, #232831, #262b35);
-    /* background: #1c1f27; */
-    /* background: rgba(0, 0, 0, .1); */
 }
 
 .response>div:nth-child(odd) {
-    background-image: linear-gradient(to left, #39414f, #343b48, #2f3642, #2b303b, #262b35);
-    /* background: #39414f; */
-    /* background: rgba(0, 0, 0, .2); */
+    background-image: linear-gradient(to right, #39414f, #343b48, #2f3642, #2b303b, #262b35);
+}
+
+.response>:hover {
+    transform: scale(1.2);
 }
 
 .buttons {
@@ -413,6 +413,26 @@ main {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+#sound-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-top: -50px;
+    color: var(--theme-icons);
+    background: var(--theme-primary);
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+}
+
+.soundActivated:hover {
+    color: black
+}
+
+
+
+
 
 @keyframes glow {
     from {

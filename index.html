@@ -1,5 +1,5 @@
 <script>
-    buildMain = "<b>A45.6</b>";
+    buildMain = "<b>A45.7</b>";
 </script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
@@ -86,7 +86,48 @@
             <div id="param-sidebar">
 
                 <div id="param-section-container">
-                    <div id="console-section" class="param-section">Console</div>
+
+                    <div id="sound-toggle">
+                        <div class="pretty p-icon p-toggle p-plain soundActivated">
+                            <input onclick="switchSound()" id="toggleSounds" title="toggleSounds" type="checkbox" />
+                            <div class="state p-success-o p-on">
+                                <i class="fa-duotone fa-music-note soundActivated"></i>
+                                <label class="soundActivated" style="margin-left:-10px;">Sons activés</label>
+                            </div>
+                            <div class="state p-off soundActivated">
+                                <i class="fa-duotone fa-music-note-slash soundActivated"></i>
+                                <label class="soundActivated" style="margin-left:-10px;">Sons désactivés</label>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        const toggleSound = document.getElementById("toggleSounds")
+                        // Mute a singular HTML5 element
+                        function mutePage() {
+                            document.querySelectorAll("video, audio").forEach(elem => muteMe(elem));
+                        }
+
+                        function switchSound() {
+                            if (switchSound.checked) {
+
+
+                                document.querySelectorAll('audio, video').forEach(el => el.muted = true)
+
+
+
+
+                            } else {
+                                sfxClick();
+                                snd19.play();
+                            }
+                        }
+
+
+
+                    </script>
+
+
+                    <div id="console-section" class="param-section" style="margin-top:40px">Console</div>
                     <div id="assistant-section" class="param-section">Assistant d'appels</div>
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
@@ -732,6 +773,32 @@
     <script src="./ui.js"></script>
     <script src="./assistant.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
+    <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
+    <script>
+        hotkeys("f5", function (event, handler) {
+            // Prevent the default refresh event under WINDOWS system
+            event.preventDefault();
+            console.log("you pressed F5!")
+            // alert("you pressed F5!");
+        });
+
+        // Single key
+        hotkeys("escape", function (event, handler) {
+            //event.srcElement: input
+            //event.target: input
+            if (event.target === "input") {
+                console.log("you pressed a INPUT!")
+                // alert("you pressed a!");
+            }
+            console.log("you pressed a!")
+            // alert("you pressed a!");
+        });
+
+
+
+    </script>
+
+
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {

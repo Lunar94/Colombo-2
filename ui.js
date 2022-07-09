@@ -339,7 +339,7 @@ btnMain.forEach((btnMain) => {
   });
 });
 
-/***************
+/***************;
  *
  *  SOUND EFFECTS
  *
@@ -491,6 +491,12 @@ src18.type = "audio/mpeg";
 src18.src = "./assets/sounds/sfxCredits.mp3";
 snd18.loop = true;
 snd18.appendChild(src18);
+
+let snd19 = new Audio();
+let src19 = document.createElement("source");
+src19.type = "audio/mpeg";
+src19.src = "./assets/sounds/sfxShhh.wav";
+snd19.appendChild(src19);
 
 const switches = document.querySelectorAll(".cb");
 switches.forEach((xSwitch) => {

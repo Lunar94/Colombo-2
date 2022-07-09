@@ -35,6 +35,7 @@ document.getElementById("maximize2").addEventListener("click", () => {
 });
 
 document.getElementById("close2").addEventListener("click", () => {
+  snd17.play();
   const exit = document.getElementById("exit");
   exit.style.display = "block";
   setTimeout(function () {
