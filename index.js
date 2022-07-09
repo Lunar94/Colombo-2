@@ -1,4 +1,5 @@
 ("use strict");
+
 //PS PART
 const fs = require("fs");
 // Modules to control application life and create native browser window
@@ -13,6 +14,7 @@ function createWindow() {
     width: 600,
     minHeight: 955,
     height: 955,
+    show: false,
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12
       nodeIntegration: false, // this is the default in Electron >= 5
@@ -23,10 +25,23 @@ function createWindow() {
     // transparent: true,
   });
 
-  // and load the index.html of the app.
+  const splash = new BrowserWindow({
+    width: 700,
+    height: 360,
+    transparent: true,
+    frame: false,
+    alwaysOnTop: true,
+  });
+
+  splash.loadFile("splash.html");
+  splash.center();
+
+  setTimeout(function () {
+    splash.close();
+    mainWindow.show();
+  }, 7000);
+
   mainWindow.loadFile("index.html");
-  // mainWindow.webContents.openDevTools();
-  // Open the DevTools by default. You can open them via "View ➡ Toggle Developer Tools".
   mainWindow.webContents.openDevTools();
 
   // Handle window controls via IPC
@@ -62,7 +77,6 @@ ipcMain.on("windowControls:minimize2", () => {
 ipcMain.on("windowControls:close2", () => {
   mainWindow.close();
 });
-
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

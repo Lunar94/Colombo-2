@@ -1,5 +1,5 @@
 <script>
-    buildMain = "<b>A45.5</b>";
+    buildMain = "<b>A45.6</b>";
 </script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
@@ -29,9 +29,6 @@
 </head>
 
 <body>
-
-
-
     <img src="./assets/images/exit.gif" id="exit" alt="">
 
     <div id="topbar">
@@ -95,7 +92,7 @@
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
                     <div id="build-section" class="param-build">Build
-                        <script>const buildVer = buildMain;
+                        <script>let buildVer = buildMain;
                             document.write(buildVer);
                         </script>
                     </div>
@@ -109,7 +106,7 @@
                 <div class="line2">
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="copyauto" name="copyauto"
+                        <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -122,7 +119,7 @@
 
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="confirmdelete" name="confirmdelete"
+                        <input type="checkbox" id="confirmdelete" name="confirmdelete" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -138,7 +135,7 @@
                 <div class="line2">
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="avenir" name="avenir"
+                        <input type="checkbox" id="avenir" name="avenir" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -149,7 +146,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="avenir2" name="avenir2"
+                        <input type="checkbox" id="avenir2" name="avenir2" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -167,7 +164,7 @@
                 <div class="line2">
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="glowing" name="glowing"
+                        <input type="checkbox" id="glowing" name="glowing" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -177,7 +174,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="paramAni" name="paramAni"
+                        <input type="checkbox" id="paramAni" name="paramAni" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -188,7 +185,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="consoleDel" name="consoleDel"
+                        <input type="checkbox" id="consoleDel" name="consoleDel" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -199,7 +196,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="pagesAni" name="pagesAni"
+                        <input type="checkbox" id="pagesAni" name="pagesAni" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -210,7 +207,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="consoleMax" name="consoleMax"
+                        <input type="checkbox" id="consoleMax" name="consoleMax" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -221,7 +218,7 @@
                     </div>
 
                     <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="consoleRes" name="consoleRes"
+                        <input type="checkbox" id="consoleRes" name="consoleRes" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" checked />
                         <div class="state p-success">
                             <i class="icon fa fa-check"></i>
@@ -621,7 +618,7 @@
                                     <div class="line3">
 
                                         <div class="pretty p-switch p-slim switch1">
-                                            <input type="radio" name="switch1" />
+                                            <input type="radio" name="switch1" class="cb" />
                                             <div class="state p-success">
                                                 <label style="color:grey;">Poste Bureau</label>
                                             </div>
@@ -632,7 +629,7 @@
                                             placeholder="Q222666       /       Z222666"><br>
 
                                         <div class="pretty p-switch p-slim switch2">
-                                            <input type="radio" name="switch1" />
+                                            <input type="radio" name="switch1" class="cb" />
                                             <div class="state p-success">
                                                 <label style="color:grey;">Poste Maison</label>
                                             </div>
@@ -661,7 +658,7 @@
 
 
                                         <div id="cancelIncident" class="btn-assistant btn">
-                                            <i class="fa-duotone fa-rectangle-xmark fa-4x" style="color:white;"></i>
+                                            <i class="fa-duotone fa-rectangle-xmark fa-4x"></i>
                                             <span class="btn-form-validate">Annuler</span>
                                         </div>
 

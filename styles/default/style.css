@@ -127,7 +127,7 @@ main {
 }
 
 .fa-4x {
-    color: white;
+    color: var(--theme-icons);
 }
 
 #app-title-param {
@@ -178,6 +178,7 @@ main {
     background: #1e1e24;
     margin-top: 15px;
     margin-bottom: 60px;
+    border-radius: 10px;
 }
 
 #console::-webkit-scrollbar-thumb {
@@ -204,11 +205,15 @@ main {
 }
 
 .response>div:nth-child(even) {
-    background: #1c1f27;
+    background-image: linear-gradient(to left, #1c1f27, #1e222a, #21252e, #232831, #262b35);
+    /* background: #1c1f27; */
+    /* background: rgba(0, 0, 0, .1); */
 }
 
 .response>div:nth-child(odd) {
-    background: #39414f;
+    background-image: linear-gradient(to left, #39414f, #343b48, #2f3642, #2b303b, #262b35);
+    /* background: #39414f; */
+    /* background: rgba(0, 0, 0, .2); */
 }
 
 .buttons {
@@ -536,7 +541,7 @@ main {
     width: 758px;
     margin-left: 200px;
     border-radius: 0 0 20px 0;
-    height: 427px;
+    height: 426px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -547,6 +552,7 @@ main {
 
 #param-theme-content::-webkit-scrollbar-track {
     background: #1e1e24;
+    border-radius: 10px;
 }
 
 #param-theme-content::-webkit-scrollbar-thumb {
@@ -556,6 +562,7 @@ main {
 
 #param-theme-content::-webkit-scrollbar-track {
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .content-inner {
@@ -606,6 +613,7 @@ main {
 
 #param-credits-content::-webkit-scrollbar-track {
     margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 
@@ -962,7 +970,7 @@ main {
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    animation: 60s credits linear infinite;
+    animation: 23s credits linear infinite;
 }
 
 .movie {
@@ -973,6 +981,24 @@ main {
 
 
 @media only screen and (max-width:600px) {
+
+    #console::-webkit-scrollbar {
+        width: 0.35rem;
+    }
+
+    #console::-webkit-scrollbar-track {
+        background: #1e1e24;
+        margin-top: 15px;
+        margin-bottom: 60px;
+        border-radius: 10px;
+    }
+
+    #console::-webkit-scrollbar-thumb {
+        background: var(--theme-primary);
+        border-radius: 10px;
+    }
+
+
     #param {
         width: 98.8%;
     }
@@ -1042,7 +1068,7 @@ main {
     }
 
     #output {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .param-section {
