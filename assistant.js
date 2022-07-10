@@ -5,7 +5,7 @@ const btnCancelIncident = document.getElementById("cancelIncident");
 const bg = document.getElementById("bgs2");
 
 btnNewIncident.addEventListener("click", () => {
-  soundPlay("sfxNewForm.wav");
+  soundPlay("sfxPolice.wav");
   btnNewDemande.classList.add("greyscale");
   form1.classList.add("animate__animated");
   form1.classList.add("animate__bounceInUp");
@@ -20,10 +20,10 @@ btnCancelIncident.addEventListener("click", () => {
   setTimeout(function () {
     form1.style.display = "none";
     form1.classList.remove("animate__bounceOutDown");
-  }, 1000);
+  }, 600);
 });
 
 btnNewDemande.addEventListener("click", () => {
-  soundPlay("sfxNewForm.wav");
+  soundPlay("sfxCat.wav");
   form2.style.display = "flex";
 });

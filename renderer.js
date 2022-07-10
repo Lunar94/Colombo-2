@@ -76,11 +76,13 @@ document.getElementById("close2").addEventListener("click", () => {
     })
     .set("closable", false)
     .set("onok", function (closeEvent) {
-      soundPlay("sfxBtn.wav");
       soundPlay("sfxExit.wav");
+      soundPlay("sfxBtn.wav");
       const exit = document.getElementById("exit");
+      exit.classList.add("param-dimmer");
       exit.style.display = "block";
       setTimeout(function () {
+        exit.classList.remove("param-dimmer");
         windowControls.close();
       }, 3500);
     })

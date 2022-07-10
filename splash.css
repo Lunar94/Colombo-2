@@ -8,6 +8,7 @@
 :root {
     font-family: poppins;
     overflow-y: hidden;
+    cursor: url(../../assets/images/cursors/UpArrow.cur), auto;
 }
 
 body {

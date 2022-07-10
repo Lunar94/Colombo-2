@@ -10,6 +10,7 @@ const path = require("path");
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
+    titleBarStyle: "customButtonsOnHover",
     minWidth: 600,
     width: 600,
     minHeight: 955,
@@ -40,7 +41,6 @@ function createWindow() {
     splash.close();
     mainWindow.show();
   }, 7000);
-
   mainWindow.loadFile("index.html");
   mainWindow.webContents.openDevTools();
 

@@ -136,14 +136,14 @@
 }
 
 .red3:hover {
-    -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 10px var(--theme-primary);
     cursor: url(../../assets/images//cursors/Hand.cur), auto;
     transition: 0.2s;
     transform: scale(1.3);
 }
 
 .green3:hover {
-    -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 10px var(--theme-primary);
     cursor: url(../../assets/images//cursors/Hand.cur), auto;
     transition: 0.2s;
     opacity: 1;
@@ -151,7 +151,7 @@
 }
 
 .yellow3:hover {
-    -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+    -webkit-box-shadow: 0 0 10px var(--theme-primary);
     cursor: url(../../assets/images//cursors/Hand.cur), auto;
     transition: 0.2s;
     opacity: 1;
@@ -209,6 +209,7 @@
 }
 
 #topbar {
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
     display: flex;
     position: relative;
     height: 30px;
@@ -227,7 +228,7 @@
     height: 30px;
     background: var(--Theme1-Color2);
     border-radius: 20px;
-    cursor: url(../../assets/images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
     border: rgba(204, 204, 204, 0.174) 1px solid;
     gap: 8px;
 }
@@ -259,7 +260,7 @@
     height: 30px;
     background: var(--Theme1-Color2);
     border-radius: 20px;
-    cursor: url(../../assets/images//cursors/Hand.cur), auto;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
     border: rgba(204, 204, 204, 0.174) 1px solid;
     gap: 8px;
 }
@@ -270,6 +271,7 @@
 }
 
 #tongue {
+    cursor: url(../../assets/images/cursors/Hand.cur), auto !important;
     display: flex;
     height: 30px;
     width: 200px;
@@ -282,6 +284,7 @@
 }
 
 #cover {
+    cursor: url(../../assets/images/cursors/Hand.cur), auto !important;
     width: 200px;
     background: var(--Theme1-Color2);
     z-index: 1;
@@ -289,6 +292,7 @@
 }
 
 #dragbar {
+    cursor: url(../../assets/images/cursors/Hand.cur), auto !important;
     -webkit-app-region: drag;
     height: 30px;
     width: 100%;

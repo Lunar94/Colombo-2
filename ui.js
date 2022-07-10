@@ -35,7 +35,7 @@ window.showAlert = function () {
         "<br/><br/>" +
         "<i class='fa-brands fa-github fa-1'></i>" +
         " " +
-        '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
+        '<a class="startLink" href="https://github.com/Lunar94/Colombo-2" target="_blank" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
         "<br/><br/>" +
         "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
         " " +
@@ -62,6 +62,7 @@ window.showAlert();
  *  CONSOLE CAA
  *
  ************/
+
 const btnMore = document.getElementById("btn-more");
 const btnClear = document.getElementById("btn-clear");
 const consoleCAA = document.getElementById("console");
@@ -120,7 +121,6 @@ btnMore.addEventListener("click", () => {
 const consoleContainer = document.getElementById("console-wrapper");
 function consoleEnlarge() {
   if (consoleCAA.style.height === "90%") {
-    soundPlay("sfxBtn.wav");
     soundPlay("sfxConsoleMinimize.wav");
     consoleContainer.classList.remove("param-dimmer");
     consoleCAA.classList.add("animate__shakeY");
@@ -135,7 +135,10 @@ function consoleEnlarge() {
     moreButtonIcon.classList.add("fa-animate__shakeY");
   } else {
     soundPlay("sfxBtn.wav");
+    soundPlay("sfxBottle.wav");
+
     soundPlay("sfxGong.wav");
+
     consoleContainer.classList.add("param-dimmer");
     consoleCAA.style.height = "90%";
     consoleCAA.classList.add("animate__slideInUp");
@@ -192,6 +195,18 @@ window.onload = function () {
       topbar.style.animation = "glow 5s infinite alternate";
       tongue.style.animation = "glow 5s infinite alternate";
       wrapCons.style.animation = "glow 5s infinite alternate";
+    }
+  };
+};
+
+// checkbox confirmDeleteConsole
+const checkConfirmDelConsole = document.getElementById("confirmdelete");
+window.onload = function () {
+  checkConfirmDelConsole.onchange = function () {
+    if (checkConfirmDelConsole.checked == false) {
+      let confirmDeleteConsoleSwitch = 0;
+    } else {
+      let confirmDeleteConsoleSwitch = 1;
     }
   };
 };
