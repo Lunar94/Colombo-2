@@ -1,6 +1,4 @@
-<script>
-    buildMain = "<b>A45.9</b>";
-</script>
+<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50</b></span>";</script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
@@ -82,7 +80,7 @@
         <div id="cover"></div>
     </div>
 
-    <div id="param-container">
+    <div id="param-container ajs-dimmer">
 
         <div id="param" class="animate__animated animate__zoomIn">
 
@@ -129,8 +127,8 @@
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
                     <div id="credits-section" class="param-section">Crédits</div>
                     <div id="build-section" class="param-build">Build
-                        <script>let buildVer = buildMain;
-                            document.write(buildVer);
+                        <script>
+                            document.write(buildMain);
                         </script>
                     </div>
 
@@ -187,10 +185,10 @@
                         </div>
                     </div>
 
-                    <div onclick="testing()" id="testing">Laissez-nous vos commentaires</div>
+                    <div class="comments" onclick="callComments()" id="testing">Laissez-nous vos commentaires</div>
 
                     <script>
-                        function testing() {
+                        function callComments() {
                             alertify.prompt("Veuillez nous soumettre vos commentaires", "Vos commentaires ici", function (evt, value) {
                                 alertify.message("Vous avez bien soumis votre commentaire: " + value);
                             })
@@ -387,7 +385,7 @@
                 <div class="line2">
                     <div class="state p-success"><u>Votre version</u> :
                         <script>
-                            document.write(buildVer);
+                            document.write(buildMain);
                         </script>
                     </div>
                 </div>

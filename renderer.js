@@ -6,11 +6,13 @@ let content_id = 0;
 
 // Binds the buttons to the context bridge API.
 document.getElementById("minimize").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
 
 document.getElementById("maximize").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxMaximize.wav");
   windowControls.maximize();
 });
@@ -25,6 +27,7 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 document.getElementById("minimize2").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
@@ -35,6 +38,7 @@ document.getElementById("maximize2").addEventListener("click", () => {
 });
 
 document.getElementById("close2").addEventListener("click", () => {
+  soundPlay("sfxBtn2.wav");
   soundPlay("sfxExit.wav");
   const exit = document.getElementById("exit");
   exit.style.display = "block";
@@ -44,16 +48,19 @@ document.getElementById("close2").addEventListener("click", () => {
 });
 
 document.getElementById("minimize3").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
 
 document.getElementById("maximize3").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxMaximize.wav");
   windowControls.maximize();
 });
 
 document.getElementById("close3").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
   soundPlay("sfxExit.wav");
   const exit = document.getElementById("exit");
   exit.style.display = "block";

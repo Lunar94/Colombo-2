@@ -120,6 +120,11 @@ main {
     height: 100%;
 }
 
+.fa-1x {
+    --fa-primary-color: var(--theme-primary);
+    --fa-secondary-color: #8A8791;
+}
+
 .fa-2x {
     --fa-primary-color: #8A8791;
     --fa-secondary-color: #8A8791;
@@ -256,13 +261,20 @@ main {
     outline: 0;
     border: none;
     font-family: poppins;
-    color: red;
+    color: var(--theme-icons);
 }
+
+.alertify .ajs-dialog {
+    top: 25%;
+    margin: auto;
+}
+
 
 .btn-smodal:hover {
     color: white;
     background-color: var(--theme-secondary);
     cursor: var(--current-cursor);
+
 }
 
 .btn:hover {
@@ -1016,6 +1028,21 @@ main {
 .movie {
     margin-bottom: 50px;
     font-size: 1rem;
+}
+
+.comments {
+    position: absolute;
+    left: 45%;
+    bottom: 0;
+    background: var(--theme-primary);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.comments:hover {
+    color: white;
+    background-color: var(--theme-secondary);
+    cursor: var(--current-cursor);
 }
 
 

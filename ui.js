@@ -1,4 +1,58 @@
 ("use strict");
+
+function soundPlay(sound) {
+  if (muted) return;
+  const audio = new Audio();
+  const source = document.createElement("source");
+  source.src = `./assets/sounds/${sound}`;
+  audio.appendChild(source);
+
+  audio.play();
+  audio.addEventListener("ended", () => {
+    audio.remove();
+  });
+}
+
+let muted = false;
+document.getElementById("toggleSounds").addEventListener("click", () => {
+  if (muted) {
+    muted = false;
+    soundPlay("sfxClick.wav");
+  } else {
+    soundPlay("sfxClick.wav");
+    soundPlay("sfxShhh.wav");
+    muted = true;
+  }
+});
+
+// setTimeout(function () {
+window.showAlert = function () {
+  alertify
+    .alert(
+      " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
+        " " +
+        '<a href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
+        "<br/><br/>" +
+        "<i class='fa-brands fa-github fa-1'></i>" +
+        " " +
+        '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
+        "<br/><br/>" +
+        "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
+        " " +
+        '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
+        "<br/>"
+    )
+    .set({ transition: "pulse" })
+    .show()
+    .set({ title: "Bienvenue sur COLOMBO" + " " + buildMain })
+    .set({ label: "Démarrer" })
+    .set("movable", false)
+    .set({ onshow: soundPlay("sfxNews.wav") });
+};
+window.showNews = function () {};
+window.showAlert();
+// }, 5200);
+
 /************
  *
  *  CONSOLE CAA
@@ -8,21 +62,6 @@ const btnMore = document.getElementById("btn-more");
 const btnClear = document.getElementById("btn-clear");
 const consoleCAA = document.getElementById("console");
 const moreButtonIcon = document.getElementById("btn-more-icon");
-
-window.showAlert = function () {
-  alertify
-    .alert(
-      '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>'
-    )
-    .set({ title: "Bienvenue sur Colombo 2.0!" })
-    .set({ label: "Démarrer" });
-};
-
-window.showNews = function () {};
-
-
-window.showAlert();
-
 // Effet de suppression console
 btnClear.addEventListener("click", () => {
   if (document.querySelector(".response").textContent != ``) {
@@ -407,31 +446,6 @@ function sfxDeleteConsole() {
   soundPlay("sfxBtn.wav");
 }
 
-function soundPlay(sound) {
-  if (muted) return;
-  const audio = new Audio();
-  const source = document.createElement("source");
-  source.src = `./assets/sounds/${sound}`;
-  audio.appendChild(source);
-
-  audio.play();
-  audio.addEventListener("ended", () => {
-    audio.remove();
-  });
-}
-
-let muted = false;
-document.getElementById("toggleSounds").addEventListener("click", () => {
-  if (muted) {
-    muted = false;
-    soundPlay("sfxClick.wav");
-  } else {
-    soundPlay("sfxClick.wav");
-    soundPlay("sfxShhh.wav");
-    muted = true;
-  }
-});
-
 let snd18 = new Audio();
 let src18 = document.createElement("source");
 src18.type = "audio/mpeg";
@@ -503,7 +517,7 @@ btnParamClose1.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-  soundPlay("sfxBtn.wav");
+  soundPlay("sfxBtn2.wav");
 });
 
 btnParamClose2.addEventListener("click", () => {
@@ -514,7 +528,7 @@ btnParamClose2.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-  soundPlay("sfxBtn.wav");
+  soundPlay("sfxBtn2.wav");
 });
 
 btnParamClose3.addEventListener("click", () => {
@@ -525,7 +539,7 @@ btnParamClose3.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-  soundPlay("sfxBtn.wav");
+  soundPlay("sfxBtn2.wav");
 });
 
 btnConsole.classList.add("param-section-activated");
