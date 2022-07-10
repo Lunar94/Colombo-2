@@ -13,6 +13,7 @@
         "electron": "^19.0.7"
     },
     "dependencies": {
+        "@mturco/context-menu": "^2.0.0",
         "alertifyjs": "^1.13.1",
         "animate.css": "^4.1.1",
         "electron-store": "^8.0.2",

@@ -1,4 +1,4 @@
-<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50.1</b></span>";</script>
+<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50.2</b></span>";</script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
@@ -29,6 +29,10 @@
 </head>
 
 <body>
+
+
+
+
     <img src="./assets/images/exit.gif" id="exit" alt="">
 
     <div id="topbar">
@@ -63,15 +67,10 @@
 
         <div id="windowsBtnStyle3">
 
-            <div id="minimize3" class="ui-button">
-                <i class="buttons-style-3">&#xE734</i>
+            <div id="minimize3" class="ui-button"><span class="dot yellow3"></span></span>
             </div>
-            <div id="maximize3" class="ui-button">
-                <i class="buttons-style-3">&#xE7C6</i>
-            </div>
-            <div id="close3" class="ui-button">
-                <i class="buttons-style-3">&#xE735</i>
-            </div>
+            <div id="maximize3" class="ui-button"><span class="dot green3"></span></div>
+            <div id="close3" class="ui-button"><span class="dot red3"></span></div>
         </div>
 
     </div>
@@ -82,7 +81,7 @@
 
     <div id="param-container">
 
-        <div id="param" class="animate__animated animate__zoomIn">
+        <div id="param" class="animate__animated animate__zoomIn ">
 
             <div id="param-topbar">
                 <div id="param-dragbar">
@@ -97,7 +96,9 @@
                 </div>
 
                 <div id="param-close3" class="ui-button">
-                    <i class="buttons-style-3">&#xE735</i>
+                    <i class="buttons-style-3">
+                        <div id="close3" class="ui-button"><span class="dot red3"></span></div>
+                    </i>
                 </div>
             </div>
 
@@ -110,11 +111,11 @@
                             <input id="toggleSounds" title="toggleSounds" type="checkbox" />
                             <div class="state p-success-o p-off">
                                 <i class="fa-duotone fa-music-note soundActivated"></i>
-                                <label class="soundActivated" style="margin-left:-10px;">Sons activés</label>
+                                <label class="soundActivated" style="margin-left:-16px;">Sons activés</label>
                             </div>
                             <div class="state p-on soundActivated">
                                 <i class="fa-duotone fa-music-note-slash soundActivated"></i>
-                                <label class="soundActivated" style="margin-left:-10px;">Sons désactivés</label>
+                                <label class="soundActivated" style="margin-left:-16px;">Sons désactivés</label>
                             </div>
                         </div>
                     </div>
@@ -185,14 +186,26 @@
                         </div>
                     </div>
 
-                    <div class="comments" onclick="callComments()" id="testing">Laissez-nous vos commentaires</div>
+                    <div class="comments fa-switcher"
+                        onclick="callComments(); soundPlay('sfxWrite.wav'); soundPlay('sfxClick.wav')"><i
+                            class="fa-duotone fa-comment-captions"></i> <span>Laissez-nous vos
+                            commentaires</span></div>
 
                     <script>
                         function callComments() {
-                            alertify.prompt("Veuillez nous soumettre vos commentaires", "Vos commentaires ici", function (evt, value) {
-                                alertify.message("Vous avez bien soumis votre commentaire: " + value);
+                            paramPanel.classList.add("animate__zoomOut");
+                            paramContainer.classList.remove("param-dimmer");
+                            setTimeout(function () {
+                                paramPanel.style.display = "none";
+                                paramPanel.classList.remove("animate__zoomOut");
+                            }, 800);
+                            alertify.prompt("Veuillez nous soumettre vos commentaires.", "Entrez votre commentaire ici.", function (evt, value) {
+                                alertify.message("Votre commentaire a bien été soumis.");
                             })
-                                .set("labels", { ok: "Submit", cancel: "Cancel" });
+                                .set("labels", { ok: "<i style='margin-right:6px' class='fa-duotone fa-paper-plane-top'></i>" + " Envoyer", cancel: "<i style='margin-right:6px;' class='fa-duotone fa-ban'></i>" + " " + " Annuler" })
+                                .set({ title: "Votre opinion est importante." })
+                                .set({ transition: 'flipx' })
+                                .set('movable', false);
                         }
                     </script>
 
@@ -341,16 +354,12 @@
 
                 <div id="topbar-3-demo" style="animation:none;">
                     <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
-                        <span id="windowsBtnStyle-title"><i>Zen étoilé</i></span>
+                        <span id="windowsBtnStyle-title"><i>Minimaliste</i></span>
                     </div>
-                    <div id="minimize" class="ui-button">
-                        <i class="buttons-style-3">&#xE734</i>
+                    <div id="minimize" class="ui-button"><span class="dot yellow3"></span></span>
                     </div>
-                    <div id="maximize" class="ui-button">
-                        <i class="buttons-style-3">&#xE7C6</i>
-                    </div>
-                    <div id="close" class="ui-button">
-                        <i class="buttons-style-3">&#xE735</i>
+                    <div id="maximize" class="ui-button"><span class="dot green3"></span></div>
+                    <div id="close" class="ui-button"><span class="dot red3"></span>
                     </div>
                 </div><br><br>
 
@@ -838,10 +847,12 @@
 
 
     </main>
+    <script src="https://unpkg.com/vanilla-context-menu@1.1.0/dist/vanilla-context-menu.js"></script>
+    <script>import VanillaContextMenu from 'vanilla-context-menu';</script>
     <script src="./renderer.js" type="text/javascript" charset="UTF-8"></script>
-    <script src="./node_modules/alertifyjs/build/alertify.js">></script>
+    <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script>
-            alertify.defaults.transition = "slide";
+        alertify.defaults.transition = "slide";
         alertify.defaults.theme.ok = "btn-smodal btn-primary";
         alertify.defaults.theme.cancel = "btn-smodal btn-danger";
         alertify.defaults.theme.input = "form-control";</script>
@@ -849,29 +860,7 @@
     <script src="./assistant.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
-    <script>
-        hotkeys("f5", function (event, handler) {
-            // Prevent the default refresh event under WINDOWS system
-            event.preventDefault();
-            console.log("you pressed F5!")
-            // alert("you pressed F5!");
-        });
 
-        // Single key
-        hotkeys("escape", function (event, handler) {
-            //event.srcElement: input
-            //event.target: input
-            if (event.target === "input") {
-                console.log("you pressed a INPUT!")
-                // alert("you pressed a!");
-            }
-            console.log("you pressed a!")
-            // alert("you pressed a!");
-        });
-
-
-
-    </script>
 
 
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
@@ -934,6 +923,32 @@
         flatpickr("input[type=datetime-local]", config);
     </script>
 
+
+    <script type="text/javascript">
+        hotkeys(
+            "right,left,up,down,space,enter,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,num_0,num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_multiply,num_add,num_enter,num_subtract,num_decimal,num_divide,shift+a,shift+b,shift+c,shift+d,shift+e,shift+f,shift+g,shift+h,shift+i,shift+j,shift+k,shift+l,shift+m,shift+n,shift+o,shift+p,shift+q,shift+r,shift+s,shift+t,shift+u,shift+v,shift+w,shift+x,shift+y,shift+z,",
+            function (event, handler) {
+                soundPlay("sfxKeyboard.wav");
+            }
+        );
+        hotkeys.filter = function (event) {
+            return true;
+        }
+        //How to add the filter to edit labels. <div contentEditable="true"></div>
+        //"contentEditable" Older browsers that do not support drops
+        hotkeys.filter = function (event) {
+
+            var tagName = (event.target || event.srcElement).tagName;
+            return !(tagName.isContentEditable || tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA');
+        }
+
+        hotkeys.filter = function (event) {
+            var tagName = (event.target || event.srcElement).tagName;
+            hotkeys.setScope(/^(INPUT|TEXTAREA|SELECT)$/.test(tagName) ? 'input' : 'other');
+            return true;
+
+        }
+    </script>
 </body>
 
 </html>

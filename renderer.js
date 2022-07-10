@@ -18,12 +18,34 @@ document.getElementById("maximize").addEventListener("click", () => {
 });
 
 document.getElementById("close").addEventListener("click", () => {
-  soundPlay("sfxExit.wav");
-  const exit = document.getElementById("exit");
-  exit.style.display = "block";
-  setTimeout(function () {
-    windowControls.close();
-  }, 3500);
+  soundPlay("sfxBtn.wav");
+  alertify
+    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
+    .set("movable", false)
+    .set({ title: "Vous êtes sûr ?" })
+    .set("labels", {
+      ok:
+        "<i style='margin-right:6px'class='fa-duotone fa-arrow-right-from-arc'></i>" +
+        "Quitter",
+
+      cancel:
+        "<i style='margin-right:6px' class='fa-duotone fa-teddy-bear'></i>" +
+        "Rester",
+    })
+    .set("closable", false)
+    .set("onok", function (closeEvent) {
+      soundPlay("sfxBtn.wav");
+      soundPlay("sfxExit.wav");
+      const exit = document.getElementById("exit");
+      exit.style.display = "block";
+      setTimeout(function () {
+        windowControls.close();
+      }, 3500);
+    })
+
+    .set("oncancel", function (closeEvent) {
+      soundPlay("sfxStay.wav");
+    });
 });
 
 document.getElementById("minimize2").addEventListener("click", () => {
@@ -38,13 +60,34 @@ document.getElementById("maximize2").addEventListener("click", () => {
 });
 
 document.getElementById("close2").addEventListener("click", () => {
-  soundPlay("sfxBtn2.wav");
-  soundPlay("sfxExit.wav");
-  const exit = document.getElementById("exit");
-  exit.style.display = "block";
-  setTimeout(function () {
-    windowControls.close();
-  }, 3500);
+  soundPlay("sfxBtn.wav");
+  alertify
+    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
+    .set("movable", false)
+    .set({ title: "Vous êtes sûr ?" })
+    .set("labels", {
+      ok:
+        "<i style='margin-right:6px'class='fa-duotone fa-arrow-right-from-arc'></i>" +
+        "Quitter",
+
+      cancel:
+        "<i style='margin-right:6px' class='fa-duotone fa-teddy-bear'></i>" +
+        "Rester",
+    })
+    .set("closable", false)
+    .set("onok", function (closeEvent) {
+      soundPlay("sfxBtn.wav");
+      soundPlay("sfxExit.wav");
+      const exit = document.getElementById("exit");
+      exit.style.display = "block";
+      setTimeout(function () {
+        windowControls.close();
+      }, 3500);
+    })
+
+    .set("oncancel", function (closeEvent) {
+      soundPlay("sfxStay.wav");
+    });
 });
 
 document.getElementById("minimize3").addEventListener("click", () => {
@@ -61,12 +104,33 @@ document.getElementById("maximize3").addEventListener("click", () => {
 
 document.getElementById("close3").addEventListener("click", () => {
   soundPlay("sfxBtn.wav");
-  soundPlay("sfxExit.wav");
-  const exit = document.getElementById("exit");
-  exit.style.display = "block";
-  setTimeout(function () {
-    windowControls.close();
-  }, 3500);
+  alertify
+    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
+    .set("movable", false)
+    .set({ title: "Vous êtes sûr ?" })
+    .set("labels", {
+      ok:
+        "<i style='margin-right:6px'class='fa-duotone fa-arrow-right-from-arc'></i>" +
+        "Quitter",
+
+      cancel:
+        "<i style='margin-right:6px' class='fa-duotone fa-teddy-bear'></i>" +
+        "Rester",
+    })
+    .set("closable", false)
+    .set("onok", function (closeEvent) {
+      soundPlay("sfxBtn.wav");
+      soundPlay("sfxExit.wav");
+      const exit = document.getElementById("exit");
+      exit.style.display = "block";
+      setTimeout(function () {
+        windowControls.close();
+      }, 3500);
+    })
+
+    .set("oncancel", function (closeEvent) {
+      soundPlay("sfxStay.wav");
+    });
 });
 
 // PS PART

@@ -25,33 +25,37 @@ document.getElementById("toggleSounds").addEventListener("click", () => {
   }
 });
 
-// setTimeout(function () {
+//  setTimeout(function () {
 window.showAlert = function () {
   alertify
     .alert(
       " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
         " " +
-        '<a href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
+        '<a class="startLink" href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
         "<br/><br/>" +
         "<i class='fa-brands fa-github fa-1'></i>" +
         " " +
-        '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
+        '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
         "<br/><br/>" +
         "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
         " " +
-        '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
+        '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
         "<br/>"
     )
     .set({ transition: "pulse" })
     .show()
-    .set({ title: "Bienvenue sur COLOMBO" + " " + buildMain })
-    .set({ label: "Démarrer" })
+    .set({ title: `Bienvenue sur COLOMBO ${buildMain}.` })
+    .set({
+      label:
+        "<i class='fa-duotone fa-door-open' style='margin-right:5px;'></i>" +
+        "Démarrer",
+    })
     .set("movable", false)
     .set({ onshow: soundPlay("sfxNews.wav") });
 };
 window.showNews = function () {};
 window.showAlert();
-// }, 5200);
+//  }, 5200);
 
 /************
  *
@@ -112,10 +116,12 @@ btnMore.addEventListener("click", () => {
   }, 800);
 });
 
+const consoleContainer = document.getElementById("console-wrapper");
 function consoleEnlarge() {
-  if (consoleCAA.style.height === "100%") {
+  if (consoleCAA.style.height === "90%") {
     soundPlay("sfxBtn.wav");
     soundPlay("sfxConsoleMinimize.wav");
+    consoleContainer.classList.remove("param-dimmer");
     consoleCAA.classList.add("animate__shakeY");
     consoleCAA.classList.remove("console-overflow");
     setTimeout(() => {
@@ -129,7 +135,8 @@ function consoleEnlarge() {
   } else {
     soundPlay("sfxBtn.wav");
     soundPlay("sfxGong.wav");
-    consoleCAA.style.height = "100%";
+    consoleContainer.classList.add("param-dimmer");
+    consoleCAA.style.height = "90%";
     consoleCAA.classList.add("animate__slideInUp");
     consoleCAA.classList.remove("console-overflow");
     setTimeout(() => {
@@ -149,6 +156,7 @@ function consoleEnlarge() {
 const btnParam = document.getElementById("btn-param");
 const paramPanel = document.getElementById("param");
 const paramButtonIcon = document.getElementById("btn-param-icon");
+const paramContainer = document.getElementById("param-container");
 
 const root = document.querySelector(":root");
 const nuanceDefault = document.getElementById("nuanceDefault");
@@ -156,6 +164,7 @@ const nuanceDefault = document.getElementById("nuanceDefault");
 const icons = document.querySelectorAll(".fa-4x");
 
 btnParam.addEventListener("click", () => {
+  paramContainer.classList.add("param-dimmer");
   soundPlay("sfxBtn.wav");
   soundPlay("sfxDrill.wav");
   paramButtonIcon.classList.add("animate__rotateIn");
@@ -505,18 +514,14 @@ const btnParamClose2 = document.getElementById("param-close2");
 const btnParamClose3 = document.getElementById("param-close3");
 
 btnParamClose1.addEventListener("click", () => {
-  alertify
-    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
-    .set({ title: "Vous êtes sûr ?" })
-    .set("labels", { ok: "Rester", cancel: "Quitter" });
-
   snd18.pause();
   snd18.currentTime = 0;
   paramPanel.classList.add("animate__zoomOut");
+  paramContainer.classList.remove("param-dimmer");
   setTimeout(function () {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
-  }, 800);
+  }, 400);
   soundPlay("sfxBtn2.wav");
 });
 
@@ -524,10 +529,11 @@ btnParamClose2.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
   paramPanel.classList.add("animate__zoomOut");
+  paramContainer.classList.remove("param-dimmer");
   setTimeout(function () {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
-  }, 800);
+  }, 400);
   soundPlay("sfxBtn2.wav");
 });
 
@@ -535,10 +541,11 @@ btnParamClose3.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
   paramPanel.classList.add("animate__zoomOut");
+  paramContainer.classList.remove("param-dimmer");
   setTimeout(function () {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
-  }, 800);
+  }, 400);
   soundPlay("sfxBtn2.wav");
 });
 
@@ -739,3 +746,43 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+document.querySelectorAll(".btn").forEach((element) => {
+  const myContextMenu = new window.VanillaContextMenu({
+    scope: element,
+    menuItems: [
+      {
+        label: "Assigner un raccourcis",
+        callback: (event) => {
+          console.log(event);
+        },
+      },
+      {
+        label: "Déplacer",
+        callback: (event) => {
+          console.log(event);
+        },
+      },
+    ],
+    customThemeClass: "custom-context",
+  });
+});
+
+const myContextMenu = new window.VanillaContextMenu({
+  scope: document.getElementById("console"),
+  menuItems: [
+    {
+      label: "Assigner un raccourcis",
+      callback: (event) => {
+        console.log(event);
+      },
+    },
+    {
+      label: "Déplacer",
+      callback: (event) => {
+        console.log(event);
+      },
+    },
+  ],
+  customThemeClass: "custom-context",
+});
