@@ -6,17 +6,17 @@ let content_id = 0;
 
 // Binds the buttons to the context bridge API.
 document.getElementById("minimize").addEventListener("click", () => {
-  snd15.play();
+  soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
 
 document.getElementById("maximize").addEventListener("click", () => {
-  snd16.play();
+  soundPlay("sfxMaximize.wav");
   windowControls.maximize();
 });
 
 document.getElementById("close").addEventListener("click", () => {
-  snd17.play();
+  soundPlay("sfxExit.wav");
   const exit = document.getElementById("exit");
   exit.style.display = "block";
   setTimeout(function () {
@@ -25,17 +25,17 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 document.getElementById("minimize2").addEventListener("click", () => {
-  snd15.play();
+  soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
 
 document.getElementById("maximize2").addEventListener("click", () => {
-  snd16.play();
+  soundPlay("sfxMaximize.wav");
   windowControls.maximize();
 });
 
 document.getElementById("close2").addEventListener("click", () => {
-  snd17.play();
+  soundPlay("sfxExit.wav");
   const exit = document.getElementById("exit");
   exit.style.display = "block";
   setTimeout(function () {
@@ -44,17 +44,17 @@ document.getElementById("close2").addEventListener("click", () => {
 });
 
 document.getElementById("minimize3").addEventListener("click", () => {
-  snd15.play();
+  soundPlay("sfxMinimize.wav");
   windowControls.minimize();
 });
 
 document.getElementById("maximize3").addEventListener("click", () => {
-  snd16.play();
+  soundPlay("sfxMaximize.wav");
   windowControls.maximize();
 });
 
 document.getElementById("close3").addEventListener("click", () => {
-  snd17.play();
+  soundPlay("sfxExit.wav");
   const exit = document.getElementById("exit");
   exit.style.display = "block";
   setTimeout(function () {

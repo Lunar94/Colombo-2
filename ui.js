@@ -9,10 +9,24 @@ const btnClear = document.getElementById("btn-clear");
 const consoleCAA = document.getElementById("console");
 const moreButtonIcon = document.getElementById("btn-more-icon");
 
+window.showAlert = function () {
+  alertify
+    .alert(
+      '<a href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>'
+    )
+    .set({ title: "Bienvenue sur Colombo 2.0!" })
+    .set({ label: "Démarrer" });
+};
+
+window.showNews = function () {};
+
+
+window.showAlert();
+
 // Effet de suppression console
 btnClear.addEventListener("click", () => {
   if (document.querySelector(".response").textContent != ``) {
-    sfxDeleteConsole();
+    soundPlay("sfxDeleteConsole.wav");
   }
 
   document.querySelector(".response").classList.add("animate__flash");
@@ -28,8 +42,8 @@ const theRoot = document.querySelector(":root");
 
 function toggleClass() {
   if (btnAstuces.classList.contains("astucesActivated")) {
-    snd2.play();
-    snd3.play();
+    soundPlay("sfxBtn.wav");
+    soundPlay("sfxAstuces2.ogg");
     btnAstuces.classList.remove("astucesActivated");
     btnAstuces.style.setProperty("margin-top", "-41px");
     theRoot.style.setProperty("--display-astuces", "none");
@@ -38,8 +52,8 @@ function toggleClass() {
       "url(../../assets/Images//cursors/Hand.cur), auto"
     );
   } else {
-    snd1.play();
-    snd2.play();
+    soundPlay("sfxAstuces.wav");
+    soundPlay("sfxBtn.wav");
     btnAstuces.classList.add("astucesActivated");
     btnAstuces.style.setProperty("margin-top", "-64px");
     theRoot.style.setProperty("--display-astuces", "block");
@@ -61,8 +75,8 @@ btnMore.addEventListener("click", () => {
 
 function consoleEnlarge() {
   if (consoleCAA.style.height === "100%") {
-    snd2.play();
-    snd5.play();
+    soundPlay("sfxBtn.wav");
+    soundPlay("sfxConsoleMinimize.wav");
     consoleCAA.classList.add("animate__shakeY");
     consoleCAA.classList.remove("console-overflow");
     setTimeout(() => {
@@ -74,8 +88,8 @@ function consoleEnlarge() {
     moreButtonIcon.classList.add("fa-expand");
     moreButtonIcon.classList.add("fa-animate__shakeY");
   } else {
-    snd2.play();
-    snd6.play();
+    soundPlay("sfxBtn.wav");
+    soundPlay("sfxGong.wav");
     consoleCAA.style.height = "100%";
     consoleCAA.classList.add("animate__slideInUp");
     consoleCAA.classList.remove("console-overflow");
@@ -103,8 +117,8 @@ const nuanceDefault = document.getElementById("nuanceDefault");
 const icons = document.querySelectorAll(".fa-4x");
 
 btnParam.addEventListener("click", () => {
-  sfxBtn();
-  snd7.play();
+  soundPlay("sfxBtn.wav");
+  soundPlay("sfxDrill.wav");
   paramButtonIcon.classList.add("animate__rotateIn");
   setTimeout(function () {
     paramButtonIcon.classList.remove("animate__rotateIn");
@@ -268,7 +282,7 @@ let lastSelected = nuanceDefault;
 
 document.getElementById("colors-container").addEventListener("click", (ev) => {
   if (ev.target.id == "colors-container") return;
-  snd14.play();
+  soundPlay("sfxChirp.wav");
   lastSelected.classList.remove("colorJS");
   ev.target.classList.add("colorJS");
   lastSelected = ev.target;
@@ -294,7 +308,7 @@ let nuanceConsoleBlack = document.getElementById("black");
 nuanceConsoleDefault.classList.add("colorJS");
 
 nuanceConsoleDefault.addEventListener("click", () => {
-  snd14.play();
+  soundPlay("sfxChirp.wav");
   consoleColor = "cDefault";
   nuanceConsoleDefault.classList.add("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -306,7 +320,7 @@ nuanceConsoleDefault.addEventListener("click", () => {
 });
 
 nuanceConsoleGrey.addEventListener("click", () => {
-  snd14.play();
+  soundPlay("sfxChirp.wav");
   consoleColor = "cGrey";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.add("colorJS");
@@ -318,7 +332,7 @@ nuanceConsoleGrey.addEventListener("click", () => {
 });
 
 nuanceConsoleWhite.addEventListener("click", () => {
-  snd14.play();
+  soundPlay("sfxChirp.wav");
   consoleColor = "cWhite";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -329,7 +343,7 @@ nuanceConsoleWhite.addEventListener("click", () => {
 });
 
 nuanceConsoleBlack.addEventListener("click", () => {
-  snd14.play();
+  soundPlay("sfxChirp.wav");
   consoleColor = "cBlack";
   nuanceConsoleDefault.classList.remove("colorJS");
   nuanceConsoleGrey.classList.remove("colorJS");
@@ -390,92 +404,8 @@ next.addEventListener("click", () => {
 function sfxDeleteConsole() {
   const sfxDeleteConsole = document.getElementById("sfxDeleteConsole");
   sfxDeleteConsole.play();
-  snd2.play();
+  soundPlay("sfxBtn.wav");
 }
-
-function sfxBtn() {
-  const sfxBtn = document.getElementById("sfxBtn");
-  sfxBtn.play();
-}
-
-function sfxBtn2() {
-  const sfxBtn2 = document.getElementById("sfxBtn2");
-  sfxBtn2.play();
-}
-
-const snd1 = new Audio();
-const src1 = document.createElement("source");
-src1.type = "audio/mpeg";
-src1.src = "./assets/sounds/sfxAstuces.wav";
-snd1.appendChild(src1);
-
-const snd2 = new Audio();
-const src2 = document.createElement("source");
-src2.type = "audio/mpeg";
-src2.src = "./assets/sounds/sfxBtn.wav";
-snd2.appendChild(src2);
-
-const snd3 = new Audio();
-const src3 = document.createElement("source");
-src3.type = "audio/mpeg";
-src3.src = "./assets/sounds/sfxAstuces2.ogg";
-snd3.appendChild(src3);
-
-const snd5 = new Audio();
-const src5 = document.createElement("source");
-src5.type = "audio/mpeg";
-src5.src = "./assets/sounds/sfxConsoleMinimize.wav";
-snd5.appendChild(src5);
-
-const snd6 = new Audio();
-const src6 = document.createElement("source");
-src6.type = "audio/mpeg";
-src6.src = "./assets/sounds/sfxGong.wav";
-snd6.appendChild(src6);
-
-const snd7 = new Audio();
-const src7 = document.createElement("source");
-src7.type = "audio/mpeg";
-src7.src = "./assets/sounds/sfxDrill.wav";
-snd7.appendChild(src7);
-
-const snd8 = new Audio();
-const src8 = document.createElement("source");
-src8.type = "audio/mpeg";
-src8.src = "./assets/sounds/sfxCash.wav";
-snd8.appendChild(src8);
-
-const snd9 = new Audio();
-const src9 = document.createElement("source");
-src9.type = "audio/mpeg";
-src9.src = "./assets/sounds/sfxNewForm.wav";
-snd9.appendChild(src9);
-
-const snd10 = new Audio();
-const src10 = document.createElement("source");
-src10.type = "audio/mpeg";
-src10.src = "./assets/sounds/sfxCancel.wav";
-snd10.appendChild(src10);
-
-const snd11 = new Audio();
-const src11 = document.createElement("source");
-src11.type = "audio/mpeg";
-src11.src = "./assets/sounds/sfxSwitch.wav";
-snd11.appendChild(src11);
-
-const snd12 = new Audio();
-const src12 = document.createElement("source");
-src12.type = "audio/mpeg";
-src12.src = "./assets/sounds/sfxSwitch2.wav";
-snd12.appendChild(src12);
-
-const snd13 = new Audio();
-const src13 = document.createElement("source");
-src13.type = "audio/mpeg";
-src13.src = "./assets/sounds/sfxAnvil.wav";
-snd13.appendChild(src13);
-
-let muted = false;
 
 function soundPlay(sound) {
   if (muted) return;
@@ -490,39 +420,17 @@ function soundPlay(sound) {
   });
 }
 
+let muted = false;
 document.getElementById("toggleSounds").addEventListener("click", () => {
   if (muted) {
-    soundPlay("sfxClick.wav");
     muted = false;
-  } else {
-    muted = true;
     soundPlay("sfxClick.wav");
+  } else {
+    soundPlay("sfxClick.wav");
+    soundPlay("sfxShhh.wav");
+    muted = true;
   }
 });
-
-const snd14 = new Audio();
-const src14 = document.createElement("source");
-src14.type = "audio/mpeg";
-src14.src = "./assets/sounds/sfxChirp.wav";
-snd14.appendChild(src14);
-
-const snd15 = new Audio();
-const src15 = document.createElement("source");
-src15.type = "audio/mpeg";
-src15.src = "./assets/sounds/sfxMinimize.wav";
-snd15.appendChild(src15);
-
-let snd16 = new Audio();
-let src16 = document.createElement("source");
-src16.type = "audio/mpeg";
-src16.src = "./assets/sounds/sfxMaximize.wav";
-snd16.appendChild(src16);
-
-let snd17 = new Audio();
-let src17 = document.createElement("source");
-src17.type = "audio/mpeg";
-src17.src = "./assets/sounds/sfxExit.wav";
-snd17.appendChild(src17);
 
 let snd18 = new Audio();
 let src18 = document.createElement("source");
@@ -541,27 +449,26 @@ const switches = document.querySelectorAll(".cb");
 switches.forEach((xSwitch) => {
   xSwitch.addEventListener("click", () => {
     if (xSwitch.checked) {
-      snd11.play();
+      soundPlay("sfxSwitch.wav");
     } else {
-      snd12.play();
+      soundPlay("sfxSwitch2.wav");
     }
   });
 });
 
-// function myFunction(grandeur) {
-//   if (grandeur.matches) {
-//     // If media query matches
-//     document.body.style.backgroundColor = "yellow";
+function sizeDetector(grandeur) {
+  if (grandeur.matches) {
+    document.body.style.backgroundColor = "yellow";
+    console.log("YELLOW");
+  } else {
+    document.body.style.backgroundColor = "pink";
+    console.log("PINK");
+  }
+}
 
-//   } else {
-//     document.body.style.backgroundColor = "pink";
-//     console.log("PINK");
-//   }
-// }
-
-// let grandeur = window.matchMedia("(max-width: 600px)");
-// myFunction(grandeur); // Call listener function at run time
-// grandeur.addListener(myFunction); // Attach listener function on state changes
+let grandeur = window.matchMedia("(max-width: 600px)");
+sizeDetector(grandeur); // Call listener function at run time
+grandeur.addListener(sizeDetector); // Attach listener function on state changes
 
 /***************
  *
@@ -584,6 +491,11 @@ const btnParamClose2 = document.getElementById("param-close2");
 const btnParamClose3 = document.getElementById("param-close3");
 
 btnParamClose1.addEventListener("click", () => {
+  alertify
+    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
+    .set({ title: "Vous êtes sûr ?" })
+    .set("labels", { ok: "Rester", cancel: "Quitter" });
+
   snd18.pause();
   snd18.currentTime = 0;
   paramPanel.classList.add("animate__zoomOut");
@@ -591,8 +503,7 @@ btnParamClose1.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-
-  sfxBtn2();
+  soundPlay("sfxBtn.wav");
 });
 
 btnParamClose2.addEventListener("click", () => {
@@ -603,8 +514,7 @@ btnParamClose2.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-
-  sfxBtn2();
+  soundPlay("sfxBtn.wav");
 });
 
 btnParamClose3.addEventListener("click", () => {
@@ -615,8 +525,7 @@ btnParamClose3.addEventListener("click", () => {
     paramPanel.style.display = "none";
     paramPanel.classList.remove("animate__zoomOut");
   }, 800);
-
-  sfxBtn2();
+  soundPlay("sfxBtn.wav");
 });
 
 btnConsole.classList.add("param-section-activated");
@@ -624,7 +533,7 @@ btnConsole.classList.add("param-section-activated");
 btnConsole.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
-  snd2.play();
+  soundPlay("sfxBtn.wav");
   btnConsole.classList.add("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -645,7 +554,7 @@ btnConsole.addEventListener("click", () => {
 btnAssistant.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
-  snd2.play();
+  soundPlay("sfxBtn.wav");
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.add("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -666,7 +575,7 @@ btnAssistant.addEventListener("click", () => {
 btnTheme.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
-  snd2.play();
+  soundPlay("sfxBtn.wav");
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.add("param-section-activated");
@@ -687,7 +596,7 @@ btnTheme.addEventListener("click", () => {
 btnUpdate.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
-  snd2.play();
+  soundPlay("sfxBtn.wav");
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
@@ -706,7 +615,7 @@ btnUpdate.addEventListener("click", () => {
 });
 
 btnCredits.addEventListener("click", () => {
-  snd2.play();
+  soundPlay("sfxBtn.wav");
   snd18.play();
 
   btnConsole.classList.remove("param-section-activated");
