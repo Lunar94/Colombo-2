@@ -152,6 +152,7 @@ document
 
       let div = document.createElement("div");
       div.id = `${content_id}-content`;
+      div.classList.add("nombril");
       div.classList.add("animate__animated");
       div.classList.add("animate__bounceInLeft");
 
@@ -175,5 +176,77 @@ document
       div.innerText = res;
 
       response.appendChild(div);
+
+      div.addEventListener("click", () => {
+        div.classList.remove("animate__bounceInLeft");
+        div.classList.add("blink_me");
+
+        setTimeout(() => {
+          div.classList.remove("blink_me");
+        }, 500);
+
+        soundPlay("sfxNewForm.wav");
+
+        alertify.set("notifier", "position", "bottom-center");
+        const notification = alertify.notify(
+          '<i class="fa-duotone fa-copy"></i>' + " Copié dans le presse-papier",
+          "success",
+          2
+        );
+      });
+
+      const contextMenuResult = new window.VanillaContextMenu({
+        scope: div,
+        menuItems: [
+          {
+            label: "Copier le résultat",
+            callback: (event) => {
+              div.classList.remove("animate__bounceInLeft");
+              div.classList.add("blink_me");
+
+              setTimeout(() => {
+                div.classList.remove("blink_me");
+              }, 500);
+
+              soundPlay("sfxNewForm.wav");
+
+              alertify.set("notifier", "position", "bottom-center");
+              const notification = alertify.notify(
+                '<i class="fa-duotone fa-copy"></i>' +
+                  " Copié dans le presse-papier",
+                "success",
+                2
+              );
+            },
+          },
+          {
+            label: "Vider la console",
+            callback: (event) => {
+              if (document.querySelector(".response").textContent != ``) {
+                soundPlay("sfxDeleteConsole.wav");
+              }
+
+              document
+                .querySelector(".response")
+                .classList.add("animate__flash");
+
+              setTimeout(() => {
+                document
+                  .querySelector(".response")
+                  .classList.remove("animate__flash");
+                document.querySelector(".response").textContent = ``;
+              }, 1000);
+            },
+          },
+        ],
+        customThemeClass: "custom-context-btn",
+      });
+
+      // document.querySelectorAll(".nombril").forEach((nombril) => {
+      //   addEventListener("click", () => {
+      //     console.log("test");
+      //     soundPlay("sfxBtn2.wav");
+      //   });
+      // });
     }
   });

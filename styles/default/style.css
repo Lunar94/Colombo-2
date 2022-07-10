@@ -517,6 +517,16 @@ main {
     }
 }
 
+.blink_me {
+    animation: blinker 0.5s linear;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
 /* CA VA ÊTRE A SUPPRIMER C'EST SUR LA 2E et 3E PAGE MON TETON */
 .tocome {
     display: flex;
@@ -1104,8 +1114,24 @@ main {
     color: white !important;
 }
 
+.nombril {
+    user-select: none;
+}
 
-.custom-context {
+.nombril:hover {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
+    transition: 0.2s;
+}
+
+.nombril:active {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
+}
+
+.custom-context-btn {
     background: var(--Theme1-Color1);
     width: 150px;
     font-family: poppins;
@@ -1115,20 +1141,41 @@ main {
     border: 1px solid var(--theme-primary);
 }
 
-.custom-context>div:first-child {
+.custom-context-btn>div:first-child {
     border-radius: 20px 20px 0 0;
 }
 
-.custom-context>div:last-child {
+.custom-context-btn>div:last-child {
     border-radius: 0 0 20px 20px;
 }
 
-.custom-context>div {
+.custom-context-btn>div {
     padding: 1rem;
     font-size: 0.8rem;
 }
 
-.custom-context>div:hover {
+.custom-context-btn>div:hover {
+    background: var(--Theme1-Color2);
+}
+
+
+.custom-context-btn-alone {
+    background: var(--Theme1-Color1);
+    width: 150px;
+    font-family: poppins;
+    border-radius: 20px;
+    width: fit-content;
+    color: white;
+    border: 1px solid var(--theme-primary);
+}
+
+.custom-context-btn-alone>div {
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+.custom-context-btn-alone>div:hover {
     background: var(--Theme1-Color2);
 }
 

@@ -66,6 +66,7 @@ const btnMore = document.getElementById("btn-more");
 const btnClear = document.getElementById("btn-clear");
 const consoleCAA = document.getElementById("console");
 const moreButtonIcon = document.getElementById("btn-more-icon");
+
 // Effet de suppression console
 btnClear.addEventListener("click", () => {
   if (document.querySelector(".response").textContent != ``) {
@@ -748,7 +749,7 @@ then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
 
 document.querySelectorAll(".btn").forEach((element) => {
-  const myContextMenu = new window.VanillaContextMenu({
+  const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
     menuItems: [
       {
@@ -764,25 +765,30 @@ document.querySelectorAll(".btn").forEach((element) => {
         },
       },
     ],
-    customThemeClass: "custom-context",
+    customThemeClass: "custom-context-btn",
   });
 });
 
-const myContextMenu = new window.VanillaContextMenu({
-  scope: document.getElementById("console"),
+const contextMenuConsole = new window.VanillaContextMenu({
+  scope: document.getElementById("inner-console"),
   menuItems: [
     {
-      label: "Assigner un raccourcis",
+      label: "Vider la console",
       callback: (event) => {
-        console.log(event);
-      },
-    },
-    {
-      label: "Déplacer",
-      callback: (event) => {
-        console.log(event);
+        if (document.querySelector(".response").textContent != ``) {
+          soundPlay("sfxDeleteConsole.wav");
+        }
+
+        document.querySelector(".response").classList.add("animate__flash");
+
+        setTimeout(() => {
+          document
+            .querySelector(".response")
+            .classList.remove("animate__flash");
+          document.querySelector(".response").textContent = ``;
+        }, 1000);
       },
     },
   ],
-  customThemeClass: "custom-context",
+  customThemeClass: "custom-context-btn-alone",
 });
