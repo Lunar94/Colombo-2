@@ -1,4 +1,4 @@
-<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50.4</b></span>";</script>
+<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50.5</b></span>";</script>
 <!-- START OF SFX -->
 <audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
@@ -653,79 +653,119 @@
 
                                 <div id="ping-container"><span id="ping-text">En ligne</span></div>
 
-                                <div id="buttons">
 
-                                    <div onclick="cashOut()" data-hover="Informations sur le système d'exploitation"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+
+                                <div class="btn" id="positionValidate"
+                                    style="transition: 0.5s; opacity:0;  top:72%; left: 48.8%; width: 2rem; height: 2rem; position:absolute;    border: 2px solid var(--theme-secondary);">
+                                    <span class="btn-text">
+                                        <i class="fa-duotone fa-circle-check fa-4x" style="font-size:2rem"></i></span>
+
+                                </div>
+
+
+                                <div id="buttons" class="box">
+
+                                    <div onclick="cashOut()"
+                                        data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.75; animation-duration: .25s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
+                                        <span class="btnLabel">Windows</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Vérifier la taille du ou des disques durs local"
-                                        data-psfile="diskSpace" class="btn hovertext"><span data-psfile="diskSpace"
-                                            class="btn-text"><i data-psfile="diskSpace"
+                                        data-psfile="diskSpace" class="btn hovertext draggable"
+                                        style="animation-delay: -0.5; animation-duration: .3s">
+                                        <span data-psfile="diskSpace" class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
+                                        <span class="btnLabel">Stockage</span>
                                     </div>
 
 
                                     <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
-                                        data-psfile="biosInfo" class="btn hovertext"><span data-psfile="biosInfo"
-                                            class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
-                                                fa-monitor-waveform fa-4x"></i></span></div>
+                                        data-psfile="biosInfo" class="btn hovertext draggable"
+                                        style="animation-delay: -0.05; animation-duration: .27s">
+                                        <span data-psfile="biosInfo" class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
+                                                fa-monitor-waveform fa-4x"></i></span>
+                                        <span class="btnLabel">Bios</span>
+                                    </div>
 
                                     <div onclick="cashOut()" data-hover="Est-ce que le poste répond bien aux paquets ?"
-                                        data-psfile="ping" class="btn hovertext"><span data-psfile="ping"
+                                        data-psfile="ping" class="btn hovertext draggable"
+                                        style="animation-delay: -0.2; animation-duration: .33s"><span data-psfile="ping"
                                             class="btn-text"><i data-psfile="ping"
                                                 class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span>
+                                        <span class="btnLabel">Ping</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Sortir la liste complète des logiciels installés"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.31; animation-duration: .24s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-uncharted fa-4x"></i></span>
+                                        <span class="btnLabel">Logiciels</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Installer un ou plusieurs logiciels sur le poste"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
-                                                class="fa-duotone fa-display-arrow-down fa-4x"></i></span></div>
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.5; animation-duration: .3s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-display-arrow-down fa-4x"></i></span>
+                                        <span class="btnLabel">Installer</span>
+                                    </div>
 
                                     <div onclick="cashOut()" data-hover="Redémarrer le poste à distance [maintenir]"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.15; animation-duration: .25s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-power-off fa-4x"></i></span>
+                                        <span class="btnLabel">Alimentation</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Transfert de fichiers d'un poste à l'autre"
-                                        data-psfile="doThis" class="btn hovertext">
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.2; animation-duration: .22s">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span>
+                                        <span class="btnLabel">P2P</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Libérer de l'espace sur le disque local C:\"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.3; animation-duration: .28s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-broom fa-4x"></i></span>
+                                        <span class="btnLabel">Nettoyer</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Ouvrir le répertoire Outlook contenant le fichier .ost"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
-                                                class="fa-duotone fa-envelopes-bulk fa-4x"></i></span></div>
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.22; animation-duration: .3s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-envelopes-bulk fa-4x"></i></span>
+                                        <span class="btnLabel">Dossier Outlook</span>
+                                    </div>
 
                                     <div onclick="cashOut()" data-hover="Contrôle à distance - ShadowRDP"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
-                                                class="fa-duotone fa-signal-stream fa-4x"></i></span></div>
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.75; animation-duration: .25s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-signal-stream fa-4x"></i></span>
+                                        <span class="btnLabel">Contrôle</span>
+                                    </div>
 
                                     <div onclick="cashOut()" data-hover="Rechercher ce poste dans l'Active Directory"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
-                                                class="fa-duotone fa-rectangle-ad fa-4x"></i></span></div>
+                                        data-psfile="doThis" class="btn hovertext draggable"
+                                        style="animation-delay: -0.5; animation-duration: .3s"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-rectangle-ad fa-4x"></i></span>
+                                        <span class="btnLabel">AD</span>
+                                    </div>
 
                                 </div>
 
@@ -882,16 +922,6 @@
     <script src="./assistant.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.13/lib/draggable.bundle.js"></script>
-    <script>
-        const swappable = new Draggable.Swappable(document.querySelectorAll('btn'), {
-            draggable: 'li'
-        });
-
-        swappable.on('swappable:start', () => console.log('swappable:start'));
-        swappable.on('swappable:swapped', () => console.log('swappable:swapped'));
-        swappable.on('swappable:stop', () => console.log('swappable:stop'));
-    </script>
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
@@ -979,6 +1009,214 @@
 
         }
     </script>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+
+
+    <script>
+        var dragDestIndex;
+        var draggedEl;
+        var draggedElIndex;
+        var rearranging = false;
+        var rearrangingDuration = 350;
+        var draggableElArr = $('.draggable');
+
+        // Update the CSS for each item to be in its correct location based on the order in the array passed
+        // @param itemEls: the DOM elements, in order, from top left, row by row
+        // @param columnsCount: the number of columns
+        // @containerEl: the DOM element of the container for the arranged elements.
+        function arrangeItems(itemEls, columnsCount, containerEl, elHeight) {
+            var $containerEl = $(containerEl);
+
+            // Set height of elements
+            var elWidth = $containerEl.width() / columnsCount;
+            elHeight = elHeight || elWidth;
+
+            for (var i = 0; i < itemEls.length; i++) {
+                var $item = $(itemEls[i]);
+                $item.data('index', i);
+                var pos = {
+                    x: (i % columnsCount),
+                    y: Math.floor(i / columnsCount)
+                };
+
+                $item.css({
+                    top: pos.y * elHeight + 'px',
+                    left: pos.x * elWidth + 'px',
+                    width: 'calc(' + (100 / columnsCount) + '% - 10px)',
+                    height: 'calc(' + elHeight + 'px - 10px)',
+                    boxSizing: 'border-box'
+                });
+            }
+        }
+
+        // Rearrange the items in an array, returning a the modified array.
+        // @param movedItemIndex: the index of the element being moved to a
+        //   new position in the array
+        // @param destinationIndex: the new index being given to the moved element
+        function rearrangeItems(arr, movedItemIndex, destinationIndex) {
+            var movedEl = arr.splice(movedItemIndex, 1)[0];
+            arr.splice(destinationIndex, 0, movedEl);
+            return arr;
+        };
+        content
+        arrangeItems(draggableElArr, 12, $('.box'));
+
+        $('.draggable').on('dragstart', function (e) {
+            draggedEl = $(this);
+            var sortedArr = [];
+            for (var i = 0; i < draggableElArr.length; i++) {
+                var elIndex = $(draggableElArr[i]).data('index');
+                sortedArr[elIndex] = draggableElArr[i];
+            }
+            draggableElArr = sortedArr;
+            draggedElIndex = $(this).data('index');
+            console.log('dragging element at position ', draggedElIndex);
+            $(this).css({ opacity: 0, transition: 'all 100ms ease' });
+        });
+
+        $('.draggable').on('dragend', function (e) {
+            e.preventDefault();
+            $(this).css({ opacity: 1, transition: 'all 700ms ease' });
+        });
+
+        $('.draggable').on('dragover', function (e) {
+            e.preventDefault();
+            if (rearranging) {
+                return;
+            }
+            var dragDestIndex = $(this).data('index');
+            console.log('dragging over position ', dragDestIndex);
+            draggedElIndex = draggedEl.data('index');
+            if (draggedElIndex !== dragDestIndex) {
+                rearranging = true;
+                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ', dragDestIndex);
+                var rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
+                arrangeItems(rearrangedEls, 12, $('.box'));
+                setTimeout(function () { rearranging = false }, rearrangingDuration);
+            }
+        });
+
+        $('.draggable').on('drop', function (e) {
+            e.preventDefault();
+            rearranging = false;
+        });</script>
+
+
+
+
+
+
+
+
+
+
+
+    <script>var dragDestIndex;
+        var draggedEl;
+        var draggedElIndex;
+        var rearranging = false;
+        var rearrangingDuration = 350;
+        var draggableElArr = $('.draggable');
+
+        // Update the CSS for each item to be in its correct location based on the order in the array passed
+        // @param itemEls: the DOM elements, in order, from top left, row by row
+        // @param columnsCount: the number of columns
+        // @containerEl: the DOM element of the container for the arranged elements.
+        function arrangeItems(itemEls, columnsCount, containerEl, elHeight) {
+            var $containerEl = $(containerEl);
+
+            // Set height of elements
+            var elWidth = $containerEl.width() / columnsCount;
+            elHeight = elHeight || elWidth;
+
+            for (var i = 0; i < itemEls.length; i++) {
+                var $item = $(itemEls[i]);
+                $item.data('index', i);
+                var pos = {
+                    x: (i % columnsCount),
+                    y: Math.floor(i / columnsCount)
+                };
+
+                $item.css({
+                    top: pos.y * elHeight + 'px',
+                    left: pos.x * elWidth + 'px',
+                    width: 'calc(' + (100 / columnsCount) + '% - 10px)',
+                    height: 'calc(' + elHeight + 'px - 10px)',
+                    boxSizing: 'border-box'
+                });
+            }
+        }
+
+        // Rearrange the items in an array, returning a the modified array.
+        // @param movedItemIndex: the index of the element being moved to a
+        //   new position in the array
+        // @param destinationIndex: the new index being given to the moved element
+        function rearrangeItems(arr, movedItemIndex, destinationIndex) {
+            var movedEl = arr.splice(movedItemIndex, 1)[0];
+            arr.splice(destinationIndex, 0, movedEl);
+            return arr;
+        };
+
+        arrangeItems(draggableElArr, 12, $('.box'));
+
+        $('.draggable').on('dragstart', function (e) {
+            draggedEl = $(this);
+            var sortedArr = [];
+            for (var i = 0; i < draggableElArr.length; i++) {
+                var elIndex = $(draggableElArr[i]).data('index');
+                sortedArr[elIndex] = draggableElArr[i];
+            }
+            draggableElArr = sortedArr;
+            draggedElIndex = $(this).data('index');
+            console.log('dragging element at position ', draggedElIndex);
+            $(this).css({ opacity: 0, transition: 'all 100ms ease' });
+        });
+
+        $('.draggable').on('dragend', function (e) {
+            e.preventDefault();
+            $(this).css({ opacity: 1, transition: 'all 700ms ease' });
+        });
+
+        $('.draggable').on('dragover', function (e) {
+            e.preventDefault();
+            if (rearranging) {
+                return;
+            }
+            var dragDestIndex = $(this).data('index');
+            console.log('dragging over position ', dragDestIndex);
+            draggedElIndex = draggedEl.data('index');
+            if (draggedElIndex !== dragDestIndex) {
+                rearranging = true;
+                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ', dragDestIndex);
+                var rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
+                arrangeItems(rearrangedEls, 12, $('.box'));
+                setTimeout(function () { rearranging = false }, rearrangingDuration);
+            }
+        });
+
+        $('.draggable').on('drop', function (e) {
+            e.preventDefault();
+            rearranging = false;
+        });</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

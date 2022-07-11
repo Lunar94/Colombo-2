@@ -762,6 +762,10 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+const positionValidate = document.getElementById("positionValidate");
+document.querySelectorAll(".btn").forEach((element) => {
+  element.setAttribute("draggable", false);
+});
 
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
@@ -776,6 +780,19 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Déplacer",
         callback: (event) => {
+          document.querySelectorAll(".btn").forEach((element) => {
+            element.setAttribute("draggable", true);
+            element.classList.add("icon");
+            positionValidate.style.display = "block";
+            positionValidate.style.opacity = "1";
+            positionValidate.addEventListener("click", () => {
+              element.classList.remove("icon");
+              positionValidate.style.display = "none";
+              positionValidate.style.opacity = "0";
+              element.setAttribute("draggable", false);
+            });
+          });
+
           console.log(event);
         },
       },

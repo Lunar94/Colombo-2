@@ -79,8 +79,8 @@ document.getElementById("close2").addEventListener("click", () => {
       soundPlay("sfxExit.wav");
       soundPlay("sfxBtn.wav");
       const exit = document.getElementById("exit");
-      exit.classList.add("param-dimmer");
       exit.style.display = "block";
+      exit.classList.add("param-dimmer");
       setTimeout(function () {
         exit.classList.remove("param-dimmer");
         windowControls.close();

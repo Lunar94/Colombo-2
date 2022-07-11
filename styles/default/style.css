@@ -68,11 +68,11 @@ h1 {
 }
 
 main {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%; */
 }
 
 .inputComments {
@@ -124,8 +124,8 @@ main {
 
 #upper-part {
     height: 50%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .swiper {
@@ -163,6 +163,7 @@ main {
 
 
 #console {
+    overflow-x: hidden !important;
     display: flex;
     position: absolute;
     height: 50%;
@@ -235,19 +236,7 @@ main {
     transform: scale(1.2);
 }
 
-#buttons {
-    font-family: Poppins;
-    font-size: 0.8rem;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
+#buttons {}
 
 #buttons div>span * {
     color: var(--theme-icons);
@@ -258,10 +247,12 @@ main {
     align-items: center;
     justify-content: center;
     background: var(--theme-primary);
-    border-radius: 20px;
+    border-radius: 50%;
     width: 120px;
     height: 120px;
     padding: 5px;
+    font-size: 0.8rem;
+    border: 5px solid var(--theme-secondary);
 }
 
 .btn-smodal {
@@ -677,12 +668,6 @@ main {
     border-radius: 10px;
 }
 
-.content-inner {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 #param-update-content {
     display: none;
     padding: 1.30rem;
@@ -760,11 +745,7 @@ main {
 }
 
 #slide-1 {
-    position: relative;
-    display: grid;
-    height: 100%;
-    width: 100%;
-    grid-template-columns: 1fr 90fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         "left center right"
@@ -1057,6 +1038,7 @@ main {
     position: absolute;
     top: 100%;
     font-size: 0.8rem;
+    width: 380px;
 
     display: var(--display-astuces);
 }
@@ -1181,6 +1163,77 @@ main {
     background: var(--Theme1-Color2);
 }
 
+.box {
+    width: 85%;
+    position: absolute;
+    left: 50%;
+    top: 37%;
+    transform: translateX(-50%);
+    background: blue;
+    display: inline-block
+}
+
+.draggable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    padding: 20px 0;
+    margin: 5px;
+    text-align: center;
+    position: absolute;
+    transition: all 700ms ease;
+    width: 120px !important;
+    height: 120px !important;
+}
+
+.btnLabel {
+    position: absolute;
+    color: grey;
+    top: 108%;
+}
+
+
+
+
+.icon {}
+
+.icon:nth-child(2n) {
+    animation-name: keyframes1;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 10%;
+}
+
+.icon:nth-child(2n-1) {
+    animation-name: keyframes2;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 30% 5%;
+}
+
+@keyframes keyframes1 {
+    0% {
+        transform: rotate(-1deg);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: rotate(1.5deg);
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes keyframes2 {
+    0% {
+        transform: rotate(1deg);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: rotate(-1.5deg);
+        animation-timing-function: ease-out;
+    }
+}
 
 
 @media only screen and (max-width:600px) {
