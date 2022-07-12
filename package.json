@@ -2,10 +2,9 @@
     "name": "colombo-2",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "main.js",
     "scripts": {
-        "start": "electron .",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "electron ."
     },
     "author": "Yan Noël",
     "license": "ISC",
@@ -16,16 +15,11 @@
         "@mturco/context-menu": "^2.0.0",
         "@shopify/draggable": "^1.0.0-beta.8",
         "alertifyjs": "^1.13.1",
-        "ani-cursor": "^0.0.5",
         "animate.css": "^4.1.1",
-        "electron-drag": "^2.0.0",
-        "electron-store": "^8.0.2",
         "flatpickr": "^4.6.13",
         "hotkeys-js": "^3.9.4",
         "install": "^0.13.0",
         "pretty-checkbox": "^3.0.3",
-        "react-hook-form": "^7.33.1",
-        "sound-play": "^1.1.0",
         "swiper": "^8.2.4",
         "vanilla-context-menu": "^1.1.0"
     }

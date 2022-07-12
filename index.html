@@ -1,37 +1,33 @@
-<script>let buildMain = "<span style='color: var(--theme-primary)'><b>A50.5</b></span>";</script>
-<!-- START OF SFX -->
-<audio id="sfxClick" src="./assets/sounds/sfxClick.wav"></audio>
+<script>
+    let buildMain = "<span style='color: let(--theme-primary)'><b>A50.6</b></span>";
+</script>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
-<audio id="sfxChangePage" src="./assets/sounds/sfxChangePage.wav"></audio>
-<audio id="sfxBtn" src="./assets/sounds/sfxBtn.wav"></audio>
-<audio id="sfxBtn2" src="./assets/sounds/sfxBtn2.wav"></audio>
-<!-- END OF SFX -->
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colombo 2.0 | Home</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">
-    <link rel="stylesheet" href="./styles/default/style.css">
-    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="./styles/default/windows-buttons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Colombo 2.0</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="./styles/default/assistant.css">
-    <link rel="stylesheet" href="./node_modules/pretty-checkbox/dist/pretty-checkbox.css">
+    <link rel="stylesheet" href="./styles/default/fullscreen.css">
+    <link rel="stylesheet" href="./styles/default/compact.css">
+    <link rel="stylesheet" href="./styles/default/2160p.css">
+    <link rel="stylesheet" href="./assets/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./styles/default/windows-buttons.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.css">
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="./node_modules/flatpickr/dist/flatpickr.css">
     <link rel="stylesheet" href="./node_modules/alertifyjs/build/css/alertify.css">
-    <link rel="stylesheet" href="./node_modules/alertifyjs/build/css/themes/semantic.css" />
-
+    <link rel="stylesheet" href="./node_modules/pretty-checkbox/dist/pretty-checkbox.css">
+    <link rel="stylesheet" href="./node_modules/alertifyjs/build/css/themes/semantic.css">
 </head>
 
 <body>
-
-
-    <img src="./assets/images/exit.gif" id="exit" alt="">
+    <img src="./assets/images/exit.gif" id="exit">
 
     <div id="topbar">
 
@@ -40,17 +36,14 @@
         </div>
 
         <div id="windowsBtnStyle1">
-
             <div id="minimize" class="ui-button"><span class="dot yellow"><span class="small-dot-yellow"></span></span>
             </div>
             <div id="maximize" class="ui-button"><span class="dot green"><span class="small-dot-green"></span></span>
             </div>
             <div id="close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span></div>
-
         </div>
 
         <div id="windowsBtnStyle2">
-
             <div id="minimize2" class="ui-button">
                 <i class="buttons-style-2">&#xE949</i>
             </div>
@@ -60,13 +53,10 @@
             <div id="close2" class="ui-button">
                 <i class="buttons-style-2">&#xE106</i>
             </div>
-
         </div>
 
         <div id="windowsBtnStyle3">
-
-            <div id="minimize3" class="ui-button"><span class="dot yellow3"></span></span>
-            </div>
+            <div id="minimize3" class="ui-button"><span class="dot yellow3"></span></span></div>
             <div id="maximize3" class="ui-button"><span class="dot green3"></span></div>
             <div id="close3" class="ui-button"><span class="dot red3"></span></div>
         </div>
@@ -77,23 +67,17 @@
         <div id="cover"></div>
     </div>
 
-
-
     <div id="param-container">
 
         <div id="param" class="animate__animated animate__zoomIn ">
 
             <div id="param-topbar">
-                <div id="param-dragbar">
-                    <span id="app-title-param">Paramètres</span>
-                </div>
+                <div id="param-dragbar"><span id="app-title-param">Paramètres</span></div>
                 <div id="param-close1" class="ui-button"><span class="dot red"><span
                             class="small-dot-red"></span></span>
                 </div>
 
-                <div id="param-close2" class="ui-button">
-                    <i class="buttons-style-2">&#xE106</i>
-                </div>
+                <div id="param-close2" class="ui-button"><i class="buttons-style-2">&#xE106</i></div>
 
                 <div id="param-close3" class="ui-button">
                     <i class="buttons-style-3">
@@ -108,22 +92,25 @@
                 <div id="param-section-container">
 
                     <div id="sound-toggle">
+
                         <div class="pretty p-icon p-toggle p-plain soundActivated">
                             <input id="toggleSounds" title="toggleSounds" type="checkbox" />
                             <div class="state p-success-o p-off">
                                 <i class="fa-duotone fa-music-note soundActivated"></i>
                                 <label class="soundActivated" style="margin-left:-16px;">Sons activés</label>
                             </div>
+
                             <div class="state p-on soundActivated">
                                 <i class="fa-duotone fa-music-note-slash soundActivated"></i>
                                 <label class="soundActivated" style="margin-left:-16px;">Sons désactivés</label>
                             </div>
+
                         </div>
+
                     </div>
 
-
-
-                    <div id="console-section" class="param-section" style="margin-top:40px">Console</div>
+                    <div id="console-section" class="param-section param-section-activated" style="margin-top:40px">
+                        Console</div>
                     <div id="assistant-section" class="param-section">Assistant d'appels</div>
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
@@ -138,15 +125,13 @@
 
             </div>
 
-
             <div id="param-console-content" class="animate__animated">
 
                 <div class="line2">
                     <div class="pretty p-icon p-smooth">
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
-                        <div class="state p-success">
-                            <i class="icon fa fa-check"></i>
+                        <div class="state p-success"> <i class="icon fa fa-check"></i>
                             <label for="copyauto"
                                 style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Confirmer avant de
                                 quitter</label>
@@ -157,8 +142,7 @@
                     <div class="pretty p-icon p-smooth">
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
-                        <div class="state p-success">
-                            <i class="icon fa fa-check"></i>
+                        <div class="state p-success"><i class="icon fa fa-check"></i>
                             <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Fonction
                                 un clique copié</label>
                         </div>
@@ -167,12 +151,9 @@
                     <div class="pretty p-icon p-smooth">
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
-                        <div class="state p-success">
-                            <i class="icon fa fa-check"></i>
+                        <div class="state p-success"><i class="icon fa fa-check"></i>
                             <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Copie
-                                automatique
-                                des
-                                résultats</label>
+                                automatique des résultats</label>
                         </div>
                     </div>
 
@@ -180,8 +161,7 @@
                     <div class="pretty p-icon p-smooth">
                         <input type="checkbox" id="confirmdelete" name="confirmdelete" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
-                        <div class="state p-success">
-                            <i class="icon fa fa-check"></i>
+                        <div class="state p-success"><i class="icon fa fa-check"></i>
                             <label for="confirmdelete"
                                 style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Confirmer avant de
                                 supprimer les résultats</label>
@@ -190,9 +170,9 @@
 
                     <div class="comments fa-switcher"
                         onclick="callComments(); soundPlay('sfxWrite.wav'); soundPlay('sfxClick.wav')"><i
-                            class="fa-duotone fa-comment-captions"></i> <span>Laissez-nous vos
-                            commentaires</span></div>
+                            class="fa-duotone fa-comment-captions"></i> <span>Laissez-nous vos commentaires</span></div>
 
+                    <!-- Function callComments() that is called with the button above. -->
                     <script>
                         function callComments() {
                             paramPanel.classList.add("animate__zoomOut");
@@ -201,29 +181,37 @@
                                 paramPanel.style.display = "none";
                                 paramPanel.classList.remove("animate__zoomOut");
                             }, 800);
-                            alertify.prompt("Veuillez nous soumettre vos commentaires.", "Entrez votre commentaire ici.", function (evt, value) {
-                                alertify.message("Votre commentaire a bien été soumis.");
-                            })
-                                .set("labels", { ok: "<i style='margin-right:6px' class='fa-duotone fa-paper-plane-top'></i>" + " Envoyer", cancel: "<i style='margin-right:6px;' class='fa-duotone fa-ban'></i>" + " " + " Annuler" })
-                                .set({ title: "Votre opinion est importante." })
-                                .set({ transition: 'flipx' })
+                            alertify.prompt("Veuillez nous soumettre vos commentaires.",
+                                    "Entrez votre commentaire ici.",
+                                    function (evt, value) {
+                                        alertify.message("Votre commentaire a bien été soumis.");
+                                    })
+                                .set("labels", {
+                                    ok: "<i style='margin-right:6px' class='fa-duotone fa-paper-plane-top'></i>" +
+                                        " Envoyer",
+                                    cancel: "<i style='margin-right:6px;' class='fa-duotone fa-ban'></i>" + " " +
+                                        " Annuler"
+                                })
+                                .set({
+                                    title: "Votre opinion est importante."
+                                })
+                                .set({
+                                    transition: 'flipx'
+                                })
                                 .set('movable', false);
                         }
                     </script>
 
-
                 </div>
+
             </div>
 
             <div id="param-assistant-content" class="animate__animated">
-                <div class="line2">
 
-                    <div class="pretty p-icon p-smooth">
-                        <input type="checkbox" id="avenir" name="avenir" class="cb"
+                <div class="line2">
+                    <div class="pretty p-icon p-smooth"><input type="checkbox" id="avenir" name="avenir" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
-                        <div class="state p-success">
-                            <i class="icon fa fa-check"></i>
-                            <label for="avenir"
+                        <div class="state p-success"><i class="icon fa fa-check"></i><label for="avenir"
                                 style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Enregistrer les
                                 appels
                                 automatiquement</label>
@@ -328,8 +316,8 @@
 
                 <span><u>Style des boutons</u> :</span><br><br>
 
+                <div id="topbar-1-demo" class="topbar-1-demo-selected" style="animation:none;">
 
-                <div id="topbar-1-demo" style="animation:none;">
                     <div id="dragbar" style="animation:none; -webkit-app-region: none; margin-left:15px;">
                         <span id="windowsBtnStyle-title"><i>Pomme arrondie</i></span>
                     </div>
@@ -340,6 +328,7 @@
                                 class="small-dot-green"></span></span></div>
                     <div id="close" class="ui-button"><span class="dot red"><span class="small-dot-red"></span></span>
                     </div>
+
                 </div><br>
 
                 <div id="topbar-2-demo" style="animation:none;">
@@ -369,8 +358,9 @@
                 </div><br><br>
 
                 <span><u>Nuance du thème</u> :</span>
+
                 <div id="colors-container">
-                    <div id="nuanceDefault" class="color"></div>
+                    <div id="nuanceDefault" class="color colorJS"></div>
                     <div id="nuance1" class="color"></div>
                     <div id="nuance2" class="color"></div>
                     <div id="nuance3" class="color"></div>
@@ -384,13 +374,13 @@
                 </div><br>
 
                 <span><u>Texte de la console</u> :</span>
+
                 <div id="console-colors-container">
-                    <div id="def" class="console-color"></div>
+                    <div id="def" class="console-color colorJS"></div>
                     <div id="grey" class="console-color"></div>
                     <div id="white" class="console-color"></div>
                     <div id="black" class="console-color"></div>
                 </div><br>
-
 
             </div>
 
@@ -402,6 +392,7 @@
                             document.write(buildMain);
                         </script>
                     </div>
+
                 </div>
 
                 <div class="line2">
@@ -424,9 +415,8 @@
 
             <div id="param-credits-content" class="animate__animated">
 
-
-
                 <div class='wrapper'>
+
                     <div class='movie'>
 
                         <div class="line2-credits">
@@ -523,13 +513,9 @@
                                 fonctionnalités du contenu numérique
                                 Le logiciel XXX [description du logiciel, de ses fonctionnalités].
                                 <br><br>
-                                Le logiciel est destiné à être utilisé par XXX [catégories de personnes,
-                                capacité
-                                des
-                                personnes],
-                                dans le cadre d’un usage XXX [préciser, par exemple : non professionnel //
-                                professionnel], pour
-                                XXX
+                                Le logiciel est destiné à être utilisé par des employés, dans le cadre d’un usage
+                                professionnel, pour CAA-QUÉBEC.
+
                                 [finalité].
                                 <br><br>
                                 Les fonctionnalités du contenu numérique sont les suivantes : XXX [compléter].
@@ -620,20 +606,24 @@
                                 <br><br>
                                 Tu as vraiment tout lu ça jusqu'en bas ? ;)
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
 
         </div>
 
     </div>
 
-
     <main>
-        <div id="content">
-            <div id="upper-part">
 
+        <div id="content">
+
+            <div id="upper-part">
 
                 <!-- Slider main container -->
                 <div class="swiper">
@@ -641,7 +631,6 @@
                     <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide swiper-no-swiping">
-
 
                             <div id="slide-1">
 
@@ -653,15 +642,11 @@
 
                                 <div id="ping-container"><span id="ping-text">En ligne</span></div>
 
-
-
                                 <div class="btn" id="positionValidate"
-                                    style="transition: 0.5s; opacity:0;  top:72%; left: 48.8%; width: 2rem; height: 2rem; position:absolute;    border: 2px solid var(--theme-secondary);">
+                                    style="transition: 0.5s; opacity:0;  top:72%; left: 48.8%; width: 2rem; height: 2rem; position:absolute;    border: 2px solid let(--theme-secondary);">
                                     <span class="btn-text">
                                         <i class="fa-duotone fa-circle-check fa-4x" style="font-size:2rem"></i></span>
-
                                 </div>
-
 
                                 <div id="buttons" class="box">
 
@@ -682,7 +667,6 @@
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                         <span class="btnLabel">Stockage</span>
                                     </div>
-
 
                                     <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
                                         data-psfile="biosInfo" class="btn hovertext draggable"
@@ -772,7 +756,9 @@
                             </div>
 
                         </div>
+
                         <div class="swiper-slide swiper-no-swiping tocome">
+
                             <div id="slide-2">
                                 <div id="bgs2" class="animate__animated"><i class="fa-duotone fa-phone fa-8x"></i>
                                 </div>
@@ -781,7 +767,6 @@
                                     <i class="fa-duotone fa-circle-plus fa-4x"></i>
                                     <span class="btn-form-validate">Nouvel Incident</span>
                                 </div>
-
 
                                 <div id="new-demande" class="btn-assistant btn animate__animated"
                                     style="margin-top: 5rem;">
@@ -793,7 +778,6 @@
 
                                     <input id="nom-prenom" class="field" title="nom-prenom" name="nom-prenom"
                                         style="margin-bottom:-8px;" type="text" placeholder="Nom complet du client">
-
 
                                     <br>
 
@@ -817,11 +801,7 @@
                                             </div>
                                         </div>
 
-
-
-
                                     </div>
-
 
                                     <input class="form-control field" type="datetime-local"
                                         placeholder="Date des premiers symptômes">
@@ -830,14 +810,12 @@
                                     <textarea id="enjeu" name="enjeu" rows="20" cols="50"
                                         placeholder="Description de l'enjeu"></textarea>
 
-
                                     <div class="line4">
 
                                         <div class="btn-assistant btn">
                                             <i class="fa-duotone fa-magnifying-glass-plus fa-4x"></i>
                                             <span class="btn-form-validate">Débuter une nouvelle enquête</span>
                                         </div>
-
 
                                         <div id="cancelIncident" class="btn-assistant btn">
                                             <i class="fa-duotone fa-rectangle-xmark fa-4x"></i>
@@ -846,22 +824,10 @@
 
                                     </div>
 
-
                                 </form>
-
-
-
-
-
-
 
                             </div>
                         </div>
-
-
-
-
-
 
                         <div class="swiper-slide  swiper-no-swiping tocome">Page #3 à venir !</div>
 
@@ -880,8 +846,8 @@
             </div>
 
             <div id="console-wrapper">
-                <div id="console" class="animate__animated console-overflow">
 
+                <div id="console" class="animate__animated console-overflow">
 
                     <div data-hover="Supprimer" id="btn-clear" class="hovertext animate__animated animate__fadeIn">
                         <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
@@ -899,31 +865,33 @@
                         <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
                     </div>
 
-
                     <div id="inner-console">
                         <div id="output" class="response animate__animated"></div>
                     </div>
 
-
                 </div>
+
             </div>
 
-
     </main>
-    <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
-    <script src="./renderer.js" type="text/javascript" charset="UTF-8"></script>
+    <!-- JS SCRIPTS SOURCES -->
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
-    <script>
-        alertify.defaults.transition = "slide";
-        alertify.defaults.theme.ok = "btn-smodal btn-primary";
-        alertify.defaults.theme.cancel = "btn-smodal btn-danger";
-        alertify.defaults.theme.input = "form-control";</script>
-    <script src="./ui.js"></script>
-    <script src="./assistant.js"></script>
+    <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
-    <script>
+
+    <!-- CDNS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- HOME MADE JS SCRIPTS -->
+    <script src="./js/renderer.js"></script>
+    <script src="./js/sounds.js"></script>
+    <script src="./js/assistant.js"></script>
+    <script src="./js/ui.js"></script>
+
+    <!-- SWIPER (Swiper.js library) -->
+    <script tag="SWIPER">
         const swiper = new Swiper('.swiper', {
             // Optional parameters
             direction: 'horizontal',
@@ -971,20 +939,19 @@
         });
     </script>
 
-
-    <script>
+    <!-- CUSTOM DATE SELECTOR IN ASSISTANT (Flatpickr.js library) -->
+    <script tag="CUSTOM DATE SELECTOR IN ASSISTANT">
         config = {
             enableTime: true,
             dateFormat: "d-m-Y",
             altFormat: "j F, Y",
             altInput: true,
         }
-
         flatpickr("input[type=datetime-local]", config);
     </script>
 
-
-    <script type="text/javascript">
+    <!-- KEYBOARD INPUT DETECTOR (Hotkeys.js library) -->
+    <script tag="KEYBOARD INPUT DETECTOR">
         hotkeys(
             "right,left,up,down,space,enter,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,num_0,num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_multiply,num_add,num_enter,num_subtract,num_decimal,num_divide,shift+a,shift+b,shift+c,shift+d,shift+e,shift+f,shift+g,shift+h,shift+i,shift+j,shift+k,shift+l,shift+m,shift+n,shift+o,shift+p,shift+q,shift+r,shift+s,shift+t,shift+u,shift+v,shift+w,shift+x,shift+y,shift+z,",
             function (event, handler) {
@@ -998,50 +965,42 @@
         //"contentEditable" Older browsers that do not support drops
         hotkeys.filter = function (event) {
 
-            var tagName = (event.target || event.srcElement).tagName;
-            return !(tagName.isContentEditable || tagName == 'INPUT' || tagName == 'SELECT' || tagName == 'TEXTAREA');
+            const tagName = (event.target || event.srcElement).tagName;
+            return !(tagName.isContentEditable || tagName == 'INPUT' || tagName == 'SELECT' || tagName ==
+                'TEXTAREA');
         }
 
         hotkeys.filter = function (event) {
-            var tagName = (event.target || event.srcElement).tagName;
+            const tagName = (event.target || event.srcElement).tagName;
             hotkeys.setScope(/^(INPUT|TEXTAREA|SELECT)$/.test(tagName) ? 'input' : 'other');
             return true;
-
         }
     </script>
 
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-
-
-
-    <script>
-        var dragDestIndex;
-        var draggedEl;
-        var draggedElIndex;
-        var rearranging = false;
-        var rearrangingDuration = 350;
-        var draggableElArr = $('.draggable');
+    <!-- DRAGGABLE SORTABLE SNAPPING LIST (https://codepen.io/brianknapp/pen/QgGxLm)-->
+    <script tag="DRAGGABLE SORTABLE SNAPPING LIST">
+        let dragDestIndex;
+        let draggedEl;
+        let draggedElIndex;
+        let rearranging = false;
+        let rearrangingDuration = 350;
+        let draggableElArr = $('.draggable');
 
         // Update the CSS for each item to be in its correct location based on the order in the array passed
         // @param itemEls: the DOM elements, in order, from top left, row by row
         // @param columnsCount: the number of columns
         // @containerEl: the DOM element of the container for the arranged elements.
         function arrangeItems(itemEls, columnsCount, containerEl, elHeight) {
-            var $containerEl = $(containerEl);
+            let $containerEl = $(containerEl);
 
             // Set height of elements
-            var elWidth = $containerEl.width() / columnsCount;
+            let elWidth = $containerEl.width() / columnsCount;
             elHeight = elHeight || elWidth;
 
-            for (var i = 0; i < itemEls.length; i++) {
-                var $item = $(itemEls[i]);
+            for (let i = 0; i < itemEls.length; i++) {
+                let $item = $(itemEls[i]);
                 $item.data('index', i);
-                var pos = {
+                let pos = {
                     x: (i % columnsCount),
                     y: Math.floor(i / columnsCount)
                 };
@@ -1061,7 +1020,7 @@
         //   new position in the array
         // @param destinationIndex: the new index being given to the moved element
         function rearrangeItems(arr, movedItemIndex, destinationIndex) {
-            var movedEl = arr.splice(movedItemIndex, 1)[0];
+            let movedEl = arr.splice(movedItemIndex, 1)[0];
             arr.splice(destinationIndex, 0, movedEl);
             return arr;
         };
@@ -1070,20 +1029,26 @@
 
         $('.draggable').on('dragstart', function (e) {
             draggedEl = $(this);
-            var sortedArr = [];
-            for (var i = 0; i < draggableElArr.length; i++) {
-                var elIndex = $(draggableElArr[i]).data('index');
+            let sortedArr = [];
+            for (let i = 0; i < draggableElArr.length; i++) {
+                let elIndex = $(draggableElArr[i]).data('index');
                 sortedArr[elIndex] = draggableElArr[i];
             }
             draggableElArr = sortedArr;
             draggedElIndex = $(this).data('index');
             console.log('dragging element at position ', draggedElIndex);
-            $(this).css({ opacity: 0, transition: 'all 100ms ease' });
+            $(this).css({
+                opacity: 0,
+                transition: 'all 100ms ease'
+            });
         });
 
         $('.draggable').on('dragend', function (e) {
             e.preventDefault();
-            $(this).css({ opacity: 1, transition: 'all 700ms ease' });
+            $(this).css({
+                opacity: 1,
+                transition: 'all 700ms ease'
+            });
         });
 
         $('.draggable').on('dragover', function (e) {
@@ -1091,135 +1056,26 @@
             if (rearranging) {
                 return;
             }
-            var dragDestIndex = $(this).data('index');
+            let dragDestIndex = $(this).data('index');
             console.log('dragging over position ', dragDestIndex);
             draggedElIndex = draggedEl.data('index');
             if (draggedElIndex !== dragDestIndex) {
                 rearranging = true;
-                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ', dragDestIndex);
-                var rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
+                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ',
+                    dragDestIndex);
+                let rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
                 arrangeItems(rearrangedEls, 12, $('.box'));
-                setTimeout(function () { rearranging = false }, rearrangingDuration);
+                setTimeout(function () {
+                    rearranging = false
+                }, rearrangingDuration);
             }
         });
 
         $('.draggable').on('drop', function (e) {
             e.preventDefault();
             rearranging = false;
-        });</script>
-
-
-
-
-
-
-
-
-
-
-
-    <script>var dragDestIndex;
-        var draggedEl;
-        var draggedElIndex;
-        var rearranging = false;
-        var rearrangingDuration = 350;
-        var draggableElArr = $('.draggable');
-
-        // Update the CSS for each item to be in its correct location based on the order in the array passed
-        // @param itemEls: the DOM elements, in order, from top left, row by row
-        // @param columnsCount: the number of columns
-        // @containerEl: the DOM element of the container for the arranged elements.
-        function arrangeItems(itemEls, columnsCount, containerEl, elHeight) {
-            var $containerEl = $(containerEl);
-
-            // Set height of elements
-            var elWidth = $containerEl.width() / columnsCount;
-            elHeight = elHeight || elWidth;
-
-            for (var i = 0; i < itemEls.length; i++) {
-                var $item = $(itemEls[i]);
-                $item.data('index', i);
-                var pos = {
-                    x: (i % columnsCount),
-                    y: Math.floor(i / columnsCount)
-                };
-
-                $item.css({
-                    top: pos.y * elHeight + 'px',
-                    left: pos.x * elWidth + 'px',
-                    width: 'calc(' + (100 / columnsCount) + '% - 10px)',
-                    height: 'calc(' + elHeight + 'px - 10px)',
-                    boxSizing: 'border-box'
-                });
-            }
-        }
-
-        // Rearrange the items in an array, returning a the modified array.
-        // @param movedItemIndex: the index of the element being moved to a
-        //   new position in the array
-        // @param destinationIndex: the new index being given to the moved element
-        function rearrangeItems(arr, movedItemIndex, destinationIndex) {
-            var movedEl = arr.splice(movedItemIndex, 1)[0];
-            arr.splice(destinationIndex, 0, movedEl);
-            return arr;
-        };
-
-        arrangeItems(draggableElArr, 12, $('.box'));
-
-        $('.draggable').on('dragstart', function (e) {
-            draggedEl = $(this);
-            var sortedArr = [];
-            for (var i = 0; i < draggableElArr.length; i++) {
-                var elIndex = $(draggableElArr[i]).data('index');
-                sortedArr[elIndex] = draggableElArr[i];
-            }
-            draggableElArr = sortedArr;
-            draggedElIndex = $(this).data('index');
-            console.log('dragging element at position ', draggedElIndex);
-            $(this).css({ opacity: 0, transition: 'all 100ms ease' });
         });
-
-        $('.draggable').on('dragend', function (e) {
-            e.preventDefault();
-            $(this).css({ opacity: 1, transition: 'all 700ms ease' });
-        });
-
-        $('.draggable').on('dragover', function (e) {
-            e.preventDefault();
-            if (rearranging) {
-                return;
-            }
-            var dragDestIndex = $(this).data('index');
-            console.log('dragging over position ', dragDestIndex);
-            draggedElIndex = draggedEl.data('index');
-            if (draggedElIndex !== dragDestIndex) {
-                rearranging = true;
-                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ', dragDestIndex);
-                var rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
-                arrangeItems(rearrangedEls, 12, $('.box'));
-                setTimeout(function () { rearranging = false }, rearrangingDuration);
-            }
-        });
-
-        $('.draggable').on('drop', function (e) {
-            e.preventDefault();
-            rearranging = false;
-        });</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </script>
 </body>
 
 </html>

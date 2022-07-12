@@ -1,90 +1,59 @@
 ("use strict");
-
-function soundPlay(sound) {
-  if (muted) return;
-  const audio = new Audio();
-  const source = document.createElement("source");
-  source.src = `./assets/sounds/${sound}`;
-  audio.appendChild(source);
-
-  audio.play();
-  audio.addEventListener("ended", () => {
-    audio.remove();
-  });
-}
-
-let muted = false;
-document.getElementById("toggleSounds").addEventListener("click", () => {
-  if (muted) {
-    muted = false;
-    soundPlay("sfxClick.wav");
-  } else {
-    soundPlay("sfxClick.wav");
-    soundPlay("sfxShhh.wav");
-    muted = true;
-  }
-});
-
-//  setTimeout(function () {
-window.showAlert = function () {
-  alertify
-    .alert(
-      " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
-        " " +
-        '<a class="startLink" href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
-        "<br/><br/>" +
-        "<i class='fa-brands fa-github fa-1'></i>" +
-        " " +
-        '<a class="startLink" href="https://github.com/Lunar94/Colombo-2" target="_blank" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
-        "<br/><br/>" +
-        "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
-        " " +
-        '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
-        "<br/>"
-    )
-    .set({ transition: "pulse" })
-    .show()
-    .set({ title: `Bienvenue sur COLOMBO ${buildMain}.` })
-    .set({
-      label:
-        "<i class='fa-duotone fa-door-open' style='margin-right:5px;'></i>" +
-        "Démarrer",
-    })
-    .set("movable", false)
-    .set({ onshow: soundPlay("sfxNews.wav") });
-};
-window.showNews = function () {};
-window.showAlert();
-//  }, 5200);
+/************
+ *
+ *  ✨ WELCOME MESSAGE
+ *
+ ************/
+//* FUNCTIONS
+// Message de bienvenue (avec délai de 5.2s pour fit avec le Splash)
+setTimeout(function welcomeMessage() {
+  window.showAlert = function welcomeMessage() {
+    alertify
+      .alert(
+        " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
+          " " +
+          '<a class="startLink" href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
+          "<br/><br/>" +
+          "<i class='fa-brands fa-github fa-1'></i>" +
+          " " +
+          '<a class="startLink" href="https://github.com/Lunar94/Colombo-2" target="_blank" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
+          "<br/><br/>" +
+          "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
+          " " +
+          '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
+          "<br/>"
+      )
+      .set({ transition: "pulse" })
+      .show()
+      .set({ title: `Bienvenue sur COLOMBO ${buildMain}.` })
+      .set({
+        label:
+          "<i class='fa-duotone fa-door-open' style='margin-right:5px;'></i>" +
+          "Démarrer",
+      })
+      .set("movable", false)
+      .set({ onshow: soundPlay("sfxNews.wav") });
+  };
+  window.showNews = function () {};
+  window.showAlert();
+}, 5200);
 
 /************
  *
- *  CONSOLE CAA
+ *  🖥️ CONSOLE CAA
  *
  ************/
-
-const btnMore = document.getElementById("btn-more");
-const btnClear = document.getElementById("btn-clear");
-const consoleCAA = document.getElementById("console");
+//* VARIABLES
+const consoleContainer = document.getElementById("console-wrapper");
 const moreButtonIcon = document.getElementById("btn-more-icon");
-
-// Effet de suppression console
-btnClear.addEventListener("click", () => {
-  if (document.querySelector(".response").textContent != ``) {
-    soundPlay("sfxDeleteConsole.wav");
-  }
-
-  document.querySelector(".response").classList.add("animate__flash");
-
-  setTimeout(() => {
-    document.querySelector(".response").classList.remove("animate__flash");
-    document.querySelector(".response").textContent = ``;
-  }, 1000);
-});
-
 const btnAstuces = document.getElementById("btn-astuces");
+const consoleCAA = document.getElementById("console");
+const btnClear = document.getElementById("btn-clear");
+const btnMore = document.getElementById("btn-more");
 const theRoot = document.querySelector(":root");
 
+//* FUNCTIONS
+// Activation | Désactivation des Astuces
 function toggleClass() {
   if (btnAstuces.classList.contains("astucesActivated")) {
     soundPlay("sfxBtn.wav");
@@ -110,15 +79,6 @@ function toggleClass() {
 }
 
 // Élargissement de la console
-btnMore.addEventListener("click", () => {
-  consoleEnlarge();
-  moreButtonIcon.classList.add("animate__rotateIn");
-  setTimeout(function () {
-    moreButtonIcon.classList.remove("animate__rotateIn");
-  }, 800);
-});
-
-const consoleContainer = document.getElementById("console-wrapper");
 function consoleEnlarge() {
   if (consoleCAA.style.height === "90%") {
     soundPlay("sfxConsoleMinimize.wav");
@@ -136,9 +96,7 @@ function consoleEnlarge() {
   } else {
     soundPlay("sfxBtn.wav");
     soundPlay("sfxBottle.wav");
-
     soundPlay("sfxGong.wav");
-
     consoleContainer.classList.add("param-dimmer");
     consoleCAA.style.height = "90%";
     consoleCAA.classList.add("animate__slideInUp");
@@ -152,127 +110,59 @@ function consoleEnlarge() {
   }
 }
 
+//* EVENTS LISTENERS
+// Effet de suppression console
+btnClear.addEventListener("click", () => {
+  if (document.querySelector(".response").textContent != ``) {
+    soundPlay("sfxDeleteConsole.wav");
+  }
+  document.querySelector(".response").classList.add("animate__flash");
+  setTimeout(() => {
+    document.querySelector(".response").classList.remove("animate__flash");
+    document.querySelector(".response").textContent = ``;
+  }, 1000);
+});
+
+// Élargissement de la console
+btnMore.addEventListener("click", () => {
+  consoleEnlarge();
+  moreButtonIcon.classList.add("animate__rotateIn");
+  setTimeout(function () {
+    moreButtonIcon.classList.remove("animate__rotateIn");
+  }, 800);
+});
+
 /***************
  *
- *  SETTINGS
+ *  ⚙️ SETTINGS
  *
  ***************/
+//* VARIABLES
 const btnParam = document.getElementById("btn-param");
 const paramPanel = document.getElementById("param");
 const paramButtonIcon = document.getElementById("btn-param-icon");
 const paramContainer = document.getElementById("param-container");
-
 const root = document.querySelector(":root");
 const nuanceDefault = document.getElementById("nuanceDefault");
-
 const icons = document.querySelectorAll(".fa-4x");
-
-btnParam.addEventListener("click", () => {
-  paramContainer.classList.add("param-dimmer");
-  soundPlay("sfxBtn.wav");
-  soundPlay("sfxDrill.wav");
-  paramButtonIcon.classList.add("animate__rotateIn");
-  setTimeout(function () {
-    paramButtonIcon.classList.remove("animate__rotateIn");
-  }, 800);
-  paramPanel.style.display = "block";
-});
-
-// checkbox glowing
 const topbar = document.getElementById("topbar");
 const tongue = document.getElementById("tongue");
 const checkGlow = document.getElementById("glowing");
 const checkConsMax = document.getElementById("consoleMax");
 const wrapCons = document.getElementById("console-wrapper");
-
-window.onload = function () {
-  checkGlow.onchange = function () {
-    if (checkGlow.checked == false) {
-      topbar.style.animation = "none";
-      tongue.style.animation = "none";
-      wrapCons.style.animation = "none";
-    } else {
-      topbar.style.animation = "glow 5s infinite alternate";
-      tongue.style.animation = "glow 5s infinite alternate";
-      wrapCons.style.animation = "glow 5s infinite alternate";
-    }
-  };
-};
-
-// checkbox confirmDeleteConsole
 const checkConfirmDelConsole = document.getElementById("confirmdelete");
-window.onload = function () {
-  checkConfirmDelConsole.onchange = function () {
-    if (checkConfirmDelConsole.checked == false) {
-      let confirmDeleteConsoleSwitch = 0;
-    } else {
-      let confirmDeleteConsoleSwitch = 1;
-    }
-  };
-};
-
-// Boutons de fenêtres
+// Contrôles boutons de fenêtres
 const fermer = document.getElementById("close");
 const agrandir = document.getElementById("maximize");
 const reduire = document.getElementById("minimize");
-
 const b1 = document.getElementById("topbar-1-demo");
 const b2 = document.getElementById("topbar-2-demo");
 const b3 = document.getElementById("topbar-3-demo");
-
 const bStyle1 = document.getElementById("windowsBtnStyle1");
 const bStyle2 = document.getElementById("windowsBtnStyle2");
 const bStyle3 = document.getElementById("windowsBtnStyle3");
-
-b1.classList.add("topbar-1-demo-selected");
-b1.addEventListener("click", () => {
-  soundPlay("sfxAnvil.wav");
-  b1.classList.add("topbar-1-demo-selected");
-  b2.classList.remove("topbar-1-demo-selected");
-  b3.classList.remove("topbar-1-demo-selected");
-
-  bStyle1.style.display = "flex";
-  bStyle2.style.display = "none";
-  bStyle3.style.display = "none";
-
-  btnParamClose1.style.display = "flex";
-  btnParamClose2.style.display = "none";
-  btnParamClose3.style.display = "none";
-});
-
-b2.addEventListener("click", () => {
-  soundPlay("sfxAnvil.wav");
-  b1.classList.remove("topbar-1-demo-selected");
-  b2.classList.add("topbar-1-demo-selected");
-  b3.classList.remove("topbar-1-demo-selected");
-
-  bStyle1.style.display = "none";
-  bStyle2.style.display = "flex";
-  bStyle3.style.display = "none";
-
-  btnParamClose1.style.display = "none";
-  btnParamClose2.style.display = "flex";
-  btnParamClose3.style.display = "none";
-});
-
-b3.addEventListener("click", () => {
-  soundPlay("sfxAnvil.wav");
-  b1.classList.remove("topbar-1-demo-selected");
-  b2.classList.remove("topbar-1-demo-selected");
-  b3.classList.add("topbar-1-demo-selected");
-
-  bStyle1.style.display = "none";
-  bStyle2.style.display = "none";
-  bStyle3.style.display = "flex";
-
-  btnParamClose1.style.display = "none";
-  btnParamClose2.style.display = "none";
-  btnParamClose3.style.display = "flex";
-});
-
 // Les nuances
-nuanceDefault.classList.add("colorJS");
-
+let lastSelected = nuanceDefault;
 const colors = {
   nuanceDefault: {
     primary: "#F78361",
@@ -341,35 +231,63 @@ const colors = {
     littleButton: "#bbba54",
   },
 };
+// Couleurs du texte de la console
+const nuanceConsoleDefault = document.getElementById("def");
+const nuanceConsoleGrey = document.getElementById("grey");
+const nuanceConsoleWhite = document.getElementById("white");
+const nuanceConsoleBlack = document.getElementById("black");
 
-let lastSelected = nuanceDefault;
-
-document.getElementById("colors-container").addEventListener("click", (ev) => {
-  if (ev.target.id == "colors-container") return;
-  soundPlay("sfxChirp.wav");
-  lastSelected.classList.remove("colorJS");
-  ev.target.classList.add("colorJS");
-  lastSelected = ev.target;
-  root.style.setProperty("--theme-primary", colors[ev.target.id].primary);
-  root.style.setProperty("--theme-secondary", colors[ev.target.id].secondary);
-  root.style.setProperty("--theme-icons", colors[ev.target.id].icons);
-  root.style.setProperty(
-    "--selection-color",
-    colors[ev.target.id].littleButton
-  );
-  root.style.setProperty(
-    "--theme-little-button",
-    colors[ev.target.id].littleButton
-  );
+//* EVENTS LISTENERS
+// Petit bouton paramètres
+btnParam.addEventListener("click", () => {
+  paramContainer.classList.add("param-dimmer");
+  soundPlay("sfxBtn.wav");
+  soundPlay("sfxDrill.wav");
+  paramButtonIcon.classList.add("animate__rotateIn");
+  setTimeout(function () {
+    paramButtonIcon.classList.remove("animate__rotateIn");
+  }, 800);
+  paramPanel.style.display = "block";
 });
 
-// Couleur du texte de la console
-let nuanceConsoleDefault = document.getElementById("def");
-let nuanceConsoleGrey = document.getElementById("grey");
-let nuanceConsoleWhite = document.getElementById("white");
-let nuanceConsoleBlack = document.getElementById("black");
+b1.addEventListener("click", () => {
+  soundPlay("sfxAnvil.wav");
+  b1.classList.add("topbar-1-demo-selected");
+  b2.classList.remove("topbar-1-demo-selected");
+  b3.classList.remove("topbar-1-demo-selected");
+  bStyle1.style.display = "flex";
+  bStyle2.style.display = "none";
+  bStyle3.style.display = "none";
+  btnParamClose1.style.display = "flex";
+  btnParamClose2.style.display = "none";
+  btnParamClose3.style.display = "none";
+});
 
-nuanceConsoleDefault.classList.add("colorJS");
+b2.addEventListener("click", () => {
+  soundPlay("sfxAnvil.wav");
+  b1.classList.remove("topbar-1-demo-selected");
+  b2.classList.add("topbar-1-demo-selected");
+  b3.classList.remove("topbar-1-demo-selected");
+  bStyle1.style.display = "none";
+  bStyle2.style.display = "flex";
+  bStyle3.style.display = "none";
+  btnParamClose1.style.display = "none";
+  btnParamClose2.style.display = "flex";
+  btnParamClose3.style.display = "none";
+});
+
+b3.addEventListener("click", () => {
+  soundPlay("sfxAnvil.wav");
+  b1.classList.remove("topbar-1-demo-selected");
+  b2.classList.remove("topbar-1-demo-selected");
+  b3.classList.add("topbar-1-demo-selected");
+  bStyle1.style.display = "none";
+  bStyle2.style.display = "none";
+  bStyle3.style.display = "flex";
+  btnParamClose1.style.display = "none";
+  btnParamClose2.style.display = "none";
+  btnParamClose3.style.display = "flex";
+});
 
 nuanceConsoleDefault.addEventListener("click", () => {
   soundPlay("sfxChirp.wav");
@@ -418,20 +336,68 @@ nuanceConsoleBlack.addEventListener("click", () => {
   consoleCAA.style.setProperty("color", "black");
 });
 
+//* FUNCTIONS
+// Checkbox pour le glowing
+window.onload = function checkGlow() {
+  checkGlow.onchange = function checkGlow() {
+    if (checkGlow.checked == false) {
+      topbar.style.animation = "none";
+      tongue.style.animation = "none";
+      wrapCons.style.animation = "none";
+    } else {
+      topbar.style.animation = "glow 5s infinite alternate";
+      tongue.style.animation = "glow 5s infinite alternate";
+      wrapCons.style.animation = "glow 5s infinite alternate";
+    }
+  };
+};
+
+// Checkbox pour la confirmation avant suppression de la console
+window.onload = function checkDelConsole() {
+  checkConfirmDelConsole.onchange = function checkDelConsole() {
+    if (checkConfirmDelConsole.checked == false) {
+      let confirmDeleteConsoleSwitch = 0;
+    } else {
+      let confirmDeleteConsoleSwitch = 1;
+    }
+  };
+};
+
+// Sélecteur de nuances
+document.getElementById("colors-container").addEventListener("click", (ev) => {
+  if (ev.target.id == "colors-container") return;
+  soundPlay("sfxChirp.wav");
+  lastSelected.classList.remove("colorJS");
+  ev.target.classList.add("colorJS");
+  lastSelected = ev.target;
+  root.style.setProperty("--theme-primary", colors[ev.target.id].primary);
+  root.style.setProperty("--theme-secondary", colors[ev.target.id].secondary);
+  root.style.setProperty("--theme-icons", colors[ev.target.id].icons);
+  root.style.setProperty(
+    "--selection-color",
+    colors[ev.target.id].littleButton
+  );
+  root.style.setProperty(
+    "--theme-little-button",
+    colors[ev.target.id].littleButton
+  );
+});
+
 /***************
  *
- *  MAIN BUTTONS
+ *  🔘 MAIN BUTTONS
  *
  ***************/
+//* VARIABLES
 const btnMain = document.querySelectorAll(".btn");
+
+//* EVENTS LISTENERS
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
     soundPlay("sfxClick.wav");
-
     btnMain.classList.add("animate__animated");
     btnMain.classList.add("animate__heartBeat");
     btnMain.classList.remove("hovertext");
-
     setTimeout(function () {
       btnMain.classList.remove("animate__animated");
       btnMain.classList.remove("animate__heartBeat");
@@ -440,86 +406,13 @@ btnMain.forEach((btnMain) => {
   });
 });
 
-/***************;
- *
- *  SOUND EFFECTS
- *
- ***************/
-
-function cashOut() {
-  setTimeout(() => {
-    soundPlay("sfxCash.wav");
-  }, 300);
-}
-
-const prev = document.querySelector(".swiper-button-prev");
-const next = document.querySelector(".swiper-button-next");
-
-prev.addEventListener("click", () => {
-  soundPlay("sfxChangePage.wav");
-  soundPlay("sfxBtn.wav");
-});
-
-next.addEventListener("click", () => {
-  soundPlay("sfxChangePage.wav");
-  soundPlay("sfxBtn.wav");
-});
-
-function sfxDeleteConsole() {
-  const sfxDeleteConsole = document.getElementById("sfxDeleteConsole");
-  sfxDeleteConsole.play();
-  soundPlay("sfxBtn.wav");
-}
-
-let snd18 = new Audio();
-let src18 = document.createElement("source");
-src18.type = "audio/mpeg";
-src18.src = "./assets/sounds/sfxCredits.mp3";
-snd18.loop = true;
-snd18.appendChild(src18);
-
-let snd19 = new Audio();
-let src19 = document.createElement("source");
-src19.type = "audio/mpeg";
-src19.src = "./assets/sounds/sfxShhh.wav";
-snd19.appendChild(src19);
-
-const switches = document.querySelectorAll(".cb");
-switches.forEach((xSwitch) => {
-  xSwitch.addEventListener("click", () => {
-    if (xSwitch.checked) {
-      soundPlay("sfxSwitch.wav");
-    } else {
-      soundPlay("sfxSwitch2.wav");
-    }
-  });
-});
-
-function sizeDetector(grandeur) {
-  if (grandeur.matches) {
-    document.body.style.backgroundColor = "yellow";
-    console.log("YELLOW");
-  } else {
-    document.body.style.backgroundColor = "pink";
-    console.log("PINK");
-  }
-}
-
-let grandeur = window.matchMedia("(max-width: 600px)");
-sizeDetector(grandeur); // Call listener function at run time
-grandeur.addListener(sizeDetector); // Attach listener function on state changes
-
 /***************
  *
- *  SETTINGS NAVIGATION
+ *  🧭 SETTINGS NAVIGATION
  *
  ***************/
-const consoleDisplay = document.getElementById("param-console-content");
-const assistantDisplay = document.getElementById("param-assistant-content");
-const themeDisplay = document.getElementById("param-theme-content");
-const updateDisplay = document.getElementById("param-update-content");
-const creditsDisplay = document.getElementById("param-credits-content");
-
+//* VARIABLES
+//Navigation (Panneau de gauche et le bouton fermer en haut à droite)
 const btnConsole = document.getElementById("console-section");
 const btnAssistant = document.getElementById("assistant-section");
 const btnTheme = document.getElementById("theme-section");
@@ -528,7 +421,14 @@ const btnCredits = document.getElementById("credits-section");
 const btnParamClose1 = document.getElementById("param-close1");
 const btnParamClose2 = document.getElementById("param-close2");
 const btnParamClose3 = document.getElementById("param-close3");
+// Les sections à droite (le contenu dans les paramètres en gros)
+const consoleDisplay = document.getElementById("param-console-content");
+const assistantDisplay = document.getElementById("param-assistant-content");
+const themeDisplay = document.getElementById("param-theme-content");
+const updateDisplay = document.getElementById("param-update-content");
+const creditsDisplay = document.getElementById("param-credits-content");
 
+//* EVENTS LISTENERS
 btnParamClose1.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
@@ -565,8 +465,6 @@ btnParamClose3.addEventListener("click", () => {
   soundPlay("sfxBtn2.wav");
 });
 
-btnConsole.classList.add("param-section-activated");
-
 btnConsole.addEventListener("click", () => {
   snd18.pause();
   snd18.currentTime = 0;
@@ -576,7 +474,6 @@ btnConsole.addEventListener("click", () => {
   btnTheme.classList.remove("param-section-activated");
   btnUpdate.classList.remove("param-section-activated");
   btnCredits.classList.remove("param-section-activated");
-
   consoleDisplay.classList.add("animate__fadeIn");
   setTimeout(function () {
     consoleDisplay.classList.remove("animate__fadeIn");
@@ -597,7 +494,6 @@ btnAssistant.addEventListener("click", () => {
   btnTheme.classList.remove("param-section-activated");
   btnUpdate.classList.remove("param-section-activated");
   btnCredits.classList.remove("param-section-activated");
-
   consoleDisplay.style.display = "none";
   assistantDisplay.classList.add("animate__fadeIn");
   setTimeout(function () {
@@ -618,7 +514,6 @@ btnTheme.addEventListener("click", () => {
   btnTheme.classList.add("param-section-activated");
   btnUpdate.classList.remove("param-section-activated");
   btnCredits.classList.remove("param-section-activated");
-
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.classList.add("animate__fadeIn");
@@ -639,7 +534,6 @@ btnUpdate.addEventListener("click", () => {
   btnTheme.classList.remove("param-section-activated");
   btnUpdate.classList.add("param-section-activated");
   btnCredits.classList.remove("param-section-activated");
-
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.style.display = "none";
@@ -654,13 +548,11 @@ btnUpdate.addEventListener("click", () => {
 btnCredits.addEventListener("click", () => {
   soundPlay("sfxBtn.wav");
   snd18.play();
-
   btnConsole.classList.remove("param-section-activated");
   btnAssistant.classList.remove("param-section-activated");
   btnTheme.classList.remove("param-section-activated");
   btnUpdate.classList.remove("param-section-activated");
   btnCredits.classList.add("param-section-activated");
-
   consoleDisplay.style.display = "none";
   assistantDisplay.style.display = "none";
   themeDisplay.style.display = "none";
@@ -674,13 +566,22 @@ btnCredits.addEventListener("click", () => {
 
 /***************
  *
- *  CUSTOM THEME SELECTOR - From Google)
+ *  👉️ CUSTOM THEME SELECTOR - From https://www.w3schools.com/howto/howto_custom_select.asp)
  *
  ***************/
+//* VARIABLES
 var x, i, j, l, ll, selElmnt, a, b, c;
-/* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
 l = x.length;
+const positionValidate = document.getElementById("positionValidate");
+document.querySelectorAll(".btn").forEach((element) => {
+  element.setAttribute("draggable", false);
+});
+
+//* EVENTS LISTENERS
+document.addEventListener("click", closeAllSelect);
+
+//* LOOPS
 for (i = 0; i < l; i++) {
   selElmnt = x[i].getElementsByTagName("select")[0];
   ll = selElmnt.length;
@@ -732,6 +633,7 @@ for (i = 0; i < l; i++) {
   });
 }
 
+//* FUNCTIONS
 function closeAllSelect(elmnt) {
   /* A function that will close all select boxes in the document,
   except the current select box: */
@@ -759,14 +661,6 @@ function closeAllSelect(elmnt) {
   }
 }
 
-/* If the user clicks anywhere outside the select box,
-then close all select boxes: */
-document.addEventListener("click", closeAllSelect);
-const positionValidate = document.getElementById("positionValidate");
-document.querySelectorAll(".btn").forEach((element) => {
-  element.setAttribute("draggable", false);
-});
-
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
@@ -792,7 +686,6 @@ document.querySelectorAll(".btn").forEach((element) => {
               element.setAttribute("draggable", false);
             });
           });
-
           console.log(event);
         },
       },
@@ -810,9 +703,7 @@ const contextMenuConsole = new window.VanillaContextMenu({
         if (document.querySelector(".response").textContent != ``) {
           soundPlay("sfxDeleteConsole.wav");
         }
-
         document.querySelector(".response").classList.add("animate__flash");
-
         setTimeout(() => {
           document
             .querySelector(".response")
@@ -824,3 +715,24 @@ const contextMenuConsole = new window.VanillaContextMenu({
   ],
   customThemeClass: "custom-context-btn-alone",
 });
+
+/***************
+ *
+ *  📏 SIZE DETECTOR (Temporary)
+ *
+ ***************/
+//* VARIABLES
+let grandeur = window.matchMedia("(max-width: 600px)");
+//* FUNCTIONS
+function sizeDetector(grandeur) {
+  if (grandeur.matches) {
+    document.body.style.backgroundColor = "yellow";
+    console.log("YELLOW");
+  } else {
+    document.body.style.backgroundColor = "pink";
+    console.log("PINK");
+  }
+}
+
+sizeDetector(grandeur);
+grandeur.addListener(sizeDetector);

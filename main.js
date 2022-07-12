@@ -1,5 +1,4 @@
 ("use strict");
-
 //PS PART
 const fs = require("fs");
 // Modules to control application life and create native browser window
@@ -19,7 +18,7 @@ function createWindow() {
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12
       nodeIntegration: false, // this is the default in Electron >= 5
-      preload: `${__dirname}/preload.js`,
+      preload: `${__dirname}/js/preload.js`,
     },
     resizable: false,
     frame: false,
@@ -106,6 +105,7 @@ app.on("activate", function () {
 // PS PART
 const { exec } = require("child_process");
 const psDir = `${__dirname}\\files`.replace(/\\/g, "\\\\");
+
 const psFiles = fs.readdirSync(psDir);
 ipcMain.handle("runPS", async (event, args) => {
   if (psFiles.includes(`${args}.ps1`)) {
