@@ -2,7 +2,12 @@
 /**█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ ░█░*/
 @media only screen and (max-width:600px) {
 
+    /* 
     /** CLASSES */
+    .fa-4x {
+        font-size: 2rem !important;
+    }
+
     .inputComments {
         width: 134% !important;
         margin-left: -40px;
@@ -12,22 +17,13 @@
         width: 69.4%;
     }
 
-    .btn-smodal {
-        display: flex;
-        height: auto;
-        background: var(--theme-primary);
-        border-radius: 20px;
-        width: 180px;
-        padding: 5px;
-    }
+    /* Boutons principaux */
+    .btn {}
 
-    .btn {
-        display: flex;
-        height: auto;
+
+    /* Bouton Alertify */
+    .btn-smodal {
         background: var(--theme-primary);
-        border-radius: 20px;
-        width: 180px;
-        padding: 5px;
     }
 
     .param-section {
@@ -64,7 +60,13 @@
         font-size: 0.8rem;
     }
 
+    .swiper-wrapper {
+        height: 452px;
+    }
+
     /** IDs */
+
+
     #console::-webkit-scrollbar {
         width: 0.35rem;
     }
@@ -85,27 +87,6 @@
         width: 98.8%;
     }
 
-    #slide-1 {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        display: grid;
-        height: 90%;
-        width: 100%;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            "center";
-    }
-
-    #computer {
-        margin-top: 1.5rem;
-    }
-
-    #computer-type-container {
-        margin-top: 1rem;
-    }
-
     #buttons {
         transform: translateY(-50%);
         position: absolute;
@@ -119,20 +100,12 @@
         left: 0%;
     }
 
-    #ping-container {
-        position: absolute;
-        left: 50%;
-        top: 91%;
-        transform: translateX(-50%);
-    }
-
-    #ping-text {
-        color: green;
-        text-transform: uppercase;
-    }
-
     #output {
         font-size: 0.7rem;
+    }
+
+    #console {
+        height: 400px;
     }
 
     #param-console-content {
@@ -182,5 +155,13 @@
 
     #console-colors-container {
         gap: 2px;
+    }
+
+    #slide-1 {
+        height: 452px;
+    }
+
+    #upper-part {
+        height: 452px;
     }
 }

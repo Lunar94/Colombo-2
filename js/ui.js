@@ -44,7 +44,7 @@ setTimeout(function welcomeMessage() {
  *
  ************/
 //* VARIABLES
-const consoleContainer = document.getElementById("console-wrapper");
+const consoleGlow = document.getElementById("console-glow");
 const moreButtonIcon = document.getElementById("btn-more-icon");
 const btnAstuces = document.getElementById("btn-astuces");
 const consoleCAA = document.getElementById("console");
@@ -82,28 +82,28 @@ function toggleClass() {
 function consoleEnlarge() {
   if (consoleCAA.style.height === "90%") {
     soundPlay("sfxConsoleMinimize.wav");
-    consoleContainer.classList.remove("param-dimmer");
-    consoleCAA.classList.add("animate__shakeY");
-    consoleCAA.classList.remove("console-overflow");
+    consoleGlow.classList.remove("param-dimmer");
+    consoleGlow.style.marginTop = "40px";
+    //  consoleCAA.classList.add("animate__shakeY");
     setTimeout(() => {
-      consoleCAA.classList.add("console-overflow");
-      consoleCAA.classList.remove("animate__shakeY");
+      // consoleCAA.classList.remove("animate__shakeY");
     }, 500);
-    consoleCAA.style.height = "50%";
+    consoleCAA.style.height = "400px";
     moreButtonIcon.classList.remove("fa-down-from-line");
     moreButtonIcon.classList.add("fa-expand");
-    moreButtonIcon.classList.add("fa-animate__shakeY");
+    // moreButtonIcon.classList.add("fa-animate__shakeY");
   } else {
     soundPlay("sfxBtn.wav");
     soundPlay("sfxBottle.wav");
     soundPlay("sfxGong.wav");
-    consoleContainer.classList.add("param-dimmer");
+
+    consoleGlow.classList.add("param-dimmer");
+
     consoleCAA.style.height = "90%";
-    consoleCAA.classList.add("animate__slideInUp");
-    consoleCAA.classList.remove("console-overflow");
+    consoleGlow.style.marginTop = "0px";
+    // consoleCAA.classList.add("animate__slideInUp");
     setTimeout(() => {
-      consoleCAA.classList.add("console-overflow");
-      consoleCAA.classList.remove("animate__slideInUp");
+      // consoleCAA.classList.remove("animate__slideInUp");
     }, 1000);
     moreButtonIcon.classList.remove("fa-expand");
     moreButtonIcon.classList.add("fa-down-from-line");
@@ -147,9 +147,7 @@ const nuanceDefault = document.getElementById("nuanceDefault");
 const icons = document.querySelectorAll(".fa-4x");
 const topbar = document.getElementById("topbar");
 const tongue = document.getElementById("tongue");
-const checkGlow = document.getElementById("glowing");
 const checkConsMax = document.getElementById("consoleMax");
-const wrapCons = document.getElementById("console-wrapper");
 const checkConfirmDelConsole = document.getElementById("confirmdelete");
 // Contrôles boutons de fenêtres
 const fermer = document.getElementById("close");
@@ -721,18 +719,18 @@ const contextMenuConsole = new window.VanillaContextMenu({
  *  📏 SIZE DETECTOR (Temporary)
  *
  ***************/
-//* VARIABLES
-let grandeur = window.matchMedia("(max-width: 600px)");
-//* FUNCTIONS
-function sizeDetector(grandeur) {
-  if (grandeur.matches) {
-    document.body.style.backgroundColor = "yellow";
-    console.log("YELLOW");
-  } else {
-    document.body.style.backgroundColor = "pink";
-    console.log("PINK");
-  }
-}
+// //* VARIABLES
+// let grandeur = window.matchMedia("(max-width: 600px)");
+// //* FUNCTIONS
+// function sizeDetector(grandeur) {
+//   if (grandeur.matches) {
+//     document.body.style.backgroundColor = "yellow";
+//     console.log("YELLOW");
+//   } else {
+//     document.body.style.backgroundColor = "pink";
+//     console.log("PINK");
+//   }
+// }
 
-sizeDetector(grandeur);
-grandeur.addListener(sizeDetector);
+// sizeDetector(grandeur);
+// grandeur.addListener(sizeDetector);

@@ -1,5 +1,5 @@
 <script>
-    let buildMain = "<span style='color: let(--theme-primary)'><b>A50.7</b></span>";
+    let buildMain = "<span style='color: var(--theme-primary)'><b>A50.8</b></span>";
 </script>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
 
@@ -640,7 +640,7 @@
                                     <i class="fa-duotone fa-computer fa-2x"></i>
                                 </div>
 
-                                <div id="ping-container"><span id="ping-text">En ligne</span></div>
+
 
                                 <div class="btn" id="positionValidate"
                                     style="transition: 0.5s; opacity:0;  top:72%; left: 48.8%; width: 2rem; height: 2rem; position:absolute;    border: 2px solid let(--theme-secondary);">
@@ -648,37 +648,33 @@
                                         <i class="fa-duotone fa-circle-check fa-4x" style="font-size:2rem"></i></span>
                                 </div>
 
-                                <div id="buttons" class="box">
+                                <div id="buttons">
 
                                     <div onclick="cashOut()"
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.75; animation-duration: .25s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
                                         <span class="btnLabel">Windows</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Vérifier la taille du ou des disques durs local"
-                                        data-psfile="diskSpace" class="btn hovertext draggable"
-                                        style="animation-delay: -0.5; animation-duration: .3s">
+                                        data-psfile="diskSpace" class="btn hovertext">
                                         <span data-psfile="diskSpace" class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                         <span class="btnLabel">Stockage</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
-                                        data-psfile="biosInfo" class="btn hovertext draggable"
-                                        style="animation-delay: -0.05; animation-duration: .27s">
+                                        data-psfile="biosInfo" class="btn hovertext">
                                         <span data-psfile="biosInfo" class="btn-text"><i data-psfile="biosInfo" class="fa-duotone
                                                 fa-monitor-waveform fa-4x"></i></span>
                                         <span class="btnLabel">Bios</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Est-ce que le poste répond bien aux paquets ?"
-                                        data-psfile="ping" class="btn hovertext draggable"
-                                        style="animation-delay: -0.2; animation-duration: .33s"><span data-psfile="ping"
+                                        data-psfile="ping" class="btn hovertext"><span data-psfile="ping"
                                             class="btn-text"><i data-psfile="ping"
                                                 class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span>
                                         <span class="btnLabel">Ping</span>
@@ -686,69 +682,147 @@
 
                                     <div onclick="cashOut()"
                                         data-hover="Sortir la liste complète des logiciels installés"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.31; animation-duration: .24s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-uncharted fa-4x"></i></span>
                                         <span class="btnLabel">Logiciels</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Installer un ou plusieurs logiciels sur le poste"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.5; animation-duration: .3s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-display-arrow-down fa-4x"></i></span>
                                         <span class="btnLabel">Installer</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Redémarrer le poste à distance [maintenir]"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.15; animation-duration: .25s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-power-off fa-4x"></i></span>
                                         <span class="btnLabel">Alimentation</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Transfert de fichiers d'un poste à l'autre"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.2; animation-duration: .22s">
+                                        data-psfile="doThis" class="btn hovertext">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class=" fa-duotone fa-arrow-right-arrow-left fa-4x"></i></span>
                                         <span class="btnLabel">P2P</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Libérer de l'espace sur le disque local C:\"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.3; animation-duration: .28s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-broom fa-4x"></i></span>
                                         <span class="btnLabel">Nettoyer</span>
                                     </div>
 
                                     <div onclick="cashOut()"
                                         data-hover="Ouvrir le répertoire Outlook contenant le fichier .ost"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.22; animation-duration: .3s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-envelopes-bulk fa-4x"></i></span>
-                                        <span class="btnLabel">Dossier Outlook</span>
+                                        <span class="btnLabel">Outlook</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Contrôle à distance - ShadowRDP"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.75; animation-duration: .25s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-signal-stream fa-4x"></i></span>
                                         <span class="btnLabel">Contrôle</span>
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Rechercher ce poste dans l'Active Directory"
-                                        data-psfile="doThis" class="btn hovertext draggable"
-                                        style="animation-delay: -0.5; animation-duration: .3s"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-rectangle-ad fa-4x"></i></span>
                                         <span class="btnLabel">AD</span>
+                                    </div>
+
+
+                                    <div onclick="cashOut()" data-hover="Sortir le mot de passe LapsUI"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-key fa-4x"></i></span>
+                                        <span class="btnLabel">LapsUI</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Sortir la version installée d'Office 365"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-briefcase-blank fa-4x"></i></span>
+                                        <span class="btnLabel">Office 365</span>
+                                    </div>
+
+                                    <div onclick="cashOut()"
+                                        data-hover="Sortir les imprimantes d'installées sur le poste"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-print fa-4x"></i></span>
+                                        <span class="btnLabel">Imprimantes</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Ouvrir le c:\ distant" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-circle-c fa-4x"></i></span>
+                                        <span class="btnLabel">C:\</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Kill un process distant" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-microchip fa-4x"></i></span>
+                                        <span class="btnLabel">Process</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Sortir le hardware du poste"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-memory fa-4x"></i></span>
+                                        <span class="btnLabel">Hardware</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="CptMgmt" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-list-tree fa-4x"></i></span>
+                                        <span class="btnLabel">CptMgmt</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Colombo" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-magnifying-glass-arrow-right fa-4x"></i></span>
+                                        <span class="btnLabel">Colombo</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Services Windows" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-bell-concierge fa-4x"></i></span>
+                                        <span class="btnLabel">Services</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Historique" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-clock-rotate-left fa-4x"></i></span>
+                                        <span class="btnLabel">Historique</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Historique" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-clock-rotate-left fa-4x"></i></span>
+                                        <span class="btnLabel">Historique</span>
+                                    </div>
+
+                                    <div onclick="cashOut()" data-hover="Historique" data-psfile="doThis"
+                                        class="btn hovertext">
+                                        <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                                class="fa-duotone fa-clock-rotate-left fa-4x"></i></span>
+                                        <span class="btnLabel">Historique</span>
                                     </div>
 
                                 </div>
@@ -845,44 +919,49 @@
 
             </div>
 
-            <div id="console-wrapper">
+            <div id="console-glow"></div>
 
-                <div id="console" class="animate__animated console-overflow">
+            <div id="console" class="animate__animated">
 
-                    <div data-hover="Supprimer" id="btn-clear" class="hovertext animate__animated animate__fadeIn">
-                        <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
-                    </div>
+                <div data-hover="Supprimer" id="btn-clear" class="hovertext animate__animated animate__fadeIn">
+                    <i class="fa-duotone fa-trash-can fa-2x animate__animated"></i>
+                </div>
 
-                    <div onclick="toggleClass()" id="btn-astuces" class="animate__animated animate__fadeIn">
-                        <i class="fa-duotone fa-message-question fa-2x animate__animated"></i>
-                    </div>
+                <div onclick="toggleClass()" id="btn-astuces" class="animate__animated animate__fadeIn">
+                    <i class="fa-duotone fa-message-question fa-2x animate__animated"></i>
+                </div>
 
-                    <div data-hover="Paramètres" id="btn-param" class="hovertext animate__animated animate__fadeIn">
-                        <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
-                    </div>
+                <div data-hover="Paramètres" id="btn-param" class="hovertext animate__animated animate__fadeIn">
+                    <i id="btn-param-icon" class="fa-duotone fa-gear fa-2x animate__animated"></i>
+                </div>
 
-                    <div data-hover="Agrandir" id="btn-more" class="hovertext animate__animated animate__fadeIn">
-                        <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
-                    </div>
+                <div data-hover="Agrandir" id="btn-more" class="hovertext animate__animated animate__fadeIn">
+                    <i id="btn-more-icon" class="fa-duotone fa-expand fa-2x animate__animated"></i>
+                </div>
 
-                    <div id="inner-console">
-                        <div id="output" class="response animate__animated"></div>
-                    </div>
-
+                <div id="inner-console">
+                    <div id="output" class="response animate__animated"></div>
                 </div>
 
             </div>
 
+
     </main>
+    <!-- CDNS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
     <!-- JS SCRIPTS SOURCES -->
+
+    <!-- <script src="./node_modules/jquery-sortablejs/jquery-sortable.js"></script> -->
+    <script type="module">
+        import Sortable from './node_modules/sortablejs/modular/sortable.complete.esm.js';
+    </script>
+
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
-
-    <!-- CDNS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- HOME MADE JS SCRIPTS -->
     <script src="./js/renderer.js"></script>
@@ -918,23 +997,11 @@
         swiper.on('slideChange', function () {
             if (this.activeIndex === 1) {
                 console.log("IM ON SECOND SLIDE!");
-
-                setTimeout(function () {
-                    consoleCAA.classList.remove("console-overflow");
-                }, 1000);
-
-                consoleCAA.classList.add("animate__slideInUp");
-                consoleCAA.style.display = "none";
-                wrapCons.style.animation = "none";
-
+                consoleCAA.style.opacity = "0";
+                consoleGlow.style.animation = "none";
             } else {
-                consoleCAA.style.display = "block";
-                wrapCons.style.animation = "glow 5s infinite alternate";
-
-                setTimeout(function () {
-                    consoleCAA.classList.remove("animate__slideInUp");
-                    consoleCAA.classList.add("console-overflow");
-                }, 1000);
+                consoleCAA.style.opacity = "1";
+                consoleGlow.style.animation = "glow 5s infinite alternate";
             }
         });
     </script>
@@ -975,106 +1042,6 @@
             hotkeys.setScope(/^(INPUT|TEXTAREA|SELECT)$/.test(tagName) ? 'input' : 'other');
             return true;
         }
-    </script>
-
-    <!-- DRAGGABLE SORTABLE SNAPPING LIST (https://codepen.io/brianknapp/pen/QgGxLm)-->
-    <script tag="DRAGGABLE SORTABLE SNAPPING LIST">
-        let dragDestIndex;
-        let draggedEl;
-        let draggedElIndex;
-        let rearranging = false;
-        let rearrangingDuration = 350;
-        let draggableElArr = $('.draggable');
-
-        // Update the CSS for each item to be in its correct location based on the order in the array passed
-        // @param itemEls: the DOM elements, in order, from top left, row by row
-        // @param columnsCount: the number of columns
-        // @containerEl: the DOM element of the container for the arranged elements.
-        function arrangeItems(itemEls, columnsCount, containerEl, elHeight) {
-            let $containerEl = $(containerEl);
-
-            // Set height of elements
-            let elWidth = $containerEl.width() / columnsCount;
-            elHeight = elHeight || elWidth;
-
-            for (let i = 0; i < itemEls.length; i++) {
-                let $item = $(itemEls[i]);
-                $item.data('index', i);
-                let pos = {
-                    x: (i % columnsCount),
-                    y: Math.floor(i / columnsCount)
-                };
-
-                $item.css({
-                    top: pos.y * elHeight + 'px',
-                    left: pos.x * elWidth + 'px',
-                    width: 'calc(' + (100 / columnsCount) + '% - 10px)',
-                    height: 'calc(' + elHeight + 'px - 10px)',
-                    boxSizing: 'border-box'
-                });
-            }
-        }
-
-        // Rearrange the items in an array, returning a the modified array.
-        // @param movedItemIndex: the index of the element being moved to a
-        //   new position in the array
-        // @param destinationIndex: the new index being given to the moved element
-        function rearrangeItems(arr, movedItemIndex, destinationIndex) {
-            let movedEl = arr.splice(movedItemIndex, 1)[0];
-            arr.splice(destinationIndex, 0, movedEl);
-            return arr;
-        };
-        content
-        arrangeItems(draggableElArr, 12, $('.box'));
-
-        $('.draggable').on('dragstart', function (e) {
-            draggedEl = $(this);
-            let sortedArr = [];
-            for (let i = 0; i < draggableElArr.length; i++) {
-                let elIndex = $(draggableElArr[i]).data('index');
-                sortedArr[elIndex] = draggableElArr[i];
-            }
-            draggableElArr = sortedArr;
-            draggedElIndex = $(this).data('index');
-            console.log('dragging element at position ', draggedElIndex);
-            $(this).css({
-                opacity: 0,
-                transition: 'all 100ms ease'
-            });
-        });
-
-        $('.draggable').on('dragend', function (e) {
-            e.preventDefault();
-            $(this).css({
-                opacity: 1,
-                transition: 'all 700ms ease'
-            });
-        });
-
-        $('.draggable').on('dragover', function (e) {
-            e.preventDefault();
-            if (rearranging) {
-                return;
-            }
-            let dragDestIndex = $(this).data('index');
-            console.log('dragging over position ', dragDestIndex);
-            draggedElIndex = draggedEl.data('index');
-            if (draggedElIndex !== dragDestIndex) {
-                rearranging = true;
-                console.log('dragging element at position ', draggedElIndex, ' to new dest at position ',
-                    dragDestIndex);
-                let rearrangedEls = rearrangeItems(draggableElArr, draggedElIndex, dragDestIndex);
-                arrangeItems(rearrangedEls, 12, $('.box'));
-                setTimeout(function () {
-                    rearranging = false
-                }, rearrangingDuration);
-            }
-        });
-
-        $('.draggable').on('drop', function (e) {
-            e.preventDefault();
-            rearranging = false;
-        });
     </script>
 </body>
 
