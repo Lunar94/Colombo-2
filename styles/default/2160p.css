@@ -1,5 +1,9 @@
+/**█▀▄▀█ █▀▀ █▀▄ █ ▄▀█   █▀█ █░█ █▀▀ █▀█ █▄█
+/**█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ ░█░*/
+
 @media only screen and (min-width:1921px) {
 
+    /** CLASSES */
     .inputComments {
         width: 1328px !important;
     }
@@ -9,6 +13,7 @@
         height: 160px;
     }
 
+    /** IDs */
     #computer {
         top: 0;
         position: absolute;
