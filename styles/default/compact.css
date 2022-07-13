@@ -5,7 +5,7 @@
     /* 
     /** CLASSES */
     .fa-4x {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
     }
 
     .inputComments {
@@ -18,7 +18,12 @@
     }
 
     /* Boutons principaux */
-    .btn {}
+    .btn {
+        width: 100px;
+        height: 40px;
+        border: 2px solid var(--theme-secondary);
+        border-radius: 20px;
+    }
 
 
     /* Bouton Alertify */
@@ -64,9 +69,11 @@
         height: 452px;
     }
 
+    .btnLabel {
+        display: none;
+    }
+
     /** IDs */
-
-
     #console::-webkit-scrollbar {
         width: 0.35rem;
     }
@@ -88,7 +95,10 @@
     }
 
     #buttons {
-
+        margin-top: 6rem;
+        margin-left: 8px;
+        gap: 1rem;
+        width: 80%;
     }
 
     #output {

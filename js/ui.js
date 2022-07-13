@@ -655,6 +655,10 @@ function closeAllSelect(elmnt) {
   }
 }
 
+btnMain.forEach((btnMain) => {
+  btnMain.setAttribute("draggable", false);
+});
+
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
@@ -669,7 +673,18 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Déplacer",
         callback: (event) => {
-          document.querySelectorAll(".btn").forEach((element) => {});
+          document.querySelectorAll(".fa-4x").forEach((element) => {
+            // element.classList.add("shake-slow");
+            // element.classList.add("shake-constant");
+            // element.classList.add("shake-constant");
+          });
+
+          element.classList.add("shake-slow");
+          element.classList.add("shake-constant");
+          element.classList.add("shake-constant");
+
+          soundPlay("sfxBtnMove.wav");
+
           console.log(event);
         },
       },

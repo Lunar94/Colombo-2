@@ -17,6 +17,7 @@
         "@shopify/draggable": "^1.0.0-beta.8",
         "alertifyjs": "^1.13.1",
         "animate.css": "^4.1.1",
+        "csshake": "^1.7.0",
         "flatpickr": "^4.6.13",
         "hotkeys-js": "^3.9.4",
         "install": "^0.13.0",

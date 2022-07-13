@@ -1,5 +1,5 @@
 <script>
-    let buildMain = "<span style='color: var(--theme-primary)'><b>A51</b></span>";
+    let buildMain = "<span style='color: var(--theme-primary)'><b>A51.4</b></span>";
 </script>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
 
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./node_modules/alertifyjs/build/css/alertify.css">
     <link rel="stylesheet" href="./node_modules/pretty-checkbox/dist/pretty-checkbox.css">
     <link rel="stylesheet" href="./node_modules/alertifyjs/build/css/themes/semantic.css">
+
 </head>
 
 <body>
@@ -645,12 +646,10 @@
 
                                 <div id="buttons">
 
-
-
-                                    <div onclick="cashOut()"
+                                    <div onclick="cashOut()" 
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
-                                        data-psfile="doThis" class="btn hovertext list-group-item"><span
-                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
                                         <span class="btnLabel">Windows</span>
 
@@ -659,11 +658,12 @@
 
                                     <div onclick="cashOut()"
                                         data-hover="Vérifier la taille du ou des disques durs local"
-                                        data-psfile="diskSpace" class="btn hovertext list-group-item">
+                                        data-psfile="diskSpace" class="btn hovertext">
                                         <span data-psfile="diskSpace" class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                         <span class="btnLabel">Stockage</span>
                                     </div>
+
 
                                     <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
                                         data-psfile="biosInfo" class="btn hovertext">
@@ -960,7 +960,6 @@
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/sortablejs/Sortable.js"></script>
 
-
     <!-- HOME MADE JS SCRIPTS -->
     <script src="./js/renderer.js"></script>
     <script src="./js/sounds.js"></script>
@@ -1056,6 +1055,8 @@
     <script>
         const el = document.getElementById('buttons');
         const sortable = new Sortable(el, {
+            swap: true, // Enable swap mode
+            swapClass: "highlighted",
 
             animation: 300, // ms, animation speed moving items when sorting, `0` — without animation
             easing: "cubic-bezier(0.5, 1, 0.89, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
@@ -1075,10 +1076,23 @@
                 // return 1; — insert after target
                 // return true; — keep default insertion point based on the direction
                 // return void; — keep default insertion point based on the direction
+                // soundPlay("sfxMove.wav");
+            },
+
+            onUpdate: function ( /**Event*/ evt) {
                 soundPlay("sfxMove.wav");
             },
+
+            // Element dragging started
+            onStart: function ( /**Event*/ evt) {
+                evt.oldIndex; // element index within parent
+                soundPlay("sfxGrab.wav");
+            },
+
         });
     </script>
+
+
 </body>
 
 </html>
