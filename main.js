@@ -14,6 +14,9 @@ function createWindow() {
     width: 600,
     minHeight: 955,
     height: 955,
+    maxHeight: 1080,
+    maxWidth: 1920,
+
     show: false,
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12

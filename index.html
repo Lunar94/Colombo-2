@@ -958,6 +958,7 @@
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
+    <script src="./node_modules/sortablejs/Sortable.js"></script>
 
 
     <!-- HOME MADE JS SCRIPTS -->
@@ -1051,7 +1052,33 @@
         }
     </script>
 
+    <!-- ACTIVATE THE SORTABLE THING (Sortable.js library) -->
+    <script>
+        const el = document.getElementById('buttons');
+        const sortable = new Sortable(el, {
 
+            animation: 300, // ms, animation speed moving items when sorting, `0` — without animation
+            easing: "cubic-bezier(0.5, 1, 0.89, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
+
+
+            onMove: function ( /**Event*/ evt, /**Event*/ originalEvent) {
+                // Example: https://jsbin.com/nawahef/edit?js,output
+                evt.dragged; // dragged HTMLElement
+                evt.draggedRect; // DOMRect {left, top, right, bottom}
+                evt.related; // HTMLElement on which have guided
+                evt.relatedRect; // DOMRect
+                evt
+                    .willInsertAfter; // Boolean that is true if Sortable will insert drag element after target by default
+                originalEvent.clientY; // mouse position
+                // return false; — for cancel
+                // return -1; — insert before target
+                // return 1; — insert after target
+                // return true; — keep default insertion point based on the direction
+                // return void; — keep default insertion point based on the direction
+                soundPlay("sfxMove.wav");
+            },
+        });
+    </script>
 </body>
 
 </html>
