@@ -88,16 +88,7 @@
     }
 
     #buttons {
-        transform: translateY(-50%);
-        position: absolute;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        font-size: 0.4rem;
-        top: 54%;
-        left: 0%;
+
     }
 
     #output {
