@@ -154,7 +154,7 @@ document
 
       let div = document.createElement("div");
       div.id = `${content_id}-content`;
-      div.classList.add("nombril");
+      div.classList.add("one-click-copy");
       div.classList.add("animate__animated");
       div.classList.add("animate__bounceInLeft");
 
@@ -181,11 +181,11 @@ document
 
       div.addEventListener("click", () => {
         div.classList.remove("animate__bounceInLeft");
-        div.classList.add("blink_me");
+        div.classList.add("animate__flash");
 
         setTimeout(() => {
-          div.classList.remove("blink_me");
-        }, 500);
+          div.classList.remove("animate__flash");
+        }, 1000);
 
         soundPlay("sfxNewForm.wav");
 
@@ -204,11 +204,11 @@ document
             label: "Copier le résultat",
             callback: (event) => {
               div.classList.remove("animate__bounceInLeft");
-              div.classList.add("blink_me");
+              div.classList.add("animate__flash");
 
               setTimeout(() => {
-                div.classList.remove("blink_me");
-              }, 500);
+                div.classList.remove("animate__flash");
+              }, 1000);
 
               soundPlay("sfxNewForm.wav");
 

@@ -655,10 +655,6 @@ function closeAllSelect(elmnt) {
   }
 }
 
-btnMain.forEach((btnMain) => {
-  btnMain.setAttribute("draggable", false);
-});
-
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
@@ -671,17 +667,21 @@ document.querySelectorAll(".btn").forEach((element) => {
         },
       },
       {
-        label: "Déplacer",
+        label: "Échanger",
         callback: (event) => {
-          document.querySelectorAll(".fa-4x").forEach((element) => {
-            // element.classList.add("shake-slow");
-            // element.classList.add("shake-constant");
-            // element.classList.add("shake-constant");
-          });
+          document.querySelectorAll(".fa-4x").forEach((element) => {});
 
-          element.classList.add("shake-slow");
           element.classList.add("shake-constant");
-          element.classList.add("shake-constant");
+
+          soundPlay("sfxBtnMove.wav");
+
+          console.log(event);
+        },
+      },
+      {
+        label: "Trier",
+        callback: (event) => {
+          document.querySelectorAll(".fa-4x").forEach((element) => {});
 
           soundPlay("sfxBtnMove.wav");
 
@@ -709,6 +709,12 @@ const contextMenuConsole = new window.VanillaContextMenu({
             .classList.remove("animate__flash");
           document.querySelector(".response").textContent = ``;
         }, 1000);
+        alertify.set("notifier", "position", "bottom-center");
+        const notification = alertify.notify(
+          '<i class="fa-duotone fa-trash"></i>' + " La console a été vidée.",
+          "success",
+          2
+        );
       },
     },
   ],

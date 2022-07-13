@@ -1,5 +1,5 @@
 <script>
-    let buildMain = "<span style='color: var(--theme-primary)'><b>A51.4</b></span>";
+    let buildMain = "<span style='color: var(--theme-primary)'><b>A51.5</b></span>";
 </script>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
 
@@ -646,9 +646,9 @@
 
                                 <div id="buttons">
 
-                                    <div onclick="cashOut()" 
+                                    <div onclick="cashOut()"
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext "><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
                                         <span class="btnLabel">Windows</span>
@@ -1057,10 +1057,10 @@
         const sortable = new Sortable(el, {
             swap: true, // Enable swap mode
             swapClass: "highlighted",
-
+            filter: '.filtered',
             animation: 300, // ms, animation speed moving items when sorting, `0` — without animation
             easing: "cubic-bezier(0.5, 1, 0.89, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
-
+            // disabled: true,
 
             onMove: function ( /**Event*/ evt, /**Event*/ originalEvent) {
                 // Example: https://jsbin.com/nawahef/edit?js,output
@@ -1081,13 +1081,21 @@
 
             onUpdate: function ( /**Event*/ evt) {
                 soundPlay("sfxMove.wav");
+                document.querySelectorAll(".btn").forEach((element) => {
+
+                    element.classList.remove("shake-constant");
+                })
+
+
             },
 
-            // Element dragging started
-            onStart: function ( /**Event*/ evt) {
-                evt.oldIndex; // element index within parent
-                soundPlay("sfxGrab.wav");
-            },
+        
+
+        // Element dragging started
+        onStart: function ( /**Event*/ evt) {
+            evt.oldIndex; // element index within parent
+            soundPlay("sfxGrab.wav");
+        },
 
         });
     </script>
