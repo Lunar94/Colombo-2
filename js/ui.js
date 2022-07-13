@@ -571,10 +571,6 @@ btnCredits.addEventListener("click", () => {
 var x, i, j, l, ll, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");
 l = x.length;
-const positionValidate = document.getElementById("positionValidate");
-document.querySelectorAll(".btn").forEach((element) => {
-  element.setAttribute("draggable", false);
-});
 
 //* EVENTS LISTENERS
 document.addEventListener("click", closeAllSelect);
@@ -666,24 +662,14 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Assigner un raccourcis",
         callback: (event) => {
+          // PLACER QUOI FAIRE ICI
           console.log(event);
         },
       },
       {
         label: "Déplacer",
         callback: (event) => {
-          document.querySelectorAll(".btn").forEach((element) => {
-            element.setAttribute("draggable", true);
-            element.classList.add("icon");
-            positionValidate.style.display = "block";
-            positionValidate.style.opacity = "1";
-            positionValidate.addEventListener("click", () => {
-              element.classList.remove("icon");
-              positionValidate.style.display = "none";
-              positionValidate.style.opacity = "0";
-              element.setAttribute("draggable", false);
-            });
-          });
+          document.querySelectorAll(".btn").forEach((element) => {});
           console.log(event);
         },
       },

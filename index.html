@@ -1,5 +1,5 @@
 <script>
-    let buildMain = "<span style='color: var(--theme-primary)'><b>A50.8</b></span>";
+    let buildMain = "<span style='color: var(--theme-primary)'><b>A50.9</b></span>";
 </script>
 <audio id="sfxDeleteConsole" src="./assets/sounds/sfxDeleteConsole.wav"></audio>
 
@@ -642,25 +642,24 @@
 
 
 
-                                <div class="btn" id="positionValidate"
-                                    style="transition: 0.5s; opacity:0;  top:72%; left: 48.8%; width: 2rem; height: 2rem; position:absolute;    border: 2px solid let(--theme-secondary);">
-                                    <span class="btn-text">
-                                        <i class="fa-duotone fa-circle-check fa-4x" style="font-size:2rem"></i></span>
-                                </div>
 
                                 <div id="buttons">
 
+
+
                                     <div onclick="cashOut()"
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext list-group-item"><span
+                                            data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
                                         <span class="btnLabel">Windows</span>
+
                                     </div>
+
 
                                     <div onclick="cashOut()"
                                         data-hover="Vérifier la taille du ou des disques durs local"
-                                        data-psfile="diskSpace" class="btn hovertext">
+                                        data-psfile="diskSpace" class="btn hovertext list-group-item">
                                         <span data-psfile="diskSpace" class="btn-text"><i data-psfile="diskSpace"
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                         <span class="btnLabel">Stockage</span>
@@ -825,10 +824,12 @@
                                         <span class="btnLabel">Historique</span>
                                     </div>
 
+
+
+
                                 </div>
 
                             </div>
-
                         </div>
 
                         <div class="swiper-slide swiper-no-swiping tocome">
@@ -947,21 +948,17 @@
 
 
     </main>
-    <!-- CDNS -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+
+
+
 
     <!-- JS SCRIPTS SOURCES -->
-
-    <!-- <script src="./node_modules/jquery-sortablejs/jquery-sortable.js"></script> -->
-    <script type="module">
-        import Sortable from './node_modules/sortablejs/modular/sortable.complete.esm.js';
-    </script>
-
+    <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
-    <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
-    <script src="./node_modules/swiper/swiper-bundle.js"></script>
+    <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
+
 
     <!-- HOME MADE JS SCRIPTS -->
     <script src="./js/renderer.js"></script>
@@ -998,9 +995,19 @@
             if (this.activeIndex === 1) {
                 console.log("IM ON SECOND SLIDE!");
                 consoleCAA.style.opacity = "0";
+
+                setTimeout(() => {
+                    consoleCAA.style.display = "none";
+                }, 500);
                 consoleGlow.style.animation = "none";
             } else {
-                consoleCAA.style.opacity = "1";
+                consoleCAA.style.display = "block";
+                consoleCAA.style.opacity = "0";
+
+                setTimeout(() => {
+                    consoleCAA.style.opacity = "1";
+                }, 10);
+
                 consoleGlow.style.animation = "glow 5s infinite alternate";
             }
         });
@@ -1043,6 +1050,8 @@
             return true;
         }
     </script>
+
+
 </body>
 
 </html>
