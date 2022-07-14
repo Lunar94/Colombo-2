@@ -238,6 +238,13 @@ document
                   .classList.remove("animate__flash");
                 document.querySelector(".response").textContent = ``;
               }, 1000);
+              alertify.set("notifier", "position", "bottom-center");
+              const notification = alertify.notify(
+                '<i class="fa-duotone fa-trash"></i>' +
+                  " La console a été vidée.",
+                "success",
+                2
+              );
             },
           },
         ],
