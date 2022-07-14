@@ -523,6 +523,7 @@
     height: 100px;
     font-size: 0.8rem;
     border: 3px solid var(--theme-secondary);
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
 }
 
 btn-hold:hover {

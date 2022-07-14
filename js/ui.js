@@ -350,17 +350,6 @@ window.onload = function checkGlow() {
   };
 };
 
-// Checkbox pour la confirmation avant suppression de la console
-window.onload = function checkDelConsole() {
-  checkConfirmDelConsole.onchange = function checkDelConsole() {
-    if (checkConfirmDelConsole.checked == false) {
-      let confirmDeleteConsoleSwitch = 0;
-    } else {
-      let confirmDeleteConsoleSwitch = 1;
-    }
-  };
-};
-
 // Sélecteur de nuances
 document.getElementById("colors-container").addEventListener("click", (ev) => {
   if (ev.target.id == "colors-container") return;
@@ -387,7 +376,7 @@ document.getElementById("colors-container").addEventListener("click", (ev) => {
  *
  ***************/
 //* VARIABLES
-// sélecteur boutons principaux
+// Sélecteur boutons principaux
 const btnMain = document.querySelectorAll(".btn");
 //Bouton Fullscreen
 var timeout_id = 0,
@@ -395,6 +384,7 @@ var timeout_id = 0,
   hold_trigger = $(".hold_trigger");
 
 //* EVENTS LISTENERS
+// Animations des boutons principaux et l'hover (astuces)
 btnMain.forEach((btnMain) => {
   btnMain.addEventListener("click", () => {
     soundPlay("sfxClick.wav");
@@ -409,6 +399,7 @@ btnMain.forEach((btnMain) => {
   });
 });
 
+// Animation du gros bouton d'alimentation
 //* FUNCTIONS
 hold_trigger
   .mousedown(function () {
@@ -429,7 +420,7 @@ function menu_toggle() {
  *
  ***************/
 //* VARIABLES
-//Navigation (Panneau de gauche et le bouton fermer en haut à droite)
+// Navigation (Panneau de gauche et le bouton fermer en haut à droite)
 const btnConsole = document.getElementById("console-section");
 const btnAssistant = document.getElementById("assistant-section");
 const btnTheme = document.getElementById("theme-section");
