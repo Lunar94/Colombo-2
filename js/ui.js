@@ -387,7 +387,12 @@ document.getElementById("colors-container").addEventListener("click", (ev) => {
  *
  ***************/
 //* VARIABLES
+// sélecteur boutons principaux
 const btnMain = document.querySelectorAll(".btn");
+//Bouton Fullscreen
+var timeout_id = 0,
+  hold_time = 1000,
+  hold_trigger = $(".hold_trigger");
 
 //* EVENTS LISTENERS
 btnMain.forEach((btnMain) => {
@@ -403,6 +408,20 @@ btnMain.forEach((btnMain) => {
     }, 300);
   });
 });
+
+//* FUNCTIONS
+hold_trigger
+  .mousedown(function () {
+    timeout_id = setTimeout(menu_toggle, hold_time);
+  })
+  .bind("mouseup mouseleave", function () {
+    clearTimeout(timeout_id);
+    $(".spinner").removeClass("active");
+  });
+
+function menu_toggle() {
+  $(".spinner").addClass("active");
+}
 
 /***************
  *

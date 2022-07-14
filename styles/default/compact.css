@@ -26,6 +26,7 @@
         border-radius: 20px;
     }
 
+    .btn-hold {}
 
     /* Bouton Alertify */
     .btn-smodal {
@@ -84,6 +85,21 @@
         transform: translateY(-50%);
         right: -9px;
         padding: 3px;
+    }
+
+    .btn-hold-small {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 40px;
+        border: 2px solid var(--theme-secondary);
+        border-radius: 20px;
+        background: var(--theme-primary);
+    }
+
+    .spinner {
+        display: none;
     }
 
     /**█ █▀▄ █▀
@@ -180,4 +196,14 @@
     #upper-part {
         height: 452px;
     }
+
+    #alim-big {
+        display: none;
+    }
+
+    #alim-small {
+        display: flex;
+    }
+
+
 }

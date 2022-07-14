@@ -514,19 +514,15 @@
 }
 
 .btn-hold {
-    background: none repeat scroll 0 0 #CB4E4E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-primary);
     border-radius: 50%;
-    box-shadow: 0 8px #AB3C3C;
-    color: #FFFFFF;
-    width: 150px;
-    height: 150px;
-    border: 0px;
-    cursor: pointer;
-    position: relative;
-    font-size: 25px;
-    margin: 5% auto;
-    display: block;
-    outline: none;
+    width: 100px;
+    height: 100px;
+    font-size: 0.8rem;
+    border: 3px solid var(--theme-secondary);
 }
 
 btn-hold:hover {
@@ -541,38 +537,13 @@ btn-hold:active {
 
 .spinner {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 6%;
-    moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    border: 5px solid #fff;
+    border: 0.5rem solid var(--theme-secondary);
     border-left-color: transparent;
     border-right-color: transparent;
     border-top-color: transparent;
-    color: #52b700;
-    display: block;
-    font-size: 30px;
-    height: 135px;
-    line-height: 50px;
-    margin: 0 auto;
-    width: 135px;
-    -webkit-perspective: 300;
-    -moz-perspective: 300;
-    -ms-perspective: 300;
-    perspective: 300;
-    -webkit-transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform: rotateY(0deg);
-    -moz-transform-style: preserve-3d;
-    -ms-transform: rotateY(0deg);
-    -ms-transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
+    height: 100px;
+    width: 100px;
 }
 
 .active {
@@ -657,6 +628,7 @@ btn-hold:active {
     position: absolute;
     top: -8px;
     border: 1px solid var(--theme-primary);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .shortcut-tag {
@@ -671,7 +643,8 @@ btn-hold:active {
     font-size: 0.6rem;
     position: absolute;
     bottom: -11px;
-    border: 1px solid var(--theme-primary)
+    border: 1px solid var(--theme-primary);
+    text-shadow: 2px 2px 4px #000000;
 }
 
 
@@ -1247,6 +1220,14 @@ h1 {
 
 #consoleDel {
     margin-left: 2rem;
+}
+
+#alim-big {
+    display: flex;
+}
+
+#alim-small {
+    display: none;
 }
 
 /**▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀*/
