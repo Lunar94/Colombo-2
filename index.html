@@ -652,11 +652,10 @@
                                     <i class="fa-duotone fa-computer fa-2x"></i>
                                 </div>
 
-                                <div id="shortcut-prompt">
-
-                                    <span style="position: absolute; top: 30%;"> Entrez une touche:</span>
-
-
+                                <div id="shortcut-prompt-wrapper">
+                                    <div id="shortcut-prompt">
+                                        <span style="position: absolute; top: 30%;"> Entrez une touche:</span>
+                                    </div>
                                 </div>
 
 
@@ -1081,23 +1080,6 @@
             easing: "cubic-bezier(0.5, 1, 0.89, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
             disabled: false,
 
-            onMove: function ( /**Event*/ evt, /**Event*/ originalEvent) {
-                // Example: https://jsbin.com/nawahef/edit?js,output
-                evt.dragged; // dragged HTMLElement
-                evt.draggedRect; // DOMRect {left, top, right, bottom}
-                evt.related; // HTMLElement on which have guided
-                evt.relatedRect; // DOMRect
-                evt
-                    .willInsertAfter; // Boolean that is true if Sortable will insert drag element after target by default
-                originalEvent.clientY; // mouse position
-                // return false; — for cancel
-                // return -1; — insert before target
-                // return 1; — insert after target
-                // return true; — keep default insertion point based on the direction
-                // return void; — keep default insertion point based on the direction
-                // soundPlay("sfxMove.wav");
-            },
-
             onUpdate: function ( /**Event*/ evt) {
                 soundPlay("sfxMove.wav");
                 // document.querySelectorAll(".fa-4x").forEach((element) => {
@@ -1105,8 +1087,6 @@
                 // })
 
             },
-
-
 
             // Called when dragging element changes position
             onEnd: function ( /**Event*/ evt) {

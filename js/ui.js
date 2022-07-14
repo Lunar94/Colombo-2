@@ -659,6 +659,7 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Assigner un raccourcis",
         callback: (event) => {
+          document.getElementById("shortcut-prompt").style.display = "flex";
           // PLACER QUOI FAIRE ICI
           console.log(event);
 
@@ -781,17 +782,18 @@ const contextMenuConsole = new window.VanillaContextMenu({
  *
  ***************/
 // //* VARIABLES
-// let grandeur = window.matchMedia("(max-width: 600px)");
+let grandeur = window.matchMedia("(max-width: 600px)");
 // //* FUNCTIONS
-// function sizeDetector(grandeur) {
-//   if (grandeur.matches) {
-//     document.body.style.backgroundColor = "yellow";
-//     console.log("YELLOW");
-//   } else {
-//     document.body.style.backgroundColor = "pink";
-//     console.log("PINK");
-//   }
-// }
+function sizeDetector(grandeur) {
+  if (grandeur.matches) {
+    document.body.style.backgroundColor = "yellow";
+    console.log("YELLOW");
+    soundPlay("sfxSnap.wav");
+  } else {
+    document.body.style.backgroundColor = "pink";
+    console.log("PINK");
+  }
+}
 
-// sizeDetector(grandeur);
-// grandeur.addListener(sizeDetector);
+sizeDetector(grandeur);
+grandeur.addListener(sizeDetector);
