@@ -655,6 +655,12 @@ function closeAllSelect(elmnt) {
   }
 }
 
+/***************
+ *
+ *  🖱️ CONTEXTUAL MENU - From https://www.npmjs.com/package/vanilla-context-menu)
+ *
+ ***************/
+//* FUNCTIONS
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
@@ -664,6 +670,8 @@ document.querySelectorAll(".btn").forEach((element) => {
         callback: (event) => {
           // PLACER QUOI FAIRE ICI
           console.log(event);
+
+          document.createElement("div");
         },
       },
       {

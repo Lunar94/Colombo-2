@@ -643,7 +643,6 @@
 
 
 
-
                                 <div id="buttons">
 
                                     <div onclick="cashOut()"
@@ -655,7 +654,6 @@
 
                                     </div>
 
-
                                     <div onclick="cashOut()"
                                         data-hover="Vérifier la taille du ou des disques durs local"
                                         data-psfile="diskSpace" class="btn hovertext">
@@ -663,7 +661,6 @@
                                                 class="fa-duotone fa-hard-drive fa-4x"></i></span>
                                         <span class="btnLabel">Stockage</span>
                                     </div>
-
 
                                     <div onclick="cashOut()" data-hover="Informations générales sur la version du Bios"
                                         data-psfile="biosInfo" class="btn hovertext">
@@ -673,8 +670,8 @@
                                     </div>
 
                                     <div onclick="cashOut()" data-hover="Est-ce que le poste répond bien aux paquets ?"
-                                        data-psfile="ping" class="btn hovertext"><span data-psfile="ping"
-                                            class="btn-text"><i data-psfile="ping"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
+                                            class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-table-tennis-paddle-ball fa-4x"></i></span>
                                         <span class="btnLabel">Ping</span>
                                     </div>
@@ -695,10 +692,9 @@
                                         <span class="btnLabel">Installer</span>
                                     </div>
 
-                                    <div onclick="cashOut()" data-hover="Redémarrer le poste à distance [maintenir]"
-                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
-                                            class="btn-text"><i data-psfile="doThis"
+                                    <div class="btn-hold icon_close hold_trigger hovertext"><span class="btn-text"><i
                                                 class="fa-duotone fa-power-off fa-4x"></i></span>
+                                        <span class="spinner"></span>
                                         <span class="btnLabel">Alimentation</span>
                                     </div>
 
@@ -825,7 +821,7 @@
                                                 class="fa-solid fa-greater-than-equal fa-4x"></i></span>
                                         <span class="btnLabel">À venir...</span>
                                         <span class="new-btn-tag">Nouveau</span>
-                                        <span class="shortcut-tag">F1</span>
+                                        <span class="shortcut-tag"></span>
                                     </div>
 
 
@@ -955,7 +951,8 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- JS SCRIPTS SOURCES -->
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
