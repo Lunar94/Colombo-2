@@ -378,10 +378,6 @@ document.getElementById("colors-container").addEventListener("click", (ev) => {
 //* VARIABLES
 // Sélecteur boutons principaux
 const btnMain = document.querySelectorAll(".btn");
-//Bouton Fullscreen
-var timeout_id = 0,
-  hold_time = 1000,
-  hold_trigger = $(".hold_trigger");
 
 //* EVENTS LISTENERS
 // Animations des boutons principaux et l'hover (astuces)
@@ -398,21 +394,6 @@ btnMain.forEach((btnMain) => {
     }, 300);
   });
 });
-
-// Animation du gros bouton d'alimentation
-//* FUNCTIONS
-hold_trigger
-  .mousedown(function () {
-    timeout_id = setTimeout(menu_toggle, hold_time);
-  })
-  .bind("mouseup mouseleave", function () {
-    clearTimeout(timeout_id);
-    $(".spinner").removeClass("active");
-  });
-
-function menu_toggle() {
-  $(".spinner").addClass("active");
-}
 
 /***************
  *
@@ -687,7 +668,13 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Échanger",
         callback: (event) => {
-          document.querySelectorAll(".fa-4x").forEach((element) => {});
+          sortable.option("swap", true);
+          // draggable
+          document.querySelectorAll(".btn").forEach((element) => {
+            element.classList.add("draggable");
+          });
+
+          // document.querySelectorAll(".fa-4x").forEach((element) => {});
 
           element.classList.add("shake-constant");
 
@@ -699,6 +686,12 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Trier",
         callback: (event) => {
+          sortable.option("swap", false);
+          // draggable
+          document.querySelectorAll(".btn").forEach((element) => {
+            element.classList.add("draggable");
+          });
+
           document.querySelectorAll(".fa-4x").forEach((element) => {});
 
           soundPlay("sfxBtnMove.wav");

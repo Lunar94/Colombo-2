@@ -111,7 +111,7 @@
                     </div>
 
                     <div id="console-section" class="param-section param-section-activated" style="margin-top:40px">
-                        Console</div>
+                        Général</div>
                     <div id="assistant-section" class="param-section">Assistant d'appels</div>
                     <div id="theme-section" class="param-section">Thème & Animations</div>
                     <div id="update-section" class="param-section">Vérifier mises à jour</div>
@@ -129,6 +129,7 @@
             <div id="param-console-content" class="animate__animated">
 
                 <div class="line2">
+
                     <div class="pretty p-icon p-smooth">
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
@@ -144,8 +145,8 @@
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success"><i class="icon fa fa-check"></i>
-                            <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Fonction
-                                un clique copié</label>
+                            <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Copier
+                                les résultats en un clique</label>
                         </div>
                     </div>
 
@@ -153,8 +154,8 @@
                         <input type="checkbox" id="copyauto" name="copyauto" class="cb"
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success"><i class="icon fa fa-check"></i>
-                            <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Copie
-                                automatique des résultats</label>
+                            <label for="copyauto" style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Copier
+                                automatiquement</label>
                         </div>
                     </div>
 
@@ -164,8 +165,18 @@
                             style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
                         <div class="state p-success"><i class="icon fa fa-check"></i>
                             <label for="confirmdelete"
-                                style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Confirmer avant de
-                                supprimer les résultats</label>
+                                style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Confirmation avant
+                                supression</label>
+                        </div>
+                    </div>
+
+                    <div class="pretty p-icon p-smooth">
+                        <input type="checkbox" id="copyauto" name="copyauto" class="cb"
+                            style="cursor: url(./assets/images//cursors/Hand.cur), auto;" />
+                        <div class="state p-success"> <i class="icon fa fa-check"></i>
+                            <label for="copyauto"
+                                style="cursor: url(./assets/images//cursors/Hand.cur), auto;">Étiquettes sous les
+                                bouttons</label>
                         </div>
                     </div>
 
@@ -645,24 +656,25 @@
 
                                 <div id="buttons">
 
-                                    <div id="alim-big" class="btn-hold icon_close hold_trigger hovertext">
+                                    <div id="alim-big" class="btn-hold filling-effect hovertext">
                                         <span class="spinner"></span><span class="btn-text"><i
                                                 class="fa-duotone fa-power-off fa-4x"></i></span>
                                         <span class="btnLabel">Alimentation</span>
                                     </div>
 
-                                    <div id="alim-small" class="btn-hold-small hovertext">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
+                                    <div id="alim-small" class="btn-hold filling-effect hovertext">
                                         <span class="btn-text"><i class="fa-duotone fa-power-off fa-4x"></i></span>
                                         <span class="btnLabel">Alimentation</span>
                                     </div>
 
+                                    <script>
+
+
+                                    </script>
+
                                     <div onclick="cashOut()"
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
-                                        data-psfile="doThis" class="btn hovertext "><span data-psfile="doThis"
+                                        data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-brands fa-windows fa-4x"></i></span>
                                         <span class="btnLabel">Windows</span>
@@ -757,7 +769,7 @@
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
                                                 class="fa-duotone fa-briefcase-blank fa-4x"></i></span>
-                                        <span class="btnLabel">Office 365</span>
+                                        <span class="btnLabel">365</span>
                                     </div>
 
                                     <div onclick="cashOut()"
@@ -816,7 +828,7 @@
                                         class="btn hovertext">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-solid fa-greater-than-equal fa-4x"></i></span>
-                                        <span class="btnLabel">À venir...</span>
+                                        <span class="btnLabel">À venir</span>
                                         <span class="new-btn-tag">Nouveau</span>
                                     </div>
 
@@ -824,7 +836,7 @@
                                         class="btn hovertext">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-solid fa-greater-than-equal fa-4x"></i></span>
-                                        <span class="btnLabel">À venir...</span>
+                                        <span class="btnLabel">À venir</span>
                                         <span class="new-btn-tag">Nouveau</span>
                                     </div>
 
@@ -832,7 +844,7 @@
                                         class="btn hovertext">
                                         <span data-psfile="doThis" class="btn-text"><i data-psfile="doThis"
                                                 class="fa-solid fa-greater-than-equal fa-4x"></i></span>
-                                        <span class="btnLabel">À venir...</span>
+                                        <span class="btnLabel">À venir</span>
                                         <span class="new-btn-tag">Nouveau</span>
                                         <span class="shortcut-tag">F1</span>
                                     </div>
@@ -1072,10 +1084,12 @@
         const sortable = new Sortable(el, {
             swap: true, // Enable swap mode
             swapClass: "highlighted",
+            dragClass: '',
+            draggable: '.draggable',
             filter: '.filtered',
             animation: 300, // ms, animation speed moving items when sorting, `0` — without animation
             easing: "cubic-bezier(0.5, 1, 0.89, 1)", // Easing for animation. Defaults to null. See https://easings.net/ for examples.
-            // disabled: true,
+            disabled: false,
 
             onMove: function ( /**Event*/ evt, /**Event*/ originalEvent) {
                 // Example: https://jsbin.com/nawahef/edit?js,output
@@ -1104,7 +1118,14 @@
 
             },
 
-
+            // Called when dragging element changes position
+            onEnd: function ( /**Event*/ evt) {
+                evt.newIndex // most likely why this event is used is to get the dragging element's current index
+                // draggable
+                document.querySelectorAll(".btn").forEach((element) => {
+                    element.classList.remove("draggable");
+                });
+            },
 
             // Element dragging started
             onStart: function ( /**Event*/ evt) {
@@ -1119,3 +1140,5 @@
 </body>
 
 </html>
+
+12H40
