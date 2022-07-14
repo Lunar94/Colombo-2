@@ -1,5 +1,5 @@
 /**█ █▀▄▀█ █▀█ █▀█ █▀█ ▀█▀ █▀
-/**█ █░▀░█ █▀▀ █▄█ █▀▄ ░█░ ▄█*/
+/**█ █ ▀ █ █▀▀ █▄█ █▀▄  █  ▄█*/
 
 @font-face {
     font-family: font-3;
@@ -549,7 +549,6 @@
     position: absolute;
     top: -8px;
     border: 1px solid var(--theme-primary);
-
 }
 
 .shortcut-tag {

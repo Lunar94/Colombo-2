@@ -1,9 +1,10 @@
-/**█▀▄▀█ █▀▀ █▀▄ █ ▄▀█   █▀█ █░█ █▀▀ █▀█ █▄█
-/**█░▀░█ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄ ░█░*/
+/**█▀▄▀█ █▀▀ █▀▄ █ ▄▀█   █▀█ █ █ █▀▀ █▀█ █▄█
+/**█ ▀ █ ██▄ █▄▀ █ █▀█   ▀▀█ █▄█ ██▄ █▀▄  █ */
+
 @media only screen and (max-width:600px) {
 
-    /* 
-    /** CLASSES */
+    /**█▀▀ █   ▄▀█ █▀ █▀ █▀▀ █▀
+    /**█▄▄ █▄▄ █▀█ ▄█ ▄█ ██▄ ▄█*/
     .fa-4x {
         font-size: 1.5rem !important;
     }
@@ -73,7 +74,21 @@
         display: none;
     }
 
-    /** IDs */
+    .new-btn-tag {
+        height: 5px;
+        top: -10px;
+    }
+
+    .shortcut-tag {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -9px;
+        padding: 3px;
+    }
+
+    /**█ █▀▄ █▀
+    /**█ █▄▀ ▄█*/
+
     #console::-webkit-scrollbar {
         width: 0.35rem;
     }
