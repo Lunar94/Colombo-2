@@ -51,9 +51,12 @@
     --fa-secondary-color: #8A8791;
 }
 
+.fa-3x {
+    color: var(--theme-icons);
+}
+
 .fa-4x {
     color: var(--theme-icons);
-
 }
 
 .greyscale {
@@ -565,10 +568,11 @@
 
 .highlighted {
     -webkit-box-shadow: 0 0 20px rgb(255, 255, 255);
+    transition: 0.2s;
 }
 
 .shake-constant {
-    animation: shake 0.5s;
+    animation: shake 1s;
     animation-iteration-count: infinite;
 }
 
@@ -602,6 +606,17 @@
     text-shadow: 2px 2px 4px #000000;
 }
 
+.sort-tag {
+    position: absolute;
+    left: -150px;
+    color: grey;
+}
+
+.trade-tag {
+    position: absolute;
+    left: -150px;
+    color: grey;
+}
 
 /**█ █▀▄ █▀
 /**█ █▄▀ ▄█*/
@@ -1182,6 +1197,46 @@ h1 {
 
 #alim-small {
     display: none;
+}
+
+#cancel-sort {
+    background: var(--theme-primary);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 8rem;
+    top: -3rem;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
+    display: none;
+}
+
+#cancel-sort:hover {
+    color: white;
+    background: var(--theme-secondary);
+}
+
+#cancel-trade {
+    background: var(--theme-primary);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 8rem;
+    top: -3rem;
+    cursor: url(../../assets/images/cursors/Hand.cur), auto;
+    display: none;
+}
+
+#cancel-trade:hover {
+    color: white;
+    background: var(--theme-secondary);
 }
 
 /**▄▀█ █▄░█ █ █▀▄▀█ ▄▀█ ▀█▀ █ █▀█ █▄░█ █▀*/

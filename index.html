@@ -656,6 +656,17 @@
 
                                 <div id="buttons">
 
+                                    <div id="cancel-sort">
+                                        <i class="fa-duotone fa-check fa-3x" style="font-size:1rem;"></i>
+                                        <span class="sort-tag">Quitter le mode tri</span>
+                                    </div>
+
+                                    <div id="cancel-trade">
+                                        <i class="fa-duotone fa-check fa-3x" style="font-size:1rem;"></i>
+                                        <span class="trade-tag">Annuler l'échange</span>
+                                    </div>
+
+
                                     <div id="alim-big" class="btn-hold filling-effect hovertext">
                                         <span class="spinner"></span><span class="btn-text"><i
                                                 class="fa-duotone fa-power-off fa-4x"></i></span>
@@ -1110,10 +1121,9 @@
 
             onUpdate: function ( /**Event*/ evt) {
                 soundPlay("sfxMove.wav");
-                document.querySelectorAll(".btn").forEach((element) => {
-
-                    element.classList.remove("shake-constant");
-                })
+                // document.querySelectorAll(".fa-4x").forEach((element) => {
+                //     element.classList.remove("shake-constant");
+                // })
 
 
             },
@@ -1122,15 +1132,31 @@
             onEnd: function ( /**Event*/ evt) {
                 evt.newIndex // most likely why this event is used is to get the dragging element's current index
                 // draggable
-                document.querySelectorAll(".btn").forEach((element) => {
-                    element.classList.remove("draggable");
-                });
+
+                if (sortable.option("swap") == true) {
+                    document.querySelectorAll(".btn").forEach((element) => {
+                        element.classList.remove("draggable");
+                        document.querySelectorAll(".fa-4x").forEach((element) => {
+                            element.classList.remove("shake-constant");
+                        });
+                    });
+                }
+                const btnCancelTrade = document.getElementById("cancel-trade");
+                btnCancelTrade.style.display = "none";
+
+
             },
 
             // Element dragging started
             onStart: function ( /**Event*/ evt) {
                 evt.oldIndex; // element index within parent
                 soundPlay("sfxGrab.wav");
+
+
+
+
+
+
             },
 
         });

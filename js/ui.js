@@ -652,7 +652,7 @@ function closeAllSelect(elmnt) {
  *
  ***************/
 //* FUNCTIONS
-document.querySelectorAll(".btn").forEach((element) => {
+=document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
     menuItems: [
@@ -668,6 +668,8 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Échanger",
         callback: (event) => {
+          const btnCancelTrade = document.getElementById("cancel-trade");
+          btnCancelTrade.style.display = "flex";
           sortable.option("swap", true);
           // draggable
           document.querySelectorAll(".btn").forEach((element) => {
@@ -675,10 +677,22 @@ document.querySelectorAll(".btn").forEach((element) => {
           });
 
           // document.querySelectorAll(".fa-4x").forEach((element) => {});
-
-          element.classList.add("shake-constant");
+          document.querySelectorAll(".fa-4x").forEach((element) => {
+            element.classList.add("shake-constant");
+          });
 
           soundPlay("sfxBtnMove.wav");
+
+          btnCancelTrade.addEventListener("click", () => {
+            document.querySelectorAll(".btn").forEach((element) => {
+              element.classList.remove("draggable");
+            });
+
+            document.querySelectorAll(".fa-4x").forEach((element) => {
+              element.classList.remove("shake-constant");
+            });
+            btnCancelTrade.style.display = "none";
+          });
 
           console.log(event);
         },
@@ -686,13 +700,31 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Trier",
         callback: (event) => {
+          const btnCancelSort = document.getElementById("cancel-sort");
+          btnCancelSort.style.display = "flex";
           sortable.option("swap", false);
           // draggable
           document.querySelectorAll(".btn").forEach((element) => {
             element.classList.add("draggable");
           });
 
-          document.querySelectorAll(".fa-4x").forEach((element) => {});
+          document.querySelectorAll(".fa-4x").forEach((element) => {
+            element.classList.add("shake-constant");
+          });
+
+          btnCancelSort.addEventListener("click", () => {
+            document.querySelectorAll(".btn").forEach((element) => {
+              element.classList.remove("draggable");
+            });
+
+            document.querySelectorAll(".fa-4x").forEach((element) => {
+              element.classList.remove("shake-constant");
+            });
+
+            btnCancelSort.style.display = "none";
+          });
+
+          // document.querySelectorAll(".fa-4x").forEach((element) => {});
 
           soundPlay("sfxBtnMove.wav");
 

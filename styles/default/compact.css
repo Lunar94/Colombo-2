@@ -48,9 +48,6 @@
 
     .color:hover {
         outline: 5px solid white;
-        outline-offset: -30px;
-        cursor: url(../../assets/images/cursors/Hand.cur), auto;
-        transition: 0.2s;
     }
 
     .colorJS {
