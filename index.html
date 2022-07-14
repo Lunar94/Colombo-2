@@ -652,6 +652,12 @@
                                     <i class="fa-duotone fa-computer fa-2x"></i>
                                 </div>
 
+                                <div id="shortcut-prompt">
+
+                                    <span style="position: absolute; top: 30%;"> Entrez une touche:</span>
+
+
+                                </div>
 
 
                                 <div id="buttons">
@@ -683,7 +689,7 @@
 
                                     </script>
 
-                                    <div onclick="cashOut()"
+                                    <div onclick="cashOut()" id="btn-main-windows"
                                         data-hover="Informations sur le système d'exploitation et sur le blablabli lorem osisidk Informations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidkInformations sur le système d'exploitation et sur le blablabli lorem osisidk"
                                         data-psfile="doThis" class="btn hovertext"><span data-psfile="doThis"
                                             class="btn-text"><i data-psfile="doThis"
@@ -994,7 +1000,6 @@
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
-    <script src="./node_modules/hotkeys-js/dist/hotkeys.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/sortablejs/Sortable.js"></script>
 
@@ -1003,6 +1008,7 @@
     <script src="./js/sounds.js"></script>
     <script src="./js/assistant.js"></script>
     <script src="./js/ui.js"></script>
+    <script src="./js/shortcuts.js"></script>
 
     <!-- SWIPER (Swiper.js library) -->
     <script tag="SWIPER">
@@ -1062,33 +1068,6 @@
         flatpickr("input[type=datetime-local]", config);
     </script>
 
-    <!-- KEYBOARD INPUT DETECTOR (Hotkeys.js library) -->
-    <script tag="KEYBOARD INPUT DETECTOR">
-        hotkeys(
-            "right,left,up,down,space,enter,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,1,2,3,4,5,6,7,8,9,0,num_0,num_1,num_2,num_3,num_4,num_5,num_6,num_7,num_8,num_9,num_multiply,num_add,num_enter,num_subtract,num_decimal,num_divide,shift+a,shift+b,shift+c,shift+d,shift+e,shift+f,shift+g,shift+h,shift+i,shift+j,shift+k,shift+l,shift+m,shift+n,shift+o,shift+p,shift+q,shift+r,shift+s,shift+t,shift+u,shift+v,shift+w,shift+x,shift+y,shift+z,",
-            function (event, handler) {
-                soundPlay("sfxKeyboard.wav");
-            }
-        );
-        hotkeys.filter = function (event) {
-            return true;
-        }
-        //How to add the filter to edit labels. <div contentEditable="true"></div>
-        //"contentEditable" Older browsers that do not support drops
-        hotkeys.filter = function (event) {
-
-            const tagName = (event.target || event.srcElement).tagName;
-            return !(tagName.isContentEditable || tagName == 'INPUT' || tagName == 'SELECT' || tagName ==
-                'TEXTAREA');
-        }
-
-        hotkeys.filter = function (event) {
-            const tagName = (event.target || event.srcElement).tagName;
-            hotkeys.setScope(/^(INPUT|TEXTAREA|SELECT)$/.test(tagName) ? 'input' : 'other');
-            return true;
-        }
-    </script>
-
     <!-- ACTIVATE THE SORTABLE THING (Sortable.js library) -->
     <script>
         const el = document.getElementById('buttons');
@@ -1125,8 +1104,9 @@
                 //     element.classList.remove("shake-constant");
                 // })
 
-
             },
+
+
 
             // Called when dragging element changes position
             onEnd: function ( /**Event*/ evt) {
@@ -1143,21 +1123,14 @@
                 }
                 const btnCancelTrade = document.getElementById("cancel-trade");
                 btnCancelTrade.style.display = "none";
-
-
             },
 
-            // Element dragging started
-            onStart: function ( /**Event*/ evt) {
+            onChoose: function ( /**Event*/ evt) {
                 evt.oldIndex; // element index within parent
                 soundPlay("sfxGrab.wav");
-
-
-
-
-
-
             },
+
+
 
         });
     </script>

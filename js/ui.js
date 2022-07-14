@@ -652,7 +652,7 @@ function closeAllSelect(elmnt) {
  *
  ***************/
 //* FUNCTIONS
-=document.querySelectorAll(".btn").forEach((element) => {
+document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
     scope: element,
     menuItems: [
@@ -672,6 +672,7 @@ function closeAllSelect(elmnt) {
           btnCancelTrade.style.display = "flex";
           sortable.option("swap", true);
           // draggable
+
           document.querySelectorAll(".btn").forEach((element) => {
             element.classList.add("draggable");
           });
@@ -683,16 +684,21 @@ function closeAllSelect(elmnt) {
 
           soundPlay("sfxBtnMove.wav");
 
-          btnCancelTrade.addEventListener("click", () => {
-            document.querySelectorAll(".btn").forEach((element) => {
-              element.classList.remove("draggable");
-            });
+          btnCancelTrade.addEventListener(
+            "click",
+            () => {
+              soundPlay("sfxClick.wav");
+              document.querySelectorAll(".btn").forEach((element) => {
+                element.classList.remove("draggable");
+              });
 
-            document.querySelectorAll(".fa-4x").forEach((element) => {
-              element.classList.remove("shake-constant");
-            });
-            btnCancelTrade.style.display = "none";
-          });
+              document.querySelectorAll(".fa-4x").forEach((element) => {
+                element.classList.remove("shake-constant");
+              });
+              btnCancelTrade.style.display = "none";
+            },
+            { once: true }
+          );
 
           console.log(event);
         },
@@ -712,17 +718,22 @@ function closeAllSelect(elmnt) {
             element.classList.add("shake-constant");
           });
 
-          btnCancelSort.addEventListener("click", () => {
-            document.querySelectorAll(".btn").forEach((element) => {
-              element.classList.remove("draggable");
-            });
+          btnCancelSort.addEventListener(
+            "click",
+            () => {
+              soundPlay("sfxClick.wav");
+              document.querySelectorAll(".btn").forEach((element) => {
+                element.classList.remove("draggable");
+              });
 
-            document.querySelectorAll(".fa-4x").forEach((element) => {
-              element.classList.remove("shake-constant");
-            });
+              document.querySelectorAll(".fa-4x").forEach((element) => {
+                element.classList.remove("shake-constant");
+              });
 
-            btnCancelSort.style.display = "none";
-          });
+              btnCancelSort.style.display = "none";
+            },
+            { once: true }
+          );
 
           // document.querySelectorAll(".fa-4x").forEach((element) => {});
 
