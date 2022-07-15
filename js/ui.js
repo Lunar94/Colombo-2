@@ -669,6 +669,15 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Échanger",
         callback: (event) => {
+          soundPlay("sfxBugs.wav");
+
+          alertify.set("notifier", "position", "bottom-center");
+          const notification = alertify.notify(
+            '<i class="fa-duotone fa-rotate"></i>' + " Mode échange activé",
+            "success",
+            2
+          );
+
           const btnCancelTrade = document.getElementById("cancel-trade");
           btnCancelTrade.style.display = "flex";
           sortable.option("swap", true);
@@ -707,6 +716,15 @@ document.querySelectorAll(".btn").forEach((element) => {
       {
         label: "Trier",
         callback: (event) => {
+          soundPlay("sfxBugs.wav");
+
+          alertify.set("notifier", "position", "bottom-center");
+          const notification = alertify.notify(
+            '<i class="fa-duotone fa-grip-dots"></i>' + " Mode triage activé",
+            "success",
+            2
+          );
+
           const btnCancelSort = document.getElementById("cancel-sort");
           btnCancelSort.style.display = "flex";
           sortable.option("swap", false);
