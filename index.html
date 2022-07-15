@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Colombo 2.0</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./styles/default/assistant.css">
+
     <link rel="stylesheet" href="./styles/default/fullscreen.css">
     <link rel="stylesheet" href="./styles/default/compact.css">
     <link rel="stylesheet" href="./styles/default/2160p.css">
@@ -875,19 +875,8 @@
 
 
 
-
-
-
-
-                           
-
-
-
-
-
-
-
-
+                            <div id="slide-2">
+                            </div>
 
 
                         </div>
@@ -941,6 +930,12 @@
     <!--* CDNs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script defer>
+        $(function () {
+            $("#slide-2").load("assistant.html");
+        });
+    </script>
+
 
     <!--* JS SCRIPTS SOURCES -->
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
@@ -953,7 +948,7 @@
     <script src="./js/renderer.js"></script>
     <script src="./js/sounds.js"></script>
     <script src="./js/ui.js"></script>
-    <script src="./js/assistant.js"></script>
+  
     <script src="./js/shortcuts.js"></script>
 
 

@@ -470,6 +470,14 @@
     border: 1px solid var(--theme-primary);
 }
 
+.custom-context-btn>hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
 .custom-context-btn>div i {
     margin-right: 1rem;
 }
@@ -500,6 +508,10 @@
     width: fit-content;
     color: white;
     border: 1px solid var(--theme-primary);
+}
+
+.custom-context-btn-alone>div i {
+    margin-right: 1rem;
 }
 
 .custom-context-btn-alone>div {

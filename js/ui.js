@@ -115,6 +115,13 @@ function consoleEnlarge() {
 btnClear.addEventListener("click", () => {
   if (document.querySelector(".response").textContent != ``) {
     soundPlay("sfxDeleteConsole.wav");
+
+    alertify.set("notifier", "position", "bottom-center");
+    const notification = alertify.notify(
+      '<i class="fa-duotone fa-trash"></i>' + " La console a été vidée.",
+      "success",
+      2
+    );
   }
   document.querySelector(".response").classList.add("animate__flash");
   setTimeout(() => {
@@ -775,24 +782,26 @@ const contextMenuConsole = new window.VanillaContextMenu({
   scope: document.getElementById("inner-console"),
   menuItems: [
     {
+      iconClass: "fa-duotone fa-trash-can",
       label: "Vider la console",
       callback: (event) => {
         if (document.querySelector(".response").textContent != ``) {
           soundPlay("sfxDeleteConsole.wav");
+          alertify.set("notifier", "position", "bottom-center");
+          const notification = alertify.notify(
+            '<i class="fa-duotone fa-trash"></i>' + " La console a été vidée.",
+            "success",
+            2
+          );
         }
         document.querySelector(".response").classList.add("animate__flash");
         setTimeout(() => {
           document
             .querySelector(".response")
             .classList.remove("animate__flash");
+
           document.querySelector(".response").textContent = ``;
         }, 1000);
-        alertify.set("notifier", "position", "bottom-center");
-        const notification = alertify.notify(
-          '<i class="fa-duotone fa-trash"></i>' + " La console a été vidée.",
-          "success",
-          2
-        );
       },
     },
   ],

@@ -203,6 +203,7 @@ document
         scope: div,
         menuItems: [
           {
+            iconClass: "fa-duotone fa-copy",
             label: "Copier le résultat",
             callback: (event) => {
               div.classList.remove("animate__bounceInLeft");
@@ -225,7 +226,9 @@ document
               );
             },
           },
+          'hr',
           {
+            iconClass: "fa-duotone fa-delete-right",
             label: "Supprimer le résultat",
             callback: (event) => {
               if (document.querySelector(".response").textContent != ``) {
@@ -251,6 +254,7 @@ document
             },
           },
           {
+            iconClass: "fa-duotone fa-trash-can",
             label: "Vider la console",
             callback: (event) => {
               if (document.querySelector(".response").textContent != ``) {
