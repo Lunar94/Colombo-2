@@ -5,6 +5,7 @@ const btnCancelIncident = document.getElementById("cancelIncident");
 const bg = document.getElementById("bgs2");
 
 btnNewIncident.addEventListener("click", () => {
+  console.log("clicked");
   soundPlay("sfxPolice.wav");
   btnNewDemande.classList.add("greyscale");
   form1.classList.add("animate__animated");
@@ -28,4 +29,4 @@ btnNewDemande.addEventListener("click", () => {
   form2.style.display = "flex";
 });
 
-console.log("connected.");
+console.log(document.querySelectorAll('[id="new-incident"]'));
