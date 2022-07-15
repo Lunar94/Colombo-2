@@ -657,6 +657,7 @@ document.querySelectorAll(".btn").forEach((element) => {
     scope: element,
     menuItems: [
       {
+        iconClass: "fa-duotone fa-keyboard-down",
         label: "Assigner un raccourcis",
         callback: (event) => {
           document.getElementById("shortcut-prompt").style.display = "flex";
@@ -667,16 +668,18 @@ document.querySelectorAll(".btn").forEach((element) => {
         },
       },
       {
+        iconClass: "fa-duotone fa-arrows-repeat",
         label: "Échanger",
         callback: (event) => {
-          soundPlay("sfxBugs.wav");
+          const bugSfxSwitch = 1;
 
-          alertify.set("notifier", "position", "bottom-center");
           const notification = alertify.notify(
             '<i class="fa-duotone fa-rotate"></i>' + " Mode échange activé",
             "success",
             2
           );
+          soundPlayer.loop("sfxBugs.wav", "bugs");
+          alertify.set("notifier", "position", "bottom-center");
 
           const btnCancelTrade = document.getElementById("cancel-trade");
           btnCancelTrade.style.display = "flex";
@@ -697,6 +700,7 @@ document.querySelectorAll(".btn").forEach((element) => {
           btnCancelTrade.addEventListener(
             "click",
             () => {
+              soundPlayer.stop("bugs");
               soundPlay("sfxClick.wav");
               document.querySelectorAll(".btn").forEach((element) => {
                 element.classList.remove("draggable");
@@ -714,6 +718,7 @@ document.querySelectorAll(".btn").forEach((element) => {
         },
       },
       {
+        iconClass: "fa-duotone fa-grip-dots",
         label: "Trier",
         callback: (event) => {
           soundPlay("sfxBugs.wav");

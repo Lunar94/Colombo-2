@@ -15,6 +15,44 @@ let snd19 = new Audio();
 let src19 = document.createElement("source");
 let muted = false;
 
+class Sound {
+  constructor() {
+    this.audio = {};
+  }
+  play(sound) {
+    if (muted) return;
+    const audio = new Audio();
+    const source = document.createElement("source");
+    source.src = `./assets/sounds/${sound}`;
+    audio.appendChild(source);
+
+    audio.play();
+    audio.addEventListener("ended", () => {
+      audio.remove();
+    });
+  }
+  loop(sound, id) {
+    if (muted) return;
+    const audio = new Audio();
+    const source = document.createElement("source");
+    source.src = `./assets/sounds/${sound}`;
+    audio.appendChild(source);
+    audio.play();
+    audio.addEventListener("ended", () => {
+      audio.currentTime = 0;
+      audio.play();
+    });
+    this.audio[id] = audio;
+  }
+  stop(id) {
+    const audio = this.audio[id];
+    if (!audio) return;
+    audio.remove();
+  }
+}
+
+const soundPlayer = new Sound();
+
 //* FUNCTIONS
 function soundPlay(sound) {
   if (muted) return;

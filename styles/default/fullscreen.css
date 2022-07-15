@@ -470,6 +470,10 @@
     border: 1px solid var(--theme-primary);
 }
 
+.custom-context-btn>div i{
+    margin-right: 1rem;
+}
+
 .custom-context-btn>div:first-child {
     border-radius: 20px 20px 0 0;
 }
