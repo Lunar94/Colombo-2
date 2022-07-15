@@ -470,7 +470,7 @@
     border: 1px solid var(--theme-primary);
 }
 
-.custom-context-btn>div i{
+.custom-context-btn>div i {
     margin-right: 1rem;
 }
 
@@ -730,6 +730,7 @@ h1 {
 
 #inner-console {
     width: 100%;
+    height: 100%;
 }
 
 #console::-webkit-scrollbar {

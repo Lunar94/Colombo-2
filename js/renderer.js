@@ -183,6 +183,8 @@ document
         div.classList.remove("animate__bounceInLeft");
         div.classList.add("animate__flash");
 
+        navigator.clipboard.writeText(div.innerText);
+
         setTimeout(() => {
           div.classList.remove("animate__flash");
         }, 1000);
@@ -206,6 +208,8 @@ document
               div.classList.remove("animate__bounceInLeft");
               div.classList.add("animate__flash");
 
+              navigator.clipboard.writeText(div.innerText);
+
               setTimeout(() => {
                 div.classList.remove("animate__flash");
               }, 1000);
@@ -216,6 +220,31 @@ document
               const notification = alertify.notify(
                 '<i class="fa-duotone fa-copy"></i>' +
                   " Copié dans le presse-papier",
+                "success",
+                2
+              );
+            },
+          },
+          {
+            label: "Supprimer le résultat",
+            callback: (event) => {
+              if (document.querySelector(".response").textContent != ``) {
+                soundPlay("sfxDeleteConsole.wav");
+              }
+
+              div.classList.remove("animate__bounceInLeft");
+
+              div.classList.add("animate__flash");
+              console.log(div);
+
+              setTimeout(() => {
+                div.classList.remove("animate__flash");
+                div.remove();
+              }, 1000);
+              alertify.set("notifier", "position", "bottom-center");
+              const notification = alertify.notify(
+                '<i class="fa-duotone fa-trash"></i>' +
+                  " Le résultat a été supprimé.",
                 "success",
                 2
               );
