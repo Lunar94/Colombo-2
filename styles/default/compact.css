@@ -97,6 +97,14 @@
         font-size: 0.7rem;
     }
 
+    .sort-tag {
+        display: none;
+    }
+
+    .trade-tag {
+        display: none;
+    }
+
     /**█ █▀▄ █▀
     /**█ █▄▀ ▄█*/
 
@@ -190,5 +198,23 @@
 
     #upper-part {
         height: 452px;
+    }
+
+    #cancel-sort {
+        position: fixed;
+        left: 50%;
+        top: 58%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        box-shadow: 0 0 50px 10px var(--theme-primary);
+    }
+
+    #cancel-trade {
+        position: fixed;
+        left: 50%;
+        top: 58%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        box-shadow: 0 0 50px 10px var(--theme-primary);
     }
 }

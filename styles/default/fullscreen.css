@@ -1207,10 +1207,12 @@ h1 {
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 8rem;
-    top: -3rem;
+    right: 9rem;
+    top: 2.5rem;
     cursor: url(../../assets/images/cursors/Hand.cur), auto;
     display: none;
+    padding: 2px;
+    box-shadow: 0 0 50px 10px var(--theme-primary);
 }
 
 #cancel-sort:hover {
@@ -1227,10 +1229,12 @@ h1 {
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: 8rem;
-    top: -3rem;
+    right: 9rem;
+    top: 2.5rem;
     cursor: url(../../assets/images/cursors/Hand.cur), auto;
     display: none;
+    padding: 2px;
+    box-shadow: 0 0 50px 10px var(--theme-primary);
 }
 
 #cancel-trade:hover {

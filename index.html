@@ -658,19 +658,17 @@
                                     </div>
                                 </div>
 
+                                <div id="cancel-sort">
+                                    <i class="fa-solid fa-xmark fa-3x" style="font-size:1rem;"></i>
+                                    <span class="sort-tag">Quitter le mode tri</span>
+                                </div>
+
+                                <div id="cancel-trade">
+                                    <i class="fa-solid fa-xmark fa-3x" style="font-size:1rem;"></i>
+                                    <span class="trade-tag">Annuler l'échange</span>
+                                </div>
 
                                 <div id="buttons">
-
-                                    <div id="cancel-sort">
-                                        <i class="fa-duotone fa-check fa-3x" style="font-size:1rem;"></i>
-                                        <span class="sort-tag">Quitter le mode tri</span>
-                                    </div>
-
-                                    <div id="cancel-trade">
-                                        <i class="fa-duotone fa-check fa-3x" style="font-size:1rem;"></i>
-                                        <span class="trade-tag">Annuler l'échange</span>
-                                    </div>
-
 
                                     <div id="alim-big" class="btn-hold filling-effect hovertext">
                                         <span class="spinner"></span><span class="btn-text"><i
@@ -873,76 +871,25 @@
                             </div>
                         </div>
 
-                        <div class="swiper-slide swiper-no-swiping tocome">
-
-                            <div id="slide-2">
-                                <div id="bgs2" class="animate__animated"><i class="fa-duotone fa-phone fa-8x"></i>
-                                </div>
-
-                                <div id="new-incident" class="btn-assistant btn animate__animated">
-                                    <i class="fa-duotone fa-circle-plus fa-4x"></i>
-                                    <span class="btn-form-validate">Nouvel Incident</span>
-                                </div>
-
-                                <div id="new-demande" class="btn-assistant btn animate__animated"
-                                    style="margin-top: 5rem;">
-                                    <i class="fa-duotone fa-circle-plus fa-4x"></i>
-                                    <span class="btn-form-validate">Nouvelle Demande</span>
-                                </div>
-
-                                <form id="form-1" action="">
-
-                                    <input id="nom-prenom" class="field" title="nom-prenom" name="nom-prenom"
-                                        style="margin-bottom:-8px;" type="text" placeholder="Nom complet du client">
-
-                                    <br>
-
-                                    <div class="line3">
-
-                                        <div class="pretty p-switch p-slim switch1">
-                                            <input type="radio" name="switch1" class="cb" />
-                                            <div class="state p-success">
-                                                <label style="color:grey;">Poste Bureau</label>
-                                            </div>
-                                        </div>
-
-                                        <input id="poste-number" class="field" title="poste-number" name="poste-number"
-                                            style="margin-top: 0px" type="text"
-                                            placeholder="Q222666       /       Z222666"><br>
-
-                                        <div class="pretty p-switch p-slim switch2">
-                                            <input type="radio" name="switch1" class="cb" />
-                                            <div class="state p-success">
-                                                <label style="color:grey;">Poste Maison</label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <input class="form-control field" type="datetime-local"
-                                        placeholder="Date des premiers symptômes">
+                        <div class="swiper-slide swiper-no-swiping">
 
 
-                                    <textarea id="enjeu" name="enjeu" rows="20" cols="50"
-                                        placeholder="Description de l'enjeu"></textarea>
 
-                                    <div class="line4">
 
-                                        <div class="btn-assistant btn">
-                                            <i class="fa-duotone fa-magnifying-glass-plus fa-4x"></i>
-                                            <span class="btn-form-validate">Débuter une nouvelle enquête</span>
-                                        </div>
 
-                                        <div id="cancelIncident" class="btn-assistant btn">
-                                            <i class="fa-duotone fa-rectangle-xmark fa-4x"></i>
-                                            <span class="btn-form-validate">Annuler</span>
-                                        </div>
 
-                                    </div>
 
-                                </form>
 
-                            </div>
+
+                            <include src="assistant.html"></include>
+
+
+
+
+
+
+
+
                         </div>
 
                         <div class="swiper-slide  swiper-no-swiping tocome">Page #3 à venir !</div>
@@ -991,23 +938,24 @@
     </main>
 
 
+    <!--* CDNs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://morgan3d.github.io/include.js/include.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!-- JS SCRIPTS SOURCES -->
+    <!--* JS SCRIPTS SOURCES -->
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
     <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
     <script src="./node_modules/sortablejs/Sortable.js"></script>
 
-    <!-- HOME MADE JS SCRIPTS -->
+    <!--* HOME MADE JS SCRIPTS -->
     <script src="./js/renderer.js"></script>
     <script src="./js/sounds.js"></script>
-    <script src="./js/assistant.js"></script>
     <script src="./js/ui.js"></script>
+
     <script src="./js/shortcuts.js"></script>
+
 
     <!-- SWIPER (Swiper.js library) -->
     <script tag="SWIPER">

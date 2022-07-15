@@ -27,3 +27,5 @@ btnNewDemande.addEventListener("click", () => {
   soundPlay("sfxCat.wav");
   form2.style.display = "flex";
 });
+
+console.log("connected.");
