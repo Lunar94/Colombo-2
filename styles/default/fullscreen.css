@@ -1267,14 +1267,13 @@ h1 {
     transform: translate(-50%, -50%);
     height: 200px;
     width: 200px;
-    background: var(--theme-primary);
+    background: var(--Theme1-Color2);
     z-index: 999;
     border-radius: 50%;
-    border: 1px solid var(--theme-secondary);
+    border: 1px solid var(--theme-primary);
     justify-content: center;
     align-items: center;
-    border: 2px solid grey;
-    box-shadow: 0 0 50px 10px white;
+    box-shadow: 0 0 50px 10px var(--theme-primary);
 }
 
 #shortcut-prompt-wrapper {

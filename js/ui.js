@@ -668,7 +668,7 @@ document.querySelectorAll(".btn").forEach((element) => {
         label: "Assigner un raccourcis",
         callback: (event) => {
           document.getElementById("shortcut-prompt-wrapper").style.display =
-            "flex";
+            "block";
           // PLACER QUOI FAIRE ICI
           console.log(event);
 
