@@ -35,36 +35,35 @@ document.addEventListener("keydown", (ev) => {
       "F12",
     ].includes(ev.key)
   ) {
-  }
+    shortcutPrompt.appendChild(shownShortcut);
 
-  shortcutPrompt.appendChild(shownShortcut);
+    shortcutPrompt.style.boxShadow = "0 0 50px 6px white";
+    btnCancelShortCutPrompt.style.display = "none";
 
-  shortcutPrompt.style.boxShadow = "0 0 50px 6px white";
-  btnCancelShortCutPrompt.style.display = "none";
+    alertify.set("notifier", "position", "bottom-center");
+    const notification = alertify.notify(
+      '<i class="fa-duotone fa-keyboard-down"></i>' +
+        " Raccourcis " +
+        ev.key +
+        " assigné",
+      "success",
+      2
+    );
 
-  alertify.set("notifier", "position", "bottom-center");
-  const notification = alertify.notify(
-    '<i class="fa-duotone fa-keyboard-down"></i>' +
-      " Raccourcis " +
-      ev.key +
-      " assigné",
-    "success",
-    2
-  );
-
-  setTimeout(() => {
-    shortcutPrompt.style.animation = "flipOutY 1.5s";
-  }, 500);
-
-  setTimeout(() => {
-    shortcutWrapper.style.animation = "fadeOut 1s";
     setTimeout(() => {
-      shortcutWrapper.style.display = "none";
-      shortcutWrapper.style.animation = "fadeIn 1s";
-      shortcutPrompt.removeChild(shownShortcut);
-      shortcutPrompt.style.boxShadow = "none";
+      shortcutPrompt.style.animation = "flipOutY 1.5s";
     }, 500);
-  }, 1000);
+
+    setTimeout(() => {
+      shortcutWrapper.style.animation = "fadeOut 1s";
+      setTimeout(() => {
+        shortcutWrapper.style.display = "none";
+        shortcutWrapper.style.animation = "fadeIn 1s";
+        shortcutPrompt.removeChild(shownShortcut);
+        shortcutPrompt.style.boxShadow = "none";
+      }, 500);
+    }, 1000);
+  }
 
   if (
     ![

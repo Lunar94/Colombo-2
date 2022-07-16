@@ -5,17 +5,26 @@
  *
  ************/
 //* FUNCTIONS
+const computer = document.getElementById("computer");
 // Récupérer le value de l'input principal (#computer)
 function getInputValue() {
   // Selecting the input element and get its value
-  const inputVal = document.getElementById("computer").value;
-
-  // Displaying the value
-  console.log(inputVal);
+  const inputVal = computer.value;
 }
 
-// getInputValue();
+getInputValue();
 
-function btnMainReboot() {
-  const anus = 'data-psfile="doThis"';
-}
+const interval = setInterval(function () {
+  if (computer.value.length == 7) {
+    console.log("anus");
+    computer.style.color = "var(--theme-primary)";
+  }
+
+  if (computer.value.length == 7) {
+    computer.style.color = "var(--theme-primary)";
+  }
+
+  if (["Q", "Z", "q", "z"].indexOf(computer.value) != 0) {
+    computer.style.color = "red";
+  }
+}, 500);

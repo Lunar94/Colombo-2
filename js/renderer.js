@@ -24,7 +24,7 @@ document.getElementById("close").addEventListener("click", () => {
     .set("movable", false)
     .set({ title: "Vous êtes sûr ?" })
     .set("labels", {
-      ok:*
+      ok:
         "<i style='margin-right:6px'class='fa-duotone fa-arrow-right-from-arc'></i>" +
         "Quitter",
 

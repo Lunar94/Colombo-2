@@ -16,16 +16,16 @@ function createWindow() {
     height: 955,
     maxHeight: 1080,
     maxWidth: 1920,
-
+    transparent: false,
     show: false,
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12
       nodeIntegration: false, // this is the default in Electron >= 5
       preload: `${__dirname}/js/preload.js`,
     },
+
     resizable: false,
     frame: false,
-    // transparent: true,
   });
 
   const splash = new BrowserWindow({
