@@ -5,6 +5,7 @@ const btnCancelIncident = document.getElementById("cancelIncident");
 const bg = document.getElementById("bgs2");
 
 btnNewIncident.addEventListener("click", () => {
+  soundPlay("sfxClick.wav");
   console.log("clicked");
   soundPlay("sfxPolice.wav");
   btnNewDemande.classList.add("greyscale");
@@ -25,6 +26,7 @@ btnCancelIncident.addEventListener("click", () => {
 });
 
 btnNewDemande.addEventListener("click", () => {
+  soundPlay("sfxClick.wav");
   soundPlay("sfxCat.wav");
   form2.style.display = "flex";
 });

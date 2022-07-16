@@ -569,6 +569,8 @@
     position: absolute;
     color: grey;
     top: 120%;
+    display: flex;
+    animation: fadeIn 1s;
 }
 
 .swiper-wrapper {
@@ -759,7 +761,7 @@ h1 {
 #console::-webkit-scrollbar-track {
     background: #1e1e24;
     margin-top: 15px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     border-radius: 10px;
 }
 
@@ -771,7 +773,7 @@ h1 {
 #output {
     font-family: font-3;
     font-size: 1rem;
-    padding-bottom: 4rem;
+    /* padding-bottom: 4rem; */
 }
 
 #buttons {

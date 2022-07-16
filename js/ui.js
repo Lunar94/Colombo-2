@@ -343,16 +343,86 @@ nuanceConsoleBlack.addEventListener("click", () => {
 
 //* FUNCTIONS
 // Checkbox pour le glowing
-window.onload = function checkGlow() {
-  checkGlow.onchange = function checkGlow() {
+const checkGlow = document.getElementById("glowing");
+const checkLabels = document.getElementById("labels");
+const checkConfirmExit = document.getElementById("confirmExit");
+
+window.onload = function () {
+  checkGlow.onchange = function () {
     if (checkGlow.checked == false) {
       topbar.style.animation = "none";
       tongue.style.animation = "none";
-      wrapCons.style.animation = "none";
+      consoleGlow.style.animation = "none";
     } else {
       topbar.style.animation = "glow 5s infinite alternate";
       tongue.style.animation = "glow 5s infinite alternate";
-      wrapCons.style.animation = "glow 5s infinite alternate";
+      consoleGlow.style.animation = "glow 5s infinite alternate";
+    }
+  };
+
+  checkLabels.onchange = function () {
+    if (checkLabels.checked == false) {
+      labels.forEach((labels) => {
+        labels.style.animation = "fadeOut 0.5s";
+
+        setTimeout(function () {
+          labels.style.display = "none";
+        }, 500);
+      });
+    } else {
+      labels.forEach((labels) => {
+        labels.style.animation = "fadeIn 1s";
+        labels.style.display = "flex";
+      });
+    }
+  };
+
+  checkConfirmExit.onchange = function () {
+    if (checkConfirmExit.checked == false) {
+      console.log("PAS CHECK");
+    } else {
+      
+      
+
+
+document.getElementById("close").addEventListener("click", () => {
+  soundPlay("sfxBtn.wav");
+  alertify
+    .confirm("Êtes-vous certain de vouloir quitter l'application ?")
+    .set("movable", false)
+    .set({ title: "Vous êtes sûr ?" })
+    .set("labels", {
+      ok:
+        "<i style='margin-right:6px'class='fa-duotone fa-arrow-right-from-arc'></i>" +
+        "Quitter",
+
+      cancel:
+        "<i style='margin-right:6px' class='fa-duotone fa-teddy-bear'></i>" +
+        "Rester",
+    })
+    .set("closable", false)
+    .set("onok", function (closeEvent) {
+      soundPlay("sfxBtn.wav");
+      soundPlay("sfxExit.wav");
+      const exit = document.getElementById("exit");
+      exit.style.display = "block";
+      setTimeout(function () {
+        windowControls.close();
+      }, 3500);
+    })
+
+    .set("oncancel", function (closeEvent) {
+      soundPlay("sfxStay.wav");
+    });
+});
+
+
+
+
+
+
+
+
     }
   };
 };
@@ -385,6 +455,7 @@ document.getElementById("colors-container").addEventListener("click", (ev) => {
 //* VARIABLES
 // Sélecteur boutons principaux
 const btnMain = document.querySelectorAll(".btn");
+const labels = document.querySelectorAll(".btnLabel");
 
 //* EVENTS LISTENERS
 // Animations des boutons principaux et l'hover (astuces)
@@ -668,7 +739,7 @@ document.querySelectorAll(".btn").forEach((element) => {
         iconClass: "fa-duotone fa-keyboard-down",
         label: "Assigner un raccourcis",
         callback: (event) => {
-          yan = 1;
+          soundPlay("sfxBtnMove.wav");
           btnCancelShortCutPrompt.style.display = "flex";
           shortcutPrompt.style.animation = "flipInY 1s";
           shortcutWrapper.style.display = "block";
@@ -681,10 +752,8 @@ document.querySelectorAll(".btn").forEach((element) => {
       },
       {
         iconClass: "fa-duotone fa-arrows-repeat",
-        label: "Échanger",
+        label: "Mode échanger",
         callback: (event) => {
-          const bugSfxSwitch = 1;
-
           const notification = alertify.notify(
             '<i class="fa-duotone fa-rotate"></i>' + " Mode échange activé",
             "success",
@@ -732,7 +801,7 @@ document.querySelectorAll(".btn").forEach((element) => {
       },
       {
         iconClass: "fa-duotone fa-grip-dots",
-        label: "Trier",
+        label: "Mode trier",
         callback: (event) => {
           soundPlayer.loop("sfxBugs.wav", "bugs");
 
@@ -827,7 +896,6 @@ function sizeDetector(grandeur) {
   if (grandeur.matches) {
     document.body.style.backgroundColor = "yellow";
     console.log("YELLOW");
-    soundPlay("sfxSnap.wav");
   } else {
     document.body.style.backgroundColor = "pink";
     console.log("PINK");
