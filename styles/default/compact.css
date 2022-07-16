@@ -218,6 +218,12 @@
         box-shadow: 0 0 50px 10px var(--theme-primary);
     }
 
+
+    #shortcut-prompt {
+        top: 20%;
+        left: 33.6%;
+    }
+
     #cancel-shortcut-prompt {
         left: 53.8%;
     }

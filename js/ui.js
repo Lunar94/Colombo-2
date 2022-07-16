@@ -668,11 +668,11 @@ document.querySelectorAll(".btn").forEach((element) => {
         iconClass: "fa-duotone fa-keyboard-down",
         label: "Assigner un raccourcis",
         callback: (event) => {
-          
-
-
-
+          btnCancelShortCutPrompt.style.display = "flex";
+          document.getElementById("shortcut-prompt").style.animation =
+            "flipInY 1s";
           shortcutWrapper.style.display = "block";
+
           // PLACER QUOI FAIRE ICI
           console.log(event);
 
