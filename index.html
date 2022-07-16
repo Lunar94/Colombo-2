@@ -28,12 +28,22 @@
 </head>
 
 <body>
-    <div id="shortcut-prompt-wrapper">
-        <div id="shortcut-prompt">
-            <span style="position: absolute; top: 30%; font-size: 0.8rem; color:var(--theme-little-button)"> Appuyez sur
+
+    <div id="shortcut-prompt-wrapper" class="animate__animated animate__fadeIn">
+
+        <div id="cancel-shortcut-prompt" class="animate__animated animate__fadeIn">
+            <i class="fa-solid fa-xmark fa-3x" style="font-size:1rem;"></i>
+            <span class="cancel-shortcut-tag">Annuler</span>
+        </div>
+
+        <div id="shortcut-prompt" class="animate__animated animate__flipInY">
+            <span style="position: absolute; top: 18%; font-size: 0.8rem; color:var(--theme-little-button)"> Appuyez
+                sur<br>
                 une touche:</span>
         </div>
     </div>
+
+
 
     <img src="./assets/images/exit.gif" id="exit">
 

@@ -175,8 +175,8 @@ document
           div.style.color = "black";
           break;
       }
-      div.innerText = res;
 
+      div.innerText = res;
       response.appendChild(div);
 
       div.addEventListener("click", () => {
@@ -226,7 +226,7 @@ document
               );
             },
           },
-          'hr',
+          "hr",
           {
             iconClass: "fa-duotone fa-delete-right",
             label: "Supprimer le résultat",
