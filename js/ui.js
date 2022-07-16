@@ -6,37 +6,37 @@
  ************/
 //* FUNCTIONS
 // Message de bienvenue (avec délai de 5.2s pour fit avec le Splash)
-setTimeout(function welcomeMessage() {
-  window.showAlert = function welcomeMessage() {
-    alertify
-      .alert(
-        " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
-          " " +
-          '<a class="startLink" href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
-          "<br/><br/>" +
-          "<i class='fa-brands fa-github fa-1'></i>" +
-          " " +
-          '<a class="startLink" href="https://github.com/Lunar94/Colombo-2" target="_blank" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
-          "<br/><br/>" +
-          "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
-          " " +
-          '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
-          "<br/>"
-      )
-      .set({ transition: "pulse" })
-      .show()
-      .set({ title: `Bienvenue sur COLOMBO ${buildMain}.` })
-      .set({
-        label:
-          "<i class='fa-duotone fa-door-open' style='margin-right:5px;'></i>" +
-          "Démarrer",
-      })
-      .set("movable", false)
-      .set({ onshow: soundPlay("sfxNews.wav") });
-  };
-  window.showNews = function () {};
-  window.showAlert();
-}, 5200);
+// setTimeout(function welcomeMessage() {
+//   window.showAlert = function welcomeMessage() {
+//     alertify
+//       .alert(
+//         " <i class='fa-duotone fa-newspaper fa-1x'></i>" +
+//           " " +
+//           '<a class="startLink" href="javascript:showNews();" style="color:grey; cursor: url(./assets/Images//cursors/Hand.cur), auto;">Nouveautés</a>' +
+//           "<br/><br/>" +
+//           "<i class='fa-brands fa-github fa-1'></i>" +
+//           " " +
+//           '<a class="startLink" href="https://github.com/Lunar94/Colombo-2" target="_blank" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Lien du Github</a>' +
+//           "<br/><br/>" +
+//           "<i class='fa-duotone fa-circle-question fa-1x'></i>" +
+//           " " +
+//           '<a class="startLink" href="javascript:showNews();" style="color:grey;  cursor: url(./assets/Images//cursors/Hand.cur), auto;">Obtenir de l\'aide</a>' +
+//           "<br/>"
+//       )
+//       .set({ transition: "pulse" })
+//       .show()
+//       .set({ title: `Bienvenue sur COLOMBO ${buildMain}.` })
+//       .set({
+//         label:
+//           "<i class='fa-duotone fa-door-open' style='margin-right:5px;'></i>" +
+//           "Démarrer",
+//       })
+//       .set("movable", false)
+//       .set({ onshow: soundPlay("sfxNews.wav") });
+//   };
+//   window.showNews = function () {};
+//   window.showAlert();
+// }, 5200);
 
 /************
  *
@@ -667,7 +667,8 @@ document.querySelectorAll(".btn").forEach((element) => {
         iconClass: "fa-duotone fa-keyboard-down",
         label: "Assigner un raccourcis",
         callback: (event) => {
-          document.getElementById("shortcut-prompt").style.display = "flex";
+          document.getElementById("shortcut-prompt-wrapper").style.display =
+            "flex";
           // PLACER QUOI FAIRE ICI
           console.log(event);
 
@@ -717,6 +718,7 @@ document.querySelectorAll(".btn").forEach((element) => {
                 element.classList.remove("shake-constant");
               });
               btnCancelTrade.style.display = "none";
+              soundPlayer.stop("bugs");
             },
             { once: true }
           );
@@ -728,7 +730,7 @@ document.querySelectorAll(".btn").forEach((element) => {
         iconClass: "fa-duotone fa-grip-dots",
         label: "Trier",
         callback: (event) => {
-          soundPlay("sfxBugs.wav");
+          soundPlayer.loop("sfxBugs.wav", "bugs");
 
           alertify.set("notifier", "position", "bottom-center");
           const notification = alertify.notify(
@@ -762,6 +764,7 @@ document.querySelectorAll(".btn").forEach((element) => {
               });
 
               btnCancelSort.style.display = "none";
+              soundPlayer.stop("bugs");
             },
             { once: true }
           );

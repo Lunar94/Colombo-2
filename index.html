@@ -28,6 +28,12 @@
 </head>
 
 <body>
+    <div id="shortcut-prompt-wrapper">
+        <div id="shortcut-prompt">
+            <span style="position: absolute; top: 30%;"> Entrez une touche:</span>
+        </div>
+    </div>
+
     <img src="./assets/images/exit.gif" id="exit">
 
     <div id="topbar">
@@ -652,12 +658,6 @@
                                     <i class="fa-duotone fa-computer fa-2x"></i>
                                 </div>
 
-                                <div id="shortcut-prompt-wrapper">
-                                    <div id="shortcut-prompt">
-                                        <span style="position: absolute; top: 30%;"> Entrez une touche:</span>
-                                    </div>
-                                </div>
-
                                 <div id="cancel-sort">
                                     <i class="fa-solid fa-xmark fa-3x" style="font-size:1rem;"></i>
                                     <span class="sort-tag">Quitter le mode tri</span>
@@ -936,19 +936,17 @@
         });
     </script>
 
-
     <!--* JS SCRIPTS SOURCES -->
     <script src="./node_modules/swiper/swiper-bundle.js"></script>
     <script src="./node_modules/alertifyjs/build/alertify.js"></script>
     <script src="./node_modules/vanilla-context-menu/dist/vanilla-context-menu.js"></script>
-    <script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
+
     <script src="./node_modules/sortablejs/Sortable.js"></script>
 
     <!--* HOME MADE JS SCRIPTS -->
     <script src="./js/renderer.js"></script>
     <script src="./js/sounds.js"></script>
     <script src="./js/ui.js"></script>
-  
     <script src="./js/shortcuts.js"></script>
 
 
@@ -999,17 +997,6 @@
         });
     </script>
 
-    <!-- CUSTOM DATE SELECTOR IN ASSISTANT (Flatpickr.js library) -->
-    <script tag="CUSTOM DATE SELECTOR IN ASSISTANT">
-        config = {
-            enableTime: true,
-            dateFormat: "d-m-Y",
-            altFormat: "j F, Y",
-            altInput: true,
-        }
-        flatpickr("input[type=datetime-local]", config);
-    </script>
-
     <!-- ACTIVATE THE SORTABLE THING (Sortable.js library) -->
     <script>
         const el = document.getElementById('buttons');
@@ -1028,8 +1015,10 @@
                 // document.querySelectorAll(".fa-4x").forEach((element) => {
                 //     element.classList.remove("shake-constant");
                 // })
-
             },
+
+
+
 
             // Called when dragging element changes position
             onEnd: function ( /**Event*/ evt) {
@@ -1046,6 +1035,16 @@
                 }
                 const btnCancelTrade = document.getElementById("cancel-trade");
                 btnCancelTrade.style.display = "none";
+
+                if (sortable.option("swap") !== true) return
+                soundPlayer.stop("bugs");
+            },
+
+            // Called by any change to the list (add / update / remove)
+            onSort: function ( /**Event*/ evt) {
+                // same properties as onEnd
+                if (sortable.option("swap") !== true) return
+                soundPlayer.stop("bugs");
             },
 
             onChoose: function ( /**Event*/ evt) {

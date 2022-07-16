@@ -1,4 +1,18 @@
 <script src="./js/assistant.js"></script>
+<script src="./node_modules/flatpickr/dist/flatpickr.js"></script>
+<!-- CUSTOM DATE SELECTOR IN ASSISTANT (Flatpickr.js library) -->
+<script tag="CUSTOM DATE SELECTOR IN ASSISTANT">
+    config = {
+        enableTime: true,
+        dateFormat: "d-m-Y",
+        altFormat: "j F, Y",
+        altInput: true,
+    }
+    flatpickr("input[type=datetime-local]", config);
+</script>
+
+
+
 <link rel="stylesheet" href="./styles/default/assistant.css">
 <div id="bgs2" class="animate__animated"><i class="fa-duotone fa-phone fa-8x"></i>
 </div>

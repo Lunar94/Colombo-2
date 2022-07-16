@@ -47,6 +47,7 @@ class Sound {
   stop(id) {
     const audio = this.audio[id];
     if (!audio) return;
+    audio.pause();
     audio.remove();
   }
 }
