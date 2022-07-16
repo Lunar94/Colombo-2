@@ -2,6 +2,12 @@ let array = {
   "btn-main-windows": "F3",
 };
 
+const shortcutPrompt = document.getElementById("shortcut-prompt");
+const shortcutWrapper = document.getElementById("shortcut-prompt-wrapper");
+const btnCancelShortCutPrompt = document.getElementById(
+  "cancel-shortcut-prompt"
+);
+
 array["btn-main-windows"] = "F12";
 
 document.addEventListener("keydown", (ev) => {
@@ -14,14 +20,6 @@ document.addEventListener("keydown", (ev) => {
   shownShortcut.style.letterSpacing = ".1em";
   shownShortcut.style.fontSize = "3rem";
   shownShortcut.style.animation = "fadeIn 0.5s";
-
-  if (shortcutWrapper.style.display !== "block") {
-    // document.getElementById("shortcut-prompt").appendChild(shownShortcut);
-    //   if (ev.key.length == 3) {
-    //     alert("ANUS");
-    //   }
-  }
-
   if (
     [
       "F1",
@@ -36,11 +34,12 @@ document.addEventListener("keydown", (ev) => {
       "F10",
       "F12",
     ].includes(ev.key)
-  )
-    document.getElementById("shortcut-prompt").appendChild(shownShortcut);
+  ) {
+  }
 
-  document.getElementById("shortcut-prompt").style.boxShadow =
-    "0 0 50px 6px white";
+  shortcutPrompt.appendChild(shownShortcut);
+
+  shortcutPrompt.style.boxShadow = "0 0 50px 6px white";
   btnCancelShortCutPrompt.style.display = "none";
 
   alertify.set("notifier", "position", "bottom-center");
@@ -54,8 +53,7 @@ document.addEventListener("keydown", (ev) => {
   );
 
   setTimeout(() => {
-    document.getElementById("shortcut-prompt").style.animation =
-      "flipOutY 1.5s";
+    shortcutPrompt.style.animation = "flipOutY 1.5s";
   }, 500);
 
   setTimeout(() => {
@@ -63,8 +61,8 @@ document.addEventListener("keydown", (ev) => {
     setTimeout(() => {
       shortcutWrapper.style.display = "none";
       shortcutWrapper.style.animation = "fadeIn 1s";
-      document.getElementById("shortcut-prompt").removeChild(shownShortcut);
-      document.getElementById("shortcut-prompt").style.boxShadow = "none";
+      shortcutPrompt.removeChild(shownShortcut);
+      shortcutPrompt.style.boxShadow = "none";
     }, 500);
   }, 1000);
 
@@ -89,11 +87,18 @@ document.addEventListener("keydown", (ev) => {
   document.getElementById(buttonId).click();
 });
 
-const btnCancelShortCutPrompt = document.getElementById(
-  "cancel-shortcut-prompt"
-);
+btnCancelShortCutPrompt.addEventListener(
+  "click",
+  () => {
+    soundPlayer.play("sfxClick.wav", "click");
 
-btnCancelShortCutPrompt.addEventListener("click", () => {
-  soundPlayer.play("sfxClick.wav", "click");
-  shortcutWrapper.style.display = "none";
-});
+    shortcutWrapper.style.animation = "fadeOut 1s";
+    setTimeout(() => {
+      shortcutWrapper.style.display = "none";
+      shortcutWrapper.style.animation = "fadeIn 1s";
+      document.getElementById("shortcut-prompt").removeChild(shownShortcut);
+      document.getElementById("shortcut-prompt").style.boxShadow = "none";
+    }, 500);
+  },
+  1000
+);

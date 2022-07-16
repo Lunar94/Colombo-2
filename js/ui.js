@@ -658,7 +658,7 @@ function closeAllSelect(elmnt) {
  *  🖱️ CONTEXTUAL MENU - From https://www.npmjs.com/package/vanilla-context-menu)
  *
  ***************/
-const shortcutWrapper = document.getElementById("shortcut-prompt-wrapper");
+
 //* FUNCTIONS
 document.querySelectorAll(".btn").forEach((element) => {
   const contextMenuBtn = new window.VanillaContextMenu({
@@ -668,9 +668,9 @@ document.querySelectorAll(".btn").forEach((element) => {
         iconClass: "fa-duotone fa-keyboard-down",
         label: "Assigner un raccourcis",
         callback: (event) => {
+          yan = 1;
           btnCancelShortCutPrompt.style.display = "flex";
-          document.getElementById("shortcut-prompt").style.animation =
-            "flipInY 1s";
+          shortcutPrompt.style.animation = "flipInY 1s";
           shortcutWrapper.style.display = "block";
 
           // PLACER QUOI FAIRE ICI
