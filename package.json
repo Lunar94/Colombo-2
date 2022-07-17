@@ -23,6 +23,7 @@
         "pretty-checkbox": "^3.0.3",
         "sortablejs": "^1.15.0",
         "swiper": "^8.2.4",
+        "validate.js": "^0.13.1",
         "vanilla-context-menu": "^1.2.2"
     }
 }

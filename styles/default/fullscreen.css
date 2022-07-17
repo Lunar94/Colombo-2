@@ -685,8 +685,9 @@ h1 {
 }
 
 #computer {
+    text-transform: uppercase;
     position: absolute;
-    color: var(--theme-primary);
+    color: white;
     display: block;
     left: 50%;
     transform: translateX(-48%);
@@ -699,6 +700,7 @@ h1 {
     letter-spacing: 0.5ch;
     z-index: 1;
     cursor: url(../../assets/images/cursors/IBeam.cur), auto;
+
 }
 
 #computer:focus {
