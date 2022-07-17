@@ -35,7 +35,14 @@ const interval = setInterval(function () {
 
   // ==================================================================================
 
-  if (isNaN(injar.charAt(1))) {
+  if (
+    isNaN(injar.charAt(1)) ||
+    isNaN(injar.charAt(2)) ||
+    isNaN(injar.charAt(3)) ||
+    isNaN(injar.charAt(4)) ||
+    isNaN(injar.charAt(5)) ||
+    isNaN(injar.charAt(6))
+  ) {
     computer.style.color = "red";
   } else {
     console.log("MARIE");
