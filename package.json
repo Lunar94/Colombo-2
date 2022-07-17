@@ -20,6 +20,7 @@
         "csshake": "^1.7.0",
         "flatpickr": "^4.6.13",
         "install": "^0.13.0",
+        "ping.js": "^0.3.0",
         "pretty-checkbox": "^3.0.3",
         "sortablejs": "^1.15.0",
         "swiper": "^8.2.4",
