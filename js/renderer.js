@@ -283,12 +283,5 @@ document
         ],
         customThemeClass: "custom-context-btn",
       });
-
-      // document.querySelectorAll(".nombril").forEach((nombril) => {
-      //   addEventListener("click", () => {
-      //     console.log("test");
-      //     soundPlay("sfxBtn2.wav");
-      //   });
-      // });
     }
   });
