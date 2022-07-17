@@ -20,23 +20,40 @@ function alphanumeric(inputtxt) {
 
 // Ici c'est le début de notre interval (100ms).
 const interval = setInterval(function () {
-  if (computer.value.match("")) {
+  const injar = document.getElementById("computer").value;
+  const filterFinal = /^[0-9qz]+$/;
+
+  //================================================================================
+
+  if (injar.charAt(0) == "z" || injar.charAt(0) == "q") {
     computer.style.color = "white";
+  } else if (injar == "") {
+    computer.style.color = "white";
+  } else {
+    computer.style.color = "red";
   }
 
   // ==================================================================================
+
+  if (isNaN(injar.charAt(1))) {
+    computer.style.color = "red";
+  } else {
+    console.log("MARIE");
+  }
+
+  // ==================================================================================
+
   const filter = /^[-abcdefghijklmnoprstuvwxy0123456789./*+,=#]+$/;
 
-  if (computer.value.match(filter)) {
-    computer.style.color = "#910B00";
+  if (injar.match(filter)) {
   } else {
     console.log("Fin de l'interval 1");
   }
 
   // ==================================================================================
-  const filterFinal = /^[0-9qz]+$/;
-  if (computer.value.length == 7 && computer.value.match(filterFinal)) {
-    // if (computer.value.match(filterFinal)) {
+
+  if (injar.length == 7 && injar.match(filterFinal)) {
+    // if (cinjar.match(filterFinal)) {
     // } else {
     //   console.log("Fin de l'interval");
     // }
