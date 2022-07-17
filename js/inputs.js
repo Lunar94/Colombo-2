@@ -6,13 +6,17 @@
  ************/
 //* VARIABLES
 const computer = document.getElementById("computer");
-const filter = /^[0-9qz]+$/;
-const frequency = 1000;
+const filter = /^[0-9qzQZ]+$/;
+const frequency = 100;
+const p = new Ping();
+const iconComputer = document.querySelector(".fa-computer");
+const iconLaptop = document.querySelector(".fa-laptop");
 
 //* FUNCTIONS
 // ============================ DÉBUT DE L'INTERVAL =================================
+
 const interval = setInterval(function fcnCptChk() {
-  const injar = document.getElementById("computer").value;
+  let injar = document.getElementById("computer").value;
 
   // ==================================================================================
 
@@ -46,18 +50,42 @@ const interval = setInterval(function fcnCptChk() {
 
   if (injar.length == 7 && injar.match(filter)) {
     computer.style.color = "var(--theme-primary)";
-    console.log("L'ENTRÉE EST COMPLÈTE & VALIDE - PROCÉDER AU PINGTEST");
-
-    const p = new Ping();
 
     p.ping("http://googlef.com", function (err, data) {
-      // Also display error if err is returned.
       if (err) {
-        console.log("Le poste ne répond pas.");
         data = data + " " + err;
+        console.log("Le poste ne répond pas.");
+        if (
+          document.getElementById("computer").value.charAt(0) == "Z" ||
+          document.getElementById("computer").value.charAt(0) == "z"
+        ) {
+          iconLaptop.style.color = "red";
+          iconComputer.style.color = "#8A8791";
+        } else {
+          iconComputer.style.color = "red";
+          iconLaptop.style.color = "#8A8791";
+        }
+      } else {
+        console.log("Le poste répond.");
+        let pingResult = 1;
+
+        if (
+          document.getElementById("computer").value.charAt(0) == "Z" ||
+          document.getElementById("computer").value.charAt(0) == "z"
+        ) {
+          iconLaptop.style.color = "green";
+          iconComputer.style.color = "#8A8791";
+        } else {
+          iconComputer.style.color = "green";
+          iconLaptop.style.color = "#8A8791";
+        }
       }
-      document.getElementById("console").innerHTML = data;
+      // document.getElementById("console").innerHTML = data;
     });
+  } else {
+    iconLaptop.style.color = " #8A8791";
+    iconComputer.style.color = " #8A8791";
   }
 }, frequency);
+
 // ============================ FIN DE L'INTERVAL ====================================

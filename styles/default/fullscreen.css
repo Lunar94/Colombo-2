@@ -34,7 +34,6 @@
     --selection-color: white;
     --texte-console: white;
     --current-cursor: url(../../assets/images/cursors/Hand.cur), auto;
-    --theme-computer-type: #8A8791;
 }
 
 ::selection {
@@ -61,7 +60,7 @@
 }
 
 .fa-5x {
-    color: var(--theme-computer-type);
+    transition: 1s;
 }
 
 .greyscale {
@@ -711,6 +710,7 @@ h1 {
 #computer:focus {
     outline: none;
     color: white;
+    transition: 1s;
 }
 
 #content {

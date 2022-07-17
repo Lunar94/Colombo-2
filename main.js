@@ -20,7 +20,7 @@ function createWindow() {
     show: false,
     webPreferences: {
       contextIsolation: true, // this is the default in Electron >= 12
-      nodeIntegration: true, // this is the default in Electron >= 5
+      nodeIntegration: false, // this is the default in Electron >= 5
       preload: `${__dirname}/js/preload.js`,
     },
 
